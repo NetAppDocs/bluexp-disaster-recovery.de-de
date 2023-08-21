@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: use/failback.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
+summary: NetApp BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recovery Service, der Disaster Recovery Workflows automatisiert. 
+---
+= Führen Sie ein Failback von Anwendungen zur ursprünglichen Quelle durch
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Nachdem ein Notfall behoben wurde, können Sie ein Failback vom Disaster-Recovery-Standort zum Quellstandort durchführen, um den normalen Betrieb wiederherzustellen. Sie können den Snapshot auswählen, von dem aus die Wiederherstellung durchgeführt werden soll.
+
+In diesem Workflow repliziert (synchronisiert) die Disaster Recovery von BlueXP alle Änderungen zurück auf die ursprüngliche Quell-Virtual Machine, bevor die Replizierungsrichtung umgekehrt wird. Dieser Prozess beginnt mit einer Beziehung, die das Failover zu einem Ziel abgeschlossen hat, und umfasst die folgenden Schritte:
+
+* Am Zielstandort werden die virtuellen Maschinen ausgeschaltet und nicht registriert, und die Volumes werden nicht gemountet.
+* Die SnapMirror Beziehung auf der ursprünglichen Quelle ist beschädigt, um sie lesen/schreiben zu lassen.
+* Die SnapMirror Beziehung wird neu synchronisiert, um die Replizierung rückgängig zu machen.
+* Die virtuellen Quellmaschinen werden eingeschaltet und registriert, und Volumes werden auf der Quelle gemountet.
+
+
+.Schritte
+. Wählen Sie in der linken Navigationsleiste von BlueXP *Protection* > *Disaster Recovery* aus.
+. Wählen Sie im oberen Menü der BlueXP Disaster Recovery die Option *Replication Plans* aus.
+. Wählen Sie den Disaster-Recovery-Plan aus.
+. Wählen Sie rechts die Option *actions* aus image:../use/icon-horizontal-dots.png["Actions-Menü-Symbol im BlueXP Disaster Recovery Service"]  Und wählen Sie *Failback*.
+. Geben Sie den Namen des Disaster-Recovery-Plans ein, um das Failback zu bestätigen und zu starten.
+. Wählen Sie den Snapshot für den Datastore aus, von dem aus wiederhergestellt werden soll.  Die Standardeinstellung ist die neueste.
+. Um den Fortschritt zu überprüfen, wählen Sie im oberen Menü *Job-Überwachung*.
+

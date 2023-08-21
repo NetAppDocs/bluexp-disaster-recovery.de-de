@@ -1,0 +1,108 @@
+---
+sidebar: sidebar 
+permalink: use/manage.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
+summary: NetApp BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recovery Service, der Disaster Recovery Workflows automatisiert. 
+---
+= Verwalten von Standorten, Plänen, Datastores und Informationen zu virtuellen Maschinen
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Sie erhalten einen schnellen Überblick über alle Disaster Recovery-Ressourcen oder sehen sich die einzelnen Ressourcen im Detail an:
+
+* Dashboard
+* Standorte
+* Replizierungspläne
+* Ressourcengruppen
+
+
+
+
+== Das Disaster Recovery-Dashboard von BlueXP ansehen
+
+Über das Dashboard erhalten Sie einen schnellen Überblick über alle Disaster-Recovery-Ressourcen und -Aktivitäten von BlueXP. Im Bereich „Vorgang“ wird der aktuelle Job-Vorgang angezeigt.
+
+.Schritte
+. Wählen Sie in der linken Navigationsleiste von BlueXP *Protection* > *Disaster Recovery* aus.
+. Wählen Sie im oberen Menü *Dashboard*.
+. Informieren Sie sich über alle Disaster Recovery-Pläne, Compliance, vCenter, Virtual Machines und Ressourcengruppen im Dashboard.
+. Um die Ressource anzuzeigen, wählen Sie den Pfeil rechts aus.
+. Um alle Ressourcengruppen anzuzeigen, wählen Sie *Ressourcengruppen anzeigen*.
+
+
+
+
+== VCenter-Sites verwalten
+
+Sie können den vCenter-Standortnamen und den Standorttyp (On-Premises oder AWS) bearbeiten.
+
+.Schritte
+. Wählen Sie im oberen Menü *Sites* aus.
+. Wählen Sie die Option *actions* image:../use/icon-horizontal-dots.png["Actions-Menü-Symbol im BlueXP Disaster Recovery Service"]  Rechts neben dem vCenter-Namen und wählen Sie *Bearbeiten*.
+. Bearbeiten Sie den Namen und den Speicherort des vCenter-Standorts.
+
+
+
+
+== Verwalten von Replikationsplänen
+
+Sie können Replikationspläne deaktivieren, aktivieren und löschen.
+
+* Wenn Sie einen Replikationsplan vorübergehend anhalten möchten, können Sie ihn deaktivieren und später aktivieren.
+* Wenn Sie den Plan nicht mehr benötigen, können Sie ihn löschen.
+
+
+.Schritte
+. Wählen Sie im oberen Menü *Replikationspläne* aus.
+. Um die Plandetails anzuzeigen, wählen Sie die Option *actions* image:../use/icon-horizontal-dots.png["Actions-Menü-Symbol im BlueXP Disaster Recovery Service"] Und wählen Sie *Plandetails anzeigen*.
+. Führen Sie einen der folgenden Schritte aus:
++
+** Um die Plandetails zu bearbeiten (Wiederholung ändern), wählen Sie die Registerkarte *Plandetails* und wählen Sie das Symbol *Bearbeiten* rechts.
+** Um die Ressourcenzuordnungen zu bearbeiten, wählen Sie die Registerkarte *Failover Mapping* und wählen Sie das Symbol *Bearbeiten*.
+** Um die virtuellen Maschinen hinzuzufügen oder zu bearbeiten, wählen Sie die Registerkarte *Virtuelle Maschine* und wählen Sie das *Bearbeiten*-Symbol.
+
+
+. Um Aktionen mit dem Plan durchzuführen, wählen Sie die Option *actions* image:../use/icon-horizontal-dots.png["Actions-Menü-Symbol im BlueXP Disaster Recovery Service"]  Wählen Sie oben eine der Optionen aus, z. B. *Test Failover*, *Failover*, *Failback*, *Disable*, *Enable*, oder * Löschen*.
+
+
+
+
+== Anzeigen von Datenspeicherinformationen
+
+Sie können Informationen darüber anzeigen, wie viele Datastores auf der Quelle und auf dem Ziel vorhanden sind.
+
+. Wählen Sie im oberen Menü *Dashboard*.
+. Wählen Sie das vCenter in der Standortzeile aus.
+. Wählen Sie *Datastores*.
+. Anzeigen der Datenspeicherinformationen.
+
+
+
+
+== Zeigen Sie Informationen zu virtuellen Maschinen an
+
+Sie können Informationen darüber anzeigen, wie viele virtuelle Maschinen auf der Quelle und auf dem Ziel zusammen mit CPU, Arbeitsspeicher und verfügbarer Kapazität vorhanden sind.
+
+. Wählen Sie im oberen Menü *Dashboard*.
+. Wählen Sie das vCenter in der Standortzeile aus.
+. Wählen Sie *Virtuelle Maschinen*.
+. Zeigen Sie die Informationen zu virtuellen Maschinen an.
+
+
+
+
+== Verwalten von Ressourcengruppen
+
+Sie können zwar eine Ressourcengruppe als Teil des Erstellens eines Replikationsplans hinzufügen, jedoch ist es möglicherweise bequemer, die Gruppen separat hinzuzufügen und später diese Gruppen im Plan zu verwenden.
+
+Sie können auch Ressourcengruppen bearbeiten und löschen.
+
+.Schritte
+. Wählen Sie im oberen Menü *Ressourcengruppen* aus.
+. Um eine Ressourcengruppe hinzuzufügen, wählen Sie *Gruppe hinzufügen*.
+. Um Aktionen mit der Ressourcengruppe durchzuführen, wählen Sie die Option *actions* aus image:../use/icon-horizontal-dots.png["Actions-Menü-Symbol im BlueXP Disaster Recovery Service"]  Wählen Sie rechts eine der Optionen aus, wie z.B. *Ressourcengruppe bearbeiten* oder *Ressourcengruppe löschen*.
+

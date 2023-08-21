@@ -1,0 +1,46 @@
+---
+indexpage:
+  lead: Disaster Recovery in der Cloud ist eine ausfallsichere und kostengünstige
+    Möglichkeit zum Schutz von Workloads vor Standortausfällen und Datenbeschädigungen
+    (z. B. Ransomware). Mit BlueXP Disaster Recovery für VMware Beta können Sie Ihre
+    lokalen VMware-Workloads, auf denen ONTAP Storage ausgeführt wird, auf ein softwaredefiniertes
+    VMware-Datacenter in einer Public Cloud replizieren, als Disaster-Recovery-Standort
+    mithilfe von NetApp Cloud-Storage.
+  tiles:
+  - title: Los geht's
+    links:
+    - title: Erfahren Sie mehr über BlueXP Disaster Recovery
+      url: "/get-started/dr-intro.html"
+    - title: Was ist neu an BlueXP Disaster Recovery
+      url: "/release-notes/dr-whats-new.html"
+    - title: Schnellstart
+      url: "/get-started/dr-quick-start.html"
+    - title: Voraussetzungen
+      url: "/get-started/dr-prerequisites.html"
+    - title: Zugriff auf BlueXP Disaster Recovery
+      url: "/get-started/dr-login.html"
+    - title: Häufig gestellte Fragen
+      url: "/get-started/dr-faq.html"
+  - title: Nutzen Sie BlueXP Disaster Recovery
+    links:
+    - title: Fügen Sie vCenter Sites hinzu
+      url: "/use/sites-add.html"
+    - title: Disaster-Recovery-Plan erstellen
+      url: "/use/drplan-create.html"
+    - title: Replizieren von Applikationen an einen anderen Standort
+      url: "/use/replicate.html"
+    - title: Failover von Apps an einen Remote-Standort
+      url: "/use/failover.html"
+    - title: Führen Sie ein Failback von Apps zum ursprünglichen Quellstandort durch
+      url: "/use/failback.html"
+    - title: Verwalten von Standorten, Plänen, Datastores und Informationen zu virtuellen
+        Maschinen
+      url: "/use/manage.html"
+    - title: Überwachen Sie Disaster-Recovery-Jobs
+      url: "/use/monitor-jobs.html"
+  - title: Blogs und Community
+    links:
+    - title: NetApp Community
+      url: https://community.netapp.com/t5/BlueXP-and-Services/ct-p/CDS
+    - title: Cloud-Webinare
+      url: https://bluexp.netapp.com/events

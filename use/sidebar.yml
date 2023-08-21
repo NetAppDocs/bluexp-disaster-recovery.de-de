@@ -1,0 +1,22 @@
+---
+section: use
+title: Nutzen Sie BlueXP Disaster Recovery
+entries:
+- title: Nutzen Sie die Disaster Recovery-Übersicht von BlueXP
+  url: "/use/use-overview.html"
+- title: Fügen Sie vCenter Sites hinzu
+  url: "/use/sites-add.html"
+- title: Disaster-Recovery-Plan erstellen
+  url: "/use/drplan-create.html"
+- title: Replikation an einem anderen Standort
+  url: "/use/replicate.html"
+- title: Failover an einen Remote-Standort
+  url: "/use/failover.html"
+- title: Führen Sie ein Failback von Anwendungen zum ursprünglichen Quellstandort
+    durch
+  url: "/use/failback.html"
+- title: Verwalten von Standorten, Plänen, Datastores und Informationen zu virtuellen
+    Maschinen
+  url: "/use/manage.html"
+- title: Überwachen Sie Disaster-Recovery-Jobs
+  url: "/use/monitor-jobs.html"

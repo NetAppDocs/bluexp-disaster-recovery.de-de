@@ -1,0 +1,158 @@
+---
+sidebar: sidebar 
+permalink: use/drplan-create.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, replication plan 
+summary: NetApp BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recovery Service, der Disaster Recovery Workflows automatisiert. Nachdem Sie vCenter Sites hinzugefügt haben, sind Sie bereit, einen Disaster Recovery- oder Replizierungsplan zu erstellen. 
+---
+= Erstellen Sie einen Replizierungsplan
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Nachdem Sie vCenter Sites hinzugefügt haben, sind Sie bereit, einen Disaster Recovery- oder Replizierungsplan zu erstellen. Wählen Sie die Quell- und Ziel-vCenter aus, wählen Sie die Ressourcengruppen aus und gruppieren Sie, wie Anwendungen wiederhergestellt und eingeschaltet werden sollen. Beispielsweise können Sie virtuelle Maschinen gruppieren, die einer Applikation zugeordnet sind, oder Anwendungen mit ähnlichen Tiers gruppieren.
+
+Solche Pläne werden manchmal _Blueprints_ genannt.
+
+Ein Assistent führt Sie durch die folgenden Schritte:
+
+* Wählen Sie vCenter-Server aus
+* Wählen Sie die VMs aus, die Sie replizieren und Gruppen zuweisen möchten
+* Zuordnen der Ressourcen aus der Quellumgebung zum Ziel
+* Wiederholung identifizieren
+* Überprüfen Sie den Plan
+
+
+
+
+== Wählen Sie vCenter-Server aus
+
+Zuerst wählen Sie das Quell-vCenter aus und dann das Ziel-vCenter aus.
+
+.Schritte
+. Wählen Sie in der linken Navigationsleiste von BlueXP *Protection* > *Disaster Recovery* aus.
+. Wählen Sie im oberen Menü der BlueXP Disaster Recovery die Option *Replication Plans* aus. Wenn Sie den Dienst gerade erst nutzen, wählen Sie im Dashboard *Replizierungsplan hinzufügen* aus.
++
+image:dr-plan-create-name.png["Screenshot mit der Seite Replizierungsplan hinzufügen > Plan hinzufügen"]
+
+. Erstellen Sie einen Namen für den Replikationsplan.
+. Wählen Sie die Quell- und Ziel-vCenter aus den Listen Source und Target vCenter aus.
+. Wählen Sie *Weiter*.
+
+
+
+
+== Wählen Sie Anwendungen aus, die Sie replizieren und Ressourcengruppen zuweisen möchten
+
+Im nächsten Schritt werden die erforderlichen virtuellen Maschinen in funktionale Ressourcengruppen gruppiert. Mit Ressourcengruppen können Sie einen Satz abhängiger virtueller Maschinen in logische Gruppen gruppieren, die Ihren Anforderungen entsprechen. Gruppen können beispielsweise die Startreihenfolge enthalten, die bei der Wiederherstellung ausgeführt werden kann.
+
+
+TIP: Jede Ressourcengruppe kann eine oder mehrere virtuelle Maschinen enthalten. Die virtuellen Maschinen werden basierend auf der Reihenfolge, in der Sie sie hier einfügen, eingeschaltet.
+
+.Schritte
+. Wählen Sie auf der linken Seite der Seite Anwendungen die virtuellen Maschinen aus, die Sie replizieren möchten, und weisen Sie sie der ausgewählten Gruppe zu.
++
+Die ausgewählte virtuelle Maschine wird automatisch zu Gruppe 1 hinzugefügt und eine neue Gruppe 2 wird gestartet. Jedes Mal, wenn Sie der letzten Gruppe eine virtuelle Maschine hinzufügen, wird eine weitere Gruppe hinzugefügt.
+
++
+image:dr-plan-create-apps-vms.png["Screenshot mit der Seite Replizierungsplan hinzufügen > zu replizierende Anwendungen"]
+
+. Führen Sie optional einen der folgenden Schritte aus:
++
+** Um Gruppen zu ändern, klicken Sie auf das Gruppensymbol *Bearbeiten*.
+** Um eine virtuelle Maschine aus einer Gruppe zu entfernen, wählen Sie *X* aus.
+** Um eine virtuelle Maschine in eine andere Gruppe zu verschieben, ziehen Sie sie in die neue Gruppe.
+
+
+. Wenn Sie mehrere Ressourcengruppen haben, stellen Sie sicher, dass die Reihenfolge der Gruppen mit der operativen Sequenz übereinstimmt, die auftreten soll.
++
+Jede virtuelle Maschine in einer Gruppe wird in der Reihenfolge gestartet, die der hier angegebenen Reihenfolge entspricht. Zwei Gruppen werden parallel gestartet.
+
+. Alternativ können Sie die Gruppe umbenennen, indem Sie auf das Symbol *Bearbeiten* klicken.
+. Wählen Sie *Weiter*.
+
+
+
+
+== Ordnen Sie dem Ziel Quellressourcen zu
+
+Geben Sie im Schritt „Ressourcenzuordnung“ an, wie die Ressourcen aus der Quellumgebung dem Ziel zugeordnet werden sollen.
+
+* Wählen Sie die Netzwerkzuordnung zum entsprechenden Segment aus.
++
+Die Segmente sollten bereits in VMC bereitgestellt werden. Wählen Sie daher das entsprechende Segment aus, um die virtuelle Maschine zuzuordnen.
+
+* Basierend auf der Auswahl von Virtual Machines werden automatisch Datastore-Zuordnungen ausgewählt.
++
+
+NOTE: SnapMirror befindet sich auf Volume-Ebene. Somit werden alle Virtual Machines zum Replikationsziel repliziert. Stellen Sie sicher, dass Sie alle virtuellen Maschinen auswählen, die Teil des Datenspeichers sind. Wenn sie nicht ausgewählt sind, werden nur die virtuellen Maschinen verarbeitet, die Teil des Replikationsplans sind.
+
+
+
+.Schritte
+. Aktivieren Sie auf der Seite „Ressourcenzuordnung“ das Kontrollkästchen, um dieselben Zuordnungen sowohl für Failover- als auch für Testvorgänge zu verwenden.
+. Wählen Sie auf der Registerkarte Failover Mappings den Abwärtspfeil rechts von jeder Ressource aus, und ordnen Sie die Ressourcen in den folgenden Ressourcen zu:
++
+** Rechenressourcen
+** Virtuelle Netzwerke
+** Virtual Machines
+** Datenspeicher
+
+
+. Unter Details zu virtuellen Maschinen können Sie optional die Größe der VM-CPU- und RAM-Parameter ändern.
++
+image:dr-plan-create-mapping-vms.png["Screenshot mit Add Replication Plan > Resource Mapping > Virtual Machines"]
+
++
+Dies ist vor allem bei der Wiederherstellung großer Umgebungen zu kleineren Ziel-Clustern oder bei Disaster-Recovery-Tests hilfreich, ohne eine 1:1-physische VMware-Infrastruktur bereitstellen zu müssen. Außerdem können Sie die Startreihenfolge für alle ausgewählten virtuellen Maschinen in den Ressourcengruppen ändern.
+
++
+Standardmäßig wird die während der Auswahl der Ressourcengruppe ausgewählte Startreihenfolge verwendet. Sie können jedoch in dieser Phase Änderungen vornehmen.
+
+. Um verschiedene Zuordnungen für die Testumgebung festzulegen, deaktivieren Sie das Kontrollkästchen und wählen Sie die Registerkarte *Testzuordnungen* aus. Gehen Sie die einzelnen Registerkarten wie zuvor durch, jedoch diesmal für die Testumgebung.
++
+
+TIP: Sie können den gesamten Plan später testen. Derzeit richten Sie die Zuordnungen für die Testumgebung ein.
+
+
+
+
+
+== Identifizieren Sie die Wiederholung
+
+Wählen Sie aus, ob Sie Daten (eine einmalige Verschiebung) zu einem anderen Ziel migrieren oder sie mit der Frequenz von SnapMirror replizieren möchten. Ermitteln Sie, wie oft die Daten gespiegelt werden sollen, wenn Sie sie replizieren möchten.
+
+
+NOTE: Konfigurieren Sie in dieser Beta-Version die Häufigkeit außerhalb des Disaster Recovery-Service von BlueXP.
+
+.Schritte
+. Wählen Sie auf der Seite Rezidive *Migrate* oder *Replicate* aus.
++
+** *Migrate*: Wählen Sie, um die Anwendung an den Zielspeicherort zu verschieben.
+** *Replicate*: Halten Sie die Zielkopie mit Änderungen von der Quellkopie in einer wiederkehrenden Replikation auf dem neuesten Stand.
+
+
++
+image:dr-plan-create-recurrence.png["Screenshot mit Add Replication Plan > Recurrence"]
+
+. Wählen Sie *Weiter*.
+
+
+
+
+== Bestätigen Sie den Replikationsplan
+
+Nehmen Sie sich zum Schluss einen Moment Zeit, um den Replizierungsplan zu bestätigen.
+
+
+TIP: Sie können den Replikationsplan später deaktivieren oder löschen.
+
+.Schritte
+. Überprüfen Sie die Informationen auf den einzelnen Registerkarten: Plandetails, Failover Mapping, Virtuelle Maschinen.
+. Wählen Sie *Plan hinzufügen*.
++
+Der Plan wird zur Liste der Pläne hinzugefügt.
+
+
