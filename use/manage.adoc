@@ -14,24 +14,11 @@ summary: NetApp BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recove
 [role="lead"]
 Sie erhalten einen schnellen Überblick über alle Disaster Recovery-Ressourcen oder sehen sich die einzelnen Ressourcen im Detail an:
 
-* Dashboard
 * Standorte
 * Replizierungspläne
+* Datenspeicher
+* Virtual Machines
 * Ressourcengruppen
-
-
-
-
-== Das Disaster Recovery-Dashboard von BlueXP ansehen
-
-Über das Dashboard erhalten Sie einen schnellen Überblick über alle Disaster-Recovery-Ressourcen und -Aktivitäten von BlueXP. Im Bereich „Vorgang“ wird der aktuelle Job-Vorgang angezeigt.
-
-.Schritte
-. Wählen Sie in der linken Navigationsleiste von BlueXP *Protection* > *Disaster Recovery* aus.
-. Wählen Sie im oberen Menü *Dashboard*.
-. Informieren Sie sich über alle Disaster Recovery-Pläne, Compliance, vCenter, Virtual Machines und Ressourcengruppen im Dashboard.
-. Um die Ressource anzuzeigen, wählen Sie den Pfeil rechts aus.
-. Um alle Ressourcengruppen anzuzeigen, wählen Sie *Ressourcengruppen anzeigen*.
 
 
 
@@ -66,7 +53,8 @@ Sie können Replikationspläne deaktivieren, aktivieren und löschen.
 ** Um die virtuellen Maschinen hinzuzufügen oder zu bearbeiten, wählen Sie die Registerkarte *Virtuelle Maschine* und wählen Sie das *Bearbeiten*-Symbol.
 
 
-. Um Aktionen mit dem Plan durchzuführen, wählen Sie die Option *actions* image:../use/icon-horizontal-dots.png["Actions-Menü-Symbol im BlueXP Disaster Recovery Service"]  Wählen Sie oben eine der Optionen aus, z. B. *Test Failover*, *Failover*, *Failback*, *Disable*, *Enable*, oder * Löschen*.
+. Kehren Sie zur Liste der Pläne zurück, indem Sie in den Semmelbröseln oben links „Replikationspläne“ auswählen.
+. Um Aktionen mit dem Plan auszuführen, wählen Sie aus der Liste der Replikationspläne die Option *actions* aus image:../use/icon-horizontal-dots.png["Actions-Menü-Symbol im BlueXP Disaster Recovery Service"]  Rechts neben dem Plan und wählen Sie eine der Optionen aus, wie z. B. *Zeitpläne bearbeiten*, *Failover testen*, *Failover*, *Failback*, *Deaktivieren*, *enable*, oder *Delete*.
 
 
 

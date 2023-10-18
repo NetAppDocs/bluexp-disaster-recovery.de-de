@@ -25,9 +25,9 @@ In diesem Workflow repliziert (synchronisiert) die Disaster Recovery von BlueXP 
 .Schritte
 . Wählen Sie in der linken Navigationsleiste von BlueXP *Protection* > *Disaster Recovery* aus.
 . Wählen Sie im oberen Menü der BlueXP Disaster Recovery die Option *Replication Plans* aus.
-. Wählen Sie den Disaster-Recovery-Plan aus.
+. Wählen Sie den Replikationsplan aus.
 . Wählen Sie rechts die Option *actions* aus image:../use/icon-horizontal-dots.png["Actions-Menü-Symbol im BlueXP Disaster Recovery Service"]  Und wählen Sie *Failback*.
-. Geben Sie den Namen des Disaster-Recovery-Plans ein, um das Failback zu bestätigen und zu starten.
+. Geben Sie den Namen des Replikationsplans ein, um das Failback zu bestätigen und zu starten.
 . Wählen Sie den Snapshot für den Datastore aus, von dem aus wiederhergestellt werden soll.  Die Standardeinstellung ist die neueste.
 . Um den Fortschritt zu überprüfen, wählen Sie im oberen Menü *Job-Überwachung*.
 

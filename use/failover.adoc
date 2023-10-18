@@ -12,9 +12,9 @@ summary: NetApp BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recove
 
 
 [role="lead"]
-Bei einem Notfall sollten Sie ein Failover Ihres primären On-Premises-Standorts in die VMware Cloud an einem AWS-Standort mit FSX for NetApp ONTAP durchführen.
+Bei einem Ausfall sollte ein Failover Ihres primären lokalen VMware-Standorts auf einen anderen VMware-Standort vor Ort oder auf VMware Cloud on AWS erfolgen.
 
-Während des Failovers wird die neueste SnapMirror-Snapshot-Kopie verwendet. Sie können auch eine bestimmte Snapshot Kopie aus einer zeitpunktgenauen Snapshot Kopie auswählen (gemäß der Aufbewahrungsrichtlinie von SnapMirror). Die Point-in-Time-Option kann hilfreich sein, wenn Sie vor einem Korruptionsereignis wie Ransomware stehen, wo die neuesten Replikate bereits kompromittiert oder verschlüsselt sind. Die Disaster Recovery von BlueXP zeigt alle verfügbaren Zeitpunkte an.
+Während des Failovers wird die neueste SnapMirror Snapshot Kopie verwendet. Sie können auch eine bestimmte Snapshot Kopie aus einer zeitpunktgenauen Snapshot Kopie auswählen (gemäß der Aufbewahrungsrichtlinie von SnapMirror). Die Point-in-Time-Option kann hilfreich sein, wenn Sie vor einem Korruptionsereignis wie Ransomware stehen, wo die neuesten Replikate bereits kompromittiert oder verschlüsselt sind. Die Disaster Recovery von BlueXP zeigt alle verfügbaren Zeitpunkte an.
 
 Durch dieses Verfahren wird die Replikationsbeziehung unterbrochen, die vCenter Quell-VMs offline gestellt und Lese-/Schreibvorgänge auf dem Zielstandort ermöglicht.
 
@@ -28,14 +28,14 @@ Bevor Sie einen tatsächlichen Failover starten, sollten Sie den Failover-Prozes
 
 Während eines Failover-Tests werden vorübergehend virtuelle Maschinen erstellt. Bei der Disaster Recovery von BlueXP wird das Ziel-Volume nicht zugeordnet. Stattdessen wird ein neues FlexClone Volume aus dem ausgewählten Snapshot erstellt und ein temporärer Datenspeicher, der das FlexClone Volume sichert, den ESXi Hosts zugeordnet.
 
-Dieser Prozess benötigt keine zusätzliche physische Kapazität für Amazon FSX for NetApp ONTAP. Das ursprüngliche Quell-Volume wird nicht geändert, und Replikatjobs können auch während der Disaster Recovery fortgesetzt werden.
+Dieser Prozess beansprucht keine zusätzliche physische Kapazität, lokal im ONTAP Storage oder auf FSX for NetApp ONTAP Storage in AWS. Das ursprüngliche Quell-Volume wird nicht geändert, und Replikatjobs können auch während der Disaster Recovery fortgesetzt werden.
 
 Wenn Sie den Test abgeschlossen haben, sollten Sie die virtuellen Maschinen mit der Option *Clean Up Test* zurücksetzen. Dies wird zwar empfohlen, ist aber nicht erforderlich.
 
 .Schritte
 . Wählen Sie in der linken Navigationsleiste von BlueXP *Protection* > *Disaster Recovery* aus.
 . Wählen Sie im oberen Menü der BlueXP Disaster Recovery die Option *Replication Plans* aus.
-. Wählen Sie den Disaster-Recovery-Plan aus.
+. Wählen Sie den Replikationsplan aus.
 . Wählen Sie rechts die Option *actions* aus image:../use/icon-horizontal-dots.png["Actions-Menü-Symbol im BlueXP Disaster Recovery Service"] Und wählen Sie *Failover testen*.
 . Geben Sie auf der Seite Test Failover „Test Failover“ ein und wählen Sie *Test Failover*.
 . Nach Abschluss des Tests die Testumgebung bereinigen.
@@ -49,7 +49,7 @@ Nach Abschluss des Failover-Tests sollten Sie die Testumgebung bereinigen. Durch
 
 .Schritte
 . Wählen Sie im oberen Menü der BlueXP Disaster Recovery die Option *Replication Plans* aus.
-. Wählen Sie den Disaster-Recovery-Plan aus.
+. Wählen Sie den Replikationsplan aus.
 . Wählen Sie rechts die Option *actions* aus image:../use/icon-horizontal-dots.png["Actions-Menü-Symbol im BlueXP Disaster Recovery Service"]  Und wählen Sie *Clean Up Failover Test*.
 . Geben Sie auf der Seite Failover testen „Clean Up Failover“ ein und wählen Sie *Clean Up Failover Test*.
 
@@ -58,7 +58,7 @@ Nach Abschluss des Failover-Tests sollten Sie die Testumgebung bereinigen. Durch
 
 == Führen Sie ein Failover über den Quellstandort an einen Disaster-Recovery-Standort durch
 
-Bei einem Notfall sollten Sie ein Failover des On-Demand-Quellstandorts in die VMware Cloud auf einer AWS-Site mit FSX für NetApp ONTAP durchführen.
+Bei einem Ausfall sollte ein Failover Ihres primären lokalen VMware-Standorts nach Bedarf zu einem anderen lokalen VMware-Standort oder zu VMware Cloud on AWS mit FSX for NetApp ONTAP erfolgen.
 
 Der Failover-Prozess umfasst die folgenden Vorgänge:
 
@@ -66,20 +66,20 @@ Der Failover-Prozess umfasst die folgenden Vorgänge:
 * Die virtuellen Quellmaschinen sind heruntergefahren.
 * Die SnapMirror Beziehung ist unterbrochen und das Zielvolume wird Lese-/Schreibzugriff gemacht.
 * Auf Basis der Auswahl des Snapshots wird das aktive Filesystem auf den angegebenen Snapshot wiederhergestellt (neueste oder ausgewählte)
-* Datastores werden basierend auf den im Disaster-Recovery-Plan erfassten Informationen erstellt und auf dem VMC-Cluster oder -Host gemountet.
+* Datastores werden basierend auf den im Replikationsplan erfassten Informationen erstellt und auf dem VMware- oder VMC-Cluster oder -Host gemountet.
 * Die virtuellen Zielmaschinen werden registriert und basierend auf der auf der Seite Ressourcengruppen erfassten Reihenfolge betrieben.
 * Die SnapMirror Beziehung wird vom Ziel zur Quell-Virtual Machine umgekehrt.
 
 
 
-TIP: Nach dem Start des Failovers werden die wiederhergestellten Objekte im VMC vCenter (VMs, Netzwerke und Datastores) angezeigt. Standardmäßig werden die virtuellen Maschinen im Ordner Workload wiederhergestellt.
+TIP: Nach dem Failover sehen Sie die wiederhergestellten VMs im vCenter des Disaster-Recovery-Standorts (Virtual Machines, Netzwerke und Datastores). Standardmäßig werden die virtuellen Maschinen im Ordner Workload wiederhergestellt.
 
 .Schritte
 . Wählen Sie in der linken Navigationsleiste von BlueXP *Protection* > *Disaster Recovery* aus.
 . Wählen Sie im oberen Menü der BlueXP Disaster Recovery die Option *Replication Plans* aus.
-. Wählen Sie den Disaster-Recovery-Plan aus.
+. Wählen Sie den Replikationsplan aus.
 . Wählen Sie rechts die Option *actions* aus image:../use/icon-horizontal-dots.png["Actions-Menü-Symbol im BlueXP Disaster Recovery Service"] Und wählen Sie *Failover*.
-. Geben Sie auf der Seite Failover testen den Namen des Disaster-Recovery-Plans ein, um ihn zu bestätigen, und wählen Sie *Failover* aus.
+. Geben Sie auf der Seite Failover testen den Namen des Replikationsplans zur Bestätigung ein, und wählen Sie *Failover* aus.
 . Wählen Sie den Snapshot für den Datastore aus, von dem aus wiederhergestellt werden soll.  Die Standardeinstellung ist die neueste.
 . Um den Fortschritt zu überprüfen, wählen Sie im oberen Menü *Job-Überwachung*.
 

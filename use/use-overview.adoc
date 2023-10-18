@@ -14,11 +14,13 @@ summary: NetApp BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recove
 [role="lead"]
 Mit der Disaster Recovery von BlueXP können Sie folgende Ziele erreichen:
 
+* link:../use/dashboard-view.html["Zeigen Sie den Zustand Ihrer Disaster-Recovery-Pläne an"]
 * link:../use/sites-add.html["Fügen Sie vCenter Sites hinzu"].
 * link:../use/drplan-create.html["Disaster-Recovery-Plan erstellen"].
 * link:../use/replicate.html["Replizierung von VMware Applikationen"] Sie erfolgt an Ihrem primären Standort an einem Disaster-Recovery-Remote-Standort in der Cloud mithilfe von SnapMirror Replizierung.
+* link:../use/migrate.html["Migrieren Sie VMware-Applikationen"] Am primären Standort zu einem anderen Standort wechseln.
 * link:../use/failover.html["Testen Sie das Failover"] Ohne eine Unterbrechung der ursprünglichen Virtual Machines.
 * Im Notfall, link:../use/failover.html["Failover an Ihrem primären Standort"] Zu VMware Cloud on AWS mit FSX for NetApp ONTAP
 * Nachdem die Katastrophe behoben ist, link:../use/failback.html["Failback"] Von einem Disaster-Recovery-Standort zum primären Standort.
-* link:../use/monitor.html["Überwachen Sie Disaster-Recovery-Vorgänge"] Auf der Seite Jobüberwachung.
+* link:../use/monitor-jobs.html["Überwachen Sie Disaster-Recovery-Vorgänge"] Auf der Seite Jobüberwachung.
 

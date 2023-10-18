@@ -2,10 +2,10 @@
 indexpage:
   lead: Disaster Recovery in der Cloud ist eine ausfallsichere und kostengünstige
     Möglichkeit zum Schutz von Workloads vor Standortausfällen und Datenbeschädigungen
-    (z. B. Ransomware). Mit BlueXP Disaster Recovery für VMware Beta können Sie Ihre
-    lokalen VMware-Workloads, auf denen ONTAP Storage ausgeführt wird, auf ein softwaredefiniertes
-    VMware-Datacenter in einer Public Cloud replizieren, als Disaster-Recovery-Standort
-    mithilfe von NetApp Cloud-Storage.
+    (z. B. Ransomware). Mit der Vorschau von BlueXP Disaster Recovery für VMware können
+    Sie Ihre lokalen VMware-Workloads, auf denen ONTAP Storage ausgeführt wird, auf
+    ein softwaredefiniertes Datacenter von VMware in einer Public Cloud oder auf einen
+    anderen lokalen Standort als Disaster-Recovery-Standort replizieren.
   tiles:
   - title: Los geht's
     links:
@@ -29,6 +29,8 @@ indexpage:
       url: "/use/drplan-create.html"
     - title: Replizieren von Applikationen an einen anderen Standort
       url: "/use/replicate.html"
+    - title: Migrieren Sie Apps zu einem anderen Standort
+      url: "/use/migrate.html"
     - title: Failover von Apps an einen Remote-Standort
       url: "/use/failover.html"
     - title: Führen Sie ein Failback von Apps zum ursprünglichen Quellstandort durch
@@ -44,3 +46,5 @@ indexpage:
       url: https://community.netapp.com/t5/BlueXP-and-Services/ct-p/CDS
     - title: Cloud-Webinare
       url: https://bluexp.netapp.com/events
+    - title: BlueXP Disaster Recovery-Blog
+      url: https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-disaster-recovery-service-for-BC-with-VMware-Cloud-on-AWS-and-FSx-for/ba-p/447066

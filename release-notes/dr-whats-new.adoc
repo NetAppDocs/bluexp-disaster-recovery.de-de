@@ -12,26 +12,78 @@ summary: BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recovery Serv
 
 
 [role="lead"]
-Erfahren Sie mehr über die Neuerungen der Disaster-Recovery-Beta-Version von BlueXP.
+Informieren Sie sich über die Neuerungen bei der Disaster-Recovery-Vorschau von BlueXP.
+
+
+
+== 20 Oktober 2023
+
+Diese Vorschauversion des Disaster Recovery von BlueXP enthält die folgenden Updates.
+
+Mit der Disaster Recovery von BlueXP können Sie Ihre lokalen, NFS-basierten VMware-Workloads vor Ausfällen in eine andere lokale, NFS-basierte VMware Umgebung, zusätzlich zur Public Cloud, schützen. Mit BlueXP Disaster Recovery werden die Disaster-Recovery-Pläne orchestriert.
+
+
+NOTE: Mit diesem Vorschauangebot behält sich NetApp das Recht vor, Angebotsdetails, Inhalte und Zeitpläne vor der allgemeinen Verfügbarkeit zu ändern.
+
+https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html["Erfahren Sie mehr über die Disaster Recovery von BlueXP"].
+
+
+
+== 27 September 2023
+
+Diese Vorschauversion des Disaster Recovery von BlueXP enthält die folgenden Updates:
+
+* *Dashboard-Updates*: Sie können nun in die Optionen auf dem Dashboard klicken, was es Ihnen erleichtert, die Informationen schnell zu überprüfen. Darüber hinaus wird im Dashboard jetzt der Status von Failover und Migrationen angezeigt.
++
+Siehe https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/dashboard-view.html["Zeigen Sie den Zustand Ihrer Disaster-Recovery-Pläne auf dem Dashboard an"].
+
+* *Aktualisierungen des Replikationsplans*:
++
+** *RPO*: Sie können jetzt im Abschnitt Datastores des Replikationsplans den Wiederherstellungspunkt Objective (RPO) und Retention Count eingeben. Zeigt die Datenmenge an, die nicht älter als die eingestellte Zeit sein muss. Wenn Sie beispielsweise die Einstellung auf 5 Minuten festlegen, kann das System bei einem Zwischenfall bis zu 5 Minuten an Daten verlieren, ohne dass dies geschäftskritische Anforderungen beeinträchtigt.
++
+Siehe https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Erstellen Sie einen Replizierungsplan"].
+
+** *Netzwerkverbesserungen*: Wenn Sie im Abschnitt „virtuelle Maschinen“ des Replikationsplans Netzwerke zwischen Quell- und Zielorten zuordnen, bietet BlueXP Disaster Recovery jetzt zwei Optionen: DHCP oder statische IP. Zuvor wurde nur DHCP unterstützt. Für statische IPs konfigurieren Sie die Subnetz-, Gateway- und DNS-Server. Darüber hinaus können Sie jetzt Anmeldeinformationen für virtuelle Maschinen eingeben.
++
+Siehe https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Erstellen Sie einen Replizierungsplan"].
+
+** *Zeitpläne bearbeiten*: Sie können jetzt Replikationspläne aktualisieren.
++
+Siehe https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/manage.html["Ressourcen managen"].
+
+** *SnapMirror-Automatisierung*: Während Sie den Replizierungsplan in diesem Release erstellen, können Sie die SnapMirror Beziehung zwischen Quell- und Ziel-Volumes in einer der folgenden Konfigurationen definieren:
++
+*** 1 zu 1
+*** 1 zu vielen in einer Fanout-Architektur
+*** Von vielen zu 1 als Konsistenzgruppe
+*** Von vielen auf viele
++
+Siehe https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Erstellen Sie einen Replizierungsplan"].
+
+
+
+
+
+
 
 
 
 == August 2023
 
-Die Disaster Recovery Beta-Version von BlueXP ist ein Cloud-basierter Disaster-Recovery-Service, der Disaster-Recovery-Workflows automatisiert. Mit der BlueXP Disaster Recovery Beta können Sie zunächst Ihre lokalen NFS-basierten VMware-Workloads schützen, die NetApp Storage in VMware Cloud (VMC) auf AWS mit Amazon FSX for ONTAP ausführen.
+Die Disaster-Recovery-Vorschau von BlueXP ist ein Cloud-basierter Disaster-Recovery-Service, der Disaster-Recovery-Workflows automatisiert. Mit der BlueXP Disaster-Recovery-Vorschau können Sie zunächst Ihre lokalen NFS-basierten VMware-Workloads schützen, die NetApp Storage in VMware Cloud (VMC) auf AWS mit Amazon FSX for ONTAP ausführen.
 
 
-NOTE: Mit diesem Beta-Angebot behält sich NetApp das Recht vor, Angebotsdetails, Inhalte und Zeitpläne vor der allgemeinen Verfügbarkeit zu ändern.
+NOTE: Mit diesem Vorschauangebot behält sich NetApp das Recht vor, Angebotsdetails, Inhalte und Zeitpläne vor der allgemeinen Verfügbarkeit zu ändern.
 
-Diese Version enthält folgende Updates:
+https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html["Erfahren Sie mehr über die Disaster Recovery von BlueXP"].
 
-* *Ressourcengruppen-Update für Startreihenfolge*: Wenn Sie einen Disaster Recovery- oder Replikationsplan erstellen, können Sie virtuelle Maschinen zu funktionalen Ressourcengruppen hinzufügen. Mit Ressourcengruppen können Sie eine Reihe abhängiger virtueller Maschinen in logische Gruppen umwandeln, die Ihren Anforderungen entsprechen. Gruppen können beispielsweise die Startreihenfolge enthalten, die bei der Wiederherstellung ausgeführt werden kann. Mit diesem Release kann jede Ressourcengruppe eine oder mehrere virtuelle Maschinen enthalten. Die Virtual Machines werden basierend auf der Reihenfolge, in der Sie sie in den Plan aufnehmen, eingeschaltet. Siehe link:../use/drplan-create.html#select-applications-to-replicate-and-assign-resource-groups["Wählen Sie Anwendungen aus, die Sie replizieren und Ressourcengruppen zuweisen möchten"].
-* *Replikationsüberprüfung*: Nachdem Sie den Disaster-Recovery- oder Replizierungsplan erstellt haben, identifizieren Sie die Wiederholung im Assistenten und initiieren eine Replikation zu einem Disaster-Recovery-Standort. Alle 30 Minuten überprüft die BlueXP Disaster Recovery, ob die Replikation tatsächlich gemäß dem Plan erfolgt. Sie können den Fortschritt auf der Seite Job Monitor überwachen. Siehe link:../use/replicate.html["Replizierung von Applikationen an einen anderen Standort"].
-* *Der Replikationsplan zeigt die Zeitpläne für die Übertragung von Recovery Point Objective (RPO)* an: Wenn Sie einen Disaster Recovery- oder Replikationsplan erstellen, wählen Sie die VMs aus. In diesem Release können Sie jetzt die SnapMirror anzeigen, die mit jedem der Volumes verknüpft sind, die dem Datenspeicher oder der VM zugeordnet sind. Sie können auch die mit dem SnapMirror Zeitplan verknüpften RPO-Übertragungszeitpläne anzeigen. Anhand des RPO können Sie feststellen, ob Ihr Backup-Zeitplan für die Wiederherstellung nach einem Ausfall ausreicht. Siehe link:../use/drplan-create.html["Erstellen Sie einen Replizierungsplan"].
-* *Job Monitor Update*: Die Job Monitor Seite enthält jetzt eine Refresh Option, damit Sie einen aktuellen Status der Operationen erhalten können. Siehe link:../use/monitor-jobs.html["Überwachen Sie Disaster-Recovery-Jobs"].
+Diese Version enthält die folgenden Updates:
 
+* *Ressourcengruppen-Update für Startreihenfolge*: Wenn Sie einen Disaster Recovery- oder Replikationsplan erstellen, können Sie virtuelle Maschinen zu funktionalen Ressourcengruppen hinzufügen. Mit Ressourcengruppen können Sie eine Reihe abhängiger virtueller Maschinen in logische Gruppen umwandeln, die Ihren Anforderungen entsprechen. Gruppen können beispielsweise die Startreihenfolge enthalten, die bei der Wiederherstellung ausgeführt werden kann. Mit diesem Release kann jede Ressourcengruppe eine oder mehrere virtuelle Maschinen enthalten. Die Virtual Machines werden basierend auf der Reihenfolge, in der Sie sie in den Plan aufnehmen, eingeschaltet. Siehe https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html#select-applications-to-replicate-and-assign-resource-groups["Wählen Sie Anwendungen aus, die Sie replizieren und Ressourcengruppen zuweisen möchten"].
+* *Replikationsüberprüfung*: Nachdem Sie den Disaster-Recovery- oder Replizierungsplan erstellt haben, identifizieren Sie die Wiederholung im Assistenten und initiieren eine Replikation zu einem Disaster-Recovery-Standort. Alle 30 Minuten überprüft die BlueXP Disaster Recovery, ob die Replikation tatsächlich gemäß dem Plan erfolgt. Sie können den Fortschritt auf der Seite Job Monitor überwachen. Siehe  https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/replicate.html["Replizierung von Applikationen an einen anderen Standort"].
+* *Der Replikationsplan zeigt die Zeitpläne für die Übertragung von Recovery Point Objective (RPO)* an: Wenn Sie einen Disaster Recovery- oder Replikationsplan erstellen, wählen Sie die VMs aus. In diesem Release können Sie jetzt die SnapMirror anzeigen, die mit jedem der Volumes verknüpft sind, die dem Datenspeicher oder der VM zugeordnet sind. Sie können auch die mit dem SnapMirror Zeitplan verknüpften RPO-Übertragungszeitpläne anzeigen. Anhand des RPO können Sie feststellen, ob Ihr Backup-Zeitplan für die Wiederherstellung nach einem Ausfall ausreicht. Siehe https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Erstellen Sie einen Replizierungsplan"].
+* *Job Monitor Update*: Die Job Monitor Seite enthält jetzt eine Refresh Option, damit Sie einen aktuellen Status der Operationen erhalten können. Siehe  https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/monitor-jobs.html["Überwachen Sie Disaster-Recovery-Jobs"].
 
-link:https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html["Erfahren Sie mehr über die Disaster Recovery von BlueXP"].
 
 
 
@@ -39,6 +91,6 @@ link:https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro
 
 Dies ist die erste Version der Disaster Recovery von BlueXP.
 
-BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recovery Service, der Disaster Recovery Workflows automatisiert. Mit der BlueXP Disaster-Recovery-Beta können Sie zunächst Ihre lokalen NFS-basierten VMware-Workloads schützen, die NetApp Storage in VMware Cloud (VMC) auf AWS mit Amazon FSX for ONTAP ausführen.
+BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recovery Service, der Disaster Recovery Workflows automatisiert. Mit der BlueXP Disaster-Recovery-Vorschau können Sie zunächst Ihre lokalen NFS-basierten VMware-Workloads schützen, die NetApp Storage in VMware Cloud (VMC) auf AWS mit Amazon FSX for ONTAP ausführen.
 
 link:https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html["Erfahren Sie mehr über die Disaster Recovery von BlueXP"].

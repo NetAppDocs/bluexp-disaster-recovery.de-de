@@ -21,7 +21,7 @@ Nachdem sie hinzugefügt wurden, führt die Disaster Recovery von BlueXP eine um
 +
 Sie finden die Seite zum Disaster Recovery Dashboard von BlueXP. Wenn Sie mit dem Service beginnen, müssen Sie vCenter-Informationen hinzufügen. Später werden im Dashboard Daten zu Ihren Standorten und Replikationsplänen angezeigt.
 
-. Wählen Sie *Discover vCenter Servers*, um Informationen über den Quell-vCenter-Standort einzugeben.
+. *Quelle*: Wählen Sie *Discover vCenter Server*, um Informationen über den vCenter-Quellstandort einzugeben.
 +
 
 TIP: Wenn einige vCenter-Sites bereits vorhanden sind und Sie weitere hinzufügen möchten, wählen Sie im oberen Menü *Sites* aus und wählen Sie dann *Add* aus.
@@ -29,20 +29,30 @@ TIP: Wenn einige vCenter-Sites bereits vorhanden sind und Sie weitere hinzufüge
 +
 image:vcenter-add.png["VCenter Server-Screenshot hinzufügen "]
 
-. Fügen Sie eine Site hinzu, wählen Sie den BlueXP Connector aus und geben Sie vCenter Zugangsdaten an.
-. Um selbstsignierte Zertifikate für das Quell-vCenter zu akzeptieren, aktivieren Sie das Kontrollkästchen.
++
+.. Fügen Sie eine Site hinzu, wählen Sie den BlueXP Connector aus und geben Sie vCenter Zugangsdaten an.
+.. Um selbstsignierte Zertifikate für das Quell-vCenter zu akzeptieren, aktivieren Sie das Kontrollkästchen.
 +
 
 NOTE: Selbstsignierte Zertifikate sind nicht so sicher wie andere Zertifikate. Wenn Ihr vCenter mit Zertifikaten der Zertifizierungsstelle (CA) * NICHT* konfiguriert ist, sollten Sie dieses Kontrollkästchen aktivieren, da andernfalls die Verbindung zum vCenter nicht funktioniert.
 
-. Wählen Sie *Hinzufügen*.
+.. Wählen Sie *Hinzufügen*.
 +
 Als Nächstes fügen Sie ein Ziel-vCenter hinzu.
 
-. Wählen Sie den Zielstandort und den Standort aus. Wenn das Ziel Cloud ist, wählen Sie *AWS* aus.
-. Wählen Sie *Hinzufügen*.
+
+
+. *Ziel*:
++
+.. Wählen Sie den Zielstandort und den Standort aus. Wenn das Ziel Cloud ist, wählen Sie *AWS* aus.
+.. Wählen Sie *Hinzufügen*.
 +
 Die Quell- und Ziel-vCenter werden in der Liste der Standorte angezeigt.
+
+
+
++
+image:sites-list.png["Screenshot der Seite „Sites“"]
 
 . Um den Fortschritt des Vorgangs anzuzeigen, wählen Sie im oberen Menü *Job-Überwachung*.
 

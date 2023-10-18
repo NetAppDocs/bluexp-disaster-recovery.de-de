@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: use/replicate.html 
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
-summary: NetApp BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recovery Service, der Disaster Recovery Workflows automatisiert. 
+summary: Mit der Disaster Recovery von BlueXP können Sie VMware Applikationen an Ihrem Quellstandort mithilfe von SnapMirror Replizierung an einen Remote-Standort zur Disaster Recovery in der Cloud replizieren. 
 ---
 = Replizierung von Applikationen an einen anderen Standort
 :hardbreaks:
@@ -12,14 +12,17 @@ summary: NetApp BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recove
 
 
 [role="lead"]
-Replizieren Sie VMware Applikationen an Ihrem Quellstandort an einen Remote-Standort für Disaster Recovery in der Cloud mit SnapMirror Replizierung.
+Mit der Disaster Recovery von BlueXP können Sie VMware Applikationen an Ihrem Quellstandort mithilfe von SnapMirror Replizierung an einen Remote-Standort zur Disaster Recovery in der Cloud replizieren.
 
 
-TIP: Nachdem Sie den Disaster-Recovery-Plan erstellt haben, identifizieren Sie im Assistenten die Wiederholung und initiieren Sie eine Replizierung zu einem Disaster-Recovery-Standort. Die BlueXP Disaster Recovery überprüft alle 30 Minuten, ob die Replizierung tatsächlich gemäß dem Plan stattfindet. Sie können das Einchecken auf der Seite Job Monitor überwachen.
+TIP: Nachdem Sie den Disaster-Recovery-Plan erstellt haben, identifizieren Sie im Assistenten die Wiederholung und initiieren Sie eine Replizierung zu einem Disaster-Recovery-Standort. Die BlueXP Disaster Recovery überprüft alle 30 Minuten, ob die Replizierung tatsächlich gemäß dem Plan stattfindet. Sie können den Fortschritt auf der Seite Job Monitor überwachen.
+
+.Bevor Sie beginnen
+Bevor Sie die Replikation starten, sollten Sie einen Replizierungsplan erstellt und zum Replizieren der Apps ausgewählt haben. Im Menü Aktionen erscheint dann die Option *replicate*.
 
 .Schritte
 . Wählen Sie in der linken Navigationsleiste von BlueXP *Protection* > *Disaster Recovery* aus.
 . Wählen Sie im oberen Menü *Replikationspläne* aus.
-. Wählen Sie den Disaster-Recovery-Plan aus.
+. Wählen Sie den Replikationsplan aus.
 . Wählen Sie rechts die Option *actions* aus image:../use/icon-horizontal-dots.png["Actions-Menü-Symbol im BlueXP Disaster Recovery Service"] Und wählen Sie *replicate*.
 

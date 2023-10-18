@@ -4,12 +4,16 @@ title: Nutzen Sie BlueXP Disaster Recovery
 entries:
 - title: Nutzen Sie die Disaster Recovery-Übersicht von BlueXP
   url: "/use/use-overview.html"
+- title: Zeigen Sie den Zustand Ihrer Disaster-Recovery-Pläne auf dem Dashboard an
+  url: "/use/dashboard-view.html"
 - title: Fügen Sie vCenter Sites hinzu
   url: "/use/sites-add.html"
-- title: Disaster-Recovery-Plan erstellen
+- title: Erstellen Sie einen Replizierungsplan
   url: "/use/drplan-create.html"
 - title: Replikation an einem anderen Standort
   url: "/use/replicate.html"
+- title: Migration zu einem anderen Standort
+  url: "/use/migrate.html"
 - title: Failover an einen Remote-Standort
   url: "/use/failover.html"
 - title: Führen Sie ein Failback von Anwendungen zum ursprünglichen Quellstandort

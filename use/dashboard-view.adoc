@@ -1,0 +1,54 @@
+---
+sidebar: sidebar 
+permalink: use/dashboard-view.html 
+keywords: disaster recovery remediate, disaster recovery, failover, failback, replication 
+summary: NetApp BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recovery Service, der Disaster Recovery Workflows automatisiert. 
+---
+= Zeigen Sie den Zustand Ihrer Disaster-Recovery-Pläne auf dem Dashboard an
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Mit dem BlueXP Disaster Recovery-Dashboard können Sie den Zustand Ihrer Disaster-Recovery-Standorte und Replizierungspläne bestimmen. Sie können schnell feststellen, welche Standorte und Pläne gesund, getrennt oder degradiert sind.
+
+.Schritte
+. Wählen Sie in der linken Navigationsleiste von BlueXP *Protection* > *Disaster Recovery* aus.
+. Wählen Sie aus dem BlueXP Disaster Recovery-Hauptmenü *Dashboard* aus.
+. Überprüfen Sie die folgenden Informationen auf dem Dashboard:
++
+** *Sites*: Sehen Sie die Gesundheit Ihrer Sites. Ein Standort kann einen der folgenden Status haben:
++
+*** *Gesund*: VCenter ist verbunden und läuft.
+*** *Disconnected*: VCenter ist nicht erreichbar oder hat Verbindungsprobleme.
+*** *Degradiert*: VCenter ist nicht erreichbar oder hat Verbindungsprobleme.
++
+Um die Standortdetails anzuzeigen, wählen Sie *Alle anzeigen* für einen Status oder *Sites anzeigen*, um alle anzuzeigen.
+
+
+
+** *Replikationspläne*: Zeigen Sie den Zustand Ihrer Pläne an. Ein Plan kann einen der folgenden Status haben:
++
+*** * Bereit*
+*** *Fehlgeschlagen*
++
+Um die Details des Replikationsplans zu überprüfen, wählen Sie *Alle anzeigen* für einen Status oder *Replikationspläne anzeigen*, um alle anzuzeigen.
+
+
+
+** *Ressourcengruppen*: Zeigen Sie den Zustand Ihrer Ressourcengruppen an. Eine Ressourcengruppe kann einen der folgenden Status haben:
++
+*** *Geschützte VMs*: Die VMs sind Teil einer Ressourcengruppe.
+*** *Ungeschützte VMs*: Die VMs sind nicht Teil einer Ressourcengruppe.
++
+Um Details zu Ressourcengruppen zu überprüfen, wählen Sie *Alle anzeigen* für einen Status oder *Ressourcengruppen anzeigen*, um alle anzuzeigen.
+
+
+
+** Die Anzahl der Failover, Test-Failover und Migrationen. Wenn Sie beispielsweise zwei Pläne erstellt und zu den Zielen migriert haben, wird die Migrationszahl als „2“ angezeigt.
+
+
+. Überprüfen Sie alle Vorgänge im Bereich „Aktivität“. Um alle Vorgänge auf dem Job Monitor anzuzeigen, wählen Sie *Alle Jobs anzeigen*.
+

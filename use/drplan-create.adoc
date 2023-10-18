@@ -12,7 +12,7 @@ summary: NetApp BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recove
 
 
 [role="lead"]
-Nachdem Sie vCenter Sites hinzugefügt haben, sind Sie bereit, einen Disaster Recovery- oder Replizierungsplan zu erstellen. Wählen Sie die Quell- und Ziel-vCenter aus, wählen Sie die Ressourcengruppen aus und gruppieren Sie, wie Anwendungen wiederhergestellt und eingeschaltet werden sollen. Beispielsweise können Sie virtuelle Maschinen gruppieren, die einer Applikation zugeordnet sind, oder Anwendungen mit ähnlichen Tiers gruppieren.
+Nachdem Sie vCenter Standorte hinzugefügt haben, sind Sie bereit, einen Disaster Recovery- oder Replizierungsplan zu erstellen. Wählen Sie die Quell- und Ziel-vCenter aus, wählen Sie die Ressourcengruppen aus und gruppieren Sie, wie Anwendungen wiederhergestellt und eingeschaltet werden sollen. Beispielsweise können Sie virtuelle Maschinen gruppieren, die einer Applikation zugeordnet sind, oder Anwendungen mit ähnlichen Tiers gruppieren.
 
 Solche Pläne werden manchmal _Blueprints_ genannt.
 
@@ -23,6 +23,14 @@ Ein Assistent führt Sie durch die folgenden Schritte:
 * Zuordnen der Ressourcen aus der Quellumgebung zum Ziel
 * Wiederholung identifizieren
 * Überprüfen Sie den Plan
+
+
+Während Sie den Replizierungsplan erstellen, können Sie die SnapMirror Beziehung zwischen Quell- und Ziel-Volumes in einer der folgenden Konfigurationen definieren:
+
+* 1 zu 1
+* 1 zu vielen in einer Fanout-Architektur
+* Von vielen zu 1 in einer Konsistenzgruppe
+* Von vielen auf viele
 
 
 
@@ -80,36 +88,31 @@ Jede virtuelle Maschine in einer Gruppe wird in der Reihenfolge gestartet, die d
 
 Geben Sie im Schritt „Ressourcenzuordnung“ an, wie die Ressourcen aus der Quellumgebung dem Ziel zugeordnet werden sollen.
 
-* Wählen Sie die Netzwerkzuordnung zum entsprechenden Segment aus.
-+
-Die Segmente sollten bereits in VMC bereitgestellt werden. Wählen Sie daher das entsprechende Segment aus, um die virtuelle Maschine zuzuordnen.
-
-* Basierend auf der Auswahl von Virtual Machines werden automatisch Datastore-Zuordnungen ausgewählt.
-+
-
-NOTE: SnapMirror befindet sich auf Volume-Ebene. Somit werden alle Virtual Machines zum Replikationsziel repliziert. Stellen Sie sicher, dass Sie alle virtuellen Maschinen auswählen, die Teil des Datenspeichers sind. Wenn sie nicht ausgewählt sind, werden nur die virtuellen Maschinen verarbeitet, die Teil des Replikationsplans sind.
-
-
-
 .Schritte
 . Aktivieren Sie auf der Seite „Ressourcenzuordnung“ das Kontrollkästchen, um dieselben Zuordnungen sowohl für Failover- als auch für Testvorgänge zu verwenden.
 . Wählen Sie auf der Registerkarte Failover Mappings den Abwärtspfeil rechts von jeder Ressource aus, und ordnen Sie die Ressourcen in den folgenden Ressourcen zu:
 +
-** Rechenressourcen
-** Virtuelle Netzwerke
-** Virtual Machines
-** Datenspeicher
-
-
-. Unter Details zu virtuellen Maschinen können Sie optional die Größe der VM-CPU- und RAM-Parameter ändern.
+** *Compute Resources*
+** *Virtuelle Netzwerke*
+** *Virtuelle Maschinen*: Wählen Sie das Netzwerk-Mapping auf das entsprechende Segment aus. Die Segmente sollten bereits bereitgestellt werden. Wählen Sie daher das entsprechende Segment für die Zuordnung der virtuellen Maschine aus.
 +
-image:dr-plan-create-mapping-vms.png["Screenshot mit Add Replication Plan > Resource Mapping > Virtual Machines"]
+
+NOTE: SnapMirror befindet sich auf Volume-Ebene. Somit werden alle Virtual Machines zum Replikationsziel repliziert. Stellen Sie sicher, dass Sie alle virtuellen Maschinen auswählen, die Teil des Datenspeichers sind. Wenn sie nicht ausgewählt sind, werden nur die virtuellen Maschinen verarbeitet, die Teil des Replikationsplans sind.
+
++
+Unter Details zu virtuellen Maschinen können Sie optional die Größe der VM-CPU- und RAM-Parameter ändern. Außerdem können Sie IP-Adresse, Subnetzmaske, DNS und Gateway auswählen, wenn Sie die Netzwerkinformationen zu einer VM konfigurieren möchten. Die Anmeldedaten für das VM-Gastbetriebssystem sollten entweder auf globaler Ebene oder auf jeder VM-Ebene bereitgestellt werden.
 
 +
 Dies ist vor allem bei der Wiederherstellung großer Umgebungen zu kleineren Ziel-Clustern oder bei Disaster-Recovery-Tests hilfreich, ohne eine 1:1-physische VMware-Infrastruktur bereitstellen zu müssen. Außerdem können Sie die Startreihenfolge für alle ausgewählten virtuellen Maschinen in den Ressourcengruppen ändern.
 
 +
 Standardmäßig wird die während der Auswahl der Ressourcengruppe ausgewählte Startreihenfolge verwendet. Sie können jedoch in dieser Phase Änderungen vornehmen.
+
+** *Datastores*: Anhand der Auswahl der virtuellen Maschinen werden automatisch Datastore-Mappings ausgewählt.
++
+Geben Sie das Recovery Point Objective (RPO) ein, um die Menge der wiederherzustellenden Daten anzugeben (gemessen in der Zeit). Wenn Sie beispielsweise einen RPO von 2 Stunden eingeben, müssen für die Recovery jederzeit Daten vorhanden sein, die nicht älter als 2 Stunden sind. Bei einem Ausfall lassen sich bis zu 2 Stunden an Daten verlieren. Geben Sie außerdem die Anzahl der Snapshot Kopien ein, die für alle Datastores beibehalten werden sollen.
+
+
 
 . Um verschiedene Zuordnungen für die Testumgebung festzulegen, deaktivieren Sie das Kontrollkästchen und wählen Sie die Registerkarte *Testzuordnungen* aus. Gehen Sie die einzelnen Registerkarten wie zuvor durch, jedoch diesmal für die Testumgebung.
 +
@@ -122,10 +125,12 @@ TIP: Sie können den gesamten Plan später testen. Derzeit richten Sie die Zuord
 
 == Identifizieren Sie die Wiederholung
 
-Wählen Sie aus, ob Sie Daten (eine einmalige Verschiebung) zu einem anderen Ziel migrieren oder sie mit der Frequenz von SnapMirror replizieren möchten. Ermitteln Sie, wie oft die Daten gespiegelt werden sollen, wenn Sie sie replizieren möchten.
+Wählen Sie aus, ob Sie Daten (eine einmalige Verschiebung) zu einem anderen Ziel migrieren oder sie mit der Frequenz von SnapMirror replizieren möchten.
+
+Ermitteln Sie, wie oft die Daten gespiegelt werden sollen, wenn Sie sie replizieren möchten.
 
 
-NOTE: Konfigurieren Sie in dieser Beta-Version die Häufigkeit außerhalb des Disaster Recovery-Service von BlueXP.
+NOTE: Konfigurieren Sie in dieser Vorschau die Häufigkeit außerhalb des BlueXP Disaster Recovery-Service.
 
 .Schritte
 . Wählen Sie auf der Seite Rezidive *Migrate* oder *Replicate* aus.
