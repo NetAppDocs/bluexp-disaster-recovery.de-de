@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: release-notes/dr-whats-new.html 
-keywords: disaster recovery faq, bluexp, disaster recovery frequently asked questions, vmware, vcenter 
-summary: BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recovery Service, der Disaster Recovery Workflows automatisiert. 
+keywords: disaster recovery, bluexp, disaster recovery, vmware, vcenter 
+summary: BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recovery Service, der Disaster Recovery Workflows automatisiert. Mit der Disaster Recovery für VMware von BlueXP können Sie Ihre lokalen VMware-Workloads, auf denen ONTAP Storage ausgeführt wird, auf ein softwaredefiniertes VMware Datacenter in Public Clouds als Disaster-Recovery-Standort mithilfe von NetApp Cloud-Storage replizieren. 
 ---
 = Was ist neu
 :hardbreaks:
@@ -13,6 +13,54 @@ summary: BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recovery Serv
 
 [role="lead"]
 Informieren Sie sich über die Neuerungen bei der Disaster-Recovery-Vorschau von BlueXP.
+
+
+
+== Februar 2024
+
+Diese BlueXP Disaster Recovery-Version umfasst die folgenden Updates:
+
+* *Network Enhancement*: Mit diesem Release können Sie nun die Größe der VM CPU und RAM Werte ändern. Sie können nun auch ein Netzwerk-DHCP oder eine statische IP-Adresse für die VM auswählen.
++
+** DHCP: Wenn Sie diese Option wählen, geben Sie Anmeldeinformationen für die VM an.
+** Statische IP: Sie können die gleichen oder andere Informationen aus der Quell-VM auswählen. Wenn Sie dieselbe Auswahl wie die Quelle wählen, müssen Sie keine Anmeldeinformationen eingeben. Wenn Sie jedoch andere Informationen aus der Quelle verwenden möchten, können Sie Anmeldeinformationen, IP-Adresse, Subnetzmaske, DNS und Gateway-Informationen angeben.
++
+Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Erstellen Sie einen Replizierungsplan"].
+
+
+
+* *Custom Scripts* können jetzt als Post Failover Prozesse eingebunden werden. Mit benutzerdefinierten Skripts kann die BlueXP Disaster Recovery Ihr Skript nach einem Failover-Prozess ausführen. Sie können beispielsweise ein benutzerdefiniertes Skript verwenden, um alle Datenbanktransaktionen nach Abschluss des Failovers wieder aufzunehmen.
++
+Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/failover.html["Failover an einen Remote-Standort"].
+
+* *SnapMirror Beziehung*: Sie können jetzt eine SnapMirror Beziehung erstellen während Sie den Replizierungsplan entwickeln. Früher mussten Sie diese Beziehung außerhalb der Disaster Recovery von BlueXP aufbauen.
++
+Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Erstellen Sie einen Replizierungsplan"].
+
+* *Consistency Groups*: Wenn Sie einen Replikationsplan erstellen, können Sie VMs mit unterschiedlichen Volumes und SVMs einbeziehen. Die Disaster Recovery von BlueXP erstellt einen KonsistenzgruppenSnapshot, der alle Volumes enthält und alle sekundären Standorte aktualisiert.
++
+Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Erstellen Sie einen Replizierungsplan"].
+
+* *VM Power-on Delay Option*: Wenn Sie einen Replikationsplan erstellen, können Sie VMs zu einer Ressourcengruppe hinzufügen. Mit Ressourcengruppen können Sie jede VM eine Verzögerung einstellen, sodass sie in einer verzögerten Reihenfolge hochgefahren werden.
++
+Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Erstellen Sie einen Replizierungsplan"].
+
+* *Applikationskonsistente Snapshot Kopien*: Sie können angeben, applikationskonsistente Snapshot Kopien zu erstellen. Der Service setzt die Applikation still und erstellt dann einen Snapshot, um einen konsistenten Status der Applikation zu erhalten.
++
+Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Erstellen Sie einen Replizierungsplan"].
+
+
+
+
+
+== 11 Januar 2024
+
+Diese Version der Disaster Recovery von BlueXP umfasst folgende Updates:
+
+* Mit dieser Version können Sie schneller auf Informationen auf anderen Seiten über das Dashboard zugreifen.
+
+
+https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html["Erfahren Sie mehr über BlueXP Disaster Recovery"].
 
 
 

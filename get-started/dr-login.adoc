@@ -27,16 +27,22 @@ Die Anmeldeseite für NetApp BlueXP wird angezeigt.
 Wenn Sie sich zum ersten Mal bei diesem Dienst anmelden, wird die Landing Page angezeigt.
 
 +
-image:draas-landing.png["Landing Page-Screenshot für die Disaster Recovery von BlueXP"]
+image:draas-landing2.png["Landing Page-Screenshot für die Disaster Recovery von BlueXP"]
 
 +
 Andernfalls wird das BlueXP Disaster Recovery Dashboard angezeigt.
 
 +
-** Wenn Sie keinen BlueXP Connector haben oder dies nicht der für diese Vorschau ist, wenden Sie sich an den NetApp Support oder folgen Sie den Nachrichten, um sich für diese Vorschau zu registrieren.
-** Wenn Sie neu bei BlueXP sind und noch keinen Connector verwendet haben, erhalten Sie bei Auswahl von „Disaster Recovery“ eine Meldung über Ihre Anmeldung. Senden Sie das Formular ab. NetApp wird sich mit Ihnen in Verbindung setzen, um Ihre Vorschauanfrage zu bearbeiten.
-** Wenn Sie ein BlueXP Benutzer mit einem vorhandenen Connector sind, wird bei Auswahl von „Disaster Recovery“ eine Meldung über Ihre Anmeldung angezeigt.
-** Wenn Sie bereits an der Vorschau teilnehmen und „Disaster Recovery“ auswählen, können Sie mit dem Service fortfahren.
+** Wenn Sie keinen BlueXP Connector haben oder diesen Service nicht anbieten, müssen Sie sich möglicherweise an den NetApp Support wenden oder den Nachrichten folgen, um sich für diesen Service zu registrieren.
++
+Informationen zum Hinzufügen eines Connectors finden Sie unter https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["Erfahren Sie mehr über Steckverbinder"^].
 
+** Wenn Sie neu bei BlueXP sind und noch keinen Connector verwendet haben, erhalten Sie bei Auswahl von „Disaster Recovery“ eine Meldung über Ihre Anmeldung. Senden Sie das Formular ab. NetApp wird sich bezüglich Ihrer Anfrage mit Ihnen in Verbindung setzen.
+** Wenn Sie ein BlueXP Benutzer mit einem vorhandenen Connector sind, wird bei Auswahl von „Disaster Recovery“ eine Meldung über Ihre Anmeldung angezeigt.
+** Wenn Sie den Dienst bereits verwenden, können Sie mit der Option „Disaster Recovery“ fortfahren.
+
+
++
+image:dr-dashboard-preview.png["BlueXP Disaster Recovery Dashboard"]
 
 

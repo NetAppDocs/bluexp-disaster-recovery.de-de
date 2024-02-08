@@ -17,8 +17,5 @@ Diese FAQ kann Ihnen helfen, wenn Sie nur nach einer schnellen Antwort auf eine 
 *Wie sieht die Disaster-Recovery-URL von BlueXP aus?*
 Geben Sie für die URL in einem Browser Folgendes ein: https://console.bluexp.netapp.com/["https://console.bluexp.netapp.com/"^] Um auf die BlueXP Konsole zuzugreifen.
 
-*Benötigen Sie eine Lizenz für die Nutzung von BlueXP Disaster Recovery?*
-Eine NetApp Lizenzdatei (NetApp License File, NLF) ist nicht erforderlich.
-
 *Wie greifen Sie auf BlueXP Disaster Recovery zu?*
 Für die Disaster Recovery von BlueXP ist keine Aktivierung erforderlich. Die Disaster-Recovery-Option wird automatisch in der linken Navigation von BlueXP angezeigt.

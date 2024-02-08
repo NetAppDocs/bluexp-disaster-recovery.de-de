@@ -75,3 +75,9 @@ Im nächsten Schritt wird Disaster Recovery in BlueXP eingerichtet.
 . Implementieren Sie in BlueXP SnapMirror zu FSX für NetApp ONTAP.
 . In BlueXP erkennen Sie das bereitgestellte FSX for NetApp ONTAP auf einer AWS-Instanz und replizieren die angegebenen Datastore-Volumes von einer On-Premises-Umgebung auf FSX for NetApp ONTAP mit der entsprechenden Häufigkeit und Aufbewahrung von NetApp Snapshot Kopien.
 
+
+
+
+=== Lizenzierung einrichten
+
+Mit BlueXP Disaster Recovery können Sie sich für eine kostenlose 90-Tage-Testversion anmelden.

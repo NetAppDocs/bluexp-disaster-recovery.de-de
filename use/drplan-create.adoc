@@ -54,7 +54,7 @@ image:dr-plan-create-name.png["Screenshot mit der Seite Replizierungsplan hinzuf
 
 == Wählen Sie Anwendungen aus, die Sie replizieren und Ressourcengruppen zuweisen möchten
 
-Im nächsten Schritt werden die erforderlichen virtuellen Maschinen in funktionale Ressourcengruppen gruppiert. Mit Ressourcengruppen können Sie einen Satz abhängiger virtueller Maschinen in logische Gruppen gruppieren, die Ihren Anforderungen entsprechen. Gruppen können beispielsweise die Startreihenfolge enthalten, die bei der Wiederherstellung ausgeführt werden kann.
+Im nächsten Schritt werden die erforderlichen virtuellen Maschinen in funktionale Ressourcengruppen gruppiert. Mit Ressourcengruppen können Sie einen Satz abhängiger virtueller Maschinen in logische Gruppen gruppieren, die Ihren Anforderungen entsprechen. Gruppen könnten beispielsweise verzögerte Startaufträge enthalten, die bei der Wiederherstellung ausgeführt werden können.
 
 
 TIP: Jede Ressourcengruppe kann eine oder mehrere virtuelle Maschinen enthalten. Die virtuellen Maschinen werden basierend auf der Reihenfolge, in der Sie sie hier einfügen, eingeschaltet.
@@ -94,23 +94,46 @@ Geben Sie im Schritt „Ressourcenzuordnung“ an, wie die Ressourcen aus der Qu
 +
 ** *Compute Resources*
 ** *Virtuelle Netzwerke*
+
+
+. Wählen Sie auf der Registerkarte Failover Mappings den Abwärtspfeil rechts neben jeder Ressource aus:
++
 ** *Virtuelle Maschinen*: Wählen Sie das Netzwerk-Mapping auf das entsprechende Segment aus. Die Segmente sollten bereits bereitgestellt werden. Wählen Sie daher das entsprechende Segment für die Zuordnung der virtuellen Maschine aus.
 +
-
-NOTE: SnapMirror befindet sich auf Volume-Ebene. Somit werden alle Virtual Machines zum Replikationsziel repliziert. Stellen Sie sicher, dass Sie alle virtuellen Maschinen auswählen, die Teil des Datenspeichers sind. Wenn sie nicht ausgewählt sind, werden nur die virtuellen Maschinen verarbeitet, die Teil des Replikationsplans sind.
-
-+
-Unter Details zu virtuellen Maschinen können Sie optional die Größe der VM-CPU- und RAM-Parameter ändern. Außerdem können Sie IP-Adresse, Subnetzmaske, DNS und Gateway auswählen, wenn Sie die Netzwerkinformationen zu einer VM konfigurieren möchten. Die Anmeldedaten für das VM-Gastbetriebssystem sollten entweder auf globaler Ebene oder auf jeder VM-Ebene bereitgestellt werden.
+SnapMirror befindet sich auf Volume-Ebene. Somit werden alle Virtual Machines zum Replikationsziel repliziert. Stellen Sie sicher, dass Sie alle virtuellen Maschinen auswählen, die Teil des Datenspeichers sind. Wenn sie nicht ausgewählt sind, werden nur die virtuellen Maschinen verarbeitet, die Teil des Replikationsplans sind.
 
 +
-Dies ist vor allem bei der Wiederherstellung großer Umgebungen zu kleineren Ziel-Clustern oder bei Disaster-Recovery-Tests hilfreich, ohne eine 1:1-physische VMware-Infrastruktur bereitstellen zu müssen. Außerdem können Sie die Startreihenfolge für alle ausgewählten virtuellen Maschinen in den Ressourcengruppen ändern.
+*** *VM CPU und RAM*: Unter den Virtual Machines Details können Sie optional die VM CPU und RAM Parameter anpassen.
+*** *Boot Order Delay*: Sie können auch die Boot-Reihenfolge für alle ausgewählten virtuellen Maschinen in den Ressourcengruppen ändern. Standardmäßig wird die während der Auswahl der Ressourcengruppe ausgewählte Startreihenfolge verwendet. Sie können jedoch in dieser Phase Änderungen vornehmen.
+*** *DHCP oder statische IP*: Wenn Sie Netzwerke zwischen Quell- und Zielorten im Abschnitt „virtuelle Maschinen“ des Replikationsplans zuordnen, bietet BlueXP Disaster Recovery zwei Optionen: DHCP oder statische IP. Konfigurieren Sie für statische IPs das Subnetz, das Gateway und die DNS-Server. Geben Sie außerdem die Anmeldeinformationen für virtuelle Maschinen ein.
++
+**** *DHCP*: Wenn Sie diese Option wählen, geben Sie nur die Anmeldeinformationen für die VM an.
+**** *Statische IP*: Sie können die gleichen oder andere Informationen aus der Quell-VM auswählen. Wenn Sie dieselbe Auswahl wie die Quelle wählen, müssen Sie keine Anmeldeinformationen eingeben. Wenn Sie jedoch andere Informationen aus der Quelle verwenden möchten, können Sie die Anmeldeinformationen, die IP-Adresse der VM, die Subnetzmaske, das DNS und die Gateway-Informationen angeben. Die Anmeldedaten für das VM-Gastbetriebssystem sollten entweder auf globaler Ebene oder auf jeder VM-Ebene bereitgestellt werden.
++
+image:dr-plan-create-mapping-vms.png["Screenshot mit Add Replication Plan > Resource Mapping > Virtual Machines"]
 
 +
-Standardmäßig wird die während der Auswahl der Ressourcengruppe ausgewählte Startreihenfolge verwendet. Sie können jedoch in dieser Phase Änderungen vornehmen.
+Dies ist vor allem bei der Wiederherstellung großer Umgebungen zu kleineren Ziel-Clustern oder bei Disaster-Recovery-Tests hilfreich, ohne eine 1:1-physische VMware-Infrastruktur bereitstellen zu müssen.
 
+
+
+
+
+** *App-konsistente Replikate*: Geben Sie an, ob applikationskonsistente Snapshot-Kopien erstellt werden sollen. Der Service setzt die Applikation still und erstellt dann einen Snapshot, um einen konsistenten Status der Applikation zu erhalten.
 ** *Datastores*: Anhand der Auswahl der virtuellen Maschinen werden automatisch Datastore-Mappings ausgewählt.
 +
-Geben Sie das Recovery Point Objective (RPO) ein, um die Menge der wiederherzustellenden Daten anzugeben (gemessen in der Zeit). Wenn Sie beispielsweise einen RPO von 2 Stunden eingeben, müssen für die Recovery jederzeit Daten vorhanden sein, die nicht älter als 2 Stunden sind. Bei einem Ausfall lassen sich bis zu 2 Stunden an Daten verlieren. Geben Sie außerdem die Anzahl der Snapshot Kopien ein, die für alle Datastores beibehalten werden sollen.
+*** *RPO*: Geben Sie das Recovery Point Objective (RPO) ein, um die Datenmenge anzugeben, die wiederhergestellt werden soll (gemessen in der Zeit). Wenn Sie beispielsweise einen RPO von 2 Stunden eingeben, müssen für die Recovery jederzeit Daten vorhanden sein, die nicht älter als 2 Stunden sind. Bei einem Ausfall lassen sich bis zu 2 Stunden an Daten verlieren. Geben Sie außerdem die Anzahl der Snapshot Kopien ein, die für alle Datastores beibehalten werden sollen.
+*** *SnapMirror Beziehungen*: Wenn ein Volume bereits eine SnapMirror Beziehung hat, können Sie die entsprechenden Quell- und Ziel-Datastores auswählen. Wenn Sie ein Volume auswählen, das nicht über eine SnapMirror-Beziehung verfügt, können Sie jetzt ein Volume erstellen, indem Sie die Arbeitsumgebung und die zugehörige Peer-SVM auswählen.
+
+
+** *Consistency Groups*: Wenn Sie einen Replikationsplan erstellen, können Sie VMs mit unterschiedlichen Volumes und SVMs einbeziehen. Bei der Disaster Recovery von BlueXP wird ein Snapshot einer Konsistenzgruppe erstellt.
++
+*** Wenn Sie das Recovery Point Objective (RPO) angeben, plant der Service ein primäres Backup auf der Grundlage des RPO und aktualisiert die sekundären Ziele.
+*** Wenn die VMs vom gleichen Volume und derselben SVM stammen, führt der Service einen standardmäßigen ONTAP-Snapshot durch und aktualisiert die sekundären Ziele.
+*** Wenn die VMs aus unterschiedlichen Volumes und derselben SVM stammen, erstellt der Service einen Consistency Group Snapshot, in dem alle Volumes eingeschlossen werden und die sekundären Ziele aktualisiert werden.
+*** Wenn die VMs aus verschiedenen Volumes und unterschiedlichen SVMs stammen, führt der Service eine Startphase für die Konsistenzgruppe und einen festzuführenden Snapshot durch, indem alle Volumes im selben oder unterschiedlichen Cluster eingeschlossen werden und die sekundären Ziele aktualisiert werden.
+*** Während des Failovers können Sie einen beliebigen Snapshot auswählen. Wenn Sie den neuesten Snapshot auswählen, erstellt der Service On-Demand-Backups, aktualisiert das Ziel und verwendet diesen Snapshot für das Failover.
+
 
 
 
