@@ -21,3 +21,33 @@ Sie können alle Disaster-Recovery-Jobs überwachen und deren Fortschritt bestim
 . Um Details zu einem bestimmten Job anzuzeigen, wählen Sie diese Zeile aus.
 . Um Informationen zu aktualisieren, wählen Sie *Aktualisieren*.
 
+
+
+
+== Abbrechen eines Jobs
+
+Wenn ein Job in Bearbeitung ist und Sie nicht möchten, dass er fortgesetzt wird, können Sie ihn abbrechen. Sie können einen Job abbrechen, wenn er im gleichen Status bleibt und Sie den nächsten Vorgang in der Warteschlange freigeben möchten. Sie können einen Job abbrechen, bevor es zu einer Zeitabsage kommt.
+
+Um einen Job abzubrechen, verwenden Sie Swagger.
+
+.Bevor Sie beginnen
+Um einen Job abzubrechen, müssen Sie über die Konto-ID verfügen.
+
+.Schritte
+. Wählen Sie in der linken Navigationsleiste von BlueXP *Protection* > *Disaster Recovery* aus.
+. Wählen Sie im oberen Menü *Job-Überwachung*.
+. Notieren Sie sich auf der Seite Job Monitor die ID des Jobs, den Sie abbrechen möchten.
+. BlueXP Disaster Recovery Swagger-URL aufrufen: https://snapcenter.cloudmanager.cloud.netapp.com/api-doc/#/Jobs/put_jobmanager_v2_jobs__jobId_["Swagger"^].
++
+"https://snapcenter.cloudmanager.cloud.netapp.com/api-doc/#/Jobs/put_jobmanager_v2_jobs__jobId_"[]
+
++
+image:dr-swagger-job-cancel.png["Swagger-Seite, die zeigt, wie ein Job abgebrochen wird"]
+
++
+Weitere Informationen zu Swagger finden Sie unter https://swagger.io/docs/["Swagger-Dokumente"^].
+
+. Von Swagger erhalten Sie das Sicherheitstoken, auch _Bearer Token_ genannt, von der Option Autorisieren.
+. Geben Sie die Konto-ID und die Job-ID ein.
+. Wählen Sie *Probieren Sie es aus*.
+

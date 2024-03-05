@@ -29,7 +29,7 @@ Sie können den vCenter-Standortnamen und den Standorttyp (On-Premises oder AWS)
 
 .Schritte
 . Wählen Sie im oberen Menü *Sites* aus.
-. Wählen Sie die Option *actions* image:../use/icon-horizontal-dots.png["Actions-Menü-Symbol im BlueXP Disaster Recovery Service"]  Rechts neben dem vCenter-Namen und wählen Sie *Bearbeiten*.
+. Wählen Sie die Option *actions* image:../use/icon-vertical-dots.png["Actions-Menü-Symbol im BlueXP Disaster Recovery Service"]  Rechts neben dem vCenter-Namen und wählen Sie *Bearbeiten*.
 . Bearbeiten Sie den Namen und den Speicherort des vCenter-Standorts.
 
 
@@ -45,6 +45,9 @@ Sie können Replikationspläne deaktivieren, aktivieren und löschen.
 
 .Schritte
 . Wählen Sie im oberen Menü *Replikationspläne* aus.
++
+image:../use/dr-plan-list2.png["Liste der Replikationspläne"]
+
 . Um die Plandetails anzuzeigen, wählen Sie die Option *actions* image:../use/icon-horizontal-dots.png["Actions-Menü-Symbol im BlueXP Disaster Recovery Service"] Und wählen Sie *Plandetails anzeigen*.
 . Führen Sie einen der folgenden Schritte aus:
 +

@@ -17,13 +17,16 @@ Mit dem BlueXP Disaster Recovery-Dashboard können Sie den Zustand Ihrer Disaste
 .Schritte
 . Wählen Sie in der linken Navigationsleiste von BlueXP *Protection* > *Disaster Recovery* aus.
 . Wählen Sie aus dem BlueXP Disaster Recovery-Hauptmenü *Dashboard* aus.
++
+image:dr-dashboard.png["BlueXP Disaster Recovery Dashboard"]
+
 . Überprüfen Sie die folgenden Informationen auf dem Dashboard:
 +
 ** *Sites*: Sehen Sie die Gesundheit Ihrer Sites. Ein Standort kann einen der folgenden Status haben:
 +
-*** *Gesund*: VCenter ist verbunden und läuft.
-*** *Disconnected*: VCenter ist nicht erreichbar oder hat Verbindungsprobleme.
-*** *Degradiert*: VCenter ist nicht erreichbar oder hat Verbindungsprobleme.
+*** *Running*: VCenter ist verbunden, funktionsfähig und läuft.
+*** *Down*: VCenter ist nicht erreichbar oder hat Verbindungsprobleme.
+*** *Problem*: VCenter ist nicht erreichbar oder hat Verbindungsprobleme.
 +
 Um die Standortdetails anzuzeigen, wählen Sie *Alle anzeigen* für einen Status oder *Sites anzeigen*, um alle anzuzeigen.
 

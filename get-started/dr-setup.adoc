@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: get-started/dr-setup.html 
-keywords: bluexp, disaster recovery, 
+keywords: bluexp, disaster recovery, aws, amazon web services 
 summary: Um das Disaster Recovery von BlueXP zu nutzen, führen Sie ein paar Schritte aus, um es einzurichten. 
 ---
 = Disaster Recovery für BlueXP einrichten
@@ -12,14 +12,14 @@ summary: Um das Disaster Recovery von BlueXP zu nutzen, führen Sie ein paar Sch
 
 
 [role="lead"]
-Um das Disaster Recovery von BlueXP zu nutzen, müssen Sie es in wenigen Schritten sowohl in AWS als auch in BlueXP einrichten.
+Um das Disaster Recovery von BlueXP zu nutzen, müssen Sie es in wenigen Schritten sowohl in Amazon Web Services (AWS) als auch in BlueXP einrichten.
 
 
 TIP: Prüfen link:../get-started/dr-prerequisites.html["Voraussetzungen"] Und stellen Sie sicher, dass Ihre Umgebung bereit ist.
 
 
 
-== Einrichtung in AWS
+== AWS einrichten
 
 In AWS müssen Sie folgende Schritte durchführen:
 
@@ -44,7 +44,7 @@ Amazon FSX für NetApp ONTAP ist ein vollständig gemanagter Service, der zuverl
 
 
 
-== In BlueXP einrichten
+== Disaster Recovery für BlueXP einrichten
 
 Im nächsten Schritt wird Disaster Recovery in BlueXP eingerichtet.
 
@@ -58,7 +58,7 @@ Im nächsten Schritt wird Disaster Recovery in BlueXP eingerichtet.
 
 === Connector in BlueXP erstellen
 
-Sie müssen sich zur Vorschau anmelden oder sich mit Ihrem NetApp Vertriebsmitarbeiter in Verbindung setzen, um diesen Service auszuprobieren. Wenn Sie dann den BlueXP Connector nutzen, werden Ihnen die entsprechenden Funktionen für den Disaster Recovery Service zur Verfügung stehen.
+Sie müssen sich an Ihren NetApp Vertriebsmitarbeiter wenden, um diesen Service auszuprobieren. Wenn Sie dann den BlueXP Connector nutzen, werden Ihnen die entsprechenden Funktionen für den Disaster Recovery Service zur Verfügung stehen.
 
 Informationen zum Erstellen eines Connectors in BlueXP vor der Nutzung des Service finden Sie in der BlueXP Dokumentation, die sich in der Beschreibung befindet https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["So erstellen Sie einen Konnektor"^].
 
@@ -81,3 +81,7 @@ Im nächsten Schritt wird Disaster Recovery in BlueXP eingerichtet.
 === Lizenzierung einrichten
 
 Mit BlueXP Disaster Recovery können Sie sich für eine kostenlose 90-Tage-Testversion anmelden.
+
+Sie können Ihre eigene Lizenz (BYOL, Bring Your Own License) verwenden, eine NetApp Lizenzdatei (NLF).
+
+Weitere Informationen zur Einrichtung einer Lizenzierung für die Disaster Recovery von BlueXP finden Sie unter link:../get-started/dr-licensing.html["Disaster-Recovery-Lizenzen für BlueXP einrichten"].

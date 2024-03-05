@@ -4,7 +4,7 @@ permalink: get-started/dr-intro.html
 keywords: how bluexp disaster recovery works, what is disaster recovery, bluexp, vmware, vcenter, draas, replicate, failover, failback, fail over, fail back 
 summary: Disaster Recovery in der Cloud ist eine ausfallsichere und kostengünstige Möglichkeit zum Schutz von Workloads vor Standortausfällen und Datenbeschädigung. Mit der Disaster Recovery für VMware von BlueXP können Sie Ihre lokalen VMware-Workloads, auf denen ONTAP Storage ausgeführt wird, auf ein softwaredefiniertes VMware Datacenter in Public Clouds als Disaster-Recovery-Standort mithilfe von NetApp Cloud-Storage replizieren. 
 ---
-= Erfahren Sie mehr zur Vorschau von BlueXP Disaster Recovery für VMware
+= Erfahren Sie mehr über BlueXP Disaster Recovery für VMware
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,15 +12,15 @@ summary: Disaster Recovery in der Cloud ist eine ausfallsichere und kostengünst
 
 
 [role="lead"]
-Disaster Recovery in der Cloud ist eine ausfallsichere und kostengünstige Möglichkeit zum Schutz von Workloads vor Standortausfällen und Datenbeschädigung. Mit der Vorschau von BlueXP Disaster Recovery für VMware können Sie Ihre lokalen VMware-Workloads, auf denen ONTAP Storage ausgeführt wird, mithilfe von NetApp Cloud Storage in ein softwaredefiniertes Datacenter von VMware in einer Public Cloud oder in eine andere lokale VMware-Umgebung mit ONTAP Storage als Disaster-Recovery-Standort replizieren.
+Disaster Recovery in der Cloud ist eine ausfallsichere und kostengünstige Möglichkeit zum Schutz von Workloads vor Standortausfällen und Datenbeschädigung. Mit der Disaster Recovery für VMware von BlueXP können Sie Ihre lokalen VMware-Workloads, auf denen ONTAP Storage ausgeführt wird, mithilfe von NetApp Cloud Storage in ein softwaredefiniertes Datacenter von VMware in einer Public Cloud oder in eine andere lokale VMware-Umgebung mit ONTAP Storage als Disaster-Recovery-Standort replizieren.
 
-Die Disaster-Recovery-Vorschau von BlueXP ist ein Cloud-basierter Disaster-Recovery-Service, der Disaster-Recovery-Workflows automatisiert. Mit dem Disaster Recovery-Service von BlueXP können Sie Ihre lokalen, NFS-basierten VMware Workloads, auf denen NetApp Storage ausgeführt wird, zu Beginn in einer der folgenden Systeme schützen:
+BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recovery Service, der Disaster Recovery Workflows automatisiert. Mit dem Disaster Recovery-Service von BlueXP können Sie Ihre lokalen, NFS-basierten VMware Workloads, auf denen NetApp Storage ausgeführt wird, zu Beginn in einer der folgenden Systeme schützen:
 
 * VMware Cloud (VMC) auf AWS mit Amazon FSX für NetApp ONTAP oder
 * Eine weitere lokale NFS-basierte VMware Umgebung mit ONTAP Storage
 
 
-Bei der Disaster-Recovery-Vorschau von BlueXP wird die ONTAP SnapMirror Technologie als Replizierungstransport zum Disaster-Recovery-Standort verwendet. Dies ermöglicht eine branchenführende Storage-Effizienz (Komprimierung und Deduplizierung) an primären und sekundären Standorten.
+Bei der Disaster Recovery von BlueXP kommt die ONTAP SnapMirror Technologie als Replizierungstransport zum Disaster-Recovery-Standort zum Einsatz. Dies ermöglicht eine branchenführende Storage-Effizienz (Komprimierung und Deduplizierung) an primären und sekundären Standorten.
 
 image:draas-onprem-to-cloud-onprem.png["Diagramm mit Komponenten der BlueXP Disaster Recovery für VMware"]
 
@@ -38,9 +38,9 @@ Die Disaster Recovery von BlueXP bietet folgende Vorteile:
 
 
 
-== Was Sie mit BlueXP Disaster Recovery für VMware als Vorschau erreichen können
+== Was Sie mit BlueXP Disaster Recovery für VMware erreichen können
 
-Mit der Disaster Recovery-Vorschau von BlueXP können Sie mehrere NetApp Technologien umfassend nutzen, um folgende Ziele zu erreichen:
+Mit BlueXP Disaster Recovery profitieren Sie von der vollständigen Nutzung verschiedener NetApp Technologien, um folgende Ziele zu erreichen:
 
 * Replizieren Sie VMware Applikationen an Ihrem lokalen Produktionsstandort an einen Disaster-Recovery-Remote-Standort in der Cloud oder vor Ort. Nutzen Sie dazu SnapMirror Replizierung.
 * Migrieren Sie VMware-Workloads von Ihrem ursprünglichen Standort zu einem anderen Standort.
@@ -57,11 +57,34 @@ NOTE: Die Konfiguration des vSphere Servers erfolgt außerhalb von BlueXP Disast
 
 NetApp berechnet Ihnen keine Kosten für die Nutzung der Testversion von BlueXP Disaster Recovery.
 
+Die Vollversion des Disaster Recovery-Service von BlueXP kann mit einer NetApp Lizenz genutzt werden.
+
+
+
+== Lizenzierung
+
+Sie können die folgenden Lizenztypen verwenden:
+
+* Melden Sie sich für eine kostenlose 90-Tage-Testversion an.
+* Bring-Your-Own-License (BYOL) bei einer NetApp Lizenzdatei (NLF), die Sie von Ihrem NetApp Vertriebsmitarbeiter erhalten. Sie können die Seriennummer der Lizenz verwenden, um das BYOL in der Digital Wallet von BlueXP zu aktivieren.
+
+
+Das Management der Lizenzen für alle BlueXP Services erfolgt über den BlueXP Digital Wallet Service. Nachdem Sie Ihr BYOL eingerichtet haben, können Sie eine aktive Lizenz für den Service in der Digital Wallet von BlueXP sehen.
+
+
+NOTE: Die Disaster Recovery-Gebühren von BlueXP basieren auf der bereitgestellten Kapazität von Datastores am Quellstandort, wenn mindestens eine VM mit einem Replizierungsplan vorhanden ist. Die Kapazität für einen Failover-Datenspeicher ist in der zulässigen Kapazität nicht enthalten. Wenn die Daten bei einem BYOL die zulässige Kapazität überschreiten, werden die Vorgänge im Service so lange eingeschränkt, bis Sie eine zusätzliche Kapazitätslizenz erhalten oder die Lizenz in der Digital Wallet von BlueXP aktualisieren.
+
+Weitere Informationen zur Einrichtung einer Lizenzierung für die Disaster Recovery von BlueXP finden Sie unter link:../get-started/dr-licensing.html["Disaster-Recovery-Lizenzen für BlueXP einrichten"].
+
 
 
 == 90 Tage kostenlos testen
 
 Sie können die Disaster Recovery von BlueXP mit einer kostenlosen Testversion von 90 Tagen testen.
+
+Um nach der 90-Tage-Testsoftware fortzufahren, müssen Sie eine BYOL-Lizenz von NetApp erwerben.
+
+Sie können jederzeit eine Lizenz erwerben und Sie werden erst nach Ablauf der 90-tägigen Testversion belastet.
 
 
 

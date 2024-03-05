@@ -43,6 +43,6 @@ Informationen zum Hinzufügen eines Connectors finden Sie unter https://docs.net
 
 
 +
-image:dr-dashboard-preview.png["BlueXP Disaster Recovery Dashboard"]
+image:dr-dashboard.png["BlueXP Disaster Recovery Dashboard"]
 
 

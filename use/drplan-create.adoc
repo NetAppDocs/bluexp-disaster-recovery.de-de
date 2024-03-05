@@ -16,6 +16,12 @@ Nachdem Sie vCenter Standorte hinzugefügt haben, sind Sie bereit, einen Disaste
 
 Solche Pläne werden manchmal _Blueprints_ genannt.
 
+Sie können einen Replizierungsplan erstellen und darüber hinaus Zeitpläne für Compliance und Tests bearbeiten.
+
+
+
+== Erstellen Sie den Plan
+
 Ein Assistent führt Sie durch die folgenden Schritte:
 
 * Wählen Sie vCenter-Server aus
@@ -33,9 +39,12 @@ Während Sie den Replizierungsplan erstellen, können Sie die SnapMirror Beziehu
 * Von vielen auf viele
 
 
+.Bevor Sie beginnen
+Wenn Sie in diesem Service eine SnapMirror Beziehung erstellen möchten, hätten Sie den Cluster und dessen SVM-Peering bereits außerhalb der Disaster Recovery von BlueXP eingerichtet haben müssen.
 
 
-== Wählen Sie vCenter-Server aus
+
+=== Wählen Sie vCenter-Server aus
 
 Zuerst wählen Sie das Quell-vCenter aus und dann das Ziel-vCenter aus.
 
@@ -52,7 +61,7 @@ image:dr-plan-create-name.png["Screenshot mit der Seite Replizierungsplan hinzuf
 
 
 
-== Wählen Sie Anwendungen aus, die Sie replizieren und Ressourcengruppen zuweisen möchten
+=== Wählen Sie Anwendungen aus, die Sie replizieren und Ressourcengruppen zuweisen möchten
 
 Im nächsten Schritt werden die erforderlichen virtuellen Maschinen in funktionale Ressourcengruppen gruppiert. Mit Ressourcengruppen können Sie einen Satz abhängiger virtueller Maschinen in logische Gruppen gruppieren, die Ihren Anforderungen entsprechen. Gruppen könnten beispielsweise verzögerte Startaufträge enthalten, die bei der Wiederherstellung ausgeführt werden können.
 
@@ -84,9 +93,12 @@ Jede virtuelle Maschine in einer Gruppe wird in der Reihenfolge gestartet, die d
 
 
 
-== Ordnen Sie dem Ziel Quellressourcen zu
+=== Ordnen Sie dem Ziel Quellressourcen zu
 
 Geben Sie im Schritt „Ressourcenzuordnung“ an, wie die Ressourcen aus der Quellumgebung dem Ziel zugeordnet werden sollen.
+
+.Bevor Sie beginnen
+Wenn Sie in diesem Service eine SnapMirror Beziehung erstellen möchten, hätten Sie den Cluster und dessen SVM-Peering bereits außerhalb der Disaster Recovery von BlueXP eingerichtet haben müssen.
 
 .Schritte
 . Aktivieren Sie auf der Seite „Ressourcenzuordnung“ das Kontrollkästchen, um dieselben Zuordnungen sowohl für Failover- als auch für Testvorgänge zu verwenden.
@@ -122,8 +134,12 @@ Dies ist vor allem bei der Wiederherstellung großer Umgebungen zu kleineren Zie
 ** *App-konsistente Replikate*: Geben Sie an, ob applikationskonsistente Snapshot-Kopien erstellt werden sollen. Der Service setzt die Applikation still und erstellt dann einen Snapshot, um einen konsistenten Status der Applikation zu erhalten.
 ** *Datastores*: Anhand der Auswahl der virtuellen Maschinen werden automatisch Datastore-Mappings ausgewählt.
 +
-*** *RPO*: Geben Sie das Recovery Point Objective (RPO) ein, um die Datenmenge anzugeben, die wiederhergestellt werden soll (gemessen in der Zeit). Wenn Sie beispielsweise einen RPO von 2 Stunden eingeben, müssen für die Recovery jederzeit Daten vorhanden sein, die nicht älter als 2 Stunden sind. Bei einem Ausfall lassen sich bis zu 2 Stunden an Daten verlieren. Geben Sie außerdem die Anzahl der Snapshot Kopien ein, die für alle Datastores beibehalten werden sollen.
+*** *RPO*: Geben Sie das Recovery Point Objective (RPO) ein, um die Datenmenge anzugeben, die wiederhergestellt werden soll (gemessen in der Zeit). Wenn Sie beispielsweise einen RPO von 60 Minuten eingeben, müssen für die Recovery jederzeit Daten vorhanden sein, die nicht älter als 60 Minuten sind. Bei einem schwerwiegenden Ausfall lassen sich bis zu 60 Minuten an Daten verlieren. Geben Sie außerdem die Anzahl der Snapshot Kopien ein, die für alle Datastores beibehalten werden sollen.
 *** *SnapMirror Beziehungen*: Wenn ein Volume bereits eine SnapMirror Beziehung hat, können Sie die entsprechenden Quell- und Ziel-Datastores auswählen. Wenn Sie ein Volume auswählen, das nicht über eine SnapMirror-Beziehung verfügt, können Sie jetzt ein Volume erstellen, indem Sie die Arbeitsumgebung und die zugehörige Peer-SVM auswählen.
++
+
+NOTE: Wenn Sie in diesem Service eine SnapMirror Beziehung erstellen möchten, hätten Sie den Cluster und dessen SVM-Peering bereits außerhalb der Disaster Recovery von BlueXP eingerichtet haben müssen.
+
 
 
 ** *Consistency Groups*: Wenn Sie einen Replikationsplan erstellen, können Sie VMs mit unterschiedlichen Volumes und SVMs einbeziehen. Bei der Disaster Recovery von BlueXP wird ein Snapshot einer Konsistenzgruppe erstellt.
@@ -146,14 +162,11 @@ TIP: Sie können den gesamten Plan später testen. Derzeit richten Sie die Zuord
 
 
 
-== Identifizieren Sie die Wiederholung
+=== Identifizieren Sie die Wiederholung
 
 Wählen Sie aus, ob Sie Daten (eine einmalige Verschiebung) zu einem anderen Ziel migrieren oder sie mit der Frequenz von SnapMirror replizieren möchten.
 
 Ermitteln Sie, wie oft die Daten gespiegelt werden sollen, wenn Sie sie replizieren möchten.
-
-
-NOTE: Konfigurieren Sie in dieser Vorschau die Häufigkeit außerhalb des BlueXP Disaster Recovery-Service.
 
 .Schritte
 . Wählen Sie auf der Seite Rezidive *Migrate* oder *Replicate* aus.
@@ -170,7 +183,7 @@ image:dr-plan-create-recurrence.png["Screenshot mit Add Replication Plan > Recur
 
 
 
-== Bestätigen Sie den Replikationsplan
+=== Bestätigen Sie den Replikationsplan
 
 Nehmen Sie sich zum Schluss einen Moment Zeit, um den Replizierungsplan zu bestätigen.
 
@@ -183,4 +196,43 @@ TIP: Sie können den Replikationsplan später deaktivieren oder löschen.
 +
 Der Plan wird zur Liste der Pläne hinzugefügt.
 
+
+
+
+
+== Bearbeiten Sie Zeitpläne, um die Compliance zu testen und sicherzustellen, dass Failover-Tests funktionieren
+
+Möglicherweise möchten Sie Zeitpläne zum Testen von Compliance- und Failover-Tests einrichten, um bei Bedarf sicherzustellen, dass diese korrekt funktionieren.
+
+* *Auswirkungen auf die Compliance-Zeit*: Wenn ein Replikationsplan erstellt wird, erstellt der Dienst standardmäßig einen Compliance-Zeitplan. Die Standard-Compliance-Zeit beträgt 30 Minuten. Um diese Zeit zu ändern, können Sie den Zeitplan im Replikationsplan bearbeiten verwenden.
+* *Auswirkungen auf Failover-Test*: Sie können einen Failover-Prozess nach Bedarf oder nach einem Zeitplan testen. Damit können Sie den Failover von virtuellen Maschinen zu einem Ziel testen, das in einem Replikationsplan angegeben ist.
++
+Ein Test-Failover erstellt ein FlexClone Volume, mountet den Datastore und verschiebt den Workload auf diesen Datastore. Ein Test-Failover-Vorgang wirkt sich auf Produktions-Workloads, die auf dem Teststandort verwendete SnapMirror Beziehung und geschützte Workloads aus, die weiterhin ordnungsgemäß ausgeführt werden müssen.
+
+
+
+Basierend auf dem Zeitplan wird der Failover-Test ausgeführt und stellt sicher, dass Workloads an das vom Replizierungsplan angegebene Ziel verschoben werden.
+
+.Schritte
+. Wählen Sie im oberen Menü der BlueXP Disaster Recovery die Option *Replication Plans* aus.
++
+image:dr-plan-list.png["Screenshot mit der Liste der Replikationspläne"]
+
+. Wählen Sie die Option *actions* image:icon-horizontal-dots.png["Menü „Aktionen für horizontale Punkte“"] Und wählen Sie *Schichtpläne bearbeiten*.
+. Geben Sie ein, wie oft Sie in wenigen Minuten BlueXP Disaster Recovery verwenden möchten, um die Compliance von Tests zu überprüfen.
+. Um zu überprüfen, ob Ihre Failover-Tests ordnungsgemäß sind, überprüfen Sie *Failover nach einem monatlichen Zeitplan ausführen*.
++
+.. Wählen Sie den Tag des Monats und die Uhrzeit aus, zu der diese Tests ausgeführt werden sollen.
+.. Geben Sie das Datum im Format JJJJ-mm-TT ein, wenn der Test gestartet werden soll.
++
+image:dr-plan-schedule-edit.png["Screenshot, in dem Sie Zeitpläne bearbeiten können"]
+
+
+
+. Um die Testumgebung nach Abschluss des Failover-Tests zu bereinigen, aktivieren Sie *Automatically clean up after Test Failover*.
++
+
+NOTE: Durch diesen Prozess werden die temporären VMs vom Teststandort entfernt, das erstellte FlexClone Volume gelöscht und die temporären Datenspeicher abgehängt.
+
+. Wählen Sie *Speichern*.
 

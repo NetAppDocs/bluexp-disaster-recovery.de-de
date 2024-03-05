@@ -8,10 +8,10 @@ indexpage:
   keywords: disaster, disaster recovery, bluexp, replicate, replication, cloud storage
   lead: Disaster Recovery in der Cloud ist eine ausfallsichere und kostengünstige
     Möglichkeit zum Schutz von Workloads vor Standortausfällen und Datenbeschädigungen
-    (z. B. Ransomware). Mit der Vorschau von BlueXP Disaster Recovery für VMware können
-    Sie Ihre lokalen VMware-Workloads, auf denen ONTAP Storage ausgeführt wird, auf
-    ein softwaredefiniertes Datacenter von VMware in einer Public Cloud oder auf einen
-    anderen lokalen Standort als Disaster-Recovery-Standort replizieren.
+    (z. B. Ransomware). Mit der BlueXP Disaster Recovery für VMware können Sie Ihre
+    lokalen VMware-Workloads, auf denen ONTAP Storage ausgeführt wird, auf ein softwaredefiniertes
+    Datacenter von VMware in einer Public Cloud oder auf einen anderen lokalen Standort
+    als Disaster-Recovery-Standort replizieren.
   tiles:
   - title: Los geht's
     links:

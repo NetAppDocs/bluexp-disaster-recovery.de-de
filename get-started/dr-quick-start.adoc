@@ -22,6 +22,9 @@ link:../get-started/dr-prerequisites.html["Stellen Sie sicher, dass Ihre Umgebun
 [role="quick-margin-para"]
 link:../get-started/dr-setup.html["Führen Sie die Schritte zum Einrichten des Dienstes aus"].
 
+[role="quick-margin-para"]
+link:../get-started/dr-licensing.html["Führen Sie die Schritte zum Einrichten der Lizenzierung durch"].
+
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"] Was kommt als Nächstes?
 [role="quick-margin-para"]
 Nachdem Sie den Service eingerichtet haben, gehen Sie wie folgt vor.

@@ -18,6 +18,8 @@ Während des Failovers wird die neueste SnapMirror Snapshot Kopie verwendet. Sie
 
 Durch dieses Verfahren wird die Replikationsbeziehung unterbrochen, die vCenter Quell-VMs offline gestellt und Lese-/Schreibvorgänge auf dem Zielstandort ermöglicht.
 
+Sie können benutzerdefinierte Skripts im .sh-, .bat- oder .ps1-Format als Post-Failover-Prozesse verwenden. Mit benutzerdefinierten Skripts kann die BlueXP Disaster Recovery Ihr Skript nach einem Failover-Prozess ausführen. Sie können beispielsweise ein benutzerdefiniertes Skript verwenden, um alle Datenbanktransaktionen nach Abschluss des Failovers wieder aufzunehmen.
+
 Bevor Sie das Failover starten, können Sie den Prozess testen und so sicherstellen, dass er bei Bedarf erfolgreich ist. Durch den Test werden die Virtual Machines nicht offline geschaltet.
 
 
@@ -31,6 +33,8 @@ Während eines Failover-Tests werden vorübergehend virtuelle Maschinen erstellt
 Dieser Prozess beansprucht keine zusätzliche physische Kapazität, lokal im ONTAP Storage oder auf FSX for NetApp ONTAP Storage in AWS. Das ursprüngliche Quell-Volume wird nicht geändert, und Replikatjobs können auch während der Disaster Recovery fortgesetzt werden.
 
 Wenn Sie den Test abgeschlossen haben, sollten Sie die virtuellen Maschinen mit der Option *Clean Up Test* zurücksetzen. Dies wird zwar empfohlen, ist aber nicht erforderlich.
+
+Ein Test-Failover-Vorgang wirkt sich auf Produktions-Workloads, die auf dem Teststandort verwendete SnapMirror Beziehung und geschützte Workloads aus, die weiterhin ordnungsgemäß ausgeführt werden müssen.
 
 .Schritte
 . Wählen Sie in der linken Navigationsleiste von BlueXP *Protection* > *Disaster Recovery* aus.
@@ -72,7 +76,7 @@ Der Failover-Prozess umfasst die folgenden Vorgänge:
 
 
 
-TIP: Nach dem Failover sehen Sie die wiederhergestellten VMs im vCenter des Disaster-Recovery-Standorts (Virtual Machines, Netzwerke und Datastores). Standardmäßig werden die virtuellen Maschinen im Ordner Workload wiederhergestellt.
+TIP: Nach dem Start des Failovers sind die wiederhergestellten VMs im vCenter des Disaster-Recovery-Standorts (Virtual Machines, Netzwerke und Datastores) zu sehen. Standardmäßig werden die virtuellen Maschinen im Ordner Workload wiederhergestellt.
 
 .Schritte
 . Wählen Sie in der linken Navigationsleiste von BlueXP *Protection* > *Disaster Recovery* aus.
