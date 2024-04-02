@@ -98,7 +98,7 @@ image:dr-architecture-diagram-70.png["Diagramm mit der Architektur der BlueXP Di
 
 Das folgende Diagramm zeigt die Architektur von lokalen zu lokalen Disaster-Recovery-Plänen.
 
-image:dr-architecture-diagram-onprem-to-onprem.png["Diagramm mit der Architektur der BlueXP Disaster Recovery für VMware Service-Infrastruktur"]
+image:dr-architecture-diagram-onprem-to-onprem2.png["Diagramm mit der Architektur der BlueXP Disaster Recovery für VMware Service-Infrastruktur"]
 
 Bei einem Notfall unterstützt dieser Service Sie bei der Wiederherstellung von Virtual Machines in der anderen lokalen VMware Umgebung oder VMC, indem die SnapMirror Beziehungen aufgehoben und der Zielstandort aktiviert wird.
 

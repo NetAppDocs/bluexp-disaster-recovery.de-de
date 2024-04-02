@@ -562,7 +562,6 @@ Für die Disaster Recovery von BlueXP ist keine Aktivierung erforderlich. Die Di
   <block id="dcc9d99320099ed731ca2f05b3e501a7" category="list-text">Migrieren Sie VMware-Workloads von Ihrem ursprünglichen Standort zu einem anderen Standort.</block>
   <block id="2aefc74ac286c583100431f62049590d" category="list-text">Bei einem Notfall führen Sie ein Failover Ihres primären Standorts nach Bedarf zum Disaster-Recovery-Standort durch. Dabei kann es sich um VMware Cloud on AWS mit FSX for NetApp ONTAP oder eine lokale VMware-Umgebung mit ONTAP handeln.</block>
   <block id="a6a42e8e3070730d19bfd86d6a1d66fe" category="paragraph">Das folgende Diagramm zeigt die Architektur von lokalen zu lokalen Disaster-Recovery-Plänen.</block>
-  <block id="11ee533cc4ce7135332d0b64a9e82e51" category="paragraph"><block ref="11ee533cc4ce7135332d0b64a9e82e51" category="inline-image-macro-rx" type="image"></block></block>
   <block id="20099229ad21726312a6ff50740b0b57" category="paragraph">Bei einem Notfall unterstützt dieser Service Sie bei der Wiederherstellung von Virtual Machines in der anderen lokalen VMware Umgebung oder VMC, indem die SnapMirror Beziehungen aufgehoben und der Zielstandort aktiviert wird.</block>
   <block id="a675a2edc95f7fca650a735944e38f96" category="paragraph">Um die Disaster Recovery von BlueXP zu nutzen, sollten Sie sicherstellen, dass Ihre Umgebung die folgenden Anforderungen erfüllt:</block>
   <block id="96ed64c294e585324853f8f980f9d78e" category="sidebar">Migrieren Sie Apps zu einem anderen Standort</block>
@@ -797,4 +796,5 @@ Für vollständigen Zugriff ist eine Disaster-Recovery-Lizenz von BlueXP erforde
   <block id="9fc7e8cb24850b1f0912cebc8da32620" category="list-text">Ihr Einstieg in das Digital Wallet von BlueXP</block>
   <block id="7b6dca09bf0ef612bac047a313d66cbf" category="list-text">Wählen Sie die Registerkarte *Data Services Licenses* aus, wählen Sie das Symbol *actions ...* für die Seriennummer des Dienstes, die Sie aktualisieren, und wählen Sie *Update License* aus.</block>
   <block id="be976ba4e18c887ae57e14f6ebfbbab3" category="sidebar">Disaster Recovery in der Cloud ist eine ausfallsichere und kostengünstige Möglichkeit zum Schutz von Workloads vor Standortausfällen und Datenbeschädigungen (z. B. Ransomware). Mit der BlueXP Disaster Recovery für VMware können Sie Ihre lokalen VMware-Workloads, auf denen ONTAP Storage ausgeführt wird, auf ein softwaredefiniertes Datacenter von VMware in einer Public Cloud oder auf einen anderen lokalen Standort als Disaster-Recovery-Standort replizieren.</block>
+  <block id="67d87f62e2f6294a12829113edfa11b8" category="paragraph"><block ref="67d87f62e2f6294a12829113edfa11b8" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>
