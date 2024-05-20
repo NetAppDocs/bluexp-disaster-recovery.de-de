@@ -188,7 +188,6 @@
   <block id="da43ae6496f10d6bfd475400915e2865" category="admonition">Die Konfiguration des vSphere Servers erfolgt außerhalb von BlueXP Disaster Recovery in vSphere Server.</block>
   <block id="20b4f77bd00b4f63a49ec8e08f3bf6a6" category="section-title">Kosten</block>
   <block id="d244f191aaddadced4c31b2f67d06c9c" category="inline-image-macro">Diagramm mit der Architektur der BlueXP Disaster Recovery für VMware Service-Infrastruktur</block>
-  <block id="a61fe2c95a03251717d7405c6bf53ede" category="paragraph"><block ref="a61fe2c95a03251717d7405c6bf53ede" category="inline-image-macro-rx" type="image"></block></block>
   <block id="7599cfdf730a164b0625ccc661508efa" category="list-text">Mit dem Service können Sie außerdem ein Failback der virtuellen Maschinen zum ursprünglichen Quellspeicherort durchführen.</block>
   <block id="a6d3ce8aba8914f5380d164c99d7dab0" category="list-text">Sie können den Disaster Recovery Failover-Prozess testen, ohne die ursprünglichen Virtual Machines zu unterbrechen. Bei diesem Test werden Virtual Machines in einem isolierten Netzwerk durch die Erstellung eines FlexClone des Volume wiederhergestellt.</block>
   <block id="b5a43a585d1a40908cfd5ee656c8579c" category="list-text">Für den Failover- oder Test-Failover-Prozess können Sie den neuesten (Standard-) oder ausgewählten Snapshot auswählen, von dem Sie Ihre virtuelle Maschine wiederherstellen möchten.</block>
@@ -614,8 +613,6 @@ Für die Disaster Recovery von BlueXP ist keine Aktivierung erforderlich. Die Di
   <block id="771e1ea643a8723d0d0dfad6c2b70ace" category="list-text">Wenn Sie noch keinen Connector für andere Dienste hinzugefügt haben, fügen Sie einen hinzu.</block>
   <block id="e6e80588e9fe7cf89218fea44300f7ca" category="inline-link">Erfahren Sie mehr über Steckverbinder</block>
   <block id="7530875db6f7eceea689fdfeb6a12778" category="paragraph">Informationen zum Hinzufügen eines Connectors finden Sie unter<block ref="d6df7dcc2fc3105e10967a9194806ce5" category="inline-link-rx"></block>.</block>
-  <block id="9aac5cf8ab754f13e3926b6983853bec" category="list-text">Überprüfen Sie die kostenlosen Testinformationen und wählen Sie *Los geht's*.</block>
-  <block id="1584158e2068ac8b1f79bfc70eb2775d" category="inline-image-macro">Auf der Seite BlueXP Disaster Recovery Subscribe or purchase license page</block>
   <block id="ee6d03e51dd7b0fc10c6b3c8fcab3718" category="section-title">Nach Ablauf der Testphase erwerben Sie eine BYOL-Lizenz über NetApp</block>
   <block id="b11106bafac141be455d28549bfe177d" category="list-text">Wählen Sie *Lizenz zu BlueXP hinzufügen*. Sie werden an das Digital Wallet von BlueXP weitergeleitet.</block>
   <block id="d2ec998008b95e1189b9d8f3dbc6ed64" category="inline-image-macro">Die BlueXP Digital Wallet Add License Seite</block>
@@ -629,29 +626,12 @@ Für die Disaster Recovery von BlueXP ist keine Aktivierung erforderlich. Die Di
   <block id="fd4452ba53d2010757fb183f23851efd" category="admonition">Wenn Sie die kostenlose Testversion beenden und keine Daten löschen möchten und keine Lizenz oder kein Abonnement erwerben, löscht BlueXP Disaster Recovery 60 Tage nach Ende der kostenlosen Testversion sämtliche Daten.</block>
   <block id="c3964fe08c9dd95815cc67d8aaee9323" category="list-text">Geben Sie „Test beenden“ in das Textfeld ein.</block>
   <block id="44a320573c319d1f30b840c2d11a4e26" category="list-text">Wählen Sie *Ende*.</block>
-  <block id="c584f4f2a6193ac47ece196c84d506a1" category="section-title">Bring-Your-Own-License (BYOL)</block>
   <block id="3906249fde1cef9339402436007bb4f7" category="paragraph">Wenn Sie Ihre eigene Lizenz (BYOL, Bring-Your-Own-License) verwenden, umfasst die Einrichtung den Erwerb der Lizenz, das Abrufen der NetApp Lizenzdatei (NLF) und das Hinzufügen der Lizenz zum digitalen Wallet von BlueXP.</block>
-  <block id="4eb472761579fcb29aec7dae0dedc791" category="section-title">BlueXP Disaster Recovery-Lizenz erwerben</block>
-  <block id="4ad29e095044e3e5ac3a8f5bdd094504" category="paragraph">Wenn Sie keine Disaster-Recovery-Lizenz für BlueXP haben, kontaktieren Sie uns, um eine zu kaufen.</block>
-  <block id="365d382b2d9ecca9b0d40171c69b38ff" category="list-text">Führen Sie einen der folgenden Schritte aus:</block>
-  <block id="14149621358a55a2bcbcb304322f2bdd" category="list-text">Wenden Sie sich an den NetApp Vertrieb, um eine Lizenz zu erwerben.</block>
-  <block id="6193e62acb4a86204633b2d093e49546" category="list-text">Klicken Sie rechts unten auf das Chat-Symbol von BlueXP, um eine Lizenz anzufordern.</block>
-  <block id="bb5400afe237282fdad364a407fc147b" category="section-title">Holen Sie sich Ihre BlueXP Disaster Recovery-Lizenzdatei</block>
   <block id="e3286b69a705d4ed944e904722ab7c8f" category="paragraph">Sie müssen die folgenden Informationen haben, bevor Sie beginnen:</block>
   <block id="43ae1d792e09f6126441ea0d91d847c7" category="list-text">BlueXP Disaster Recovery Seriennummer</block>
   <block id="079aeecf06b109e4316b0a68ea943f2b" category="paragraph">Suchen Sie diese Nummer in Ihrem Auftrag, oder wenden Sie sich an das Account Team, um diese Informationen zu erhalten.</block>
   <block id="bcbbd9a155e07caa8b31001adc835c79" category="list-text">BlueXP Konto-ID</block>
-  <block id="98d8dec8ea6912e160aa222c8e6f76c7" category="paragraph">Sie finden Ihre BlueXP Konto-ID, indem Sie oben in BlueXP das Dropdown-Menü *Account* auswählen und dann neben Ihrem Konto *Konto verwalten* auswählen. Ihre Account-ID wird auf der Registerkarte „Übersicht“ angezeigt. Verwenden Sie *Account-DARKSITE1* für die Seite im Privatmodus ohne Internetzugang.</block>
-  <block id="4642741ba5bc33f3309c8ec5bab06682" category="section-title">Erweitern Sie das Digital Wallet von BlueXP um eine Disaster Recovery-Lizenz</block>
-  <block id="ba8afb5484c287f1ace20840bc94d916" category="paragraph">Nachdem Sie eine BlueXP Disaster-Recovery-Lizenz für Ihr BlueXP Konto erworben haben, müssen Sie die Lizenz zum Digital Wallet von BlueXP hinzufügen.</block>
-  <block id="7caa9eb74f44350c8dde29c8267cdf24" category="list-text">Wählen Sie im Menü BlueXP *Governance* &gt; *Digital Wallet* &gt; *Data Services Licenses*.</block>
   <block id="c8508c0ce4da6dc634b7c66b1df15681" category="list-text">Wählen Sie *Lizenz Hinzufügen*.</block>
-  <block id="021d7e94275fbce0d19f7cf686aabd40" category="inline-image-macro">NetApp BlueXP Digital Wallet – Lizenzseite hinzufügen</block>
-  <block id="5fe793b25da4bb065137c8c34e98d41f" category="list-text">Geben Sie auf der Seite Lizenz hinzufügen die Lizenzinformationen ein und wählen Sie *Lizenz hinzufügen*:</block>
-  <block id="b628341a05a2d315b4789aadc3fd8caa" category="list-text">Wenn Sie die BlueXP Lizenzseriennummer haben und Ihr NSS-Konto kennen, wählen Sie die Option *Seriennummer eingeben* aus und geben Sie diese Information ein.</block>
-  <block id="bae190eec3db4a0dd635ae72756acde8" category="inline-link">Fügen Sie das NSS-Konto zu BlueXP hinzu</block>
-  <block id="30fc689a9c3cd4222329fe3a4c818a33" category="paragraph">Wenn Ihr NetApp Support Site Konto nicht in der Dropdown-Liste verfügbar ist,<block ref="06a3bc9d474b5d4e44d1a2733cac785a" category="inline-link-rx"></block>.</block>
-  <block id="751ab53fef561de80df12e1944c11ba2" category="list-text">Wenn Sie über die BlueXP-Lizenzdatei verfügen (erforderlich bei Installation auf einer dunklen Seite), wählen Sie die Option *Lizenzdatei hochladen* aus und folgen Sie den Anweisungen zum Anhängen der Datei.</block>
   <block id="8eea62084ca7e541d918e823422bd82e" category="paragraph-title">Ergebnis</block>
   <block id="7c8c5dfa7e1cbe0ce55b88149d634d69" category="paragraph">Das Digital Wallet von BlueXP zeigt jetzt Disaster Recovery mit einer Lizenz an.</block>
   <block id="72e3dbb78819e204c1d67c9aaba1d190" category="inline-image-macro">NetApp BlueXP Digital Wallet</block>
@@ -675,10 +655,7 @@ Für die Disaster Recovery von BlueXP ist keine Aktivierung erforderlich. Die Di
   <block id="e907b41f5f3d7332bee5a43fbbf78a08" category="section-title">Lizenzierung einrichten</block>
   <block id="64f8f55f5eb85f10374cb9251379aa7d" category="paragraph">Mit BlueXP Disaster Recovery können Sie sich für eine kostenlose 90-Tage-Testversion anmelden.</block>
   <block id="db9425c5e893fb09212aa796b71ab4ff" category="paragraph"><block ref="db9425c5e893fb09212aa796b71ab4ff" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="0fb78a41f977493934dee1c46062309c" category="list-text">Wenn Sie keinen BlueXP Connector haben oder diesen Service nicht anbieten, müssen Sie sich möglicherweise an den NetApp Support wenden oder den Nachrichten folgen, um sich für diesen Service zu registrieren.</block>
-  <block id="665470c666558171488159c6aa3dd98a" category="list-text">Wenn Sie neu bei BlueXP sind und noch keinen Connector verwendet haben, erhalten Sie bei Auswahl von „Disaster Recovery“ eine Meldung über Ihre Anmeldung. Senden Sie das Formular ab. NetApp wird sich bezüglich Ihrer Anfrage mit Ihnen in Verbindung setzen.</block>
   <block id="9aea41391b3a188365a351addd6cf6fc" category="list-text">Wenn Sie ein BlueXP Benutzer mit einem vorhandenen Connector sind, wird bei Auswahl von „Disaster Recovery“ eine Meldung über Ihre Anmeldung angezeigt.</block>
-  <block id="8f333bfde48f31b2cfcf04c153782963" category="list-text">Wenn Sie den Dienst bereits verwenden, können Sie mit der Option „Disaster Recovery“ fortfahren.</block>
   <block id="cbef5af23561d0ec620e5d275e7c8eb5" category="inline-image-macro">BlueXP Disaster Recovery Dashboard</block>
   <block id="b044111e167403664c9e3432eca1f25a" category="sidebar">BlueXP Disaster Recovery-Dokumentation</block>
   <block id="4aca0b59a2fa7d9e86368a58f1e869c9" category="list-text">Wählen Sie die Option *actions* <block ref="e282bbe0f95615c6416d0f1c92efdcdd" category="inline-image-macro-rx" type="image"></block>  Rechts neben dem vCenter-Namen und wählen Sie *Bearbeiten*.</block>
@@ -751,20 +728,17 @@ Für vollständigen Zugriff ist eine Disaster-Recovery-Lizenz von BlueXP erforde
   <block id="78a065b9fb649a31c2037ac8b6adf208" category="paragraph">Um das Disaster Recovery von BlueXP zu nutzen, müssen Sie es in wenigen Schritten sowohl in Amazon Web Services (AWS) als auch in BlueXP einrichten.</block>
   <block id="456948be6cc17bd9f797492f175ff847" category="section-title">AWS einrichten</block>
   <block id="724c7536b89d0d851109ea9f7868da08" category="paragraph">Sie müssen sich an Ihren NetApp Vertriebsmitarbeiter wenden, um diesen Service auszuprobieren. Wenn Sie dann den BlueXP Connector nutzen, werden Ihnen die entsprechenden Funktionen für den Disaster Recovery Service zur Verfügung stehen.</block>
-  <block id="0bf14c9d518db90372ef9c78dc9638b2" category="paragraph">Sie können Ihre eigene Lizenz (BYOL, Bring Your Own License) verwenden, eine NetApp Lizenzdatei (NLF).</block>
   <block id="878214f294066da0bab8a3693a1f802a" category="doc">Erfahren Sie mehr über BlueXP Disaster Recovery für VMware</block>
   <block id="e04cb1e00b4f2d764efe09d0b22a6b43" category="paragraph">Disaster Recovery in der Cloud ist eine ausfallsichere und kostengünstige Möglichkeit zum Schutz von Workloads vor Standortausfällen und Datenbeschädigung. Mit der Disaster Recovery für VMware von BlueXP können Sie Ihre lokalen VMware-Workloads, auf denen ONTAP Storage ausgeführt wird, mithilfe von NetApp Cloud Storage in ein softwaredefiniertes Datacenter von VMware in einer Public Cloud oder in eine andere lokale VMware-Umgebung mit ONTAP Storage als Disaster-Recovery-Standort replizieren.</block>
   <block id="81cd6d5889a00f3187d6e30af0f9838e" category="paragraph">BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recovery Service, der Disaster Recovery Workflows automatisiert. Mit dem Disaster Recovery-Service von BlueXP können Sie Ihre lokalen, NFS-basierten VMware Workloads, auf denen NetApp Storage ausgeführt wird, zu Beginn in einer der folgenden Systeme schützen:</block>
   <block id="fbec25bffbcdefa11c9ca28adb0b824c" category="paragraph">Bei der Disaster Recovery von BlueXP kommt die ONTAP SnapMirror Technologie als Replizierungstransport zum Disaster-Recovery-Standort zum Einsatz. Dies ermöglicht eine branchenführende Storage-Effizienz (Komprimierung und Deduplizierung) an primären und sekundären Standorten.</block>
   <block id="3c524eb32d863a57c821ef5ffecb96ee" category="section-title">Was Sie mit BlueXP Disaster Recovery für VMware erreichen können</block>
   <block id="0ad83d5f52e2b8f6dfc6ec26ef91aa38" category="paragraph">Mit BlueXP Disaster Recovery profitieren Sie von der vollständigen Nutzung verschiedener NetApp Technologien, um folgende Ziele zu erreichen:</block>
-  <block id="2020a15d2254ab61244fd58956ac0150" category="paragraph">Die Vollversion des Disaster Recovery-Service von BlueXP kann mit einer NetApp Lizenz genutzt werden.</block>
   <block id="0b9c6eef4e3d3a222eb04e910d252339" category="section-title">Lizenzierung</block>
   <block id="924cc6eaf82618251de609e2689ed733" category="paragraph">Sie können die folgenden Lizenztypen verwenden:</block>
   <block id="2caf85d76a31b7bef7132937ff28e9dc" category="list-text">Bring-Your-Own-License (BYOL) bei einer NetApp Lizenzdatei (NLF), die Sie von Ihrem NetApp Vertriebsmitarbeiter erhalten. Sie können die Seriennummer der Lizenz verwenden, um das BYOL in der Digital Wallet von BlueXP zu aktivieren.</block>
   <block id="c809a23426c6fb72cef75816c461ade9" category="paragraph">Das Management der Lizenzen für alle BlueXP Services erfolgt über den BlueXP Digital Wallet Service. Nachdem Sie Ihr BYOL eingerichtet haben, können Sie eine aktive Lizenz für den Service in der Digital Wallet von BlueXP sehen.</block>
   <block id="8eb586b1b79ddd3ae7c3123b39d4420e" category="admonition">Die Disaster Recovery-Gebühren von BlueXP basieren auf der bereitgestellten Kapazität von Datastores am Quellstandort, wenn mindestens eine VM mit einem Replizierungsplan vorhanden ist. Die Kapazität für einen Failover-Datenspeicher ist in der zulässigen Kapazität nicht enthalten. Wenn die Daten bei einem BYOL die zulässige Kapazität überschreiten, werden die Vorgänge im Service so lange eingeschränkt, bis Sie eine zusätzliche Kapazitätslizenz erhalten oder die Lizenz in der Digital Wallet von BlueXP aktualisieren.</block>
-  <block id="5ae84730ec695b46a67c1692274ccaf3" category="paragraph">Um nach der 90-Tage-Testsoftware fortzufahren, müssen Sie eine BYOL-Lizenz von NetApp erwerben.</block>
   <block id="27be91c80d5e97799bb6e73e37370e5d" category="paragraph">Sie können jederzeit eine Lizenz erwerben und Sie werden erst nach Ablauf der 90-tägigen Testversion belastet.</block>
   <block id="da329ee75f8833283c259789372600f6" category="list-text">Lokale VMware Arbeitsumgebung mit NetApp Storage</block>
   <block id="0f5757c2302ddb1a6b48cf01d0fe295d" category="list-text">Ein VMware Konto mit einem softwaredefinierten Datacenter (SDDC) auf AWS, das auch als Virtual Machines Cloud bezeichnet wird. Verwenden Sie in der VMware Cloud Console die Dienstrollen Administrator und NSX Cloud Administrator. Verwenden Sie auch den Organisationseigentümer für die Rolle Organisation. Siehe<block ref="e0529c1c92608a25886bf41835abea27" category="inline-link-rx"></block>.</block>
@@ -775,26 +749,57 @@ Für vollständigen Zugriff ist eine Disaster-Recovery-Lizenz von BlueXP erforde
   <block id="7033a5d3e074f0c7401499ee4e48f38a" category="list-text">Stellen Sie sicher, dass VMware-Tools (oder Open VM-Tools) auf den zu schützenden VMs ausgeführt werden.</block>
   <block id="7c480d19e9a60d89cc5b027f95938aa8" category="list-text">Bei Windows VMs, auf denen SQL oder Oracle oder beides ausgeführt wird, sollten die Datenbanken ihre VSS-Writer aktivieren, und die Datenbanken sollten sich in einem stabilen Zustand befinden.</block>
   <block id="af77ac64a97a80925dee7dc916344004" category="list-text">Bei Oracle-Datenbanken, die auf einem Linux-Betriebssystem ausgeführt werden, sollte die Benutzerauthentifizierung des Betriebssystems für die Rolle „Oracle Database SYSDBA“ aktiviert sein.</block>
-  <block id="952d5792e20104bd51e61d359faac899" category="paragraph">Mit BlueXP Disaster Recovery können Sie den Service kostenlos testen oder mit Ihrer eigenen Lizenz nutzen.</block>
-  <block id="dd6dd33362dbc70a36edb35890647f3c" category="paragraph">Nachdem Sie Ihr BYOL eingerichtet haben, können Sie die Lizenz auf der Registerkarte BlueXP Digital Wallet *Data Service Licenses* sehen.</block>
   <block id="e23539b066371b4dcfdd50b7d80417d8" category="paragraph">Nach Ablauf der kostenlosen Testversion oder Ablauf der Lizenz können Sie im Service weiterhin Folgendes tun:</block>
   <block id="1594f78ebbb281f7b5359eb6d2b89912" category="list-text">Führen Sie alle geplanten Vorgänge aus, die während des Testzeitraums oder unter der Lizenz erstellt wurden.</block>
   <block id="a14b332e4d6b9ee17b484a7fb805179f" category="paragraph">Sie können jederzeit eine Lizenz erhalten und Sie werden erst nach Ablauf der 90-tägigen Testversion belastet. Um nach der 90-Tage-Testsoftware fortzufahren, müssen Sie eine BYOL-Lizenz erwerben.</block>
   <block id="01c014f2e37e5bf6d3ce893bea0197cb" category="list-text">Nach der Einrichtung eines Connectors wird auf der Startseite von BlueXP Disaster Recovery die Schaltfläche zum Hinzufügen eines Connectors zu einer Schaltfläche geändert, um eine kostenlose Testversion zu starten. Wählen Sie *Kostenlose Testversion starten*.</block>
   <block id="b9ef842238fa8d82db6b7559f33adc6c" category="paragraph">Nach Ablauf der Testversion können Sie eine Lizenz über Ihren NetApp Vertriebsmitarbeiter erwerben.</block>
-  <block id="ecfbb42aa9e2f3b94bd289d87aaf5ea3" category="list-text">Wenden Sie sich an Ihren NetApp Vertriebsmitarbeiter, um eine Lizenz zu erwerben.</block>
   <block id="9bdfa376bcb2fa79aff92c39d0b24fcd" category="list-text">Nachdem Sie die Lizenz erhalten haben, kehren Sie zu der Disaster Recovery von BlueXP zurück. Wählen Sie oben rechts die Option *Zahlungsmethoden anzeigen*. Oder wählen Sie in der Nachricht, dass die kostenlose Testversion abläuft *Abonnieren oder eine Lizenz erwerben*.</block>
-  <block id="97bcf0f36d751871efb4e9140f54f17d" category="paragraph"><block ref="97bcf0f36d751871efb4e9140f54f17d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="d2a39678e393e2b473354681a2c1e5f4" category="inline-image-macro">Registerkarte „Data Services Licenses“ des Digital Wallet von BlueXP</block>
-  <block id="e220d51686433f8f5a05d755bc58c162" category="paragraph"><block ref="e220d51686433f8f5a05d755bc58c162" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="e3585ef220efaa70fe392bb8e133b54e" category="list-text">Wählen Sie in der Digital Wallet von BlueXP auf der Registerkarte *Data Services Licenses* *Add license* aus.</block>
   <block id="7578ebad24c71aee2f2992e5efe1118d" category="list-text">Geben Sie auf der Seite Lizenz hinzufügen die Seriennummer und die Kontoinformationen zur NetApp-Support-Website ein.</block>
   <block id="c6711fc66daa9915490ca9f9bdc7f08f" category="paragraph"><block ref="c6711fc66daa9915490ca9f9bdc7f08f" category="inline-image-macro-rx" type="image"></block></block>
   <block id="be94b7e6fbf892064754b145ecdeb994" category="paragraph"><block ref="be94b7e6fbf892064754b145ecdeb994" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="17456408ade135981b9345bc87881dc3" category="paragraph">Nachdem Sie Ihre BlueXP Disaster Recovery-Lizenz bei Ihrem NetApp Vertriebsmitarbeiter erworben haben, aktivieren Sie die Lizenz, indem Sie die BlueXP Disaster Recovery Seriennummer und die Informationen zum NetApp Support Site (NSS) Konto eingeben.</block>
-  <block id="c9b34ae6e6872c8ec153a41cea722706" category="paragraph"><block ref="c9b34ae6e6872c8ec153a41cea722706" category="inline-image-macro-rx" type="image"></block></block>
   <block id="9fc7e8cb24850b1f0912cebc8da32620" category="list-text">Ihr Einstieg in das Digital Wallet von BlueXP</block>
-  <block id="7b6dca09bf0ef612bac047a313d66cbf" category="list-text">Wählen Sie die Registerkarte *Data Services Licenses* aus, wählen Sie das Symbol *actions ...* für die Seriennummer des Dienstes, die Sie aktualisieren, und wählen Sie *Update License* aus.</block>
   <block id="be976ba4e18c887ae57e14f6ebfbbab3" category="sidebar">Disaster Recovery in der Cloud ist eine ausfallsichere und kostengünstige Möglichkeit zum Schutz von Workloads vor Standortausfällen und Datenbeschädigungen (z. B. Ransomware). Mit der BlueXP Disaster Recovery für VMware können Sie Ihre lokalen VMware-Workloads, auf denen ONTAP Storage ausgeführt wird, auf ein softwaredefiniertes Datacenter von VMware in einer Public Cloud oder auf einen anderen lokalen Standort als Disaster-Recovery-Standort replizieren.</block>
-  <block id="67d87f62e2f6294a12829113edfa11b8" category="paragraph"><block ref="67d87f62e2f6294a12829113edfa11b8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="93716955add4f66b2af685a33bac4789" category="section-title">15 Mai 2024</block>
+  <block id="9df62cb4d6f151b560e84723841bd523" category="paragraph">Diese BlueXP Disaster Recovery-Version umfasst die folgenden Updates:</block>
+  <block id="7f1d1e9df7ef6953a6e373e29826ca55" category="list-text">*Das Replizieren von VMware-Workloads von On-Premises auf On-Premises* ist nun als allgemeine Verfügbarkeitsfunktion verfügbar. Zuvor war es eine Technologievorschau mit eingeschränkter Funktionalität.</block>
+  <block id="b7005516f0c1f875afae2146a2fb3617" category="list-text">*Lizenzierungs-Updates*: mit BlueXP Disaster Recovery können Sie sich für eine kostenlose 90-Tage-Testversion anmelden, ein PAYGO-Abonnement (Pay-as-you-go) für Amazon Marketplace erwerben oder die NetApp-Lizenzdatei (BYOL), die Sie von Ihrem NetApp Vertriebsmitarbeiter oder der NetApp Support-Website (NSS) beziehen.</block>
+  <block id="eb9506998f4dca4bcb82fe962448b79b" category="paragraph">Weitere Informationen zur Einrichtung einer Lizenzierung für die Disaster Recovery von BlueXP finden Sie unter <block ref="eaa54a57026891d12cbf928afd176564" category="inline-link-macro-rx"></block>.</block>
+  <block id="8deb19747c06e3643bab5716cb645635" category="paragraph">Wenn Sie sich zum ersten Mal bei diesem Service anmelden, wird die Landing Page angezeigt, und Sie können sich für eine kostenlose Testversion anmelden.</block>
+  <block id="ac3c6e071ee2b6acd7920433ae08c475" category="paragraph"><block ref="ac3c6e071ee2b6acd7920433ae08c475" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="dd1ef091f49695b9c14e0e34da748ab7" category="list-text">Wenn Sie noch keinen BlueXP Connector hinzugefügt haben, müssen Sie einen Connector hinzufügen. Informationen zum Hinzufügen eines Connectors finden Sie unter<block ref="d6df7dcc2fc3105e10967a9194806ce5" category="inline-link-rx"></block>.</block>
+  <block id="e2066cd1f4f96874fad4da9c48f8715b" category="list-text">Wenn Sie den Dienst bereits verwenden, wird bei Auswahl von „Disaster Recovery“ das Dashboard angezeigt.</block>
+  <block id="7cc1b1d71d565ea421a16ed9422fe6c2" category="list-text">Mit Amazon Web Services (AWS) Marketplace besteht ein Pay-as-you-go-Abonnement (PAYGO).</block>
+  <block id="23c019f17394a366e5bf51ef8a23b0a8" category="paragraph">Nachdem Sie Ihr BYOL eingerichtet haben, können Sie die Lizenz auf der Registerkarte BlueXP Digital Wallet *Data Service Licenses* sehen.</block>
+  <block id="4701248bbe25ed364a5f0c79467e9f29" category="list-text">Fügen Sie zunächst vCenter hinzu.</block>
+  <block id="d780b26d8f0dcbe5b2593febbaacdb60" category="paragraph">Weitere Informationen finden Sie unter <block ref="84d66f7662bc8a91a68e93706653efe2" category="inline-link-macro-rx"></block>.</block>
+  <block id="ad7911fdd21ff5752d10300d0446de95" category="section-title">Abonnieren Sie nach Ablauf der Testversion den AWS Marketplace</block>
+  <block id="e1186eb5e41d3a9e96827c9ab4aef684" category="paragraph">Nach Ablauf der kostenlosen Testversion können Sie entweder eine Lizenz bei NetApp erwerben oder sich über AWS Marketplace abonnieren. Dieses Verfahren bietet einen allgemeinen Überblick über das direkte Abonnieren im AWS Marketplace.</block>
+  <block id="acce4a6c25bc51b4930085d68e3cb0cd" category="list-text">Bei der Disaster Recovery von BlueXP wird deutlich, dass die kostenlose Testversion ausläuft. Wählen Sie in der Nachricht *Abonnieren oder eine Lizenz erwerben*.</block>
+  <block id="89642db6eeb3c89414135d980b0f379c" category="inline-image-macro">Die Seite mit den BlueXP Disaster Recovery-Zahlungsmethoden</block>
+  <block id="cd54cee81e627d252868fbc3cfc5731c" category="paragraph"><block ref="cd54cee81e627d252868fbc3cfc5731c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="584a50ae29d097d233ebd86ad952d305" category="list-text">Wählen Sie *im AWS Marketplace abonnieren*.</block>
+  <block id="a06442e94af0d31f4eee679c83de7779" category="list-text">Wählen Sie im AWS Marketplace *Kaufoptionen anzeigen*.</block>
+  <block id="266c58f74740e96b35f10409d3036f8f" category="list-text">Verwenden Sie AWS Marketplace, um BlueXP Disaster Recovery zu abonnieren.</block>
+  <block id="717132172ed170ccb94cc8674c35dfbd" category="list-text">Wenn Sie zur Disaster Recovery von BlueXP zurückkehren, wird in einer Meldung angezeigt, dass Sie abonniert sind.</block>
+  <block id="6678054c83157276d9287735dd3e1d92" category="paragraph">Um die Abonnementdetails in der Digital Wallet von BlueXP anzuzeigen, wählen Sie *Details zum Abonnement anzeigen* aus, und zeigen Sie das aktive Abonnement auf der Seite *Abonnements* an.</block>
+  <block id="0a504e78221db1ccaf51b7ad21bc16ce" category="inline-image-macro">Registerkarte „BlueXP Digital Wallet Subscriptions“</block>
+  <block id="f3688cd67baeb83949d8b3d8688cda8b" category="paragraph"><block ref="f3688cd67baeb83949d8b3d8688cda8b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4052ab6997dacca028b4d726754818d5" category="paragraph">*Aktivieren Sie die Lizenz*
+Nachdem Sie Ihre BlueXP Disaster Recovery-Lizenz bei Ihrem NetApp Vertriebsmitarbeiter erworben haben, aktivieren Sie die Lizenz, indem Sie die BlueXP Disaster Recovery Seriennummer und die Informationen zum NetApp Support Site (NSS) Konto eingeben.</block>
+  <block id="19a9d224e357593876fd44c3faede4ab" category="paragraph">Sie finden Ihre BlueXP Konto-ID, indem Sie oben in BlueXP das Dropdown-Menü *Account* auswählen und dann neben Ihrem Konto *Konto verwalten* auswählen. Ihre Account-ID wird auf der Registerkarte „Übersicht“ angezeigt.</block>
+  <block id="3a00897c7ffb183a2673af94c243c5fd" category="paragraph">*Lizenz zu BlueXP Digital Wallet hinzufügen*
+Nachdem Sie eine BlueXP Disaster-Recovery-Lizenz für Ihr BlueXP Konto erworben haben, müssen Sie die Lizenz zum Digital Wallet von BlueXP hinzufügen.</block>
+  <block id="e4822c1e77f0d7746ffdde4c031a2109" category="inline-image-macro">Die Seite BlueXP Disaster Recovery Payment metnods</block>
+  <block id="5646d601e859bd392516de29f6a97047" category="paragraph"><block ref="5646d601e859bd392516de29f6a97047" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="595da0c0edf936a84fa3d6a69bbbb4e5" category="paragraph"><block ref="595da0c0edf936a84fa3d6a69bbbb4e5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5d50de45dd75ac0ea74e9c427687d113" category="list-text">Wählen Sie in der Digital Wallet von BlueXP auf der Registerkarte *Data Services Licenses* *Add License* aus.</block>
+  <block id="7744384d0e7b78819bc53ca36ef36369" category="list-text">Wählen Sie die Registerkarte *Data Services licences*, wählen Sie das Symbol *actions ...* für die Seriennummer des Dienstes, die Sie aktualisieren, und wählen Sie *Update License*.</block>
+  <block id="fe16d01759ec350f7a6eaad418e37316" category="paragraph">Der Disaster Recovery-Service von BlueXP kann entweder mit einer NetApp Lizenz oder mit einem Jahresabonnement-basierten Plan über Amazon Web Services Marketplace genutzt werden.</block>
+  <block id="577219605d1e6146de9dc5b1e218ce65" category="paragraph">Um nach der 90-Tage-Testsoftware fortzufahren, benötigen Sie ein PAYGO-Abonnement (Pay-as-you-go) von Ihrem Cloud-Provider oder eine BYOL-Lizenz von NetApp.</block>
+  <block id="d66d706cd022ab39ed6479a713135515" category="paragraph"><block ref="d66d706cd022ab39ed6479a713135515" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="991e816286764c3a5ea9b023c35e1d77" category="paragraph"><block ref="991e816286764c3a5ea9b023c35e1d77" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f356176c4e01ac702abad1ad2e11449a" category="paragraph">Sie können ein PAYGO-Abonnement (Pay-as-you-go) für AWS Marketplace erwerben oder BYOL (Bring-Your-Own-License) bei einer Lizenzdatei (NetApp License File, NLF) nutzen.</block>
+  <block id="b45dfe874eaba6a97e58e0436eba2402" category="sidebar">Erste Schritte mit BlueXP Disaster Recovery as a Service Lab on Demand</block>
 </blocks>

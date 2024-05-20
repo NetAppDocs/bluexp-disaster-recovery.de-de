@@ -16,6 +16,21 @@ Erfahren Sie mehr über die Neuerungen bei BlueXP Disaster Recovery.
 
 
 
+== 15 Mai 2024
+
+Diese BlueXP Disaster Recovery-Version umfasst die folgenden Updates:
+
+* *Das Replizieren von VMware-Workloads von On-Premises auf On-Premises* ist nun als allgemeine Verfügbarkeitsfunktion verfügbar. Zuvor war es eine Technologievorschau mit eingeschränkter Funktionalität.
+* *Lizenzierungs-Updates*: mit BlueXP Disaster Recovery können Sie sich für eine kostenlose 90-Tage-Testversion anmelden, ein PAYGO-Abonnement (Pay-as-you-go) für Amazon Marketplace erwerben oder die NetApp-Lizenzdatei (BYOL), die Sie von Ihrem NetApp Vertriebsmitarbeiter oder der NetApp Support-Website (NSS) beziehen.
++
+Weitere Informationen zur Einrichtung einer Lizenzierung für die Disaster Recovery von BlueXP finden Sie unter link:../get-started/dr-licensing.html["Lizenzierung einrichten"].
+
+
+
+https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html["Erfahren Sie mehr über die Disaster Recovery von BlueXP"].
+
+
+
 == 5 März 2024
 
 Dies ist die Disaster Recovery-Version von BlueXP für die allgemeine Verfügbarkeit. Sie umfasst folgende Updates.

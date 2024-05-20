@@ -24,22 +24,18 @@ Die Anmeldeseite für NetApp BlueXP wird angezeigt.
 . Melden Sie sich bei BlueXP an.
 . Wählen Sie in der linken Navigationsleiste von BlueXP *Protection* > *Disaster Recovery* aus.
 +
-Wenn Sie sich zum ersten Mal bei diesem Dienst anmelden, wird die Landing Page angezeigt.
+Wenn Sie sich zum ersten Mal bei diesem Service anmelden, wird die Landing Page angezeigt, und Sie können sich für eine kostenlose Testversion anmelden.
 
 +
-image:draas-landing2.png["Landing Page-Screenshot für die Disaster Recovery von BlueXP"]
+image:draas-landing3-free-trial.png["Landing Page-Screenshot für die Disaster Recovery von BlueXP"]
 
 +
 Andernfalls wird das BlueXP Disaster Recovery Dashboard angezeigt.
 
 +
-** Wenn Sie keinen BlueXP Connector haben oder diesen Service nicht anbieten, müssen Sie sich möglicherweise an den NetApp Support wenden oder den Nachrichten folgen, um sich für diesen Service zu registrieren.
-+
-Informationen zum Hinzufügen eines Connectors finden Sie unter https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["Erfahren Sie mehr über Steckverbinder"^].
-
-** Wenn Sie neu bei BlueXP sind und noch keinen Connector verwendet haben, erhalten Sie bei Auswahl von „Disaster Recovery“ eine Meldung über Ihre Anmeldung. Senden Sie das Formular ab. NetApp wird sich bezüglich Ihrer Anfrage mit Ihnen in Verbindung setzen.
+** Wenn Sie noch keinen BlueXP Connector hinzugefügt haben, müssen Sie einen Connector hinzufügen. Informationen zum Hinzufügen eines Connectors finden Sie unter https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["Erfahren Sie mehr über Steckverbinder"^].
 ** Wenn Sie ein BlueXP Benutzer mit einem vorhandenen Connector sind, wird bei Auswahl von „Disaster Recovery“ eine Meldung über Ihre Anmeldung angezeigt.
-** Wenn Sie den Dienst bereits verwenden, können Sie mit der Option „Disaster Recovery“ fortfahren.
+** Wenn Sie den Dienst bereits verwenden, wird bei Auswahl von „Disaster Recovery“ das Dashboard angezeigt.
 
 
 +

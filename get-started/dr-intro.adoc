@@ -57,7 +57,7 @@ NOTE: Die Konfiguration des vSphere Servers erfolgt außerhalb von BlueXP Disast
 
 NetApp berechnet Ihnen keine Kosten für die Nutzung der Testversion von BlueXP Disaster Recovery.
 
-Die Vollversion des Disaster Recovery-Service von BlueXP kann mit einer NetApp Lizenz genutzt werden.
+Der Disaster Recovery-Service von BlueXP kann entweder mit einer NetApp Lizenz oder mit einem Jahresabonnement-basierten Plan über Amazon Web Services Marketplace genutzt werden.
 
 
 
@@ -66,6 +66,7 @@ Die Vollversion des Disaster Recovery-Service von BlueXP kann mit einer NetApp L
 Sie können die folgenden Lizenztypen verwenden:
 
 * Melden Sie sich für eine kostenlose 90-Tage-Testversion an.
+* Mit Amazon Web Services (AWS) Marketplace besteht ein Pay-as-you-go-Abonnement (PAYGO).
 * Bring-Your-Own-License (BYOL) bei einer NetApp Lizenzdatei (NLF), die Sie von Ihrem NetApp Vertriebsmitarbeiter erhalten. Sie können die Seriennummer der Lizenz verwenden, um das BYOL in der Digital Wallet von BlueXP zu aktivieren.
 
 
@@ -82,7 +83,7 @@ Weitere Informationen zur Einrichtung einer Lizenzierung für die Disaster Recov
 
 Sie können die Disaster Recovery von BlueXP mit einer kostenlosen Testversion von 90 Tagen testen.
 
-Um nach der 90-Tage-Testsoftware fortzufahren, müssen Sie eine BYOL-Lizenz von NetApp erwerben.
+Um nach der 90-Tage-Testsoftware fortzufahren, benötigen Sie ein PAYGO-Abonnement (Pay-as-you-go) von Ihrem Cloud-Provider oder eine BYOL-Lizenz von NetApp.
 
 Sie können jederzeit eine Lizenz erwerben und Sie werden erst nach Ablauf der 90-tägigen Testversion belastet.
 
@@ -94,11 +95,11 @@ Mit BlueXP Disaster Recovery können Sie Workloads wiederherstellen, die von ein
 
 Bei der Disaster Recovery von BlueXP kommt die ONTAP SnapMirror Technologie zum Einsatz, die für eine hocheffiziente Replizierung sorgt und die ONTAP fortlaufend inkrementelle Snapshot-Effizienz erhält. Die SnapMirror Replizierung stellt sicher, dass applikationskonsistente Snapshot Kopien immer synchron sind und die Daten unmittelbar nach einem Failover nutzbar sind.
 
-image:dr-architecture-diagram-70.png["Diagramm mit der Architektur der BlueXP Disaster Recovery für VMware Service-Infrastruktur"]
+image:dr-architecture-diagram-70-2.png["Diagramm mit der Architektur der BlueXP Disaster Recovery für VMware Service-Infrastruktur"]
 
 Das folgende Diagramm zeigt die Architektur von lokalen zu lokalen Disaster-Recovery-Plänen.
 
-image:dr-architecture-diagram-onprem-to-onprem2.png["Diagramm mit der Architektur der BlueXP Disaster Recovery für VMware Service-Infrastruktur"]
+image:dr-architecture-diagram-onprem-to-onprem3.png["Diagramm mit der Architektur der BlueXP Disaster Recovery für VMware Service-Infrastruktur"]
 
 Bei einem Notfall unterstützt dieser Service Sie bei der Wiederherstellung von Virtual Machines in der anderen lokalen VMware Umgebung oder VMC, indem die SnapMirror Beziehungen aufgehoben und der Zielstandort aktiviert wird.
 

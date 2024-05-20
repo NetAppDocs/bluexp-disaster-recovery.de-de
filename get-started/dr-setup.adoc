@@ -82,6 +82,6 @@ Im nächsten Schritt wird Disaster Recovery in BlueXP eingerichtet.
 
 Mit BlueXP Disaster Recovery können Sie sich für eine kostenlose 90-Tage-Testversion anmelden.
 
-Sie können Ihre eigene Lizenz (BYOL, Bring Your Own License) verwenden, eine NetApp Lizenzdatei (NLF).
+Sie können ein PAYGO-Abonnement (Pay-as-you-go) für AWS Marketplace erwerben oder BYOL (Bring-Your-Own-License) bei einer Lizenzdatei (NetApp License File, NLF) nutzen.
 
 Weitere Informationen zur Einrichtung einer Lizenzierung für die Disaster Recovery von BlueXP finden Sie unter link:../get-started/dr-licensing.html["Disaster-Recovery-Lizenzen für BlueXP einrichten"].
