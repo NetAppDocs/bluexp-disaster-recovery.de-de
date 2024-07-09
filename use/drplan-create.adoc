@@ -69,12 +69,13 @@ Im nächsten Schritt werden die erforderlichen virtuellen Maschinen in funktiona
 TIP: Jede Ressourcengruppe kann eine oder mehrere virtuelle Maschinen enthalten. Die virtuellen Maschinen werden basierend auf der Reihenfolge, in der Sie sie hier einfügen, eingeschaltet.
 
 .Schritte
+. Suchen Sie auf der linken Seite der Seite Anwendungen optional nach Datastores.
 . Wählen Sie auf der linken Seite der Seite Anwendungen die virtuellen Maschinen aus, die Sie replizieren möchten, und weisen Sie sie der ausgewählten Gruppe zu.
 +
 Die ausgewählte virtuelle Maschine wird automatisch zu Gruppe 1 hinzugefügt und eine neue Gruppe 2 wird gestartet. Jedes Mal, wenn Sie der letzten Gruppe eine virtuelle Maschine hinzufügen, wird eine weitere Gruppe hinzugefügt.
 
 +
-image:dr-plan-create-apps-vms.png["Screenshot mit der Seite Replizierungsplan hinzufügen > zu replizierende Anwendungen"]
+image:dr-plan-create-apps-vms3.png["Screenshot mit der Seite Replizierungsplan hinzufügen > zu replizierende Anwendungen"]
 
 . Führen Sie optional einen der folgenden Schritte aus:
 +
@@ -102,15 +103,28 @@ Wenn Sie in diesem Service eine SnapMirror Beziehung erstellen möchten, hätten
 
 .Schritte
 . Aktivieren Sie auf der Seite „Ressourcenzuordnung“ das Kontrollkästchen, um dieselben Zuordnungen sowohl für Failover- als auch für Testvorgänge zu verwenden.
++
+image:dr-plan-resource-mapping.png["Replizierungsplan, Registerkarte „Ressourcenzuordnung“"]
+
 . Wählen Sie auf der Registerkarte Failover Mappings den Abwärtspfeil rechts von jeder Ressource aus, und ordnen Sie die Ressourcen in den folgenden Ressourcen zu:
 +
 ** *Compute Resources*
++
+*** *Quell- und Ziel-Rechenzentren*
+*** *Zielhost* (optional)
+*** *Zielcluster* (optional)
+*** *Ziel-VM-Ordner* (optional): Erstellen Sie mit diesem einen neuen Stammordner, um die ausgewählten VMs zu speichern.
+
+
 ** *Virtuelle Netzwerke*
 
 
 . Wählen Sie auf der Registerkarte Failover Mappings den Abwärtspfeil rechts neben jeder Ressource aus:
 +
 ** *Virtuelle Maschinen*: Wählen Sie das Netzwerk-Mapping auf das entsprechende Segment aus. Die Segmente sollten bereits bereitgestellt werden. Wählen Sie daher das entsprechende Segment für die Zuordnung der virtuellen Maschine aus.
++
+Dieser Abschnitt kann je nach Auswahl aktiviert oder deaktiviert sein.
+
 +
 SnapMirror befindet sich auf Volume-Ebene. Somit werden alle Virtual Machines zum Replikationsziel repliziert. Stellen Sie sicher, dass Sie alle virtuellen Maschinen auswählen, die Teil des Datenspeichers sind. Wenn sie nicht ausgewählt sind, werden nur die virtuellen Maschinen verarbeitet, die Teil des Replikationsplans sind.
 
@@ -134,6 +148,9 @@ Dies ist vor allem bei der Wiederherstellung großer Umgebungen zu kleineren Zie
 ** *App-konsistente Replikate*: Geben Sie an, ob applikationskonsistente Snapshot-Kopien erstellt werden sollen. Der Service setzt die Applikation still und erstellt dann einen Snapshot, um einen konsistenten Status der Applikation zu erhalten.
 ** *Datastores*: Anhand der Auswahl der virtuellen Maschinen werden automatisch Datastore-Mappings ausgewählt.
 +
+Dieser Abschnitt kann je nach Auswahl aktiviert oder deaktiviert sein.
+
++
 *** *RPO*: Geben Sie das Recovery Point Objective (RPO) ein, um die Datenmenge anzugeben, die wiederhergestellt werden soll (gemessen in der Zeit). Wenn Sie beispielsweise einen RPO von 60 Minuten eingeben, müssen für die Recovery jederzeit Daten vorhanden sein, die nicht älter als 60 Minuten sind. Bei einem schwerwiegenden Ausfall lassen sich bis zu 60 Minuten an Daten verlieren. Geben Sie außerdem die Anzahl der Snapshot Kopien ein, die für alle Datastores beibehalten werden sollen.
 *** *SnapMirror Beziehungen*: Wenn ein Volume bereits eine SnapMirror Beziehung hat, können Sie die entsprechenden Quell- und Ziel-Datastores auswählen. Wenn Sie ein Volume auswählen, das nicht über eine SnapMirror-Beziehung verfügt, können Sie jetzt ein Volume erstellen, indem Sie die Arbeitsumgebung und die zugehörige Peer-SVM auswählen.
 +
@@ -154,6 +171,9 @@ NOTE: Wenn Sie in diesem Service eine SnapMirror Beziehung erstellen möchten, h
 
 
 . Um verschiedene Zuordnungen für die Testumgebung festzulegen, deaktivieren Sie das Kontrollkästchen und wählen Sie die Registerkarte *Testzuordnungen* aus. Gehen Sie die einzelnen Registerkarten wie zuvor durch, jedoch diesmal für die Testumgebung.
++
+Auf der Registerkarte Testzuordnungen sind die Zuordnungen für virtuelle Maschinen und Datenspeicher deaktiviert.
+
 +
 
 TIP: Sie können den gesamten Plan später testen. Derzeit richten Sie die Zuordnungen für die Testumgebung ein.
@@ -191,7 +211,7 @@ Nehmen Sie sich zum Schluss einen Moment Zeit, um den Replizierungsplan zu best�
 TIP: Sie können den Replikationsplan später deaktivieren oder löschen.
 
 .Schritte
-. Überprüfen Sie die Informationen auf den einzelnen Registerkarten: Plandetails, Failover Mapping, Virtuelle Maschinen.
+. Überprüfen Sie die Informationen auf den einzelnen Registerkarten: Plandetails, Failover Mapping, VMs.
 . Wählen Sie *Plan hinzufügen*.
 +
 Der Plan wird zur Liste der Pläne hinzugefügt.

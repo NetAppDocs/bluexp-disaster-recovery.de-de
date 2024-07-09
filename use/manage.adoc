@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: use/manage.html 
-keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
-summary: NetApp BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recovery Service, der Disaster Recovery Workflows automatisiert. 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, replication plans, resource groups 
+summary: Sie erhalten einen schnellen Überblick über alle Disaster Recovery-Ressourcen von BlueXP und können vCenter Standorte, Ressourcengruppen und Replizierungspläne managen. 
 ---
-= Verwalten von Standorten, Plänen, Datastores und Informationen zu virtuellen Maschinen
+= Verwalten von Standorten, Ressourcengruppen, Replikationsplänen, Datastores und Informationen zu virtuellen Maschinen
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -15,10 +15,10 @@ summary: NetApp BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recove
 Sie erhalten einen schnellen Überblick über alle Disaster Recovery-Ressourcen oder sehen sich die einzelnen Ressourcen im Detail an:
 
 * Standorte
+* Ressourcengruppen
 * Replizierungspläne
 * Datenspeicher
 * Virtual Machines
-* Ressourcengruppen
 
 
 
@@ -35,9 +35,23 @@ Sie können den vCenter-Standortnamen und den Standorttyp (On-Premises oder AWS)
 
 
 
+== Verwalten von Ressourcengruppen
+
+Sie können zwar eine Ressourcengruppe als Teil des Erstellens eines Replikationsplans hinzufügen, jedoch ist es möglicherweise bequemer, die Gruppen separat hinzuzufügen und später diese Gruppen im Plan zu verwenden.
+
+Sie können auch Ressourcengruppen bearbeiten und löschen.
+
+.Schritte
+. Wählen Sie im oberen Menü *Ressourcengruppen* aus.
+. Um eine Ressourcengruppe hinzuzufügen, wählen Sie *Gruppe hinzufügen*.
+. Um Aktionen mit der Ressourcengruppe durchzuführen, wählen Sie die Option *actions* aus image:../use/icon-horizontal-dots.png["Actions-Menü-Symbol im BlueXP Disaster Recovery Service"]  Wählen Sie rechts eine der Optionen aus, wie z.B. *Ressourcengruppe bearbeiten* oder *Ressourcengruppe löschen*.
+
+
+
+
 == Verwalten von Replikationsplänen
 
-Sie können Replikationspläne deaktivieren, aktivieren und löschen.
+Sie können Replikationspläne deaktivieren, aktivieren und löschen. Sie können Zeitpläne ändern.
 
 * Wenn Sie einen Replikationsplan vorübergehend anhalten möchten, können Sie ihn deaktivieren und später aktivieren.
 * Wenn Sie den Plan nicht mehr benötigen, können Sie ihn löschen.
@@ -53,11 +67,19 @@ image:../use/dr-plan-list2.png["Liste der Replikationspläne"]
 +
 ** Um die Plandetails zu bearbeiten (Wiederholung ändern), wählen Sie die Registerkarte *Plandetails* und wählen Sie das Symbol *Bearbeiten* rechts.
 ** Um die Ressourcenzuordnungen zu bearbeiten, wählen Sie die Registerkarte *Failover Mapping* und wählen Sie das Symbol *Bearbeiten*.
-** Um die virtuellen Maschinen hinzuzufügen oder zu bearbeiten, wählen Sie die Registerkarte *Virtuelle Maschine* und wählen Sie das *Bearbeiten*-Symbol.
+** Um die virtuellen Maschinen hinzuzufügen oder zu bearbeiten, wählen Sie die Registerkarte *Virtuelle Maschinen* und wählen Sie die Option *VMs hinzufügen* oder das Symbol *Bearbeiten*.
 
 
 . Kehren Sie zur Liste der Pläne zurück, indem Sie in den Semmelbröseln oben links „Replikationspläne“ auswählen.
 . Um Aktionen mit dem Plan auszuführen, wählen Sie aus der Liste der Replikationspläne die Option *actions* aus image:../use/icon-horizontal-dots.png["Actions-Menü-Symbol im BlueXP Disaster Recovery Service"]  Rechts neben dem Plan und wählen Sie eine der Optionen aus, wie z. B. *Zeitpläne bearbeiten*, *Failover testen*, *Failover*, *Failback*, *Deaktivieren*, *enable*, oder *Delete*.
+. Um einen Test-Failover-Zeitplan festzulegen oder zu ändern oder die Prüfung der Compliance-Häufigkeit festzulegen, wählen Sie die Option *actions* image:../use/icon-horizontal-dots.png["Actions-Menü-Symbol im BlueXP Disaster Recovery Service"] rechts neben dem Plan aus und wählen *Edit Schedules* aus.
++
+.. Geben Sie auf der Seite Zeitpläne bearbeiten ein, wie oft in Minuten die Failover-Compliance-Prüfung erfolgen soll.
+.. Prüfen Sie *Run-Test-Failovers nach einem Zeitplan*.
+.. Wählen Sie in der Option Wiederholen den täglichen, wöchentlichen oder monatlichen Zeitplan aus.
+.. Wählen Sie *Speichern*.
+
+
 
 
 
@@ -82,18 +104,4 @@ Sie können Informationen darüber anzeigen, wie viele virtuelle Maschinen auf d
 . Wählen Sie das vCenter in der Standortzeile aus.
 . Wählen Sie *Virtuelle Maschinen*.
 . Zeigen Sie die Informationen zu virtuellen Maschinen an.
-
-
-
-
-== Verwalten von Ressourcengruppen
-
-Sie können zwar eine Ressourcengruppe als Teil des Erstellens eines Replikationsplans hinzufügen, jedoch ist es möglicherweise bequemer, die Gruppen separat hinzuzufügen und später diese Gruppen im Plan zu verwenden.
-
-Sie können auch Ressourcengruppen bearbeiten und löschen.
-
-.Schritte
-. Wählen Sie im oberen Menü *Ressourcengruppen* aus.
-. Um eine Ressourcengruppe hinzuzufügen, wählen Sie *Gruppe hinzufügen*.
-. Um Aktionen mit der Ressourcengruppe durchzuführen, wählen Sie die Option *actions* aus image:../use/icon-horizontal-dots.png["Actions-Menü-Symbol im BlueXP Disaster Recovery Service"]  Wählen Sie rechts eine der Optionen aus, wie z.B. *Ressourcengruppe bearbeiten* oder *Ressourcengruppe löschen*.
 

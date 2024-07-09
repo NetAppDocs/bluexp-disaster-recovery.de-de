@@ -1,0 +1,6 @@
+---
+section: reference
+title: Referenz
+entries:
+- title: Für die Disaster Recovery von BlueXP sind vCenter Berechtigungen erforderlich
+  url: "/reference/vcenter-privileges.html"

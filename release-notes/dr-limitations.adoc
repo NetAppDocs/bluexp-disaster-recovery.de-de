@@ -16,12 +16,6 @@ Bekannte Einschränkungen identifizieren Plattformen, Geräte oder Funktionen, d
 
 
 
-== Failback verwendet die neueste Snapshot Kopie
-
-In dem aktuellen Release verwendet der Failback-Prozess immer die neueste Snapshot-Kopie. Dies geschieht selbst, wenn Sie eine bestimmte Snapshot Kopie wählen.
-
-
-
 == BlueXP entdeckt möglicherweise Amazon FSX for NetApp ONTAP nicht
 
 Manchmal erkennt BlueXP Amazon FSX for NetApp ONTAP-Cluster nicht. Dies könnte daran liegen, dass die FSX-Anmeldeinformationen nicht korrekt waren.

@@ -75,12 +75,8 @@ Nach Ablauf der kostenlosen Testversion können Sie entweder eine Lizenz bei Net
 
 .Schritte
 . Bei der Disaster Recovery von BlueXP wird deutlich, dass die kostenlose Testversion ausläuft. Wählen Sie in der Nachricht *Abonnieren oder eine Lizenz erwerben*.
-+
-image:draas-license-subscribe2.png["Die Seite mit den BlueXP Disaster Recovery-Zahlungsmethoden"]
-
 . Wählen Sie *im AWS Marketplace abonnieren*.
-. Wählen Sie im AWS Marketplace *Kaufoptionen anzeigen*.
-. Verwenden Sie AWS Marketplace, um BlueXP Disaster Recovery zu abonnieren.
+. Wählen Sie im AWS Marketplace *Kaufoptionen anzeigen*. Verwenden Sie AWS Marketplace, um BlueXP Disaster Recovery zu abonnieren.
 . Wenn Sie zur Disaster Recovery von BlueXP zurückkehren, wird in einer Meldung angezeigt, dass Sie abonniert sind.
 +
 Um die Abonnementdetails in der Digital Wallet von BlueXP anzuzeigen, wählen Sie *Details zum Abonnement anzeigen* aus, und zeigen Sie das aktive Abonnement auf der Seite *Abonnements* an.

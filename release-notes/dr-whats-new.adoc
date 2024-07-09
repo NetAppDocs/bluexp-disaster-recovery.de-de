@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: release-notes/dr-whats-new.html 
-keywords: disaster recovery, bluexp, disaster recovery, vmware, vcenter 
+keywords: disaster recovery, bluexp, disaster recovery, vmware, vcenter, draas 
 summary: BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recovery Service, der Disaster Recovery Workflows automatisiert. Mit der Disaster Recovery für VMware von BlueXP können Sie Ihre lokalen VMware-Workloads, auf denen ONTAP Storage ausgeführt wird, auf ein softwaredefiniertes VMware Datacenter in Public Clouds als Disaster-Recovery-Standort mithilfe von NetApp Cloud-Storage replizieren. 
 ---
 = Was ist neu
@@ -13,6 +13,46 @@ summary: BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recovery Serv
 
 [role="lead"]
 Erfahren Sie mehr über die Neuerungen bei BlueXP Disaster Recovery.
+
+
+
+== 5 Juli 2024
+
+Diese BlueXP Disaster Recovery-Version umfasst die folgenden Updates:
+
+* *Unterstützung für AFF A-Serie*: Dieses Release unterstützt die Hardware-Plattformen der NetApp AFF A-Serie.
+
+
+* *Unterstützung für lokale VMware-VMFS-Datastores*: Diese Version enthält eine _Technologie-Vorschau_ der Unterstützung für VMs, die auf VMware vSphere-VMFS-Datastores (Virtual Machine File System) gemountet sind, die auf lokalem Speicher geschützt sind. In dieser Version wird Disaster Recovery in einer Technologievorschau für lokale VMware-Workloads in lokale VMware-Umgebungen mit VMFS-Datastores unterstützt.
++
+
+NOTE: NetApp berechnet Ihnen keine Kosten für vorab angezeigte Workload-Kapazität.
+
+* *Aktualisierungen des Replikationsplans*: Sie können einen Replikationsplan einfacher hinzufügen, indem Sie VMs auf der Seite Anwendungen nach Datastore filtern und auf der Seite Ressourcenzuordnung weitere Zieldetails auswählen.
++
+Siehe https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Erstellen Sie einen Replizierungsplan"].
+
+* *Replikationspläne bearbeiten*: Mit dieser Version wurde die Failover-Mappings-Seite für eine bessere Übersichtlichkeit erweitert.
++
+Siehe https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/manage.html["Pläne verwalten"].
+
+* *VMs bearbeiten*: Mit dieser Version enthielt der Prozess zum Bearbeiten von VMs im Plan einige kleinere UI-Verbesserungen.
++
+Siehe https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/manage.html["Managen von VMs"].
+
+* *Failover-Updates*: Bevor Sie ein Failover initiieren, können Sie nun den Status der VMs bestimmen und ob diese ein- oder ausgeschaltet sind. Mit dem Failover-Prozess können Sie jetzt einen Snapshot erstellen oder die Snapshots auswählen.
++
+Siehe https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/failover.html["Failover von Anwendungen an einen Remote-Standort"].
+
+* *Failover-Testzeitpläne*: Sie können jetzt die Failover-Tests bearbeiten und tägliche, wöchentliche und monatliche Zeitpläne für den Failover-Test festlegen.
++
+Siehe https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/manage.html["Pläne verwalten"].
+
+* *Updates zu den Voraussetzungen*: Informationen zu den Voraussetzungen für die BlueXP Disaster Recovery wurden aktualisiert.
++
+Siehe https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-prerequisites.html["Voraussetzungen für die Disaster Recovery von BlueXP"].
+
+
 
 
 

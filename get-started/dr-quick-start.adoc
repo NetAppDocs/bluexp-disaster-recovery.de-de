@@ -18,23 +18,23 @@ Hier erhalten Sie einen Überblick über die Schritte, die Sie für Ihren Einsti
 [role="quick-margin-para"]
 link:../get-started/dr-prerequisites.html["Stellen Sie sicher, dass Ihre Umgebung diese Anforderungen erfüllt"].
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"] Richten Sie den Disaster Recovery-Service ein
-[role="quick-margin-para"]
-link:../get-started/dr-setup.html["Führen Sie die Schritte zum Einrichten des Dienstes aus"].
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"] Disaster-Recovery-Service von BlueXP einrichten
+[role="quick-margin-list"]
+* link:../get-started/dr-setup.html["Richten Sie die Infrastruktur für den Service ein"].
+* link:../get-started/dr-licensing.html["Lizenzierung einrichten"].
 
-[role="quick-margin-para"]
-link:../get-started/dr-licensing.html["Führen Sie die Schritte zum Einrichten der Lizenzierung durch"].
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"] Was kommt als Nächstes?
 [role="quick-margin-para"]
 Nachdem Sie den Service eingerichtet haben, gehen Sie wie folgt vor.
 
 [role="quick-margin-list"]
-* link:../use/sites-add.html["Fügen Sie vCenter Sites hinzu"].
-* link:../use/drplan-create.html["Disaster-Recovery-Plan erstellen"].
+* link:../use/sites-add.html["Fügen Sie Ihre vCenter Sites zur Disaster Recovery von BlueXP hinzu"].
+* link:../use/manage.html#manage-resource-groups["Erstellen Sie Ihre erste Ressourcengruppe"].
+* link:../use/drplan-create.html["Erstellen Sie Ihren ersten Replizierungsplan"].
 * link:../use/replicate.html["Replizierung von Applikationen an einen anderen Standort"].
 * link:../use/failover.html["Failover von Anwendungen an einen Remote-Standort"].
 * link:../use/failback.html["Führen Sie ein Failback von Anwendungen zum ursprünglichen Quellstandort durch"].
-* link:../use/manage.html["Verwalten von Standorten, Plänen, Datastores und Informationen zu virtuellen Maschinen"].
+* link:../use/manage.html["Verwalten von Standorten, Ressourcengruppen und Replikationsplänen"].
 * link:../use/monitor-jobs.html["Überwachen Sie Disaster-Recovery-Vorgänge"].
 

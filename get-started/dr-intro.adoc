@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: get-started/dr-intro.html 
 keywords: how bluexp disaster recovery works, what is disaster recovery, bluexp, vmware, vcenter, draas, replicate, failover, failback, fail over, fail back 
-summary: Disaster Recovery in der Cloud ist eine ausfallsichere und kostengünstige Möglichkeit zum Schutz von Workloads vor Standortausfällen und Datenbeschädigung. Mit der Disaster Recovery für VMware von BlueXP können Sie Ihre lokalen VMware-Workloads, auf denen ONTAP Storage ausgeführt wird, auf ein softwaredefiniertes VMware Datacenter in Public Clouds als Disaster-Recovery-Standort mithilfe von NetApp Cloud-Storage replizieren. 
+summary: Disaster Recovery in der Cloud ist eine ausfallsichere und kostengünstige Möglichkeit zum Schutz von Workloads vor Standortausfällen und Datenbeschädigung. Mit der Disaster Recovery für VMware von BlueXP können Sie Ihre lokalen VMware-Workloads, auf denen ONTAP Storage ausgeführt wird, mithilfe von NetApp Cloud Storage in ein softwaredefiniertes Datacenter von VMware in einer Public Cloud oder in eine andere lokale VMware-Umgebung mit ONTAP Storage als Disaster-Recovery-Standort replizieren. 
 ---
 = Erfahren Sie mehr über BlueXP Disaster Recovery für VMware
 :hardbreaks:
@@ -14,11 +14,14 @@ summary: Disaster Recovery in der Cloud ist eine ausfallsichere und kostengünst
 [role="lead"]
 Disaster Recovery in der Cloud ist eine ausfallsichere und kostengünstige Möglichkeit zum Schutz von Workloads vor Standortausfällen und Datenbeschädigung. Mit der Disaster Recovery für VMware von BlueXP können Sie Ihre lokalen VMware-Workloads, auf denen ONTAP Storage ausgeführt wird, mithilfe von NetApp Cloud Storage in ein softwaredefiniertes Datacenter von VMware in einer Public Cloud oder in eine andere lokale VMware-Umgebung mit ONTAP Storage als Disaster-Recovery-Standort replizieren.
 
-BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recovery Service, der Disaster Recovery Workflows automatisiert. Mit dem Disaster Recovery-Service von BlueXP können Sie Ihre lokalen, NFS-basierten VMware Workloads, auf denen NetApp Storage ausgeführt wird, zu Beginn in einer der folgenden Systeme schützen:
+BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recovery Service, der Disaster Recovery Workflows automatisiert. Zunächst können Sie mit dem Disaster Recovery-Service von BlueXP Ihre lokalen, NFS-basierten Workloads schützen und in einer Technologievorschau VMware vSphere VMFS-Datastores (Virtual Machine File System) mit NetApp Storage in eine der folgenden Systeme einbinden:
 
 * VMware Cloud (VMC) auf AWS mit Amazon FSX für NetApp ONTAP oder
 * Eine weitere lokale NFS-basierte VMware Umgebung mit ONTAP Storage
 
+
+
+IMPORTANT: In dieser Version wird die Disaster Recovery in einer Technologievorschau für lokale VMware-Workloads in lokalen VMware-Umgebungen mit VMware vSphere VMFS-Datastores (Virtual Machine File System) unterstützt. NetApp berechnet Ihnen keine Kosten für vorab angezeigte Workload-Kapazität.
 
 Bei der Disaster Recovery von BlueXP kommt die ONTAP SnapMirror Technologie als Replizierungstransport zum Disaster-Recovery-Standort zum Einsatz. Dies ermöglicht eine branchenführende Storage-Effizienz (Komprimierung und Deduplizierung) an primären und sekundären Standorten.
 
@@ -57,7 +60,10 @@ NOTE: Die Konfiguration des vSphere Servers erfolgt außerhalb von BlueXP Disast
 
 NetApp berechnet Ihnen keine Kosten für die Nutzung der Testversion von BlueXP Disaster Recovery.
 
-Der Disaster Recovery-Service von BlueXP kann entweder mit einer NetApp Lizenz oder mit einem Jahresabonnement-basierten Plan über Amazon Web Services Marketplace genutzt werden.
+Der Disaster Recovery-Service von BlueXP lässt sich entweder mit einer NetApp Lizenz oder mit einem Jahresabonnement-basierten Plan über Amazon Web Services nutzen.
+
+
+IMPORTANT: Einige Versionen enthalten eine Technologievorschau. NetApp berechnet Ihnen keine Kosten für vorab angezeigte Workload-Kapazität. Weitere Informationen zu den Vorschauen der neuesten Technologie finden Sie unter link:../release-notes/dr-whats-new.html["Was ist neu an BlueXP Disaster Recovery"] .
 
 
 

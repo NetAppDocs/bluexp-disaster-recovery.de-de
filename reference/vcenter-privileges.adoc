@@ -1,0 +1,153 @@
+---
+sidebar: sidebar 
+permalink: reference/vcenter-privileges.html 
+keywords: disaster recovery, bluexp, vcenter, 
+summary: 'Das vCenter Konto muss über mindestens einen Satz vCenter Berechtigungen verfügen, damit die Disaster Recovery von BlueXP ihre Services ausführen kann, wie zum Beispiel das Registrieren und Deregistrieren von Datastores, das Starten und Stoppen von VMs sowie das Neukonfigurieren von Virtual Machines (VMs). Die folgende Tabelle führt alle erforderlichen Berechtigungen für das BlueXP Disaster Recovery und Schnittstellen zu einem vCenter Cluster auf.' 
+---
+= Für die Disaster Recovery von BlueXP sind vCenter Berechtigungen erforderlich
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Das vCenter Konto muss über mindestens einen Satz vCenter Berechtigungen verfügen, damit die Disaster Recovery von BlueXP ihre Services ausführen kann, wie zum Beispiel das Registrieren und Deregistrieren von Datastores, das Starten und Stoppen von VMs sowie das Neukonfigurieren von Virtual Machines (VMs). Die folgende Tabelle führt alle erforderlichen Berechtigungen für das BlueXP Disaster Recovery und Schnittstellen zu einem vCenter Cluster auf.
+
+[cols="25,35a,40a"]
+|===
+| Typ | Berechtigungsname | Beschreibung 
+
+
+| * Datastore*  a| 
+Datastore: Datastore konfigurieren
+ a| 
+Verwenden Sie, um einen Datastore zu konfigurieren.
+
+
+
+|   a| 
+Datastore: Datastore entfernen
+ a| 
+Verwenden Sie, um einen Datastore zu entfernen.
+
+
+
+| *Virtuelle Maschine*  a| 
+Virtuelle Maschine.Konfiguration.Einstellungen ändern
+ a| 
+Verwenden Sie, um allgemeine VM-Einstellungen zu ändern.
+
+
+
+|   a| 
+Virtuelle Maschine.Konfiguration.Ändern Sie die Geräteeinstellungen
+ a| 
+Mit können Sie die Eigenschaften eines vorhandenen Geräts ändern.
+
+
+
+|   a| 
+Virtuelle Maschine.Konfiguration.Neu laden vom Pfad
+ a| 
+Dient zum Ändern eines VM-Konfigurationspatches unter Beibehaltung der Identität der VM. Lösungen wie VMware vCenter Site Recovery Manager verwenden diesen Vorgang, um die Identifikation von VMs während Failover und Failback aufrecht zu erhalten.
+
+
+
+|   a| 
+Virtuelle Maschine.Konfiguration.Umbenennen
+ a| 
+Verwenden Sie, um eine VM umzubenennen oder die zugeordneten Nodes einer VM zu ändern.
+
+
+
+|   a| 
+Virtuelle Maschine.Konfiguration.Zurücksetzen der Gastinformationen
+ a| 
+Verwenden Sie diese Option, um die Informationen zum Gastbetriebssystem für eine VM zu bearbeiten.
+
+
+
+|   a| 
+Virtuelle Maschine.Konfiguration.Speicher ändern
+ a| 
+Verwenden Sie diese Funktion, um die der VM zugewiesene Speichermenge zu ändern.
+
+
+
+|   a| 
+Virtual Machine.Configuration.Ändern der CPU-Anzahl
+ a| 
+Mit können Sie die Anzahl der virtuellen CPUs ändern.
+
+
+
+| *Virtual Machine Guest*  a| 
+Virtual Machine: Gastbetrieb. Änderungen Des Gastbetriebs
+ a| 
+Aktiviert VM-Gastvorgänge, die Änderungen an einem Gastbetriebssystem in einer VM umfassen, wie beispielsweise das Übertragen einer Datei an die VM.
+
+
+
+| *Interaktion Mit Virtuellen Maschinen*  a| 
+Virtuelle Maschine.Interaktion.Ausschalten
+ a| 
+Zum Ausschalten einer eingeschalteten VM. Mit diesem Vorgang wird das Gastbetriebssystem heruntergefahren.
+
+
+
+|   a| 
+Virtuelle Maschine.Interaktion.Einschalten
+ a| 
+Verwenden Sie, um eine ausgeschalteten VM einzuschalten und eine angehaltene VM wieder aufzunehmen.
+
+
+
+|   a| 
+Virtual Machine.Interaction.VMware Tools installieren
+ a| 
+Verwenden Sie zum Mounten und Unmounten des CD-Installationsprogramms für VMware Tools als CD-ROM für das Gastbetriebssystem.
+
+
+
+| *Virtuelle Maschineninventar*  a| 
+Virtuelle Maschine.Inventar.Neue erstellen
+ a| 
+Dient zum Erstellen einer VM und Zuweisen von Ressourcen für deren Ausführung.
+
+
+
+|   a| 
+Virtuelle Maschine.Bestandsaufnahme.Registrieren
+ a| 
+Verwenden Sie diese Anwendung, um eine vorhandene VM zu einem vCenter-Server- oder Hostbestand hinzuzufügen.
+
+
+
+|   a| 
+Virtuelle Maschine.Bestandsaufnahme.Registrierung aufheben
+ a| 
+Verwenden Sie diese Anwendung, um die Registrierung einer VM von einem vCenter-Server oder Host-Inventar aufzuheben.
+
+
+
+| *Status Der Virtuellen Maschine*  a| 
+Virtual Machine: Snapshot-Management: Erstellen Sie einen
+ a| 
+Dient zum Erstellen eines Snapshots aus dem aktuellen Status der VM.
+
+
+
+|   a| 
+Virtual Machine: Snapshot-Management: Snapshot Entfernen
+ a| 
+Verwenden Sie, um einen Snapshot aus dem Snapshot-Verlauf zu entfernen.
+
+
+
+|   a| 
+Virtual Machine: Snapshot-Management: Auf Snapshot zurücksetzen
+ a| 
+Verwenden Sie, um die VM in den Zustand zu versetzen, in dem sie bei einem bestimmten Snapshot war.
+
+|===
