@@ -904,4 +904,24 @@ Nachdem Sie eine BlueXP Disaster-Recovery-Lizenz für Ihr BlueXP Konto erworben 
   <block id="554cfab3938e21d9270bd6b75931f96f" category="sidebar">Videos</block>
   <block id="63d5049791d9d79d86e9a108b0a999ca" category="sidebar">Referenz</block>
   <block id="b80f9ccd1ed052ae2d1a95c50bd37d8b" category="sidebar">Für die Disaster Recovery von BlueXP sind vCenter Berechtigungen erforderlich</block>
+  <block id="f4c84d2d214fb7f3e3cae921398c8e4a" category="section-title">17 Juli 2024</block>
+  <block id="e96e73e43a84335e9de1d02f80f7d655" category="list-text">*Failover-Testzeitpläne*: Diese Version enthält Updates der Failover-Testplanstruktur, die zur Unterstützung von täglichen und wöchentlichen Zeitplänen benötigt wurde. Für dieses Update müssen Sie alle vorhandenen Replikationspläne deaktivieren und wieder aktivieren, damit Sie die neuen täglichen und wöchentlichen Failover-Testpläne verwenden können. Dies ist eine einmalige Anforderung.</block>
+  <block id="7043d4fb27c94bc9a206c106cef9d80c" category="paragraph">Und so funktioniert es:</block>
+  <block id="2ae04d8f24d0c8f552b0d3857c0953b3" category="list-text">Wählen Sie einen Plan aus, und klicken Sie auf das Symbol Aktionen, um das Dropdown-Menü anzuzeigen.</block>
+  <block id="dbf8ea65a71d9e2042b03a97a0da4095" category="list-text">Wählen Sie *Deaktivieren*.</block>
+  <block id="9ffe587f372d96c9b0db66cfe333c0cf" category="list-text">Wählen Sie nach ein paar Minuten *enable*.</block>
+  <block id="dc6efda4f2a86706d886df508f873039" category="list-text">*Aktualisierungen des Replikationsplans*: Dieses Release enthält Aktualisierungen der Replikationsplandaten, wodurch ein Problem mit „nicht gefundenem Snapshot“ behoben wird. Dies erfordert, dass Sie die Aufbewahrungszahl in allen Replikationsplänen auf 1 ändern und einen On-Demand-Snapshot initiieren. Dieser Prozess erstellt ein neues Backup und entfernt alle älteren Backups.</block>
+  <block id="3d3e2652059a9417e7a9b8801e83b99d" category="list-text">Wählen Sie den Replikationsplan aus, klicken Sie auf die Registerkarte *Failover Mapping* und klicken Sie auf das Bleistiftsymbol *Bearbeiten*.</block>
+  <block id="f05351f8a712da4ff1e724d342c4670b" category="list-text">Klicken Sie auf den Pfeil *Datastores*, um ihn zu erweitern.</block>
+  <block id="ee9e0fb0a09a468f33fa6f2dabc4ff49" category="inline-image-macro">Seite für Failover-Zuordnungen bearbeiten</block>
+  <block id="7cbc4647aa042fa4dbc711ee9aa94612" category="paragraph"><block ref="7cbc4647aa042fa4dbc711ee9aa94612" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0d59b78804ed5feec9399254629a60f1" category="list-text">Notieren Sie sich den Wert der Aufbewahrungszahl im Replizierungsplan. Sie müssen diesen ursprünglichen Wert wieder aktivieren, wenn Sie mit diesen Schritten fertig sind.</block>
+  <block id="e9c686cd7f0fc0f9a24375142cf2639b" category="list-text">Verringern Sie die Anzahl auf 1.</block>
+  <block id="94eec0eecc897e0613b4dca05f1db3b5" category="list-text">Initiieren Sie einen On-Demand-Snapshot. Wählen Sie dazu auf der Seite Replizierungsplan den Plan aus, klicken Sie auf das Aktionen-Symbol und wählen Sie *Snapshot jetzt erstellen* aus.</block>
+  <block id="4be920e5d3a5c6a1a13e6a9ed1ea0d96" category="list-text">Nachdem der Snapshot-Job erfolgreich abgeschlossen wurde, erhöhen Sie die Anzahl im Replikationsplan wieder auf den ursprünglichen Wert, den Sie im ersten Schritt angegeben haben.</block>
+  <block id="fcf0bc475de9e6576c18ef6dcf5d7506" category="list-text">Wiederholen Sie diese Schritte für alle vorhandenen Replikationspläne.</block>
+  <block id="f51ae48fcef0eb66752ca677561d408c" category="section-title">Anzahl der Aufbewahrungsfristen für Failover-Zeitpläne ändern</block>
+  <block id="b138bbcc2a9cc6e505caed49815b326b" category="paragraph">Sie können ändern, wie viele Datastores beibehalten werden.</block>
+  <block id="2aef38b97efb9369d3e496e8d062d8fd" category="paragraph"><block ref="2aef38b97efb9369d3e496e8d062d8fd" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="51c600bec26d8fec2fcc4cb42728fd01" category="list-text">Ändern Sie den Wert der Aufbewahrungszahl im Replikationsplan.</block>
 </blocks>

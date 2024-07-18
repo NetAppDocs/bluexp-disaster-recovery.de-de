@@ -16,6 +16,43 @@ Erfahren Sie mehr über die Neuerungen bei BlueXP Disaster Recovery.
 
 
 
+== 17 Juli 2024
+
+Diese BlueXP Disaster Recovery-Version umfasst die folgenden Updates:
+
+* *Failover-Testzeitpläne*: Diese Version enthält Updates der Failover-Testplanstruktur, die zur Unterstützung von täglichen und wöchentlichen Zeitplänen benötigt wurde. Für dieses Update müssen Sie alle vorhandenen Replikationspläne deaktivieren und wieder aktivieren, damit Sie die neuen täglichen und wöchentlichen Failover-Testpläne verwenden können. Dies ist eine einmalige Anforderung.
++
+Und so funktioniert es:
+
++
+.. Wählen Sie im oberen Menü *Replikationspläne* aus.
+.. Wählen Sie einen Plan aus, und klicken Sie auf das Symbol Aktionen, um das Dropdown-Menü anzuzeigen.
+.. Wählen Sie *Deaktivieren*.
+.. Wählen Sie nach ein paar Minuten *enable*.
+
+
+* *Aktualisierungen des Replikationsplans*: Dieses Release enthält Aktualisierungen der Replikationsplandaten, wodurch ein Problem mit „nicht gefundenem Snapshot“ behoben wird. Dies erfordert, dass Sie die Aufbewahrungszahl in allen Replikationsplänen auf 1 ändern und einen On-Demand-Snapshot initiieren. Dieser Prozess erstellt ein neues Backup und entfernt alle älteren Backups.
++
+Und so funktioniert es:
+
++
+.. Wählen Sie im oberen Menü *Replikationspläne* aus.
+.. Wählen Sie den Replikationsplan aus, klicken Sie auf die Registerkarte *Failover Mapping* und klicken Sie auf das Bleistiftsymbol *Bearbeiten*.
+.. Klicken Sie auf den Pfeil *Datastores*, um ihn zu erweitern.
++
+image:use/dr-plan-failover-edit.png["Seite für Failover-Zuordnungen bearbeiten"]
+
+.. Notieren Sie sich den Wert der Aufbewahrungszahl im Replizierungsplan. Sie müssen diesen ursprünglichen Wert wieder aktivieren, wenn Sie mit diesen Schritten fertig sind.
+.. Verringern Sie die Anzahl auf 1.
+.. Initiieren Sie einen On-Demand-Snapshot. Wählen Sie dazu auf der Seite Replizierungsplan den Plan aus, klicken Sie auf das Aktionen-Symbol und wählen Sie *Snapshot jetzt erstellen* aus.
+.. Nachdem der Snapshot-Job erfolgreich abgeschlossen wurde, erhöhen Sie die Anzahl im Replikationsplan wieder auf den ursprünglichen Wert, den Sie im ersten Schritt angegeben haben.
+.. Wiederholen Sie diese Schritte für alle vorhandenen Replikationspläne.
+
+
+
+
+
+
 == 5 Juli 2024
 
 Diese BlueXP Disaster Recovery-Version umfasst die folgenden Updates:

@@ -84,6 +84,21 @@ image:../use/dr-plan-list2.png["Liste der Replikationspläne"]
 
 
 
+=== Anzahl der Aufbewahrungsfristen für Failover-Zeitpläne ändern
+
+Sie können ändern, wie viele Datastores beibehalten werden.
+
+. Wählen Sie im oberen Menü *Replikationspläne* aus.
+. Wählen Sie den Replikationsplan aus, klicken Sie auf die Registerkarte *Failover Mapping* und klicken Sie auf das Bleistiftsymbol *Bearbeiten*.
+. Klicken Sie auf den Pfeil *Datastores*, um ihn zu erweitern.
++
+image:../use/dr-plan-failover-edit.png["Seite für Failover-Zuordnungen bearbeiten"]
+
+. Ändern Sie den Wert der Aufbewahrungszahl im Replikationsplan.
+
+
+
+
 == Anzeigen von Datenspeicherinformationen
 
 Sie können Informationen darüber anzeigen, wie viele Datastores auf der Quelle und auf dem Ziel vorhanden sind.
