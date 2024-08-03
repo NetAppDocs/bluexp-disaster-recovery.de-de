@@ -16,6 +16,23 @@ Erfahren Sie mehr über die Neuerungen bei BlueXP Disaster Recovery.
 
 
 
+== 2 August 2024
+
+Diese BlueXP Disaster Recovery-Version umfasst die folgenden Updates:
+
+* *Unterstützung von lokalen zu lokalen VMware-VMFS-Datastores für FC*: Diese Version enthält eine _Technologie-Vorschau_ der Unterstützung für VMs, die auf VMware vSphere-VMFS-Datastores (Virtual Machine File System) für FC-Schutz auf lokalem Speicher gemountet sind. Zuvor hatte der Service eine Technologievorschau zur Unterstützung von VMFS-Datastores für ISCI bereitgestellt. In dieser Version unterstützt BlueXP Disaster Recovery eine Technologievorschau für lokale VMware-Workloads in lokale VMware-Umgebung mit VMFS-Datastores für FC.
++
+
+NOTE: NetApp berechnet Ihnen keine Kosten für vorab angezeigte Workload-Kapazität.
+
+* *Job abbrechen*: Mit diesem Release können Sie jetzt einen Job in der Job Monitor UI abbrechen.
++
+Siehe https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/monitor-jobs.html["Überwachen von Jobs"].
+
+
+
+
+
 == 17 Juli 2024
 
 Diese BlueXP Disaster Recovery-Version umfasst die folgenden Updates:
@@ -65,10 +82,7 @@ Diese BlueXP Disaster Recovery-Version umfasst die folgenden Updates:
 
 NOTE: NetApp berechnet Ihnen keine Kosten für vorab angezeigte Workload-Kapazität.
 
-* *Aktualisierungen des Replikationsplans*: Sie können einen Replikationsplan einfacher hinzufügen, indem Sie VMs auf der Seite Anwendungen nach Datastore filtern und auf der Seite Ressourcenzuordnung weitere Zieldetails auswählen.
-+
-Siehe https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Erstellen Sie einen Replizierungsplan"].
-
+* *Updates des Replikationsplans*: Sie können einen Replikationsplan einfacher hinzufügen, indem Sie VMs auf der Seite Anwendungen nach Datastore filtern und durch selecti//refer auf link:../use/drplan-create.html["Erstellen Sie einen Replizierungsplan"]. Siehe https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Erstellen Sie einen Replizierungsplan"]. NG Weitere Zieldetails auf der Seite „Ressourcenzuordnung“.
 * *Replikationspläne bearbeiten*: Mit dieser Version wurde die Failover-Mappings-Seite für eine bessere Übersichtlichkeit erweitert.
 +
 Siehe https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/manage.html["Pläne verwalten"].

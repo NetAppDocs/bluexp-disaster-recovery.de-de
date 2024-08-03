@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: use/monitor-jobs.html 
-keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, monitor 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, monitor, bluexp 
 summary: NetApp BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recovery Service, der Disaster Recovery Workflows automatisiert. Sie können alle Disaster-Recovery-Jobs überwachen und deren Fortschritt bestimmen. 
 ---
 = Überwachen Sie Disaster-Recovery-Jobs
@@ -20,4 +20,20 @@ Sie können alle Disaster-Recovery-Jobs überwachen und deren Fortschritt bestim
 . Untersuchen Sie alle Jobs im Zusammenhang mit Operationen und überprüfen Sie deren Zeitstempel und Status.
 . Um Details zu einem bestimmten Job anzuzeigen, wählen Sie diese Zeile aus.
 . Um Informationen zu aktualisieren, wählen Sie *Aktualisieren*.
+
+
+
+
+== Abbrechen eines Jobs
+
+Wenn ein Job in Bearbeitung ist oder sich in der Warteschlange befindet und Sie nicht möchten, dass er fortgesetzt wird, können Sie ihn abbrechen. Sie können einen Job abbrechen, wenn er im gleichen Status bleibt und Sie den nächsten Vorgang in der Warteschlange freigeben möchten. Sie können einen Job abbrechen, bevor es zu einer Zeitabsage kommt.
+
+.Schritte
+. Wählen Sie in der linken Navigationsleiste von BlueXP *Protection* > *Disaster Recovery* aus.
+. Wählen Sie im oberen Menü *Job-Überwachung*.
+. Notieren Sie sich auf der Seite Job Monitor die ID des Jobs, den Sie abbrechen möchten.
++
+Der Job muss sich im Status „in Bearbeitung“ oder „in Warteschlange“ befinden.
+
+. Wählen Sie in der Spalte Aktionen die Option *Abbrechen* aus.
 
