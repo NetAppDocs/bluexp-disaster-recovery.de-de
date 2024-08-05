@@ -20,7 +20,7 @@ Erfahren Sie mehr über die Neuerungen bei BlueXP Disaster Recovery.
 
 Diese BlueXP Disaster Recovery-Version umfasst die folgenden Updates:
 
-* *Unterstützung von lokalen zu lokalen VMware-VMFS-Datastores für FC*: Diese Version enthält eine _Technologie-Vorschau_ der Unterstützung für VMs, die auf VMware vSphere-VMFS-Datastores (Virtual Machine File System) für FC-Schutz auf lokalem Speicher gemountet sind. Zuvor hatte der Service eine Technologievorschau zur Unterstützung von VMFS-Datastores für ISCI bereitgestellt. In dieser Version unterstützt BlueXP Disaster Recovery eine Technologievorschau für lokale VMware-Workloads in lokale VMware-Umgebung mit VMFS-Datastores für FC.
+* *Unterstützung von lokalen zu lokalen VMware-VMFS-Datastores für FC*: Diese Version enthält eine _Technologie-Vorschau_ der Unterstützung für VMs, die auf VMware vSphere-VMFS-Datastores (Virtual Machine File System) für FC-Schutz auf lokalem Speicher gemountet sind. Zuvor wurde eine Technologievorschau bereitgestellt, die VMFS-Datastores für iSCSI unterstützt.
 +
 
 NOTE: NetApp berechnet Ihnen keine Kosten für vorab angezeigte Workload-Kapazität.

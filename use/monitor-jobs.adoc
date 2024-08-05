@@ -35,5 +35,5 @@ Wenn ein Job in Bearbeitung ist oder sich in der Warteschlange befindet und Sie 
 +
 Der Job muss sich im Status „in Bearbeitung“ oder „in Warteschlange“ befinden.
 
-. Wählen Sie in der Spalte Aktionen die Option *Abbrechen* aus.
+. Wählen Sie in der Spalte Aktionen die Option *Auftrag abbrechen* aus.
 
