@@ -42,13 +42,10 @@ Um die Details des Replikationsplans zu überprüfen, wählen Sie *Alle anzeigen
 
 
 ** *Ressourcengruppen*: Zeigen Sie den Zustand Ihrer Ressourcengruppen an. Eine Ressourcengruppe kann einen der folgenden Status haben:
+** *Geschützte VMs*: Die VMs sind Teil einer Ressourcengruppe.
+** *Ungeschützte VMs*: Die VMs sind nicht Teil einer Ressourcengruppe.
 +
-*** *Geschützte VMs*: Die VMs sind Teil einer Ressourcengruppe.
-*** *Ungeschützte VMs*: Die VMs sind nicht Teil einer Ressourcengruppe.
-+
-Um Details zu Ressourcengruppen zu überprüfen, wählen Sie *Alle anzeigen* für einen Status oder *Ressourcengruppen anzeigen*, um alle anzuzeigen.
-
-
+Um Details zu überprüfen, wählen Sie den Link *Ansicht* unter jedem.
 
 ** Die Anzahl der Failover, Test-Failover und Migrationen. Wenn Sie beispielsweise zwei Pläne erstellt und zu den Zielen migriert haben, wird die Migrationszahl als „2“ angezeigt.
 
