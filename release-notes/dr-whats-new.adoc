@@ -16,6 +16,24 @@ Erfahren Sie mehr über die Neuerungen bei BlueXP Disaster Recovery.
 
 
 
+== 20 September 2024
+
+Diese BlueXP  Disaster Recovery-Version enthält das folgende Update.
+
+* *Unterstützung für lokale VMware-VMFS-Datastores*: Diese Version enthält Unterstützung für VMs, die auf VMware vSphere-VMFS-Datastores (Virtual Machine File System) für iSCSI und FC gemountet sind und auf lokalem Speicher geschützt sind. Zuvor bot der Service eine Technologievorschau, die VMFS-Datastores für iSCSI und FC unterstützte.
++
+Folgende Punkte sollten in Bezug auf iSCSI- und FC-Protokolle zusätzlich beachtet werden:
+
++
+** FC-Unterstützung ist für Front-End-Protokolle des Clients, nicht für Replizierung.
+** Die Disaster Recovery von BlueXP  unterstützt nur eine einzige LUN pro ONTAP Volume. Das Volume sollte nicht über mehrere LUNs verfügen.
+** Bei jedem Replizierungsplan sollte das Ziel-ONTAP-Volume die gleichen Protokolle verwenden wie das Quell-ONTAP-Volume, auf dem die geschützten VMs gehostet werden. Wenn z. B. die Quelle ein FC-Protokoll verwendet, sollte das Ziel auch FC verwenden.
+
+
+
+
+
+
 == 2 August 2024
 
 Diese BlueXP Disaster Recovery-Version umfasst die folgenden Updates:

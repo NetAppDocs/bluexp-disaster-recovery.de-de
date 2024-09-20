@@ -1,0 +1,65 @@
+---
+sidebar: sidebar 
+permalink: use/reports.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, monitor, bluexp, protection, reports 
+summary: NetApp BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recovery Service, der Disaster Recovery Workflows automatisiert. Sie können alle Disaster-Recovery-Jobs überwachen und deren Fortschritt bestimmen. 
+---
+= Erstellen von Disaster-Recovery-Berichten
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Durch die Überprüfung von Disaster Recovery-Berichten können Sie die Bereitschaft Ihrer Disaster Recovery analysieren. Vordefinierte Berichte enthalten eine Zusammenfassung von Failover und Failbacks, Replikationsdetails zu allen Standorten und Jobdetails für das vergangene Jahr. Sie können auch benutzerdefinierte Berichte erstellen.
+
+Sie können Berichte im PDF-Format herunterladen.
+
+.Schritte
+. Wählen Sie in der linken Navigationsleiste von BlueXP *Protection* > *Disaster Recovery* aus.
+. Wählen Sie im oberen Menü *Berichte*.
++
+image:dr-reports.png["Berichtsseite"]
+
+. Bevor Sie einen Bericht erstellen oder herunterladen, aktualisieren Sie die Daten, indem Sie auf die Option *Aktualisieren* klicken.
+. Wählen Sie einen Bericht aus der Registerkarte *Ready-Made* oder erstellen Sie Ihren eigenen Bericht auf der Registerkarte *Custom*.
+. Einen Bericht herunterladen, indem Sie auf *Download* klicken.
+
+
+
+
+== Erstellen Sie Ihren eigenen Disaster-Recovery-Bericht
+
+Sie können einen benutzerdefinierten Bericht erstellen, in dem Sie die Standorte, Replikationspläne und Daten angeben können. Sie können festlegen, ob Failover- und Failback-Zusammenfassungen für das vergangene Jahr, VM-Details für jeden Replikationsplan und Jobdetails für jeden Replikationsplan für das vergangene Jahr einbezogen werden sollen.
+
+. Wählen Sie im oberen Menü *Berichte*.
+. Bevor Sie einen Bericht erstellen, aktualisieren Sie die Daten, indem Sie auf die Option *Aktualisieren* klicken.
+. Wählen Sie die Registerkarte *Custom*.
+. Wählen Sie *Hinzufügen*, um einen neuen Bericht hinzuzufügen.
++
+image:dr-reports-add.png["Dialogfeld „Benutzerdefinierten Bericht hinzufügen“"]
+
+. Wählen Sie die Optionen zum Anpassen des Berichts aus:
++
+** Standorte
+** Replizierungspläne
+** Daten
++
+*** Zusammenfassung von Failover und Failbacks für das vergangene Jahr
+*** VM-Details für jeden Replizierungsplan
+*** Jobdetails für jeden Replikationsplan des vergangenen Jahres
+
+
+
+
+. Wählen Sie *Hinzufügen*, um einen neuen Bericht hinzuzufügen.
++
+Ihr benutzerdefinierter Bericht wird in der Liste der benutzerdefinierten Berichte angezeigt.
+
++
+
+TIP: Um alle im Bericht enthaltenen Sites oder Pläne anzuzeigen, klicken Sie auf die Nummer rechts neben dem Berichtsnamen oder Plannamen.
+
+. Laden Sie Ihren individuellen Bericht herunter, indem Sie auf *Download* klicken.
+

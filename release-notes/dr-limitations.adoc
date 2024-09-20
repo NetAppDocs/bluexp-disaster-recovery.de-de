@@ -16,6 +16,12 @@ Bekannte Einschränkungen identifizieren Plattformen, Geräte oder Funktionen, d
 
 
 
+== Warten Sie, bis das Failback abgeschlossen ist, bevor Sie die Ermittlung ausführen
+
+Wenn ein Failover abgeschlossen ist, starten Sie die Erkennung nicht manuell auf dem Quell-vCenter. Warten Sie, bis das Failback abgeschlossen ist, und starten Sie dann die Erkennung im Quell-vCenter.
+
+
+
 == BlueXP entdeckt möglicherweise Amazon FSX for NetApp ONTAP nicht
 
 Manchmal erkennt BlueXP Amazon FSX for NetApp ONTAP-Cluster nicht. Dies könnte daran liegen, dass die FSX-Anmeldeinformationen nicht korrekt waren.

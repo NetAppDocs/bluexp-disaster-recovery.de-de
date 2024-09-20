@@ -336,9 +336,6 @@ Für die Disaster Recovery von BlueXP ist keine Aktivierung erforderlich. Die Di
   <block id="b2f702d4d241c0d53726eedc499ac784" category="paragraph">Solche Pläne werden manchmal _Blueprints_ genannt.</block>
   <block id="4f27ef77939e5393adc6b44aec83a6b7" category="paragraph">Ein Assistent führt Sie durch die folgenden Schritte:</block>
   <block id="8705d6076cb452e919a6e22862427440" category="list-text">Wählen Sie vCenter-Server aus</block>
-  <block id="8b89ed4b8e4a4b16d551a86114a0c361" category="list-text">Wählen Sie die VMs aus, die Sie replizieren und Gruppen zuweisen möchten</block>
-  <block id="0ee5515fd7a8d972a5df4c4eb08b18f2" category="list-text">Wiederholung identifizieren</block>
-  <block id="febc3cdab40dc222679ce1e42cce7011" category="list-text">Überprüfen Sie den Plan</block>
   <block id="d72f4a94d857178ae5cb1420995137e4" category="inline-image-macro">Screenshot mit der Seite Replizierungsplan hinzufügen &amp;gt; Plan hinzufügen</block>
   <block id="6961a5b80d0429840ea8a9232c79ec6f" category="paragraph"><block ref="b3b324f474892662518dcbec32158ea5" category="inline-image-macro-rx" type="image"></block></block>
   <block id="466ea193e548e9ef8d853f2da4829a3e" category="list-text">Erstellen Sie einen Namen für den Replikationsplan.</block>
@@ -920,8 +917,6 @@ Nachdem Sie eine BlueXP Disaster-Recovery-Lizenz für Ihr BlueXP Konto erworben 
   <block id="7906e2e007c3bad108fcd7ed7311a131" category="paragraph"><block ref="7906e2e007c3bad108fcd7ed7311a131" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6dbc81f47f4a822cd11ce7c8403756ed" category="list-text">Wählen Sie auf der Registerkarte Failover Mappings den Abwärtspfeil rechts neben jeder Ressource aus, und ordnen Sie die jeweiligen Ressourcen zu.</block>
   <block id="022ab008c31f5588f9d15da4dc3439fb" category="list-text">*Compute Resources*: Wählen Sie den Pfeil nach unten neben *Compute Resources*.</block>
-  <block id="023cde6974e67dee3aff7c64e3290e80" category="list-text">Quell-Cluster</block>
-  <block id="221533a77747ed01c409141d8985b5fe" category="list-text">Ziel-Cluster (optional)</block>
   <block id="5bfe17be68350c18dc777bcfabdd7a8f" category="list-text">*Virtuelle Netzwerke*: Wählen Sie auf der Registerkarte Failover Mappings den Abwärtspfeil neben *Virtuelle Netzwerke* aus. Geben Sie das virtuelle Quell-LAN und das Zielsegment ein oder wählen Sie es aus.</block>
   <block id="a358a5c755a9f869690207e2a0726737" category="list-text">*Virtuelle Maschinen*: Wählen Sie auf der Registerkarte Failover Mappings den Abwärtspfeil neben *Virtuelle Maschinen* aus.</block>
   <block id="909f84e264f0200a692127b28fbdbaaf" category="paragraph">Wählen Sie die Netzwerkzuordnung zum entsprechenden Segment aus. Die Segmente sollten bereits bereitgestellt werden. Wählen Sie daher das entsprechende Segment für die Zuordnung der virtuellen Maschine aus.</block>
@@ -934,4 +929,47 @@ Nachdem Sie eine BlueXP Disaster-Recovery-Lizenz für Ihr BlueXP Konto erworben 
   <block id="10936c8535aaede0ed75f5d8d4fa6aaf" category="list-text">*Retention count*: Geben Sie die Anzahl der Snapshots ein, die Sie behalten möchten.</block>
   <block id="b23c862689b973964a4b79af3d87b2de" category="list-text">*Quell- und Zieldatenspeicher*: Wenn ein Volume bereits eine SnapMirror-Beziehung hat, können Sie die entsprechenden Quell- und Zieldatenspeicher auswählen. Wenn Sie ein Volume auswählen, das nicht über eine SnapMirror-Beziehung verfügt, können Sie jetzt ein Volume erstellen, indem Sie die Arbeitsumgebung und die zugehörige Peer-SVM auswählen.</block>
   <block id="8772d236d3c62b688c3b57224d982ee1" category="paragraph"><block ref="8772d236d3c62b688c3b57224d982ee1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1267d6fc2aff2a3372b02b4d25a9f397" category="list-text">Führen Sie einen Failover-Test durch, während virtuelle Maschinen vorübergehend erstellt werden. Mithilfe der Disaster Recovery von BlueXP  wird ein neues FlexClone Volume aus dem ausgewählten Snapshot erstellt, und ein temporärer Datenspeicher, der das FlexClone Volume sichert, wird den ESXi Hosts zugeordnet. Dieser Prozess beansprucht keine zusätzliche physische Kapazität, lokal im ONTAP Storage oder auf FSX for NetApp ONTAP Storage in AWS. Das ursprüngliche Quell-Volume wird nicht geändert, und Replikatjobs können auch während der Disaster Recovery fortgesetzt werden.</block>
+  <block id="76e4d72594030fca0b96279d0f8392dc" category="section-title">Bedingungen, die Ihnen bei der BlueXP  Disaster Recovery helfen könnten</block>
+  <block id="b7b26d16c3d1d84d3872afa1f04c92d6" category="paragraph">Möglicherweise profitieren Sie von der Kenntnis einiger Begriffe im Zusammenhang mit Disaster Recovery.</block>
+  <block id="7f800e59a5bd3f98ce900fa6e543f67d" category="list-text">*Standort*: Ein logischer Container, der normalerweise mit einem physischen Rechenzentrum oder Cloud-Provider verknüpft ist.</block>
+  <block id="1060a69dfe06a51ad97fdd63bb36b6c6" category="list-text">*Ressourcengruppe*: Ein logischer Container, mit dem Sie mehrere VMs als eine Einheit verwalten können.</block>
+  <block id="01f306e8e2e64b0a1d39d18d7594ecf5" category="list-text">*Replizierungsplan*: Eine Reihe von Regeln, wie häufig Backups durchgeführt werden und wie Failover-Ereignisse gehandhabt werden. Pläne werden einer oder mehreren Ressourcengruppen zugewiesen.</block>
+  <block id="84c20a0b7ce2eb1001004d644d0ca57e" category="section-title">Warten Sie, bis das Failback abgeschlossen ist, bevor Sie die Ermittlung ausführen</block>
+  <block id="a59aaedc864081e6c1a7bd46bcdf9813" category="paragraph">Wenn ein Failover abgeschlossen ist, starten Sie die Erkennung nicht manuell auf dem Quell-vCenter. Warten Sie, bis das Failback abgeschlossen ist, und starten Sie dann die Erkennung im Quell-vCenter.</block>
+  <block id="eaecda6db64f5346d5c63bfe0094e040" category="section-title">20 September 2024</block>
+  <block id="ee811bd919a27bd2eb705f65ed45e4f6" category="paragraph">Diese BlueXP  Disaster Recovery-Version enthält das folgende Update.</block>
+  <block id="b077aa4f9a421cc2e2782608fb5caf4f" category="list-text">*Unterstützung für lokale VMware-VMFS-Datastores*: Diese Version enthält Unterstützung für VMs, die auf VMware vSphere-VMFS-Datastores (Virtual Machine File System) für iSCSI und FC gemountet sind und auf lokalem Speicher geschützt sind. Zuvor bot der Service eine Technologievorschau, die VMFS-Datastores für iSCSI und FC unterstützte.</block>
+  <block id="0eb65976c0b0c5ffa90b07d4a062e509" category="paragraph">Folgende Punkte sollten in Bezug auf iSCSI- und FC-Protokolle zusätzlich beachtet werden:</block>
+  <block id="d671bd2f503deef1e03581ce8d516507" category="list-text">FC-Unterstützung ist für Front-End-Protokolle des Clients, nicht für Replizierung.</block>
+  <block id="cf1967c6d778937fae37b9e43582b1b6" category="list-text">Die Disaster Recovery von BlueXP  unterstützt nur eine einzige LUN pro ONTAP Volume. Das Volume sollte nicht über mehrere LUNs verfügen.</block>
+  <block id="f3a37c3560d0027bc0f49abfab4ab0e3" category="list-text">Bei jedem Replizierungsplan sollte das Ziel-ONTAP-Volume die gleichen Protokolle verwenden wie das Quell-ONTAP-Volume, auf dem die geschützten VMs gehostet werden. Wenn z. B. die Quelle ein FC-Protokoll verwendet, sollte das Ziel auch FC verwenden.</block>
+  <block id="3baff38a392d31950fc8d4d62ea2adc0" category="list-text">Wählen Sie vCenter-Server aus.</block>
+  <block id="cfb3b856fe141dd537038393a8052d33" category="list-text">Wählen Sie die VMs aus, die Sie replizieren und Gruppen zuweisen möchten.</block>
+  <block id="8e635b1aadad234871ba0e012309361f" category="list-text">Identifizieren Sie die Wiederholung, führen Sie ein vom Gast gehostetes Skript aus, legen Sie die Startreihenfolge fest, und wählen Sie das Ziel für den Wiederherstellungspunkt aus.</block>
+  <block id="1c10305a999dce53cb52dd4f6b8d89ff" category="list-text">Überprüfen Sie den Plan.</block>
+  <block id="054b753af44fc4eeee43c9ba6037caaa" category="doc">Erstellen von Disaster-Recovery-Berichten</block>
+  <block id="282dfbc5927b79619ad76e7f3cbfe3c6" category="paragraph">Durch die Überprüfung von Disaster Recovery-Berichten können Sie die Bereitschaft Ihrer Disaster Recovery analysieren. Vordefinierte Berichte enthalten eine Zusammenfassung von Failover und Failbacks, Replikationsdetails zu allen Standorten und Jobdetails für das vergangene Jahr. Sie können auch benutzerdefinierte Berichte erstellen.</block>
+  <block id="08efd64e87408e4769275d6a11482ddf" category="paragraph">Sie können Berichte im PDF-Format herunterladen.</block>
+  <block id="b775ae7fb34855ffeede56666da9a15c" category="list-text">Wählen Sie im oberen Menü *Berichte*.</block>
+  <block id="44f0d43cd92781ec793d9ba50c2d422e" category="inline-image-macro">Berichtsseite</block>
+  <block id="a73757daae33bff01ded292e39f3ddaf" category="paragraph"><block ref="a73757daae33bff01ded292e39f3ddaf" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3ccbbafbdd477e2f028bfd34e03f436b" category="list-text">Bevor Sie einen Bericht erstellen oder herunterladen, aktualisieren Sie die Daten, indem Sie auf die Option *Aktualisieren* klicken.</block>
+  <block id="c83e2a522238e98593e337bd5a7311b5" category="list-text">Wählen Sie einen Bericht aus der Registerkarte *Ready-Made* oder erstellen Sie Ihren eigenen Bericht auf der Registerkarte *Custom*.</block>
+  <block id="70db9063910acf1265d5a518168c69cd" category="list-text">Einen Bericht herunterladen, indem Sie auf *Download* klicken.</block>
+  <block id="0656a1b7f286656b2fc85b91fe54f0dd" category="section-title">Erstellen Sie Ihren eigenen Disaster-Recovery-Bericht</block>
+  <block id="8eaafa07b3ff6e9aa5dbe62e7cc8c77c" category="paragraph">Sie können einen benutzerdefinierten Bericht erstellen, in dem Sie die Standorte, Replikationspläne und Daten angeben können. Sie können festlegen, ob Failover- und Failback-Zusammenfassungen für das vergangene Jahr, VM-Details für jeden Replikationsplan und Jobdetails für jeden Replikationsplan für das vergangene Jahr einbezogen werden sollen.</block>
+  <block id="036f7e4b10d318ae312cdfbb79a225fe" category="list-text">Bevor Sie einen Bericht erstellen, aktualisieren Sie die Daten, indem Sie auf die Option *Aktualisieren* klicken.</block>
+  <block id="27c38bec0a8c0321e9a3236a8a9d4e76" category="list-text">Wählen Sie die Registerkarte *Custom*.</block>
+  <block id="c3c616a8c2970d4d1156559952705700" category="list-text">Wählen Sie *Hinzufügen*, um einen neuen Bericht hinzuzufügen.</block>
+  <block id="402199b58c216d8c9be526288150639b" category="inline-image-macro">Dialogfeld „Benutzerdefinierten Bericht hinzufügen“</block>
+  <block id="8224443416aacfdb9c8d006355a8489a" category="paragraph"><block ref="8224443416aacfdb9c8d006355a8489a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4d6c444c23609646be63340436709d5f" category="list-text">Wählen Sie die Optionen zum Anpassen des Berichts aus:</block>
+  <block id="f6068daa29dbb05a7ead1e3b5a48bbee" category="list-text">Daten</block>
+  <block id="478109b22c544f0e3bed80d9622cc572" category="list-text">Zusammenfassung von Failover und Failbacks für das vergangene Jahr</block>
+  <block id="d9848020098abdd6a6adf5b664e0a02c" category="list-text">VM-Details für jeden Replizierungsplan</block>
+  <block id="2eac16c021d7f4e2d342be672e454649" category="list-text">Jobdetails für jeden Replikationsplan des vergangenen Jahres</block>
+  <block id="65db0a5300ccaa6099d24aaf16150200" category="paragraph">Ihr benutzerdefinierter Bericht wird in der Liste der benutzerdefinierten Berichte angezeigt.</block>
+  <block id="b7a41431aa1eee1607db390ac47d2a65" category="admonition">Um alle im Bericht enthaltenen Sites oder Pläne anzuzeigen, klicken Sie auf die Nummer rechts neben dem Berichtsnamen oder Plannamen.</block>
+  <block id="a99780537c030fe162f59c129be8e471" category="list-text">Laden Sie Ihren individuellen Bericht herunter, indem Sie auf *Download* klicken.</block>
 </blocks>

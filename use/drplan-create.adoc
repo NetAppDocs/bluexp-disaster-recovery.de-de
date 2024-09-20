@@ -24,11 +24,11 @@ Sie können einen Replizierungsplan erstellen und darüber hinaus Zeitpläne fü
 
 Ein Assistent führt Sie durch die folgenden Schritte:
 
-* Wählen Sie vCenter-Server aus
-* Wählen Sie die VMs aus, die Sie replizieren und Gruppen zuweisen möchten
+* Wählen Sie vCenter-Server aus.
+* Wählen Sie die VMs aus, die Sie replizieren und Gruppen zuweisen möchten.
 * Zuordnen der Ressourcen aus der Quellumgebung zum Ziel
-* Wiederholung identifizieren
-* Überprüfen Sie den Plan
+* Identifizieren Sie die Wiederholung, führen Sie ein vom Gast gehostetes Skript aus, legen Sie die Startreihenfolge fest, und wählen Sie das Ziel für den Wiederherstellungspunkt aus.
+* Überprüfen Sie den Plan.
 
 
 Während Sie den Replizierungsplan erstellen, können Sie die SnapMirror Beziehung zwischen Quell- und Ziel-Volumes in einer der folgenden Konfigurationen definieren:
@@ -108,11 +108,6 @@ image:dr-plan-resource-mapping2.png["Replizierungsplan, Registerkarte „Ressour
 
 . Wählen Sie auf der Registerkarte Failover Mappings den Abwärtspfeil rechts neben jeder Ressource aus, und ordnen Sie die jeweiligen Ressourcen zu.
 . *Compute Resources*: Wählen Sie den Pfeil nach unten neben *Compute Resources*.
-+
-** Quell-Cluster
-** Ziel-Cluster (optional)
-
-
 . *Virtuelle Netzwerke*: Wählen Sie auf der Registerkarte Failover Mappings den Abwärtspfeil neben *Virtuelle Netzwerke* aus. Geben Sie das virtuelle Quell-LAN und das Zielsegment ein oder wählen Sie es aus.
 . *Virtuelle Maschinen*: Wählen Sie auf der Registerkarte Failover Mappings den Abwärtspfeil neben *Virtuelle Maschinen* aus.
 +
@@ -130,10 +125,10 @@ SnapMirror befindet sich auf Volume-Ebene. Somit werden alle Virtual Machines zu
 *** *DHCP*: Wenn Sie diese Option wählen, geben Sie nur die Anmeldeinformationen für die VM an.
 *** *Statische IP*: Sie können die gleichen oder andere Informationen aus der Quell-VM auswählen. Wenn Sie dieselbe Auswahl wie die Quelle wählen, müssen Sie keine Anmeldeinformationen eingeben. Wenn Sie jedoch andere Informationen aus der Quelle verwenden möchten, können Sie die Anmeldeinformationen, die IP-Adresse der VM, die Subnetzmaske, das DNS und die Gateway-Informationen angeben. Die Anmeldedaten für das VM-Gastbetriebssystem sollten entweder auf globaler Ebene oder auf jeder VM-Ebene bereitgestellt werden.
 +
-image:dr-plan-create-mapping-vms2.png["Screenshot mit Add Replication Plan > Resource Mapping > Virtual Machines"]
+Dies ist vor allem bei der Wiederherstellung großer Umgebungen zu kleineren Ziel-Clustern oder bei Disaster-Recovery-Tests hilfreich, ohne eine 1:1-physische VMware-Infrastruktur bereitstellen zu müssen.
 
 +
-Dies ist vor allem bei der Wiederherstellung großer Umgebungen zu kleineren Ziel-Clustern oder bei Disaster-Recovery-Tests hilfreich, ohne eine 1:1-physische VMware-Infrastruktur bereitstellen zu müssen.
+image:dr-plan-create-mapping-vms2.png["Screenshot mit Add Replication Plan > Resource Mapping > Virtual Machines"]
 
 
 

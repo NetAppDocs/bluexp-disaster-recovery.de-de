@@ -47,6 +47,7 @@ Mit BlueXP Disaster Recovery profitieren Sie von der vollständigen Nutzung vers
 
 * Replizieren Sie VMware Applikationen an Ihrem lokalen Produktionsstandort an einen Disaster-Recovery-Remote-Standort in der Cloud oder vor Ort. Nutzen Sie dazu SnapMirror Replizierung.
 * Migrieren Sie VMware-Workloads von Ihrem ursprünglichen Standort zu einem anderen Standort.
+* Führen Sie einen Failover-Test durch, während virtuelle Maschinen vorübergehend erstellt werden. Mithilfe der Disaster Recovery von BlueXP  wird ein neues FlexClone Volume aus dem ausgewählten Snapshot erstellt, und ein temporärer Datenspeicher, der das FlexClone Volume sichert, wird den ESXi Hosts zugeordnet. Dieser Prozess beansprucht keine zusätzliche physische Kapazität, lokal im ONTAP Storage oder auf FSX for NetApp ONTAP Storage in AWS. Das ursprüngliche Quell-Volume wird nicht geändert, und Replikatjobs können auch während der Disaster Recovery fortgesetzt werden.
 * Bei einem Notfall führen Sie ein Failover Ihres primären Standorts nach Bedarf zum Disaster-Recovery-Standort durch. Dabei kann es sich um VMware Cloud on AWS mit FSX for NetApp ONTAP oder eine lokale VMware-Umgebung mit ONTAP handeln.
 * Nach der Behebung des Ausfalls können Sie nach Bedarf ein Failback vom Disaster-Recovery-Standort zum primären Standort durchführen.
 
@@ -112,4 +113,15 @@ Bei einem Notfall unterstützt dieser Service Sie bei der Wiederherstellung von 
 * Mit dem Service können Sie außerdem ein Failback der virtuellen Maschinen zum ursprünglichen Quellspeicherort durchführen.
 * Sie können den Disaster Recovery Failover-Prozess testen, ohne die ursprünglichen Virtual Machines zu unterbrechen. Bei diesem Test werden Virtual Machines in einem isolierten Netzwerk durch die Erstellung eines FlexClone des Volume wiederhergestellt.
 * Für den Failover- oder Test-Failover-Prozess können Sie den neuesten (Standard-) oder ausgewählten Snapshot auswählen, von dem Sie Ihre virtuelle Maschine wiederherstellen möchten.
+
+
+
+
+== Bedingungen, die Ihnen bei der BlueXP  Disaster Recovery helfen könnten
+
+Möglicherweise profitieren Sie von der Kenntnis einiger Begriffe im Zusammenhang mit Disaster Recovery.
+
+* *Standort*: Ein logischer Container, der normalerweise mit einem physischen Rechenzentrum oder Cloud-Provider verknüpft ist.
+* *Ressourcengruppe*: Ein logischer Container, mit dem Sie mehrere VMs als eine Einheit verwalten können.
+* *Replizierungsplan*: Eine Reihe von Regeln, wie häufig Backups durchgeführt werden und wie Failover-Ereignisse gehandhabt werden. Pläne werden einer oder mehreren Ressourcengruppen zugewiesen.
 
