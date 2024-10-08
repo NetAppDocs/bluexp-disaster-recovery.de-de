@@ -44,7 +44,7 @@ Diese Voraussetzungen gelten sowohl für lokale vCenter Cluster als auch für da
 * Für alle VMware Datastores, die von BlueXP Disaster Recovery gemanagt werden sollen, muss eines der folgenden Protokolle verwendet werden:
 +
 ** NFS
-** VMFS mit iSCSI-Protokoll (derzeit in einer Technologievorschau)
+** VMFS mithilfe des iSCSI- oder FC-Protokolls
 
 
 * Wenn Sie VMware Cloud SDDC nutzen, gelten diese Voraussetzungen.

@@ -22,5 +22,4 @@ Für vollständigen Zugriff ist eine Disaster-Recovery-Lizenz von BlueXP erforde
 
 Weitere Informationen zur Einrichtung einer Lizenzierung für die Disaster Recovery von BlueXP finden Sie unter link:../get-started/dr-licensing.html["Disaster-Recovery-Lizenzen für BlueXP einrichten"].
 
-*Wie greifen Sie auf BlueXP Disaster Recovery zu?*
-Für die Disaster Recovery von BlueXP ist keine Aktivierung erforderlich. Die Disaster-Recovery-Option wird automatisch in der linken Navigation von BlueXP angezeigt.
+*Wie greifen Sie auf Disaster Recovery von BlueXP  zu?* Für die Disaster Recovery von BlueXP ist keine Aktivierung erforderlich. Die Disaster-Recovery-Option wird automatisch in der linken Navigation von BlueXP angezeigt.

@@ -14,7 +14,7 @@ summary: Disaster Recovery in der Cloud ist eine ausfallsichere und kostengünst
 [role="lead"]
 Disaster Recovery in der Cloud ist eine ausfallsichere und kostengünstige Möglichkeit zum Schutz von Workloads vor Standortausfällen und Datenbeschädigung. Mit der Disaster Recovery für VMware von BlueXP können Sie Ihre lokalen VMware-Workloads, auf denen ONTAP Storage ausgeführt wird, mithilfe von NetApp Cloud Storage in ein softwaredefiniertes Datacenter von VMware in einer Public Cloud oder in eine andere lokale VMware-Umgebung mit ONTAP Storage als Disaster-Recovery-Standort replizieren.
 
-BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recovery Service, der Disaster Recovery Workflows automatisiert. Zunächst können Sie mit dem Disaster Recovery-Service von BlueXP Ihre lokalen, NFS-basierten Workloads schützen und in einer Technologievorschau VMware vSphere VMFS-Datastores (Virtual Machine File System) mit NetApp Storage in eine der folgenden Systeme einbinden:
+BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recovery Service, der Disaster Recovery Workflows automatisiert. Mit dem Disaster Recovery-Service BlueXP  können Sie Ihre lokalen, NFS-basierten Workloads und VMware vSphere Datastores des Virtual Machine File System (VMFS) für iSCSI und FC mit NetApp Storage in einer der folgenden Systeme schützen:
 
 * VMware Cloud (VMC) auf AWS mit Amazon FSX für NetApp ONTAP oder
 * Eine weitere lokale NFS-basierte VMware Umgebung mit ONTAP Storage
