@@ -24,3 +24,5 @@ entries:
   url: "/use/manage.html"
 - title: Überwachen Sie Disaster-Recovery-Jobs
   url: "/use/monitor-jobs.html"
+- title: Erstellen von Disaster-Recovery-Berichten
+  url: "/use/reports.html"

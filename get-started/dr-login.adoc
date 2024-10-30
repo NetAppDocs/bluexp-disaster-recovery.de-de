@@ -27,7 +27,7 @@ Die Anmeldeseite für NetApp BlueXP wird angezeigt.
 Wenn Sie sich zum ersten Mal bei diesem Service anmelden, wird die Landing Page angezeigt, und Sie können sich für eine kostenlose Testversion anmelden.
 
 +
-image:draas-landing3-free-trial.png["Landing Page-Screenshot für die Disaster Recovery von BlueXP"]
+image:draas-landing4-free-trial.png["Landing Page-Screenshot für die Disaster Recovery von BlueXP"]
 
 +
 Andernfalls wird das BlueXP Disaster Recovery Dashboard angezeigt.

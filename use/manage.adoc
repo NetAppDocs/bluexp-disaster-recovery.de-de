@@ -71,7 +71,7 @@ image:../use/dr-plan-list2.png["Liste der Replikationspläne"]
 
 
 . Kehren Sie zur Liste der Pläne zurück, indem Sie in den Semmelbröseln oben links „Replikationspläne“ auswählen.
-. Um Aktionen mit dem Plan auszuführen, wählen Sie aus der Liste der Replikationspläne die Option *actions* aus image:../use/icon-horizontal-dots.png["Actions-Menü-Symbol im BlueXP Disaster Recovery Service"]  Rechts neben dem Plan und wählen Sie eine der Optionen aus, wie z. B. *Zeitpläne bearbeiten*, *Failover testen*, *Failover*, *Failback*, *Deaktivieren*, *enable*, oder *Delete*.
+. Um Aktionen mit dem Plan auszuführen, wählen Sie aus der Liste der Replikationspläne die Option *actions* rechts neben dem Plan aus und wählen Sie eine der Optionen ausimage:../use/icon-horizontal-dots.png["Actions-Menü-Symbol im BlueXP Disaster Recovery Service"], wie z.B. *Edit Schedules*, *Test Failover*, *Failover*, *Failback*, *Migrate*, *Take Snapshot now*, *clean up old Snapshots*, *Disable*, *enable* oder *Delete*.
 . Um einen Test-Failover-Zeitplan festzulegen oder zu ändern oder die Prüfung der Compliance-Häufigkeit festzulegen, wählen Sie die Option *actions* image:../use/icon-horizontal-dots.png["Actions-Menü-Symbol im BlueXP Disaster Recovery Service"] rechts neben dem Plan aus und wählen *Edit Schedules* aus.
 +
 .. Geben Sie auf der Seite Zeitpläne bearbeiten ein, wie oft in Minuten die Failover-Compliance-Prüfung erfolgen soll.
@@ -80,6 +80,39 @@ image:../use/dr-plan-list2.png["Liste der Replikationspläne"]
 .. Wählen Sie *Speichern*.
 
 
+
+
+
+
+=== Snapshots nach Bedarf abgleichen
+
+Sie können Snapshots abgleichen, die nicht synchron zwischen Quelle und Ziel sind. Dies kann vorkommen, wenn Snapshots auf einem Ziel außerhalb der Disaster Recovery von BlueXP  gelöscht werden. Der Dienst löscht automatisch den Snapshot auf der Quelle alle 24 Stunden. Sie können dies jedoch nach Bedarf durchführen. Mit dieser Funktion können Sie sicherstellen, dass die Snapshots über alle Standorte hinweg konsistent sind.
+
+.Schritte
+. Wählen Sie im oberen Menü *Replikationspläne* aus.
++
+image:../use/dr-plan-list2.png["Liste der Replikationspläne"]
+
+. Wählen Sie aus der Liste der Replikationspläne rechts neben dem Plan die Option *actions* aus und wählen Sie *Snapshots abgleichen* ausimage:../use/icon-horizontal-dots.png["Actions-Menü-Symbol im BlueXP Disaster Recovery Service"].
+. Überprüfen Sie die Abgleichinformationen.
+. Wählen Sie *Abgleichen*.
+
+
+
+
+=== Löschen Sie einen Replikationsplan
+
+Sie können einen Replikationsplan löschen, wenn Sie ihn nicht mehr benötigen. Wenn Sie einen Replizierungsplan löschen, können Sie auch die vom Plan erstellten primären und sekundären Snapshots löschen.
+
+.Schritte
+. Wählen Sie im oberen Menü *Replikationspläne* aus.
++
+image:../use/dr-plan-list2.png["Liste der Replikationspläne"]
+
+. Wählen Sie die Option *actions* image:../use/icon-horizontal-dots.png["Actions-Menü-Symbol im BlueXP Disaster Recovery Service"]rechts neben dem Plan aus und wählen Sie *Delete*.
+. Wählen Sie aus, ob Sie die primären Snapshots, sekundären Snapshots oder nur die vom Plan erstellten Metadaten löschen möchten.
+. Geben Sie „delete“ ein, um den Löschvorgang zu bestätigen.
+. Wählen Sie *Löschen*.
 
 
 
@@ -95,6 +128,7 @@ Sie können ändern, wie viele Datastores beibehalten werden.
 image:../use/dr-plan-failover-edit.png["Seite für Failover-Zuordnungen bearbeiten"]
 
 . Ändern Sie den Wert der Aufbewahrungszahl im Replikationsplan.
+. Wenn der Replikationsplan ausgewählt ist, wählen Sie das Menü Aktionen aus, wählen Sie *alte Snapshots bereinigen“ aus, um alte Snapshots auf dem Ziel zu entfernen, die der neuen Aufbewahrungszahl entsprechen.
 
 
 

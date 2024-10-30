@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: use/reports.html 
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, monitor, bluexp, protection, reports 
-summary: NetApp BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recovery Service, der Disaster Recovery Workflows automatisiert. Sie können alle Disaster-Recovery-Jobs überwachen und deren Fortschritt bestimmen. 
+summary: Durch die Überprüfung von Disaster Recovery-Berichten können Sie die Bereitschaft Ihrer Disaster Recovery analysieren. Vordefinierte Berichte enthalten eine Zusammenfassung von Failover und Failbacks, Replikationsdetails zu allen Standorten und Jobdetails für das vergangene Jahr. 
 ---
 = Erstellen von Disaster-Recovery-Berichten
 :hardbreaks:
@@ -12,54 +12,24 @@ summary: NetApp BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recove
 
 
 [role="lead"]
-Durch die Überprüfung von Disaster Recovery-Berichten können Sie die Bereitschaft Ihrer Disaster Recovery analysieren. Vordefinierte Berichte enthalten eine Zusammenfassung von Failover und Failbacks, Replikationsdetails zu allen Standorten und Jobdetails für das vergangene Jahr. Sie können auch benutzerdefinierte Berichte erstellen.
+Durch die Überprüfung von Disaster Recovery-Berichten können Sie die Bereitschaft Ihrer Disaster Recovery analysieren. Vordefinierte Berichte enthalten eine Zusammenfassung der Failover-Tests, Details zum Replizierungsplan und Jobdetails für alle Standorte innerhalb eines Kontos der letzten sieben Tage.
 
-Sie können Berichte im PDF-Format herunterladen.
+Sie können Berichte im HTML- oder JSON-Format herunterladen.
+
+
+TIP: Sie können die HTML-Seite mit den Optionen Ihres Browsers in eine PDF-Datei konvertieren.
+
+Der Download-Link ist sechs Stunden gültig.
 
 .Schritte
-. Wählen Sie in der linken Navigationsleiste von BlueXP *Protection* > *Disaster Recovery* aus.
-. Wählen Sie im oberen Menü *Berichte*.
-+
-image:dr-reports.png["Berichtsseite"]
-
-. Bevor Sie einen Bericht erstellen oder herunterladen, aktualisieren Sie die Daten, indem Sie auf die Option *Aktualisieren* klicken.
-. Wählen Sie einen Bericht aus der Registerkarte *Ready-Made* oder erstellen Sie Ihren eigenen Bericht auf der Registerkarte *Custom*.
-. Einen Bericht herunterladen, indem Sie auf *Download* klicken.
+. Wählen Sie in der linken Navigationsleiste von BlueXP  *Schutz* > *Disaster Recovery* > *Replikationspläne* aus.
+. Wählen Sie oben auf der Seite *Bericht erstellen* aus.
+. Wählen Sie das Dateiformat und den Zeitraum innerhalb der letzten 7 Tage aus.
+. Wählen Sie *Erstellen*.
 
 
 
+NOTE: Die Anzeige des Berichts kann einige Minuten dauern.
 
-== Erstellen Sie Ihren eigenen Disaster-Recovery-Bericht
-
-Sie können einen benutzerdefinierten Bericht erstellen, in dem Sie die Standorte, Replikationspläne und Daten angeben können. Sie können festlegen, ob Failover- und Failback-Zusammenfassungen für das vergangene Jahr, VM-Details für jeden Replikationsplan und Jobdetails für jeden Replikationsplan für das vergangene Jahr einbezogen werden sollen.
-
-. Wählen Sie im oberen Menü *Berichte*.
-. Bevor Sie einen Bericht erstellen, aktualisieren Sie die Daten, indem Sie auf die Option *Aktualisieren* klicken.
-. Wählen Sie die Registerkarte *Custom*.
-. Wählen Sie *Hinzufügen*, um einen neuen Bericht hinzuzufügen.
-+
-image:dr-reports-add.png["Dialogfeld „Benutzerdefinierten Bericht hinzufügen“"]
-
-. Wählen Sie die Optionen zum Anpassen des Berichts aus:
-+
-** Standorte
-** Replizierungspläne
-** Daten
-+
-*** Zusammenfassung von Failover und Failbacks für das vergangene Jahr
-*** VM-Details für jeden Replizierungsplan
-*** Jobdetails für jeden Replikationsplan des vergangenen Jahres
-
-
-
-
-. Wählen Sie *Hinzufügen*, um einen neuen Bericht hinzuzufügen.
-+
-Ihr benutzerdefinierter Bericht wird in der Liste der benutzerdefinierten Berichte angezeigt.
-
-+
-
-TIP: Um alle im Bericht enthaltenen Sites oder Pläne anzuzeigen, klicken Sie auf die Nummer rechts neben dem Berichtsnamen oder Plannamen.
-
-. Laden Sie Ihren individuellen Bericht herunter, indem Sie auf *Download* klicken.
+. Um einen Bericht herunterzuladen, wählen Sie *Download Report* aus und wählen ihn im Download-Ordner des Administrators aus.
 

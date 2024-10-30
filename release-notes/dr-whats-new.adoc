@@ -4,7 +4,7 @@ permalink: release-notes/dr-whats-new.html
 keywords: disaster recovery, bluexp, disaster recovery, vmware, vcenter, draas 
 summary: BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recovery Service, der Disaster Recovery Workflows automatisiert. Mit der Disaster Recovery für VMware von BlueXP können Sie Ihre lokalen VMware-Workloads, auf denen ONTAP Storage ausgeführt wird, auf ein softwaredefiniertes VMware Datacenter in Public Clouds als Disaster-Recovery-Standort mithilfe von NetApp Cloud-Storage replizieren. 
 ---
-= Was ist neu
+= Neuerungen bei der BlueXP  Disaster Recovery
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -13,6 +13,61 @@ summary: BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recovery Serv
 
 [role="lead"]
 Erfahren Sie mehr über die Neuerungen bei BlueXP Disaster Recovery.
+
+
+
+== 30 Oktober 2024
+
+Diese BlueXP Disaster Recovery-Version umfasst die folgenden Updates:
+
+* *Reporting*: Mit dieser Version können Sie jetzt Berichte generieren und herunterladen, um Ihre Landschaft zu analysieren. Vordefinierte Berichte fassen Failover und Failbacks zusammen, zeigen Replikationsdetails auf allen Standorten an und zeigen Jobdetails der letzten sieben Tage an.
++
+Siehe https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/reports.html["Erstellen von Disaster-Recovery-Berichten"].
+
+* *30-tägige kostenlose Testversion*: Mit dieser Version können Sie sich jetzt für eine 30-tägige kostenlose Testversion von BlueXP  Disaster Recovery anmelden. Zuvor waren kostenlose Testversionen für 90 Tage.
++
+Siehe https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-licensing.html["Lizenzierung einrichten"].
+
+* *Deaktivieren und Aktivieren von Replikationsplänen*: Eine frühere Version enthielt Updates der Failover-Testplanstruktur, die zur Unterstützung von täglichen und wöchentlichen Zeitplänen erforderlich war. Für dieses Update mussten Sie alle vorhandenen Replikationspläne deaktivieren und wieder aktivieren, damit Sie die neuen täglichen und wöchentlichen Failover-Testpläne verwenden können. Dies ist eine einmalige Anforderung.
++
+Und so funktioniert es:
+
++
+.. Wählen Sie im oberen Menü *Replikationspläne* aus.
+.. Wählen Sie einen Plan aus, und klicken Sie auf das Symbol Aktionen, um das Dropdown-Menü anzuzeigen.
+.. Wählen Sie *Deaktivieren*.
+.. Wählen Sie nach ein paar Minuten *enable*.
+
+
+* *Ordnerzuordnung*: Wenn Sie einen Replikationsplan erstellen und Rechenressourcen zuordnen, können Sie jetzt Ordner zuordnen, so dass VMs in einem Ordner wiederhergestellt werden, den Sie für Rechenzentrum, Cluster und Host angeben.
++
+Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Erstellen Sie einen Replizierungsplan"].
+
+* *VM-Details verfügbar für Failover, Failback und Test-Failover*: Wenn ein Fehler auftritt und Sie einen Failover starten, ein Failback durchführen oder den Failover testen, können Sie jetzt Details der VMs sehen und feststellen, welche VMs nicht neu gestartet wurden.
++
+Siehe https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/failover.html["Failover von Anwendungen an einen Remote-Standort"].
+
+* *VM Boot Delay mit bestellter Bootsequenz*: Wenn Sie einen Replikationsplan erstellen, können Sie jetzt eine Boot-Delay für jede VM im Plan festlegen. So können Sie eine Sequenz für die VMs festlegen, die gestartet werden soll, um sicherzustellen, dass alle Ihre Priorität 1 VMs ausgeführt werden, bevor nachfolgende VMs mit Priorität gestartet werden.
++
+Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Erstellen Sie einen Replizierungsplan"].
+
+* *VM-Betriebssysteminformationen*: Wenn Sie einen Replikationsplan erstellen, können Sie nun das Betriebssystem für jede VM im Plan sehen. Dies ist hilfreich bei der Entscheidung, wie VMs in einer Ressourcengruppe gruppiert werden sollen.
++
+Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Erstellen Sie einen Replizierungsplan"].
+
+* *VM Name Aliasing*: Wenn Sie einen Replikationsplan erstellen, können Sie jetzt den VM-Namen auf dem Disaster Recovery Sit ein Präfix und Suffix hinzufügen. Dadurch können Sie einen aussagekräftigeren Namen für die VMs im Plan verwenden.
++
+Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Erstellen Sie einen Replizierungsplan"].
+
+* *Alte Schnappschüsse aufräumen*: Mit diesem Release können Sie alle Snapshots löschen, die nicht mehr benötigt werden, als Sie für die angegebene Aufbewahrungszahl benötigen. Snapshots können sich im Laufe der Zeit ansammeln, wenn Sie die Anzahl der Snapshot-Aufbewahrung senken, und Sie können sie jetzt entfernen, um Speicherplatz freizugeben. Dies ist jederzeit nach Bedarf oder beim Löschen eines Replikationsplans möglich.
++
+Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/manage.html["Verwalten von Standorten, Ressourcengruppen, Replikationsplänen, Datastores und Informationen zu virtuellen Maschinen"].
+
+* *Snapshots abgleichen*: Mit diesem Release können Sie jetzt Snapshots abgleichen, die nicht synchron zwischen Quelle und Ziel sind. Dies kann vorkommen, wenn Snapshots auf einem Ziel außerhalb der Disaster Recovery von BlueXP  gelöscht werden. Der Dienst löscht den Snapshot auf der Quelle automatisch alle 24 Stunden. Sie können dies jedoch nach Bedarf durchführen. Mit dieser Funktion können Sie sicherstellen, dass die Snapshots über alle Standorte hinweg konsistent sind.
++
+Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/manage.html["Verwalten von Replikationsplänen"].
+
+
 
 
 
@@ -74,9 +129,6 @@ Und so funktioniert es:
 .. Wählen Sie im oberen Menü *Replikationspläne* aus.
 .. Wählen Sie den Replikationsplan aus, klicken Sie auf die Registerkarte *Failover Mapping* und klicken Sie auf das Bleistiftsymbol *Bearbeiten*.
 .. Klicken Sie auf den Pfeil *Datastores*, um ihn zu erweitern.
-+
-image:use/dr-plan-failover-edit.png["Seite für Failover-Zuordnungen bearbeiten"]
-
 .. Notieren Sie sich den Wert der Aufbewahrungszahl im Replizierungsplan. Sie müssen diesen ursprünglichen Wert wieder aktivieren, wenn Sie mit diesen Schritten fertig sind.
 .. Verringern Sie die Anzahl auf 1.
 .. Initiieren Sie einen On-Demand-Snapshot. Wählen Sie dazu auf der Seite Replizierungsplan den Plan aus, klicken Sie auf das Aktionen-Symbol und wählen Sie *Snapshot jetzt erstellen* aus.

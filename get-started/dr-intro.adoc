@@ -72,7 +72,7 @@ IMPORTANT: Einige Versionen enthalten eine Technologievorschau. NetApp berechnet
 
 Sie können die folgenden Lizenztypen verwenden:
 
-* Melden Sie sich für eine kostenlose 90-Tage-Testversion an.
+* Melden Sie sich für eine kostenlose 30-Tage-Testversion an.
 * Mit Amazon Web Services (AWS) Marketplace besteht ein Pay-as-you-go-Abonnement (PAYGO).
 * Bring-Your-Own-License (BYOL) bei einer NetApp Lizenzdatei (NLF), die Sie von Ihrem NetApp Vertriebsmitarbeiter erhalten. Sie können die Seriennummer der Lizenz verwenden, um das BYOL in der Digital Wallet von BlueXP zu aktivieren.
 
@@ -86,13 +86,13 @@ Weitere Informationen zur Einrichtung einer Lizenzierung für die Disaster Recov
 
 
 
-== 90 Tage kostenlos testen
+== 30 Tage kostenlos testen
 
-Sie können die Disaster Recovery von BlueXP mit einer kostenlosen Testversion von 90 Tagen testen.
+Sie können die Disaster Recovery von BlueXP mit einer kostenlosen Testversion von 30 Tagen testen.
 
-Um nach der 90-Tage-Testsoftware fortzufahren, benötigen Sie ein PAYGO-Abonnement (Pay-as-you-go) von Ihrem Cloud-Provider oder eine BYOL-Lizenz von NetApp.
+Um nach der 30-Tage-Testsoftware fortzufahren, benötigen Sie ein PAYGO-Abonnement (Pay-as-you-go) von Ihrem Cloud-Provider oder eine BYOL-Lizenz von NetApp.
 
-Sie können jederzeit eine Lizenz erwerben und Sie werden erst nach Ablauf der 90-tägigen Testversion belastet.
+Sie können jederzeit eine Lizenz erwerben und Sie werden erst nach Ablauf der 30-tägigen Testversion belastet.
 
 
 
