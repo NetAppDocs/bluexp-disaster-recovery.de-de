@@ -26,8 +26,7 @@ Der Download-Link ist sechs Stunden gültig.
 . Wählen Sie oben auf der Seite *Bericht erstellen* aus.
 . Wählen Sie das Dateiformat und den Zeitraum innerhalb der letzten 7 Tage aus.
 . Wählen Sie *Erstellen*.
-
-
++
 
 NOTE: Die Anzeige des Berichts kann einige Minuten dauern.
 
