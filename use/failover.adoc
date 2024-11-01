@@ -12,21 +12,23 @@ summary: NetApp BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recove
 
 
 [role="lead"]
-Bei einem Ausfall sollte ein Failover Ihres primären lokalen VMware-Standorts auf einen anderen VMware-Standort vor Ort oder auf VMware Cloud on AWS erfolgen.
+Bei einem Ausfall sollte ein Failover Ihres primären lokalen VMware-Standorts auf einen anderen VMware-Standort vor Ort oder auf VMware Cloud on AWS erfolgen. Sie können den Failover-Prozess testen, um sicherzustellen, dass er bei Bedarf erfolgreich ist.
 
-Während des Failovers wird die neueste SnapMirror Snapshot Kopie verwendet. Sie können auch eine bestimmte Snapshot Kopie aus einer zeitpunktgenauen Snapshot Kopie auswählen (gemäß der Aufbewahrungsrichtlinie von SnapMirror). Die Point-in-Time-Option kann hilfreich sein, wenn Sie vor einem Korruptionsereignis wie Ransomware stehen, wo die neuesten Replikate bereits kompromittiert oder verschlüsselt sind. Die Disaster Recovery von BlueXP zeigt alle verfügbaren Zeitpunkte an.
+Während eines Failover wird die aktuellste SnapMirror Snapshot Kopie verwendet. Sie können auch einen bestimmten Snapshot aus einem zeitpunktgenauen Snapshot auswählen (gemäß der Aufbewahrungsrichtlinie von SnapMirror). Die Point-in-Time-Option kann hilfreich sein, wenn Sie vor einem Korruptionsereignis wie Ransomware stehen, wo die neuesten Replikate bereits kompromittiert oder verschlüsselt sind. Die Disaster Recovery von BlueXP zeigt alle verfügbaren Zeitpunkte an.
 
-Durch dieses Verfahren wird die Replikationsbeziehung unterbrochen, die vCenter Quell-VMs offline gestellt und Lese-/Schreibvorgänge auf dem Zielstandort ermöglicht.
+Dieser Prozess unterscheidet sich, je nachdem, ob der Produktionsstandort in einem ordnungsgemäßen Zustand ist und Sie aus anderen Gründen als zum Ausfall der Infrastruktur ein Failover auf den Disaster-Recovery-Standort durchführen:
 
-Sie können benutzerdefinierte Skripts im .sh-, .bat- oder .ps1-Format als Post-Failover-Prozesse verwenden. Mit benutzerdefinierten Skripts kann die BlueXP Disaster Recovery Ihr Skript nach einem Failover-Prozess ausführen. Sie können beispielsweise ein benutzerdefiniertes Skript verwenden, um alle Datenbanktransaktionen nach Abschluss des Failovers wieder aufzunehmen.
+* Ausfall eines kritischen Produktionsstandorts, auf den kein Zugriff auf das Quell-vCenter- oder ONTAP-Cluster möglich ist: Mit BlueXP  Disaster Recovery können Sie einen beliebigen verfügbaren Snapshot auswählen, der wiederhergestellt werden soll.
+* Produktionsumgebung ist in gutem Zustand: Sie können entweder „jetzt einen Snapshot erstellen“ oder einen zuvor erstellten Snapshot auswählen.
 
-Bevor Sie das Failover starten, können Sie den Prozess testen und so sicherstellen, dass er bei Bedarf erfolgreich ist. Durch den Test werden die Virtual Machines nicht offline geschaltet.
+
+Bei diesem Verfahren wird die Replikationsbeziehung unterbrochen, die vCenter Quell-VMs offline gestellt, die Volumes als Datastores im Disaster Recovery vCenter registriert, die geschützten VMs anhand der Failover-Regeln im Plan neu gestartet und das Lesen/Schreiben auf dem Zielstandort ermöglicht.
 
 
 
 == Testen Sie den Failover-Prozess
 
-Bevor Sie einen tatsächlichen Failover starten, sollten Sie den Failover-Prozess testen.
+Bevor Sie das Failover starten, können Sie den Prozess testen. Durch den Test werden die Virtual Machines nicht offline geschaltet.
 
 Während eines Failover-Tests werden vorübergehend virtuelle Maschinen erstellt. Bei der Disaster Recovery von BlueXP wird das Ziel-Volume nicht zugeordnet. Stattdessen wird ein neues FlexClone Volume aus dem ausgewählten Snapshot erstellt und ein temporärer Datenspeicher, der das FlexClone Volume sichert, den ESXi Hosts zugeordnet.
 
