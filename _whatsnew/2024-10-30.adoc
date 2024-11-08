@@ -1,0 +1,89 @@
+= Berichterstellung
+:allow-uri-read: 
+
+
+
+
+=== Berichterstellung
+
+Sie können jetzt Berichte erstellen und herunterladen, um Ihre Umgebung zu analysieren. Vordefinierte Berichte fassen Failover und Failbacks zusammen, zeigen Replikationsdetails auf allen Standorten an und zeigen Jobdetails der letzten sieben Tage an.
+
+Siehe https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/reports.html["Erstellen von Disaster-Recovery-Berichten"].
+
+
+
+=== 30 Tage kostenlos testen
+
+Sie können sich jetzt für eine kostenlose 30-Tage-Testversion von BlueXP  Disaster Recovery anmelden. Zuvor waren kostenlose Testversionen für 90 Tage.
+
+Siehe https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-licensing.html["Lizenzierung einrichten"].
+
+
+
+=== Deaktivieren und aktivieren Sie Replikationspläne
+
+Eine frühere Version beinhaltete Aktualisierungen der Planungsstruktur für Failover-Tests, die zur Unterstützung von täglichen und wöchentlichen Zeitplänen erforderlich war. Für dieses Update mussten Sie alle vorhandenen Replikationspläne deaktivieren und wieder aktivieren, damit Sie die neuen täglichen und wöchentlichen Failover-Testpläne verwenden können. Dies ist eine einmalige Anforderung.
+
+Und so funktioniert es:
+
+. Wählen Sie im oberen Menü *Replikationspläne* aus.
+. Wählen Sie einen Plan aus, und klicken Sie auf das Symbol Aktionen, um das Dropdown-Menü anzuzeigen.
+. Wählen Sie *Deaktivieren*.
+. Wählen Sie nach ein paar Minuten *enable*.
+
+
+
+
+=== Ordnerzuordnung
+
+Wenn Sie einen Replizierungsplan erstellen und Rechenressourcen zuordnen, können Sie jetzt Ordner zuordnen, sodass VMs in einem Ordner wiederhergestellt werden, den Sie für Datacenter, Cluster und Host angeben.
+
+Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Erstellen Sie einen Replizierungsplan"].
+
+
+
+=== VM-Details für Failover, Failback und Test-Failover verfügbar
+
+Wenn ein Fehler auftritt und Sie einen Failover starten, ein Failback durchführen oder den Failover testen, können Sie jetzt die Details der VMs sehen und ermitteln, welche VMs nicht neu gestartet wurden.
+
+Siehe https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/failover.html["Failover von Anwendungen an einen Remote-Standort"].
+
+
+
+=== VM-Boot-Verzögerung mit bestellter Boot-Sequenz
+
+Wenn Sie einen Replizierungsplan erstellen, können Sie jetzt für jede VM im Plan eine Boot-Verzögerung festlegen. So können Sie eine Sequenz für die VMs festlegen, die gestartet werden soll, um sicherzustellen, dass alle Ihre Priorität 1 VMs ausgeführt werden, bevor nachfolgende VMs mit Priorität gestartet werden.
+
+Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Erstellen Sie einen Replizierungsplan"].
+
+
+
+=== Informationen zum VM-Betriebssystem
+
+Wenn Sie einen Replikationsplan erstellen, können Sie nun das Betriebssystem für jede VM im Plan sehen. Dies ist hilfreich bei der Entscheidung, wie VMs in einer Ressourcengruppe gruppiert werden sollen.
+
+Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Erstellen Sie einen Replizierungsplan"].
+
+
+
+=== Aliasing für VM-Namen
+
+Wenn Sie einen Replikationsplan erstellen, können Sie den VM-Namen auf dem Disaster Recovery Sit nun ein Präfix und ein Suffix hinzufügen. Dadurch können Sie einen aussagekräftigeren Namen für die VMs im Plan verwenden.
+
+Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Erstellen Sie einen Replizierungsplan"].
+
+
+
+=== Alte Snapshots bereinigen
+
+Sie können alle Snapshots löschen, die nicht mehr über die angegebene Aufbewahrungszahl hinaus benötigt werden. Snapshots können sich im Laufe der Zeit ansammeln, wenn Sie die Anzahl der Snapshot-Aufbewahrung senken, und Sie können sie jetzt entfernen, um Speicherplatz freizugeben. Dies ist jederzeit nach Bedarf oder beim Löschen eines Replikationsplans möglich.
+
+Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/manage.html["Verwalten von Standorten, Ressourcengruppen, Replikationsplänen, Datastores und Informationen zu virtuellen Maschinen"].
+
+
+
+=== Snapshots abgleichen
+
+Sie können jetzt Snapshots abgleichen, die nicht synchron zwischen Quelle und Ziel sind. Dies kann vorkommen, wenn Snapshots auf einem Ziel außerhalb der Disaster Recovery von BlueXP  gelöscht werden. Der Dienst löscht den Snapshot auf der Quelle automatisch alle 24 Stunden. Sie können dies jedoch nach Bedarf durchführen. Mit dieser Funktion können Sie sicherstellen, dass die Snapshots über alle Standorte hinweg konsistent sind.
+
+Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/manage.html["Verwalten von Replikationsplänen"].

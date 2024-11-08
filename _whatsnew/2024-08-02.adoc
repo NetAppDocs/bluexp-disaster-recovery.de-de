@@ -1,0 +1,20 @@
+= Unterstützung von lokalen bis lokalen VMware VMFS-Datastores für FC
+:allow-uri-read: 
+
+
+
+
+=== Unterstützung von lokalen bis lokalen VMware VMFS-Datastores für FC
+
+Diese Version enthält eine Technologievorschau von Unterstützung für VMs, die auf VMware vSphere VMFS-Datastores (Virtual Machine File System) für FC-Schutz auf lokalem Storage gemountet sind. Zuvor wurde eine Technologievorschau bereitgestellt, die VMFS-Datastores für iSCSI unterstützt.
+
+
+NOTE: NetApp berechnet Ihnen keine Kosten für vorab angezeigte Workload-Kapazität.
+
+
+
+=== Job wird abgebrochen
+
+Mit diesem Release können Sie nun einen Job in der Job Monitor-Benutzeroberfläche abbrechen.
+
+Siehe https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/monitor-jobs.html["Überwachen von Jobs"].
