@@ -18,6 +18,8 @@ Solche Pläne werden manchmal _Blueprints_ genannt.
 
 Sie können einen Replizierungsplan erstellen und darüber hinaus Zeitpläne für Compliance und Tests bearbeiten.
 
+Sie können mehrere VMs auf mehreren Datenspeichern sichern. Die Disaster Recovery von BlueXP  erstellt ONTAP-Konsistenzgruppen für alle ONTAP-Volumes, die geschützte VM-Datastores hosten.
+
 
 
 == Erstellen Sie den Plan
@@ -29,14 +31,6 @@ Ein Assistent führt Sie durch die folgenden Schritte:
 * Zuordnen der Ressourcen aus der Quellumgebung zum Ziel
 * Identifizieren Sie die Wiederholung, führen Sie ein vom Gast gehostetes Skript aus, legen Sie die Startreihenfolge fest, und wählen Sie das Ziel für den Wiederherstellungspunkt aus.
 * Überprüfen Sie den Plan.
-
-
-Während Sie den Replizierungsplan erstellen, können Sie die SnapMirror Beziehung zwischen Quell- und Ziel-Volumes in einer der folgenden Konfigurationen definieren:
-
-* 1 zu 1
-* 1 bis viele in einer Fan-out-Architektur
-* Von vielen zu 1 in einer Konsistenzgruppe
-* Von vielen auf viele
 
 
 Wenn Sie den Plan erstellen, sollten Sie folgende Richtlinien befolgen:
@@ -127,16 +121,20 @@ TIP: Wenn ein vCenter über einen Distributed Resource Scheduler (DRS) verfügt,
 ** *Ziel-VM-Ordner* (optional): Erstellen Sie einen neuen Stammordner, um die ausgewählten VMs zu speichern.
 
 
-. *Virtuelle Netzwerke*: Wählen Sie auf der Registerkarte Failover Mappings den Abwärtspfeil neben *Virtuelle Netzwerke* aus. Wählen Sie das virtuelle Quell-LAN und das Zielsegment aus.
+. *Virtuelle Netzwerke*: Wählen Sie auf der Registerkarte Failover Mappings den Abwärtspfeil neben *Virtuelle Netzwerke* aus. Wählen Sie das virtuelle Quell-LAN und das virtuelle Ziel-LAN aus.
++
+Wählen Sie die Netzwerkzuordnung zum entsprechenden virtuellen LAN aus. Die virtuellen LANs sollten bereits bereitgestellt werden. Wählen Sie daher das entsprechende virtuelle LAN für die Zuordnung der VM aus.
+
 . *Virtuelle Maschinen*: Wählen Sie auf der Registerkarte Failover Mappings den Abwärtspfeil neben *Virtuelle Maschinen* aus.
 +
-Wenn Sie Änderungen an den Standardeinstellungen vornehmen, müssen Sie Anmeldedaten angeben.
+Der Standard für die VMs ist zugeordnet. Bei der Standardzuordnung werden dieselben Einstellungen verwendet, die die VMs in der Produktionsumgebung verwenden (gleiche IP-Adresse, Subnetzmaske und Gateway).
 
 +
-Der Standard für die VMs ist zugeordnet. Beim Mapping werden dieselben Einstellungen verwendet, die die VMs in der Produktionsumgebung verwenden (gleiche IP-Adresse, Subnetzmaske und Gateway).
+Wenn Sie Änderungen an den Standardeinstellungen vornehmen, müssen Sie das Feld Ziel-IP in „anders als die Quelle“ ändern.
 
 +
-Wählen Sie die Netzwerkzuordnung zum entsprechenden Segment aus. Die Segmente sollten bereits bereitgestellt werden. Wählen Sie daher das entsprechende Segment für die Zuordnung der VM aus.
+
+NOTE: Wenn Sie Einstellungen in „anders als von der Quelle“ ändern, müssen Sie die Anmeldeinformationen für das VM-Gastbetriebssystem angeben.
 
 +
 In diesem Abschnitt können je nach Auswahl verschiedene Felder angezeigt werden.
