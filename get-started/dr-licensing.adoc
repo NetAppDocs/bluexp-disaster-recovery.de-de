@@ -22,7 +22,7 @@ Sie können die folgenden Lizenztypen verwenden:
 
 
 
-NOTE: Die Disaster Recovery-Gebühren von BlueXP basieren auf der bereitgestellten Kapazität von Datastores am Quellstandort, wenn mindestens eine VM mit einem Replizierungsplan vorhanden ist. Die Kapazität für einen Failover-Datenspeicher ist in der zulässigen Kapazität nicht enthalten. Wenn die Daten bei einem BYOL die zulässige Kapazität überschreiten, werden die Vorgänge im Service so lange eingeschränkt, bis Sie eine zusätzliche Kapazitätslizenz erhalten oder die Lizenz in der Digital Wallet von BlueXP aktualisieren.
+NOTE: Die Disaster Recovery-Gebühren von BlueXP  basieren auf der genutzten Kapazität von Datastores am Quellstandort, wenn mindestens eine VM mit einem Replizierungsplan vorhanden ist. Die Kapazität für einen Failover-Datenspeicher ist in der zulässigen Kapazität nicht enthalten. Wenn die Daten bei einem BYOL die zulässige Kapazität überschreiten, werden die Vorgänge im Service so lange eingeschränkt, bis Sie eine zusätzliche Kapazitätslizenz erhalten oder die Lizenz in der Digital Wallet von BlueXP aktualisieren.
 
 Nachdem Sie Ihr BYOL eingerichtet haben, können Sie die Lizenz auf der Registerkarte BlueXP Digital Wallet *Data Service Licenses* sehen.
 
