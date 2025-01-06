@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: use/sites-add.html 
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
-summary: NetApp BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recovery Service, der Disaster Recovery Workflows automatisiert. 
+summary: Bevor Sie einen Disaster Recovery-Plan erstellen können, müssen Sie einen primären vCenter Standort und einen Ziel-vCenter Disaster Recovery-Standort in BlueXP  Disaster Recovery hinzufügen. 
 ---
-= Fügen Sie vCenter Sites hinzu
+= Fügen Sie einem Standort vCenter hinzu
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,7 +12,7 @@ summary: NetApp BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recove
 
 
 [role="lead"]
-Bevor Sie einen Disaster-Recovery-Plan erstellen können, müssen Sie einen primären vCenter Standort und einen Ziel-vCenter Disaster-Recovery-Standort in BlueXP hinzufügen.
+Bevor Sie einen Disaster Recovery-Plan erstellen können, müssen Sie einem Standort einen primären vCenter Server und einen vCenter Ziel-Disaster-Recovery-Standort in BlueXP  hinzufügen.
 
 Nachdem sie hinzugefügt wurden, führt die Disaster Recovery von BlueXP eine umfassende Bestandsaufnahme der vCenter Umgebungen durch, einschließlich vCenter Cluster, ESXi Hosts, Datastores, Storage-Platzbedarf, Details zu Virtual Machines, SnapMirror Replikaten und Virtual Machine-Netzwerken.
 
@@ -20,6 +20,10 @@ Nachdem sie hinzugefügt wurden, führt die Disaster Recovery von BlueXP eine um
 . Melden Sie sich bei BlueXP an und wählen Sie im linken Navigationsbereich *Protection* > *Disaster Recovery* aus.
 +
 Sie finden die Seite zum Disaster Recovery Dashboard von BlueXP. Wenn Sie mit dem Service beginnen, müssen Sie vCenter-Informationen hinzufügen. Später werden im Dashboard Daten zu Ihren Standorten und Replikationsplänen angezeigt.
+
++
+
+NOTE: Je nach Art der Site, die Sie hinzufügen, werden unterschiedliche Felder angezeigt.
 
 . *Quelle*: Wählen Sie *Discover vCenter Server*, um Informationen über den vCenter-Quellstandort einzugeben.
 +
@@ -30,17 +34,19 @@ TIP: Wenn einige vCenter-Sites bereits vorhanden sind und Sie weitere hinzufüge
 image:vcenter-add.png["VCenter Server-Screenshot hinzufügen "]
 
 +
-.. Fügen Sie eine Site hinzu, wählen Sie den BlueXP Connector aus und geben Sie vCenter Zugangsdaten an.
-.. Um selbstsignierte Zertifikate für das Quell-vCenter zu akzeptieren, aktivieren Sie das Kontrollkästchen.
+** Fügen Sie eine Site hinzu, wählen Sie den BlueXP Connector aus und geben Sie vCenter Zugangsdaten an.
+** (Gilt nur für On-Premises-Standorte) um selbstsignierte Zertifikate für das Quell-vCenter zu akzeptieren, aktivieren Sie das Kontrollkästchen.
 +
 
 NOTE: Selbstsignierte Zertifikate sind nicht so sicher wie andere Zertifikate. Wenn Ihr vCenter mit Zertifikaten der Zertifizierungsstelle (CA) * NICHT* konfiguriert ist, sollten Sie dieses Kontrollkästchen aktivieren, da andernfalls die Verbindung zum vCenter nicht funktioniert.
 
-.. Wählen Sie *Hinzufügen*.
+** (Gilt nur für Cloud-Sites) *API-Token*: Geben Sie das API-Token ein, um den Dienstzugriff für Ihre Organisation zu autorisieren. Erstellen des API-Tokens durch Angabe bestimmter Unternehmens- und Servicerollen
+** (Gilt nur für Cloud-Standorte) *lange Organisations-ID*: Geben Sie die eindeutige ID für die Organisation ein. Sie können diese ID identifizieren, indem Sie auf den Benutzernamen im Abschnitt „Konto“ der BlueXP -Konsole klicken.
+
+
+. Wählen Sie *Hinzufügen*.
 +
 Als Nächstes fügen Sie ein Ziel-vCenter hinzu.
-
-
 
 . *Ziel*:
 +
