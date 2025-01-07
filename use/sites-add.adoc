@@ -40,8 +40,6 @@ image:vcenter-add.png["VCenter Server-Screenshot hinzufügen "]
 
 NOTE: Selbstsignierte Zertifikate sind nicht so sicher wie andere Zertifikate. Wenn Ihr vCenter mit Zertifikaten der Zertifizierungsstelle (CA) * NICHT* konfiguriert ist, sollten Sie dieses Kontrollkästchen aktivieren, da andernfalls die Verbindung zum vCenter nicht funktioniert.
 
-** (Gilt nur für Cloud-Sites) *API-Token*: Geben Sie das API-Token ein, um den Dienstzugriff für Ihre Organisation zu autorisieren. Erstellen des API-Tokens durch Angabe bestimmter Unternehmens- und Servicerollen
-** (Gilt nur für Cloud-Standorte) *lange Organisations-ID*: Geben Sie die eindeutige ID für die Organisation ein. Sie können diese ID identifizieren, indem Sie auf den Benutzernamen im Abschnitt „Konto“ der BlueXP -Konsole klicken.
 
 
 . Wählen Sie *Hinzufügen*.
@@ -51,14 +49,19 @@ Als Nächstes fügen Sie ein Ziel-vCenter hinzu.
 . *Ziel*:
 +
 .. Wählen Sie den Zielstandort und den Standort aus. Wenn das Ziel Cloud ist, wählen Sie *AWS* aus.
++
+*** (Gilt nur für Cloud-Sites) *API-Token*: Geben Sie das API-Token ein, um den Dienstzugriff für Ihre Organisation zu autorisieren. Erstellen des API-Tokens durch Angabe bestimmter Unternehmens- und Servicerollen
+*** (Gilt nur für Cloud-Standorte) *lange Organisations-ID*: Geben Sie die eindeutige ID für die Organisation ein. Sie können diese ID identifizieren, indem Sie auf den Benutzernamen im Abschnitt „Konto“ der BlueXP -Konsole klicken.
+
+
 .. Wählen Sie *Hinzufügen*.
 +
 Die Quell- und Ziel-vCenter werden in der Liste der Standorte angezeigt.
 
-
-
 +
-image:sites-list.png["Screenshot der Seite „Sites“"]
+image:sites-list2.png["Screenshot der Seite „Sites“"]
+
+
 
 . Um den Fortschritt des Vorgangs anzuzeigen, wählen Sie im oberen Menü *Job-Überwachung*.
 
