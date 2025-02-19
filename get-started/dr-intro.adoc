@@ -47,7 +47,7 @@ Mit BlueXP Disaster Recovery profitieren Sie von der vollständigen Nutzung vers
 
 * Replizieren Sie VMware Applikationen an Ihrem lokalen Produktionsstandort an einen Disaster-Recovery-Remote-Standort in der Cloud oder vor Ort. Nutzen Sie dazu SnapMirror Replizierung.
 * Migrieren Sie VMware-Workloads von Ihrem ursprünglichen Standort zu einem anderen Standort.
-* Führen Sie einen Failover-Test durch, während virtuelle Maschinen vorübergehend erstellt werden. Mithilfe der Disaster Recovery von BlueXP  wird ein neues FlexClone Volume aus dem ausgewählten Snapshot erstellt, und ein temporärer Datenspeicher, der das FlexClone Volume sichert, wird den ESXi Hosts zugeordnet. Dieser Prozess beansprucht keine zusätzliche physische Kapazität, lokal im ONTAP Storage oder auf FSX for NetApp ONTAP Storage in AWS. Das ursprüngliche Quell-Volume wird nicht geändert, und Replikatjobs können auch während der Disaster Recovery fortgesetzt werden.
+* Führen Sie einen Failover-Test durch, während virtuelle Maschinen vorübergehend erstellt werden. Die Disaster Recovery von BlueXP  erstellt aus dem ausgewählten Snapshot ein neues FlexClone-Volume, und ein temporärer Datenspeicher für das FlexClone-Volume wird den ESXi Hosts zugeordnet. Dieser Prozess beansprucht keine zusätzliche physische Kapazität, lokal im ONTAP Storage oder auf FSX for NetApp ONTAP Storage in AWS. Das ursprüngliche Quell-Volume wird nicht geändert, und Replikatjobs können auch während der Disaster Recovery fortgesetzt werden.
 * Bei einem Notfall führen Sie ein Failover Ihres primären Standorts nach Bedarf zum Disaster-Recovery-Standort durch. Dabei kann es sich um VMware Cloud on AWS mit FSX for NetApp ONTAP oder eine lokale VMware-Umgebung mit ONTAP handeln.
 * Nach der Behebung des Ausfalls können Sie nach Bedarf ein Failback vom Disaster-Recovery-Standort zum primären Standort durchführen.
 
@@ -100,7 +100,7 @@ Sie können jederzeit eine Lizenz erwerben und Sie werden erst nach Ablauf der 3
 
 Mit BlueXP Disaster Recovery können Sie Workloads wiederherstellen, die von einem On-Premises-Standort zu Amazon FSX for ONTAP oder zu einem anderen On-Premises-Standort repliziert werden. Dieser Service automatisiert die Recovery von der SnapMirror Ebene durch die Registrierung der Virtual Machines in der Virtual Machine Cloud (VMC) und bis zu Netzwerkzuordnungen direkt auf der VMware Netzwerkvirtualisierungs- und Sicherheitsplattform NSX-T. Diese Funktion ist in allen Virtual Machine Cloud-Umgebungen enthalten.
 
-Bei der Disaster Recovery von BlueXP kommt die ONTAP SnapMirror Technologie zum Einsatz, die für eine hocheffiziente Replizierung sorgt und die ONTAP fortlaufend inkrementelle Snapshot-Effizienz erhält. Die SnapMirror Replizierung stellt sicher, dass applikationskonsistente Snapshot Kopien immer synchron sind und die Daten unmittelbar nach einem Failover nutzbar sind.
+Bei der Disaster Recovery in BlueXP  kommt die ONTAP SnapMirror Technologie zum Einsatz, die für eine hocheffiziente Replizierung sorgt und die ONTAP fortlaufend inkrementelle Snapshot-Effizienz erhält. Die SnapMirror Replizierung stellt sicher, dass applikationskonsistente Snapshot Kopien immer synchron sind und die Daten sofort nach einem Failover nutzbar sind.
 
 image:dr-architecture-diagram-70-2.png["Diagramm mit der Architektur der BlueXP Disaster Recovery für VMware Service-Infrastruktur"]
 

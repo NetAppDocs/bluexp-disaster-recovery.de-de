@@ -68,10 +68,10 @@ Bei einem Ausfall sollte ein Failover Ihres primären lokalen VMware-Standorts n
 
 Der Failover-Prozess umfasst die folgenden Vorgänge:
 
-* Wenn Sie den letzten Snapshot ausgewählt haben, wird das SnapMirror Update ausgeführt, um die neuesten Änderungen zu replizieren.
+* Wenn Sie den letzten Snapshot ausgewählt haben, wird die SnapMirror-Aktualisierung ausgeführt, um die letzten Änderungen zu replizieren.
 * Die virtuellen Quellmaschinen sind heruntergefahren.
 * Die SnapMirror Beziehung ist unterbrochen und das Zielvolume wird Lese-/Schreibzugriff gemacht.
-* Auf Basis der Auswahl des Snapshots wird das aktive Filesystem auf den angegebenen Snapshot wiederhergestellt (neueste oder ausgewählte)
+* Basierend auf der Auswahl des Snapshots wird das aktive Dateisystem auf dem angegebenen Snapshot wiederhergestellt (zuletzt oder ausgewählt)
 * Datastores werden basierend auf den im Replikationsplan erfassten Informationen erstellt und auf dem VMware- oder VMC-Cluster oder -Host gemountet.
 * Die virtuellen Zielmaschinen werden registriert und basierend auf der auf der Seite Ressourcengruppen erfassten Reihenfolge betrieben.
 * Die SnapMirror Beziehung wird vom Ziel zur Quell-Virtual Machine umgekehrt.
@@ -88,7 +88,7 @@ TIP: Nach dem Start des Failovers sind die wiederhergestellten VMs im vCenter de
 +
 image:dr-plan-failover2.png["Failover-Seite"]
 
-. Initiieren Sie auf der Seite Failover entweder jetzt einen Snapshot, oder wählen Sie den Snapshot für den Datastore aus, von dem aus die Wiederherstellung durchgeführt werden soll. Die Standardeinstellung ist die neueste.
+. Starten Sie auf der Seite Failover entweder jetzt einen Snapshot, oder wählen Sie den Snapshot für den Datastore aus, von dem aus wiederhergestellt werden soll. Die Standardeinstellung ist die neueste.
 +
 Vor dem Failover wird ein Snapshot der aktuellen Quelle erstellt und auf das aktuelle Ziel repliziert.
 
