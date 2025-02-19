@@ -16,6 +16,28 @@ Erfahren Sie mehr über die Neuerungen bei BlueXP Disaster Recovery.
 
 
 
+== 19 Februar 2025
+
+Version 4.2
+
+
+
+=== Unterstützung von ASA r2 für VMs und Datastores auf VMFS Storage
+
+Diese Version von BlueXP  Disaster Recovery unterstützt ASA r2 für VMs und Datastores auf VMFS-Storage. Auf einem ASA r2 System unterstützt die ONTAP Software grundlegende SAN-Funktionen und beseitigt gleichzeitig Funktionen, die in SAN-Umgebungen nicht unterstützt werden.
+
+Dieser Release unterstützt die folgenden Funktionen für ASA r2:
+
+* Provisioning von Konsistenzgruppen für primären Storage (nur flache Konsistenzgruppe, d. h. nur eine Ebene ohne hierarchische Struktur)
+* Backup-Vorgänge (Konsistenzgruppen), einschließlich SnapMirror-Automatisierung
+
+
+Die Unterstützung für ASA r2 für BlueXP  Disaster Recovery verwendet ONTAP 9.16.1.
+
+Während Datastores auf einem ONTAP Volume oder einer ASA r2 Storage-Einheit gemountet werden können, kann eine Ressourcengruppe in der Disaster Recovery mit BlueXP  nicht sowohl einen Datenspeicher aus ONTAP als auch einen Datenspeicher aus ASA r2 umfassen. Sie können entweder einen Datenspeicher aus ONTAP oder einen Datenspeicher aus ASA r2 in einer Ressourcengruppe auswählen.
+
+
+
 == 30 Oktober 2024
 
 

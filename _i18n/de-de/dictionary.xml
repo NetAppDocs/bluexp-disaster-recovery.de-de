@@ -1046,4 +1046,13 @@ Nachdem Sie Ihre BlueXP Disaster Recovery-Lizenz bei Ihrem NetApp Vertriebsmitar
   <block id="c2a573f83674b01d424b4f0c10fdc5f1" category="list-text">(Gilt nur für Cloud-Sites) *API-Token*: Geben Sie das API-Token ein, um den Dienstzugriff für Ihre Organisation zu autorisieren. Erstellen des API-Tokens durch Angabe bestimmter Unternehmens- und Servicerollen</block>
   <block id="92d0331e97c92cd07178f7a7c2ab56da" category="list-text">(Gilt nur für Cloud-Standorte) *lange Organisations-ID*: Geben Sie die eindeutige ID für die Organisation ein. Sie können diese ID identifizieren, indem Sie auf den Benutzernamen im Abschnitt „Konto“ der BlueXP -Konsole klicken.</block>
   <block id="15a58a3d11cafa89812a0ab9b55e93b0" category="paragraph"><block ref="15a58a3d11cafa89812a0ab9b55e93b0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ca716ff875c64c5d237c8e862b62065c" category="doc">Unterstützung von ASA r2 für VMs und Datastores auf VMFS Storage</block>
+  <block id="1979efa5817be86acee4a8fbdf309a1a" category="paragraph">Diese Version von BlueXP  Disaster Recovery unterstützt ASA r2 für VMs und Datastores auf VMFS-Storage. Auf einem ASA r2 System unterstützt die ONTAP Software grundlegende SAN-Funktionen und beseitigt gleichzeitig Funktionen, die in SAN-Umgebungen nicht unterstützt werden.</block>
+  <block id="d154d7f159ffe4fedd65f7894a405e59" category="paragraph">Dieser Release unterstützt die folgenden Funktionen für ASA r2:</block>
+  <block id="38e9022b7f95524a99b3126af89eb640" category="list-text">Provisioning von Konsistenzgruppen für primären Storage (nur flache Konsistenzgruppe, d. h. nur eine Ebene ohne hierarchische Struktur)</block>
+  <block id="bbc4e3ff648912e4a892f88fcb03c65b" category="list-text">Backup-Vorgänge (Konsistenzgruppen), einschließlich SnapMirror-Automatisierung</block>
+  <block id="7e13cc5491f076161e0aefc0728bf351" category="paragraph">Die Unterstützung für ASA r2 für BlueXP  Disaster Recovery verwendet ONTAP 9.16.1.</block>
+  <block id="60a0836359d058db16981cf45c24594f" category="paragraph">Während Datastores auf einem ONTAP Volume oder einer ASA r2 Storage-Einheit gemountet werden können, kann eine Ressourcengruppe in der Disaster Recovery mit BlueXP  nicht sowohl einen Datenspeicher aus ONTAP als auch einen Datenspeicher aus ASA r2 umfassen. Sie können entweder einen Datenspeicher aus ONTAP oder einen Datenspeicher aus ASA r2 in einer Ressourcengruppe auswählen.</block>
+  <block id="79043fd5ff3b61216207b60882cd72cd" category="section-title">19 Februar 2025</block>
+  <block id="c3687f641cfdd19b41b8fe6f7cb68897" category="paragraph">Version 4.2</block>
 </blocks>
