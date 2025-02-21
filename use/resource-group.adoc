@@ -1,0 +1,82 @@
+---
+sidebar: sidebar 
+permalink: use/resource-group.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, replication plan, protection, disaster, recovery, virtual machines, vm 
+summary: NetApp BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recovery Service, der Disaster Recovery Workflows automatisiert. Nachdem Sie vCenter Sites hinzugefügt haben, sind Sie bereit, einen Disaster Recovery- oder Replizierungsplan zu erstellen. 
+---
+= Erstellen Sie eine Ressourcengruppe, um VMs gemeinsam zu organisieren
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Nachdem Sie vCenter Sites hinzugefügt haben, möchten Sie möglicherweise Ressourcengruppen erstellen, die VMs gruppieren. Ressourcengruppen ermöglichen es Ihnen, eine Reihe abhängiger VMs in logischen Gruppen zu organisieren, die Ihren Anforderungen entsprechen. Beispielsweise können Sie VMs einer Applikation gruppieren oder Applikationen mit ähnlichen Tiers gruppieren. Als weiteres Beispiel könnten Gruppen verzögerte Startaufträge enthalten, die bei der Wiederherstellung ausgeführt werden können.
+
+Sie können Ressourcengruppen mithilfe der folgenden Methoden erstellen:
+
+* Auf der Registerkarte Ressourcengruppen
+* Während Sie einen Disaster Recovery- oder Replizierungsplan erstellen. Wenn viele VMs von einem vCenter Quell-Cluster gehostet werden, ist es möglicherweise einfacher für Sie, die Ressourcengruppen beim Erstellen des Replikationsplans zu erstellen. Anweisungen zum Erstellen von Ressourcengruppen während des Erstellens eines Replikationsplans finden Sie unter link:dr-plan-create.html["Erstellen Sie einen Replizierungsplan"].
+
+
+
+TIP: Jede Ressourcengruppe kann eine oder mehrere VMs enthalten. Die VMs werden basierend auf der Reihenfolge, in der Sie sie in den Replizierungsplan aufnehmen, eingeschaltet. Sie können die Reihenfolge ändern, indem Sie die VMs in der Liste der Ressourcengruppen nach oben oder unten ziehen.
+
+.Informationen zu Ressourcengruppen
+Mit Ressourcengruppen können Sie VMs kombinieren, die betrieblich miteinander verbunden sind und als ein einziges System geschützt werden müssen.
+
+Eine Point-of-Sale-Applikation kann beispielsweise aus mehreren VMs bestehen, die Datenbanken hosten, mehreren VMs, die Management von Geschäftslogikregeln hosten, und mehreren VMs, die als Webserver-basierte Storefront fungieren. Es kann sich vorteilhaft auswirken, die Verfügbarkeit der gesamten Applikation mit einem einzigen Sicherungsprozess zu managen, indem diese VMs in einer einzelnen Ressourcengruppe platziert werden.
+
+Wenn Ressourcengruppen eingerichtet sind, können Sie die Regeln des Replikationsplans für eine ordnungsgemäße VM-Startreihenfolge, Netzwerkverbindung und mehr anwenden, um eine ordnungsgemäße Wiederherstellung aller für die Anwendung erforderlichen VMs sicherzustellen.
+
+.Wie funktioniert das?
+BlueXP  Disaster Recovery sichert VMs, indem die zugrunde liegenden ONTAP Volumes und LUNs repliziert werden, die die VMs in der Ressourcengruppe hosten. Dazu fragt das System vCenter nach dem Namen jedes Datenspeichers ab, der VMs in einer Ressourcengruppe hostet. BlueXP  Disaster Recovery identifiziert dann das ONTAP Quell-Volume oder die LUN, die diesen Datenspeicher hostet. Sämtliche Sicherung wird mithilfe der SnapMirror Replizierung auf ONTAP Volume-Ebene durchgeführt.
+
+Wenn VMs in der Ressourcengruppe auf verschiedenen Datenspeichern gehostet werden, verwendet die Disaster Recovery von BlueXP  eine der folgenden Methoden, um einen Daten-konsistenten Snapshot der ONTAP Volumes oder LUNs zu erstellen.
+
+[cols="30,65a"]
+|===
+| Relative Position von FlexVol Volumes | Snapshot-Replikatprozess 
+
+
+| Mehrere Datenspeicher - FlexVol Volumes in der *gleichen SVM*  a| 
+* Die ONTAP Konsistenzgruppe wurde erstellt
+* Snapshots der erstellten Konsistenzgruppe
+* Die SnapMirror-Replizierung im Volume wurde durchgeführt
+
+
+
+
+| Mehrere Datenspeicher – FlexVol Volumes in *mehreren SVMs*  a| 
+* ONTAP-API: `cg_start`. Stellt alle Volumes nach, damit Snapshots erstellt werden können, und initiiert Volume-bezogene Snapshots aller Ressourcengruppen-Volumes.
+* ONTAP-API: `cg_end`. Setzt den I/O-Vorgang auf allen Volumes fort und ermöglicht die SnapMirror-Replizierung mit Volume-Umfang, nachdem Snapshots erstellt wurden.
+
+
+|===
+Wenn Sie Ressourcengruppen erstellen, beachten Sie die folgenden Probleme:
+
+* Ein einzelner Datenspeicher sollte keine VMs hosten, die durch mehr als einen Replizierungsplan geschützt sind.
+* Hosten Sie geschützte und ungesicherte VMs nicht auf demselben Datenspeicher. Wenn geschützte und ungesicherte VMs auf demselben Datenspeicher gehostet werden, können folgende Probleme auftreten:
++
+** Da bei der Disaster Recovery von BlueXP  SnapMirror verwendet und das System ganze ONTAP Volumes repliziert, wird die genutzte Kapazität dieses Volumes zu Lizenzierungsüberlegungen verwendet. In diesem Fall wird der von geschützten und ungeschützten VMs verbrauchte Volume-Speicherplatz in diese Berechnung einbezogen.
+** Wenn für die Ressourcengruppe und die zugehörigen Datenspeicher ein Failover am Disaster Recovery-Standort erforderlich ist, sind alle ungesicherten VMs (VMs, die nicht zur Ressourcengruppe gehören, aber auf dem ONTAP Volume gehostet werden) vom Failover-Prozess nicht mehr am Quellstandort vorhanden. Dies führt zu einem Ausfall ungeschützter VMs am Quellstandort. Darüber hinaus startet die Disaster Recovery von BlueXP  diese ungeschützten VMs nicht am vCenter Failover-Standort.
+
+
+* Damit eine VM geschützt ist, muss sie in eine Ressourcengruppe aufgenommen werden.
+
+
+*BEST PRACTICE*: Organisieren Sie Ihre VMs vor der Bereitstellung der Disaster Recovery von BlueXP , um die Ausbreitung von Datastores zu minimieren. Platzieren Sie VMs, die eine Sicherung auf einer Teilmenge an Datenspeichern benötigen, und platzieren Sie VMs, die nicht in einer anderen Teilmenge an Datenspeichern gesichert werden. Stellen Sie sicher, dass die VMs auf einem bestimmten Datenspeicher nicht durch unterschiedliche Replizierungsplänen geschützt sind.
+
+.Schritte
+. Wählen Sie im BlueXP  Disaster Recovery-Menü *Ressourcengruppen* aus.
+. Wählen Sie *Hinzufügen*.
+. Geben Sie einen Namen für die Ressourcengruppe ein.
+. Wählen Sie das vCenter-Quellcluster aus, in dem sich die VMs befinden.
+. Wählen Sie auf der linken Seite der Seite Ressourcengruppen hinzufügen die VMs aus, die Sie schützen möchten.
++
+image:dr-resource-groups-add.png["Screenshot mit der Seite „Ressourcengruppen hinzufügen“"]
+
+. Sie können optional die Reihenfolge der VMs auf der rechten Seite ändern, indem Sie die einzelnen VMs nach oben oder unten in der Liste ziehen. Die VMs werden basierend auf der Reihenfolge, in der Sie sie einschließen, eingeschaltet.
+. Wählen Sie *Hinzufügen*.
+
