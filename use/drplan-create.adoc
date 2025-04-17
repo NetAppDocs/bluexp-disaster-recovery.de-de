@@ -20,6 +20,13 @@ Sie können einen Replizierungsplan erstellen und darüber hinaus Zeitpläne fü
 
 Sie können mehrere VMs auf mehreren Datenspeichern sichern. Die Disaster Recovery von BlueXP  erstellt ONTAP-Konsistenzgruppen für alle ONTAP-Volumes, die geschützte VM-Datastores hosten.
 
+VMs können nur gesichert werden, wenn der Replizierungsplan einen der folgenden Status hat:
+
+* Bereit
+* Failback durchgeführt
+* Failover-Test festgelegt
+
+
 
 
 == Erstellen Sie den Plan
@@ -27,7 +34,7 @@ Sie können mehrere VMs auf mehreren Datenspeichern sichern. Die Disaster Recove
 Ein Assistent führt Sie durch die folgenden Schritte:
 
 * Wählen Sie vCenter-Server aus.
-* Wählen Sie die VMs aus, die Sie replizieren und Gruppen zuweisen möchten.
+* Wählen Sie die VMs oder Datastores aus, die Sie replizieren möchten, und weisen Sie Ressourcengruppen zu.
 * Zuordnen der Ressourcen aus der Quellumgebung zum Ziel
 * Identifizieren Sie die Wiederholung, führen Sie ein vom Gast gehostetes Skript aus, legen Sie die Startreihenfolge fest, und wählen Sie das Ziel für den Wiederherstellungspunkt aus.
 * Überprüfen Sie den Plan.
@@ -64,27 +71,54 @@ image:dr-plan-create-name.png["Screenshot mit der Seite Replizierungsplan hinzuf
 
 === Wählen Sie Anwendungen aus, die Sie replizieren und Ressourcengruppen zuweisen möchten
 
-Im nächsten Schritt werden die erforderlichen VMs in funktionale Ressourcengruppen gruppiert. Mit Ressourcengruppen können Sie eine Reihe abhängiger VMs in logischen Gruppen gruppieren, die Ihren Anforderungen entsprechen. Gruppen könnten beispielsweise verzögerte Startaufträge enthalten, die bei der Wiederherstellung ausgeführt werden können.
+Im nächsten Schritt werden die erforderlichen VMs oder Datastores in funktionale Ressourcengruppen gruppiert. Mit Ressourcengruppen können Sie eine Reihe abhängiger VMs oder Datenspeicher in logischen Gruppen gruppieren, die Ihren Anforderungen entsprechen. Gruppen könnten beispielsweise verzögerte Startaufträge enthalten, die bei der Wiederherstellung ausgeführt werden können.
 
-Wenn Sie Anwendungen im Replikationsplan auswählen, wird das Betriebssystem für jede VM im Plan angezeigt. Dies ist hilfreich bei der Entscheidung, wie VMs in einer Ressourcengruppe gruppiert werden sollen.
+Wenn Sie Anwendungen im Replizierungsplan auswählen, wird das Betriebssystem für jede VM oder jeden Datastore im Plan angezeigt. Dies ist hilfreich bei der Entscheidung, wie VMs oder Datastores in einer Ressourcengruppe gruppiert werden.
 
 
-TIP: Jede Ressourcengruppe kann eine oder mehrere VMs enthalten. Die VMs werden basierend auf der Reihenfolge, in der Sie sie hier einfügen, eingeschaltet.
+TIP: Jede Ressourcengruppe kann eine oder mehrere VMs oder Datenspeicher enthalten. Die VMs werden basierend auf der Reihenfolge, in der Sie sie hier einfügen, eingeschaltet.
+
+Wenn Sie Ressourcengruppen erstellen, beachten Sie die folgenden Probleme:
+
+* Bevor Sie Datastores zu Ressourcengruppen hinzufügen, starten Sie zunächst eine manuelle Ermittlung oder eine geplante Ermittlung der VMs. Dadurch wird sichergestellt, dass die VMs erkannt und in der Ressourcengruppe aufgelistet werden. Wenn Sie keine manuelle Ermittlung auslösen, werden die VMs möglicherweise nicht in der Ressourcengruppe aufgeführt.
+* Stellen Sie sicher, dass sich mindestens eine VM im Datastore befindet. Wenn sich keine VMs im Datastore befinden, wird der Datastore nicht erkannt.
+* Ein einzelner Datenspeicher sollte keine VMs hosten, die durch mehr als einen Replizierungsplan geschützt sind.
+* Hosten Sie keine geschützten und ungesicherten VMs auf demselben Datenspeicher. Wenn geschützte und ungesicherte VMs auf demselben Datenspeicher gehostet werden, können folgende Probleme auftreten:
++
+** Da bei der Disaster Recovery von BlueXP  SnapMirror verwendet und das System ganze ONTAP Volumes repliziert, wird die genutzte Kapazität dieses Volumes zu Lizenzierungsüberlegungen verwendet. In diesem Fall wird der von geschützten und ungeschützten VMs verbrauchte Volume-Speicherplatz in diese Berechnung einbezogen.
+** Wenn für die Ressourcengruppe und die zugehörigen Datastores ein Failover am Disaster Recovery-Standort erforderlich ist, sind alle ungesicherten VMs (VMs, die nicht zur Ressourcengruppe gehören, aber auf dem ONTAP Volume gehostet werden) vom Failover-Prozess nicht mehr am Quellstandort vorhanden. Dies führt zu einem Ausfall ungeschützter VMs am Quellstandort. Darüber hinaus startet die Disaster Recovery von BlueXP  diese ungeschützten VMs nicht am vCenter Failover-Standort.
+
+
+* Damit eine VM geschützt ist, muss sie in eine Ressourcengruppe aufgenommen werden.
+
+
+*BEST PRACTICE*: Organisieren Sie Ihre VMs vor der Bereitstellung der Disaster Recovery von BlueXP , um die Ausbreitung von Datastores zu minimieren. Platzieren Sie VMs, die eine Sicherung auf einer Teilmenge von Datenspeichern benötigen, und platzieren Sie VMs, die nicht in einer anderen Teilmenge von Datenspeichern gesichert werden sollen. Stellen Sie sicher, dass die VMs auf einem beliebigen Datastore nicht durch unterschiedliche Replikationspläne geschützt sind.
 
 .Schritte
-. Optional können Sie auf der linken Seite der Seite „Applikationen“ die VMs nach ihrem Datenspeicher filtern. Sie können auch nach bestimmten VMs anhand des Namens suchen.
-. Wählen Sie auf der linken Seite der Seite Anwendungen die VMs aus, die Sie schützen möchten, und weisen Sie sie der ausgewählten Gruppe zu.
+. Wählen Sie *Virtual Machines* oder *Datastores* aus.
+. Optional können Sie nach bestimmten VMs oder Datastores anhand des Namens suchen.
+. Wählen Sie auf der linken Seite der Seite Anwendungen die VMs oder Datastores aus, die Sie schützen möchten, und weisen Sie sie der ausgewählten Gruppe zu.
 +
-Die ausgewählte VM wird automatisch zu Gruppe 1 hinzugefügt und eine neue Gruppe 2 wird gestartet. Jedes Mal, wenn Sie der letzten Gruppe eine VM hinzufügen, wird eine weitere Gruppe hinzugefügt.
+Die ausgewählte Ressource wird automatisch zu Gruppe 1 hinzugefügt und eine neue Gruppe 2 wird gestartet. Jedes Mal, wenn Sie der letzten Gruppe eine Ressource hinzufügen, wird eine weitere Gruppe hinzugefügt.
 
 +
-image:dr-plan-create-apps-vms5.png["Screenshot mit der Seite Replizierungsplan hinzufügen > zu replizierende Anwendungen"]
+image:dr-plan-create-apps-vms6.png["Screenshot mit der Seite Replizierungsplan hinzufügen > zu replizierende Anwendungen"]
+
++
+Oder, für Datastores:
+
++
+image:dr-plan-create-apps-datastores.png["Screenshot mit der Seite Replizierungsplan hinzufügen > zu replizierende Anwendungen"]
 
 . Führen Sie optional einen der folgenden Schritte aus:
 +
 ** Um den Gruppennamen zu ändern, klicken Sie auf das Gruppensymbol *Bearbeiten*image:icon-pencil.png["Bleistiftsymbol"].
-** Um eine VM aus einer Gruppe zu entfernen, wählen Sie *X* neben der VM aus.
-** Um eine VM in eine andere Gruppe zu verschieben, ziehen Sie sie per Drag-and-Drop in die neue Gruppe.
+** Um eine Ressource aus einer Gruppe zu entfernen, wählen Sie *X* neben der Ressource aus.
+** Um eine Ressource in eine andere Gruppe zu verschieben, ziehen Sie sie in die neue Gruppe.
++
+
+TIP: Um einen Datastore in eine andere Ressourcengruppe zu verschieben, heben Sie die Auswahl des unerwünschten Datastore auf und senden Sie den Replikationsplan ab. Erstellen oder bearbeiten Sie dann den anderen Replizierungsplan und wählen Sie den Datenspeicher erneut aus.
+
 
 
 . Wenn Sie mehrere Ressourcengruppen haben, stellen Sie sicher, dass die Reihenfolge der Gruppen mit der operativen Sequenz übereinstimmt, die auftreten soll.

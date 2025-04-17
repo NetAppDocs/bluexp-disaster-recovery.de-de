@@ -1,0 +1,39 @@
+= Geplante Ermittlung für VMs
+:allow-uri-read: 
+
+
+
+
+=== Geplante Ermittlung für VMs
+
+Bei der Disaster Recovery von BlueXP  werden alle 24 Stunden einmal erkannt. Mit dieser Version können Sie den Zeitplan zur Bestandsaufnahme nun an Ihre Anforderungen anpassen und die Performance bei Bedarf verringern. Wenn Sie beispielsweise über eine große Anzahl von VMs verfügen, können Sie den Erkennungszeitplan so einstellen, dass er alle 48 Stunden ausgeführt wird. Wenn Sie über eine geringe Anzahl von VMs verfügen, können Sie den Erkennungszeitplan so einstellen, dass er alle 12 Stunden ausgeführt wird.
+
+Wenn Sie die Ermittlung nicht per wan planen, können Sie die Option für die geplante Ermittlung deaktivieren und die Ermittlung jederzeit manuell aktualisieren.
+
+Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/sites-add.html["Fügen Sie vCenter-Serverstandorte hinzu"].
+
+
+
+=== Unterstützung für Ressourcengruppen-Datastore
+
+Zuvor können Sie Ressourcengruppen nur nach VMs erstellen. Mit diesem Release können Sie eine Ressourcengruppe nach Datastores erstellen. Wenn Sie einen Replikationsplan erstellen und eine Ressourcengruppe für diesen Plan erstellen, werden alle VMs in einem Datenspeicher aufgelistet. Dies ist nützlich, wenn Sie über eine große Anzahl von VMs verfügen und sie nach Datenspeicher gruppieren möchten.
+
+Sie haben folgende Möglichkeiten, eine Ressourcengruppe mit einem Datastore zu erstellen:
+
+* Wenn Sie eine Ressourcengruppe mithilfe von Datastores hinzufügen, wird eine Liste der Datastores angezeigt. Sie können einen oder mehrere Datastores auswählen, um eine Ressourcengruppe zu erstellen.
+* Wenn Sie einen Replizierungsplan erstellen und eine Ressourcengruppe innerhalb des Plans erstellen, werden die VMs in den Datenspeichern angezeigt.
+
+
+Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Erstellen Sie einen Replizierungsplan"].
+
+
+
+=== Benachrichtigungen über Ablauf der kostenlosen Testversion oder Lizenz
+
+Diese Version enthält Benachrichtigungen, dass die kostenlose Testversion in 60 Tagen abläuft, um sicherzustellen, dass Sie Zeit haben, um eine Lizenz zu erhalten. Diese Version enthält auch Benachrichtigungen an dem Tag, an dem die Lizenz abläuft.
+
+
+
+=== Benachrichtigung über Service-Updates
+
+Mit diesem Release wird oben ein Banner angezeigt, das anzeigt, dass Services aktualisiert werden und der Service in den Wartungsmodus versetzt wird. Das Banner wird angezeigt, wenn der Dienst aktualisiert wird, und wird nach Abschluss der Aktualisierung nicht mehr angezeigt. Sie können zwar weiterhin in der Benutzeroberfläche arbeiten, während das Upgrade ausgeführt wird, Sie können jedoch keine neuen Jobs senden. Geplante Jobs werden ausgeführt, nachdem die Aktualisierung abgeschlossen ist und der Dienst in den Produktionsmodus zurückkehrt.

@@ -12,19 +12,21 @@ summary: NetApp BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recove
 
 
 [role="lead"]
-Nachdem Sie vCenter Sites hinzugefügt haben, möchten Sie möglicherweise Ressourcengruppen erstellen, die VMs gruppieren. Ressourcengruppen ermöglichen es Ihnen, eine Reihe abhängiger VMs in logischen Gruppen zu organisieren, die Ihren Anforderungen entsprechen. Beispielsweise können Sie VMs einer Applikation gruppieren oder Applikationen mit ähnlichen Tiers gruppieren. Als weiteres Beispiel könnten Gruppen verzögerte Startaufträge enthalten, die bei der Wiederherstellung ausgeführt werden können.
+Nachdem Sie vCenter Sites hinzugefügt haben, möchten Sie möglicherweise Ressourcengruppen erstellen, die VMs durch VMs oder Datastores gruppieren. Ressourcengruppen ermöglichen es Ihnen, eine Reihe abhängiger VMs in logischen Gruppen zu organisieren, die Ihren Anforderungen entsprechen. Beispielsweise können Sie VMs einer Applikation gruppieren oder Applikationen mit ähnlichen Tiers gruppieren. Als weiteres Beispiel könnten Gruppen verzögerte Startaufträge enthalten, die bei der Wiederherstellung ausgeführt werden können.
+
+Sie können VMs selbst oder VMs in Datastores gruppieren.
 
 Sie können Ressourcengruppen mithilfe der folgenden Methoden erstellen:
 
 * Auf der Registerkarte Ressourcengruppen
-* Während Sie einen Disaster Recovery- oder Replizierungsplan erstellen. Wenn viele VMs von einem vCenter Quell-Cluster gehostet werden, ist es möglicherweise einfacher für Sie, die Ressourcengruppen beim Erstellen des Replikationsplans zu erstellen. Anweisungen zum Erstellen von Ressourcengruppen während des Erstellens eines Replikationsplans finden Sie unter link:dr-plan-create.html["Erstellen Sie einen Replizierungsplan"].
+* Während Sie einen Disaster Recovery- oder Replizierungsplan erstellen. Wenn viele VMs von einem vCenter Quell-Cluster gehostet werden, ist es möglicherweise einfacher für Sie, die Ressourcengruppen beim Erstellen des Replikationsplans zu erstellen. Anweisungen zum Erstellen von Ressourcengruppen während des Erstellens eines Replikationsplans finden Sie unter link:drplan-create.html["Erstellen Sie einen Replizierungsplan"].
 
 
 
-TIP: Jede Ressourcengruppe kann eine oder mehrere VMs enthalten. Die VMs werden basierend auf der Reihenfolge, in der Sie sie in den Replizierungsplan aufnehmen, eingeschaltet. Sie können die Reihenfolge ändern, indem Sie die VMs in der Liste der Ressourcengruppen nach oben oder unten ziehen.
+TIP: Jede Ressourcengruppe kann eine oder mehrere VMs oder Datenspeicher enthalten. Die VMs werden basierend auf der Reihenfolge, in der Sie sie in den Replizierungsplan aufnehmen, eingeschaltet. Sie können die Reihenfolge ändern, indem Sie die VMs oder Datenspeicher in der Liste der Ressourcengruppen nach oben oder unten ziehen.
 
 .Informationen zu Ressourcengruppen
-Mit Ressourcengruppen können Sie VMs kombinieren, die betrieblich miteinander verbunden sind und als ein einziges System geschützt werden müssen.
+Mit Ressourcengruppen können Sie VMs oder Datastores kombinieren, die VMs umfassen, die operativ verbunden sind und als ein einziges System geschützt werden müssen.
 
 Eine Point-of-Sale-Applikation kann beispielsweise aus mehreren VMs bestehen, die Datenbanken hosten, mehreren VMs, die Management von Geschäftslogikregeln hosten, und mehreren VMs, die als Webserver-basierte Storefront fungieren. Es kann sich vorteilhaft auswirken, die Verfügbarkeit der gesamten Applikation mit einem einzigen Sicherungsprozess zu managen, indem diese VMs in einer einzelnen Ressourcengruppe platziert werden.
 
@@ -56,26 +58,33 @@ Wenn VMs in der Ressourcengruppe auf verschiedenen Datenspeichern gehostet werde
 |===
 Wenn Sie Ressourcengruppen erstellen, beachten Sie die folgenden Probleme:
 
+* Bevor Sie Datastores zu Ressourcengruppen hinzufügen, starten Sie zunächst eine manuelle Ermittlung oder eine geplante Ermittlung der VMs. Dadurch wird sichergestellt, dass die VMs erkannt und in der Ressourcengruppe aufgelistet werden. Wenn Sie keine manuelle Ermittlung auslösen, werden die VMs möglicherweise nicht in der Ressourcengruppe aufgeführt.
+* Stellen Sie sicher, dass sich mindestens eine VM im Datastore befindet. Wenn sich keine VMs im Datastore befinden, wird der Datastore nicht erkannt.
 * Ein einzelner Datenspeicher sollte keine VMs hosten, die durch mehr als einen Replizierungsplan geschützt sind.
-* Hosten Sie geschützte und ungesicherte VMs nicht auf demselben Datenspeicher. Wenn geschützte und ungesicherte VMs auf demselben Datenspeicher gehostet werden, können folgende Probleme auftreten:
+* Hosten Sie keine geschützten und ungesicherten VMs auf demselben Datenspeicher. Wenn geschützte und ungesicherte VMs auf demselben Datenspeicher gehostet werden, können folgende Probleme auftreten:
 +
 ** Da bei der Disaster Recovery von BlueXP  SnapMirror verwendet und das System ganze ONTAP Volumes repliziert, wird die genutzte Kapazität dieses Volumes zu Lizenzierungsüberlegungen verwendet. In diesem Fall wird der von geschützten und ungeschützten VMs verbrauchte Volume-Speicherplatz in diese Berechnung einbezogen.
-** Wenn für die Ressourcengruppe und die zugehörigen Datenspeicher ein Failover am Disaster Recovery-Standort erforderlich ist, sind alle ungesicherten VMs (VMs, die nicht zur Ressourcengruppe gehören, aber auf dem ONTAP Volume gehostet werden) vom Failover-Prozess nicht mehr am Quellstandort vorhanden. Dies führt zu einem Ausfall ungeschützter VMs am Quellstandort. Darüber hinaus startet die Disaster Recovery von BlueXP  diese ungeschützten VMs nicht am vCenter Failover-Standort.
+** Wenn für die Ressourcengruppe und die zugehörigen Datastores ein Failover am Disaster Recovery-Standort erforderlich ist, sind alle ungesicherten VMs (VMs, die nicht zur Ressourcengruppe gehören, aber auf dem ONTAP Volume gehostet werden) vom Failover-Prozess nicht mehr am Quellstandort vorhanden. Dies führt zu einem Ausfall ungeschützter VMs am Quellstandort. Darüber hinaus startet die Disaster Recovery von BlueXP  diese ungeschützten VMs nicht am vCenter Failover-Standort.
 
 
 * Damit eine VM geschützt ist, muss sie in eine Ressourcengruppe aufgenommen werden.
 
 
-*BEST PRACTICE*: Organisieren Sie Ihre VMs vor der Bereitstellung der Disaster Recovery von BlueXP , um die Ausbreitung von Datastores zu minimieren. Platzieren Sie VMs, die eine Sicherung auf einer Teilmenge an Datenspeichern benötigen, und platzieren Sie VMs, die nicht in einer anderen Teilmenge an Datenspeichern gesichert werden. Stellen Sie sicher, dass die VMs auf einem bestimmten Datenspeicher nicht durch unterschiedliche Replizierungsplänen geschützt sind.
+*BEST PRACTICE*: Organisieren Sie Ihre VMs vor der Bereitstellung der Disaster Recovery von BlueXP , um die Ausbreitung von Datastores zu minimieren. Platzieren Sie VMs, die eine Sicherung auf einer Teilmenge von Datenspeichern benötigen, und platzieren Sie VMs, die nicht in einer anderen Teilmenge von Datenspeichern gesichert werden sollen. Stellen Sie sicher, dass die VMs auf einem beliebigen Datastore nicht durch unterschiedliche Replikationspläne geschützt sind.
 
 .Schritte
 . Wählen Sie im BlueXP  Disaster Recovery-Menü *Ressourcengruppen* aus.
 . Wählen Sie *Hinzufügen*.
 . Geben Sie einen Namen für die Ressourcengruppe ein.
 . Wählen Sie das vCenter-Quellcluster aus, in dem sich die VMs befinden.
+. Wählen Sie entweder *Virtual Machines* oder *Datastores* je nachdem, wie Sie suchen möchten.
+. Wählen Sie die Registerkarte *Ressourcengruppen hinzufügen*. Das System listet alle Datastores oder VMs im ausgewählten vCenter-Cluster auf. Wenn Sie *Datastores* ausgewählt haben, listet das System alle Datastores im ausgewählten vCenter Cluster auf. Wenn Sie *Virtual Machines* ausgewählt haben, listet das System alle VMs im ausgewählten vCenter-Cluster auf.
 . Wählen Sie auf der linken Seite der Seite Ressourcengruppen hinzufügen die VMs aus, die Sie schützen möchten.
 +
 image:dr-resource-groups-add.png["Screenshot mit der Seite „Ressourcengruppen hinzufügen“"]
+
++
+image:dr-resource-groups-datastores-add.png["Screenshot mit der Seite „Ressourcengruppen hinzufügen“"]
 
 . Sie können optional die Reihenfolge der VMs auf der rechten Seite ändern, indem Sie die einzelnen VMs nach oben oder unten in der Liste ziehen. Die VMs werden basierend auf der Reihenfolge, in der Sie sie einschließen, eingeschaltet.
 . Wählen Sie *Hinzufügen*.

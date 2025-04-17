@@ -14,7 +14,23 @@ summary: Bevor Sie einen Disaster Recovery-Plan erstellen können, müssen Sie e
 [role="lead"]
 Bevor Sie einen Disaster Recovery-Plan erstellen können, müssen Sie einem Standort einen primären vCenter Server und einen vCenter Ziel-Disaster-Recovery-Standort in BlueXP  hinzufügen.
 
-Nachdem sie hinzugefügt wurden, führt die Disaster Recovery von BlueXP eine umfassende Bestandsaufnahme der vCenter Umgebungen durch, einschließlich vCenter Cluster, ESXi Hosts, Datastores, Storage-Platzbedarf, Details zu Virtual Machines, SnapMirror Replikaten und Virtual Machine-Netzwerken.
+Nach dem Hinzufügen von vCenters führt BlueXP  Disaster Recovery eine umfassende Erkennung der vCenter-Umgebungen durch, einschließlich vCenter-Cluster, ESXi-Hosts, Datastores, Storage-Platzbedarf, Details zu virtuellen Maschinen, SnapMirror-Replikaten und Virtual-Machine-Netzwerken.
+
+Wenn Sie in früheren Versionen vCenter hinzugefügt haben und den Ermittlungsplan anpassen möchten, müssen Sie den vCenter Server-Standort bearbeiten und den Zeitplan festlegen.
+
+
+TIP: Bei der Disaster Recovery von BlueXP  werden alle 24 Stunden einmal erkannt. Nach der Einrichtung eines Standorts können Sie später das vCenter bearbeiten, um den Ermittlungsplan an Ihre Anforderungen anzupassen. Wenn Sie beispielsweise über eine große Anzahl an VMs verfügen, können Sie den Erkennungszeitplan so einstellen, dass er alle 23 Stunden und 59 Minuten ausgeführt wird. Wenn Sie über eine geringe Anzahl von VMs verfügen, können Sie den Erkennungszeitplan so einstellen, dass er alle 12 Stunden ausgeführt wird. Das Mindestintervall beträgt 30 Minuten und das Maximum 24 Stunden.
+
+Sie sollten zunächst einige manuelle Ermittlungen durchführen, um die aktuellsten Informationen über Ihre Umgebung zu erhalten. Danach können Sie den Zeitplan so einstellen, dass er automatisch ausgeführt wird.
+
+Neu hinzugefügte oder gelöschte VMs werden bei der nächsten geplanten Erkennung oder bei einer sofortigen manuellen Erkennung erkannt.
+
+VMs können nur gesichert werden, wenn der Replizierungsplan einen der folgenden Status hat:
+
+* Bereit
+* Failback durchgeführt
+* Failover-Test festgelegt
+
 
 .Schritte
 . Melden Sie sich bei BlueXP an und wählen Sie im linken Navigationsbereich *Protection* > *Disaster Recovery* aus.
@@ -64,4 +80,38 @@ image:sites-list2.png["Screenshot der Seite „Sites“"]
 
 
 . Um den Fortschritt des Vorgangs anzuzeigen, wählen Sie im oberen Menü *Job-Überwachung*.
+
+
+
+
+== Bearbeiten Sie den vCenter Server-Standort und passen Sie den Ermittlungsplan an
+
+Sie können den vCenter Server-Standort bearbeiten, um den Ermittlungsplan anzupassen. Wenn Sie beispielsweise über eine große Anzahl an VMs verfügen, können Sie den Erkennungszeitplan so einstellen, dass er alle 23 Stunden und 59 Minuten ausgeführt wird. Wenn Sie über eine geringe Anzahl von VMs verfügen, können Sie den Erkennungszeitplan so einstellen, dass er alle 12 Stunden ausgeführt wird.
+
+Wenn Sie in früheren Versionen vCenter hinzugefügt haben und den Ermittlungsplan anpassen möchten, müssen Sie den vCenter Server-Standort bearbeiten und den Zeitplan festlegen.
+
+Wenn Sie die Ermittlung nicht planen möchten, können Sie die Option für die geplante Ermittlung deaktivieren und die Ermittlung jederzeit manuell aktualisieren.
+
+.Schritte
+. Wählen Sie im BlueXP  Disaster Recovery-Menü *Sites* aus.
+. Wählen Sie die Site aus, die Sie bearbeiten möchten.
+. Wählen Sie das Aktionen-image:icon-vertical-dots.png["Aktionssymbol"]Symbol auf der rechten Seite und wählen Sie *Bearbeiten*.
+. Bearbeiten Sie die Felder auf der Seite vCenter-Server bearbeiten nach Bedarf.
+. Um den Ermittlungszeitplan anzupassen, aktivieren Sie das Kontrollkästchen *geplante Ermittlung aktivieren*, und wählen Sie das gewünschte Datum und das gewünschte Zeitintervall aus.
++
+image:sites-edit-schedule.png["Screenshot zum Ermittlungsplan bearbeiten"]
+
+. Wählen Sie *Speichern*.
+
+
+
+
+== Erkennung manuell aktualisieren
+
+Sie können die Ermittlung jederzeit manuell aktualisieren. Dies ist nützlich, wenn Sie VMs hinzugefügt oder entfernt haben und die Informationen in BlueXP  Disaster Recovery aktualisieren möchten.
+
+.Schritte
+. Wählen Sie im BlueXP  Disaster Recovery-Menü *Sites* aus.
+. Wählen Sie die Site aus, die Sie aktualisieren möchten.
+. Wählen Sie das Aktionen-image:icon-vertical-dots.png["Aktionssymbol"]Symbol auf der rechten Seite und wählen Sie *Aktualisieren*.
 

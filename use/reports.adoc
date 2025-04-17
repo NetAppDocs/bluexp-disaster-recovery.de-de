@@ -14,10 +14,7 @@ summary: Durch die Überprüfung von Disaster Recovery-Berichten können Sie die
 [role="lead"]
 Durch die Überprüfung von Disaster Recovery-Berichten können Sie die Bereitschaft Ihrer Disaster Recovery analysieren. Vordefinierte Berichte enthalten eine Zusammenfassung der Failover-Tests, Details zum Replizierungsplan und Jobdetails für alle Standorte innerhalb eines Kontos der letzten sieben Tage.
 
-Sie können Berichte im HTML- oder JSON-Format herunterladen.
-
-
-TIP: Sie können die HTML-Seite mit den Optionen Ihres Browsers in eine PDF-Datei konvertieren.
+Sie können Berichte im PDF-, HTML- oder JSON-Format herunterladen.
 
 Der Download-Link ist sechs Stunden gültig.
 

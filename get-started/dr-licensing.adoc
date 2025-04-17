@@ -118,13 +118,13 @@ Sie können die kostenlose Testversion jederzeit beenden oder warten, bis sie ab
 +
 image:draas-trial-end3.png["Kostenlose Testseite beenden"]
 
-. Wenn Sie alle Daten löschen möchten, aktivieren Sie *Alle Daten löschen, wenn meine Testversion endet*.
+. Wenn Sie alle Daten löschen möchten, aktivieren Sie *Daten sofort nach dem Beenden meiner kostenlosen Testversion löschen*.
 +
 Dadurch werden alle Zeitpläne, Replikationspläne, Ressourcengruppen, vCenter und Standorte gelöscht. Audit-Daten, Betriebsprotokolle und Jobverlauf werden bis zum Ende der Lebensdauer des Produkts aufbewahrt.
 
 +
 
-NOTE: Wenn Sie die kostenlose Testversion beenden und keine Daten löschen möchten und keine Lizenz oder kein Abonnement erwerben, löscht BlueXP Disaster Recovery 60 Tage nach Ende der kostenlosen Testversion sämtliche Daten.
+NOTE: Wenn Sie die kostenlose Testversion beenden, keine Daten löschen möchten und keine Lizenz oder kein Abonnement erwerben, löscht BlueXP  Disaster Recovery 60 Tage nach Ablauf der kostenlosen Testversion alle Ihre Daten.
 
 . Geben Sie „Test beenden“ in das Textfeld ein.
 . Wählen Sie *Ende*.
