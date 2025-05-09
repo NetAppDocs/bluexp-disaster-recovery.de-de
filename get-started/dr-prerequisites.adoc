@@ -99,6 +99,7 @@ TIP: On-Premises bis On-Premises: Nutzen Sie den BlueXP On-Premises Connector. N
 +
 Siehe https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Erkennen von ONTAP Clustern vor Ort"^].
 
+* Informationen zur Einrichtung eines intelligenten Proxys für die Disaster Recovery von BlueXP  finden Sie unter link:../get-started/dr-setup.html["Richten Sie Ihre Infrastruktur für die Disaster Recovery von BlueXP ein"].
 
 
 

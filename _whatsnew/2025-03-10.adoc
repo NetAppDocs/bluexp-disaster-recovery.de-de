@@ -1,0 +1,25 @@
+= Intelligente Proxy-Unterstützung
+:allow-uri-read: 
+
+
+
+
+=== Intelligente Proxy-Unterstützung
+
+Der BlueXP -Connector unterstützt den intelligenten Proxy. Ein intelligenter Proxy ist eine einfache, sichere und effiziente Möglichkeit, Ihre On-Premises-Umgebung mit dem BlueXP -Service zu verbinden. Sie stellt eine sichere Verbindung zwischen Ihrer Umgebung und dem BlueXP -Dienst her, ohne dass ein VPN oder ein direkter Internetzugang erforderlich ist. Diese optimierte Proxy-Implementierung entlastet den API-Verkehr innerhalb des lokalen Netzwerks.
+
+Wenn ein Proxy konfiguriert ist, versucht BlueXP  Disaster Recovery, direkt mit VMware oder ONTAP zu kommunizieren und verwendet den konfigurierten Proxy, wenn die direkte Kommunikation fehlschlägt.
+
+Für die Implementierung eines BlueXP  Disaster Recovery Proxy ist eine Port 443-Kommunikation zwischen dem Connector und allen vCenter-Servern und ONTAP-Arrays über ein HTTPS-Protokoll erforderlich. Der BlueXP  Disaster Recovery-Agent im Connector kommuniziert direkt mit VMware vSphere, VC oder ONTAP, wenn Aktionen durchgeführt werden.
+
+Weitere Informationen zum intelligenten Proxy für die Disaster Recovery von BlueXP  finden Sie unter https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-setup.html["Richten Sie Ihre Infrastruktur für die Disaster Recovery von BlueXP ein"].
+
+Weitere Informationen über die Einrichtung eines allgemeinen Proxys in BlueXP  finden Sie unter https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html["Konfigurieren Sie einen Konnektor für die Verwendung eines Proxy-Servers"^].
+
+
+
+=== Beenden Sie die kostenlose Testversion jederzeit
+
+Sie können die kostenlose Testversion an jedem Zinken stoppen oder Sie können warten, bis sie abläuft.
+
+Siehe https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-licensing.html#end-the-free-trial["Beenden Sie die kostenlose Testversion"].
