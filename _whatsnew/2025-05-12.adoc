@@ -22,7 +22,7 @@ Bei einem Failover ersetzt die Disaster Recovery von BlueXP  den Teil Netzwerk 
 
 Zusammenfassend bleibt die Host-Adresse unverändert, während die Netzwerkadresse durch das ersetzt wird, was in der Subnetz-Zuordnung des Standorts konfiguriert ist. So lässt sich die IP-Adressenzuweisung beim Failover einfacher managen, insbesondere wenn Sie hunderte Netzwerke und tausende VMs managen müssen.
 
-Weitere Informationen zum Eingeben von Subnetzzuordnungen in Ihren Standorten finden Sie unter link:../use/sites-add.html["Fügen Sie vCenter-Serverstandorte hinzu"].
+Weitere Informationen zum Einbeziehen der Subnetzzuordnung in Ihre Standorte finden Sie unter https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/sites-add.html["Fügen Sie vCenter-Serverstandorte hinzu"].
 
 
 
@@ -36,7 +36,7 @@ Wenn Sie ein Failover starten, können Sie jetzt eine Option *Skip Protection* w
 
 Nachdem der ursprüngliche Quellstandort wieder online ist, können Sie den umgekehrten Schutz einrichten, indem Sie im Menü Aktionen des Replikationsplans die Option *Ressourcen schützen* auswählen. Dadurch wird versucht, für jedes Volume im Plan eine umgekehrte Replikationsbeziehung zu erstellen. Sie können diesen Job wiederholt ausführen, bis der Schutz wiederhergestellt ist. Wenn der Schutz wiederhergestellt ist, können Sie ein Failback auf die übliche Weise initiieren.
 
-Einzelheiten zum Übersprungsschutz finden Sie unter link:../use/failover.html["Failover von Anwendungen an einen Remote-Standort"].
+Weitere Informationen zum Übersprungsschutz finden Sie unter https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/failover.html["Fehler bei ovre-Anwendungen an einem Remote-Standort"].
 
 
 
@@ -50,4 +50,4 @@ Wenn diese Option ausgewählt ist, wird für BlueXP  Disaster Recovery kein Bac
 
 Nach der Konfiguration erstellt der Service keine regelmäßig geplanten Snapshots, sondern verlässt sich darauf, dass die externe Einheit diese Snapshots erstellt und aktualisiert.
 
-Weitere Informationen zur Verwendung externer Snapshot-Lösungen im Replikationsplan finden Sie unter link:../use/drplan-create.html["Erstellen Sie einen Replizierungsplan"].
+Weitere Informationen zum Übersprungsschutz finden Sie unter https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Erstellen Sie einen Replizierungsplan"].
