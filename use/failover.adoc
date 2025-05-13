@@ -86,13 +86,18 @@ TIP: Nach dem Start des Failovers sind die wiederhergestellten VMs im vCenter de
 . Wählen Sie den Replikationsplan aus.
 . Wählen Sie rechts die Option *actions* aus image:../use/icon-horizontal-dots.png["Actions-Menü-Symbol im BlueXP Disaster Recovery Service"] Und wählen Sie *Failover*.
 +
-image:dr-plan-failover2.png["Failover-Seite"]
+image:dr-plan-failover3.png["Failover-Seite"]
 
 . Starten Sie auf der Seite Failover entweder jetzt einen Snapshot, oder wählen Sie den Snapshot für den Datastore aus, von dem aus wiederhergestellt werden soll. Die Standardeinstellung ist die neueste.
 +
 Vor dem Failover wird ein Snapshot der aktuellen Quelle erstellt und auf das aktuelle Ziel repliziert.
 
 . Wählen Sie optional *Force Failover* aus, wenn das Failover auch dann erfolgen soll, wenn ein Fehler erkannt wird, der normalerweise das Failover verhindert.
+. Wählen Sie optional *Schutz überspringen* aus, wenn der Dienst nach einem Failover des Replikationsplans nicht automatisch eine umgekehrte SnapMirror-Schutzbeziehung erstellen soll. Dies ist nützlich, wenn Sie auf dem wiederhergestellten Standort weitere Vorgänge durchführen möchten, bevor Sie ihn in BlueXP  Disaster Recovery wieder online schalten.
++
+
+TIP: Sie können den umgekehrten Schutz einrichten, indem Sie im Menü Aktionen des Replikationsplans die Option *Ressourcen schützen* auswählen. Dadurch wird versucht, für jedes Volume im Plan eine umgekehrte Replikationsbeziehung zu erstellen. Sie können diesen Job wiederholt ausführen, bis der Schutz wiederhergestellt ist. Wenn der Schutz wiederhergestellt ist, können Sie ein Failback auf die übliche Weise initiieren.
+
 . Geben Sie „Failover“ in die Box ein.
 . Wählen Sie *Failover*.
 . Um den Fortschritt zu überprüfen, wählen Sie im oberen Menü *Job-Überwachung*.

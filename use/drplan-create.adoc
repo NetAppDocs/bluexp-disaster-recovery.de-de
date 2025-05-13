@@ -71,12 +71,12 @@ image:dr-plan-create-name.png["Screenshot mit der Seite Replizierungsplan hinzuf
 
 === Wählen Sie Anwendungen aus, die Sie replizieren und Ressourcengruppen zuweisen möchten
 
-Im nächsten Schritt werden die erforderlichen VMs oder Datastores in funktionale Ressourcengruppen gruppiert. Mit Ressourcengruppen können Sie eine Reihe abhängiger VMs oder Datenspeicher in logischen Gruppen gruppieren, die Ihren Anforderungen entsprechen. Gruppen könnten beispielsweise verzögerte Startaufträge enthalten, die bei der Wiederherstellung ausgeführt werden können.
+Im nächsten Schritt werden die erforderlichen VMs oder Datastores in funktionale Ressourcengruppen gruppiert. Mit Ressourcengruppen können Sie eine Reihe von VMs oder Datastores mit einem gemeinsamen Snapshot schützen.
 
 Wenn Sie Anwendungen im Replizierungsplan auswählen, wird das Betriebssystem für jede VM oder jeden Datastore im Plan angezeigt. Dies ist hilfreich bei der Entscheidung, wie VMs oder Datastores in einer Ressourcengruppe gruppiert werden.
 
 
-TIP: Jede Ressourcengruppe kann eine oder mehrere VMs oder Datenspeicher enthalten. Die VMs werden basierend auf der Reihenfolge, in der Sie sie hier einfügen, eingeschaltet.
+TIP: Jede Ressourcengruppe kann eine oder mehrere VMs oder Datenspeicher enthalten.
 
 Wenn Sie Ressourcengruppen erstellen, beachten Sie die folgenden Probleme:
 
@@ -92,7 +92,7 @@ Wenn Sie Ressourcengruppen erstellen, beachten Sie die folgenden Probleme:
 * Damit eine VM geschützt ist, muss sie in eine Ressourcengruppe aufgenommen werden.
 
 
-*BEST PRACTICE*: Organisieren Sie Ihre VMs vor der Bereitstellung der Disaster Recovery von BlueXP , um die Ausbreitung von Datastores zu minimieren. Platzieren Sie VMs, die eine Sicherung auf einer Teilmenge von Datenspeichern benötigen, und platzieren Sie VMs, die nicht in einer anderen Teilmenge von Datenspeichern gesichert werden sollen. Stellen Sie sicher, dass die VMs auf einem beliebigen Datastore nicht durch unterschiedliche Replikationspläne geschützt sind.
+*BEST PRACTICE*: Organisieren Sie Ihre VMs vor der Bereitstellung der Disaster Recovery von BlueXP , um die Ausbreitung von Datastores zu minimieren. Platzieren Sie VMs, die eine Sicherung auf einer Teilmenge von Datenspeichern benötigen, und platzieren Sie VMs, die nicht in einer anderen Teilmenge von Datenspeichern gesichert werden sollen. Mit Datastore-basiertem Schutz können Sie sicherstellen, dass die VMs auf jedem gegebenen Datastore gesichert sind.
 
 .Schritte
 . Wählen Sie *Virtual Machines* oder *Datastores* aus.
@@ -120,10 +120,6 @@ image:dr-plan-create-apps-datastores.png["Screenshot mit der Seite Replizierungs
 TIP: Um einen Datastore in eine andere Ressourcengruppe zu verschieben, heben Sie die Auswahl des unerwünschten Datastore auf und senden Sie den Replikationsplan ab. Erstellen oder bearbeiten Sie dann den anderen Replizierungsplan und wählen Sie den Datenspeicher erneut aus.
 
 
-
-. Wenn Sie mehrere Ressourcengruppen haben, stellen Sie sicher, dass die Reihenfolge der Gruppen mit der operativen Sequenz übereinstimmt, die auftreten soll.
-+
-Jede VM in einer Gruppe wird in der Reihenfolge basierend auf der hier angegebenen Reihenfolge gestartet.
 
 . Wählen Sie *Weiter*.
 
@@ -177,7 +173,7 @@ In diesem Abschnitt können je nach Auswahl verschiedene Felder angezeigt werden
 ** *IP-Adress-Typ*: Konfigurieren Sie die VM-Konfiguration so, dass sie den Anforderungen des virtuellen Zielnetzwerks entspricht. BlueXP  Disaster Recovery bietet zwei Optionen: DHCP oder statische IP. Konfigurieren Sie für statische IPs die Subnetzmaske, das Gateway und die DNS-Server. Geben Sie darüber hinaus Anmeldedaten für VMs ein.
 +
 *** *DHCP*: Wählen Sie diese Einstellung, wenn Ihre VMs Netzwerkkonfigurationsinformationen von einem DHCP-Server beziehen sollen. Wenn Sie sich für diese Option entscheiden, geben Sie nur die Anmeldeinformationen für die VM an.
-*** *Statische IP*: Wählen Sie diese Einstellung, wenn Sie IP-Konfigurationsinformationen manuell angeben möchten. Sie können die gleichen oder unterschiedliche Informationen von der Quell-VM auswählen. Wenn Sie dieselbe Auswahl wie die Quelle wählen, müssen Sie keine Anmeldeinformationen eingeben. Wenn Sie jedoch andere Informationen aus der Quelle verwenden möchten, können Sie die Anmeldeinformationen, die IP-Adresse der VM, die Subnetzmaske, das DNS und die Gateway-Informationen angeben. Die Anmeldedaten für das VM-Gastbetriebssystem sollten entweder auf globaler Ebene oder auf jeder VM-Ebene bereitgestellt werden.
+*** *Statische IP*: Wählen Sie diese Einstellung, wenn Sie IP-Konfigurationsinformationen manuell angeben möchten. Sie können eine der folgenden Optionen auswählen: Wie die Quelle, anders als die Quelle oder die Subnetzzuordnung. Wenn Sie dieselbe Auswahl wie die Quelle wählen, müssen Sie keine Anmeldeinformationen eingeben. Wenn Sie jedoch andere Informationen aus der Quelle verwenden möchten, können Sie die Anmeldeinformationen, die IP-Adresse der VM, die Subnetzmaske, das DNS und die Gateway-Informationen angeben. Die Anmeldedaten für das VM-Gastbetriebssystem sollten entweder auf globaler Ebene oder auf jeder VM-Ebene bereitgestellt werden.
 +
 Dies ist vor allem bei der Wiederherstellung großer Umgebungen zu kleineren Ziel-Clustern oder bei Disaster-Recovery-Tests hilfreich, ohne eine 1:1-physische VMware-Infrastruktur bereitstellen zu müssen.
 
@@ -192,13 +188,13 @@ image:dr-plan-create-mapping-vms2.png["Screenshot mit Add Replication Plan > Res
 +
 image:dr-plan-resource-mapping-vm-boot-order.png["Screenshot mit Add Replication Plan > Resource Mapping > Virtual Machines"]
 
-** *Startreihenfolge*: Sie können die Startreihenfolge nach einem Failover für alle ausgewählten virtuellen Maschinen über die Ressourcengruppen hinweg ändern. Standardmäßig wird die während der Auswahl der Ressourcengruppe ausgewählte Startreihenfolge verwendet. Sie können jedoch in dieser Phase Änderungen vornehmen. So können Sie sicherstellen, dass alle VMs mit Ihrer Priorität ausgeführt werden, bevor VMs mit der folgenden Priorität gestartet werden.
+** *Startreihenfolge*: Sie können die Startreihenfolge nach einem Failover für alle ausgewählten virtuellen Maschinen über die Ressourcengruppen hinweg ändern. Standardmäßig werden alle VMs parallel gebootet. Sie können jedoch zu diesem Zeitpunkt Änderungen vornehmen. So können Sie sicherstellen, dass alle VMs mit Ihrer Priorität ausgeführt werden, bevor VMs mit der folgenden Priorität gestartet werden.
 +
-Startauftragsnummern gelten nur innerhalb einer Ressourcengruppe. Wenn Sie eine "2" in einer Gruppe und eine "2" in einer anderen Gruppe haben, beginnen die VMs in der ersten Gruppe in ihrer Reihenfolge und die VMs in der zweiten Gruppe beginnen in ihrer Reihenfolge.
+Alle VMs mit derselben Startauftragsnummer werden parallel gestartet.
 
 +
-*** Sequenzieller Start: Weisen Sie jeder VM eine eindeutige Nummer zu, um den in der zugewiesenen Reihenfolge zu booten, z. B. 1,2,3,4,5
-*** Gleichzeitiges Booten: Weisen Sie allen VMs die gleiche Zahl zu, um sie gleichzeitig zu booten, z. B. 1,1,4,2,2,3,4,1,1.
+*** Sequenzieller Start: Weisen Sie jeder VM eine eindeutige Nummer zu, um den in der zugewiesenen Reihenfolge zu booten, z. B. 1,2,3,4,5.
+*** Gleichzeitiges Booten: Weisen Sie jeder VM dieselbe Zahl zu, um sie gleichzeitig zu booten, z. B. 1,1,4,2,2,3,4,1,1.
 
 
 ** *Boot Delay*: Passen Sie die Verzögerung in Minuten der Boot-Aktion an.
@@ -214,14 +210,21 @@ TIP: Um die Startreihenfolge auf die Standardeinstellung zurückzusetzen, wähle
 Dieser Abschnitt kann je nach Auswahl aktiviert oder deaktiviert sein.
 
 +
-** *RPO*: Geben Sie das Recovery Point Objective (RPO) ein, um die Datenmenge anzugeben, die wiederhergestellt werden soll (gemessen in der Zeit). Wenn Sie beispielsweise einen RPO von 60 Minuten eingeben, müssen für die Recovery jederzeit Daten vorhanden sein, die nicht älter als 60 Minuten sind. Bei einem schwerwiegenden Ausfall lassen sich bis zu 60 Minuten an Daten verlieren. Geben Sie außerdem die Anzahl der Snapshot-Kopien ein, die für alle Datastores beibehalten werden sollen.
+** *Plattform-verwaltete Backups und Aufbewahrungszeitpläne verwenden*: Wenn Sie eine externe Snapshot-Managementlösung verwenden, aktivieren Sie dieses Kontrollkästchen. BlueXP  Disaster Recovery unterstützt die Verwendung externer Snapshot-Managementlösungen, wie z. B. der native Richtlinienplaner von ONTAP SnapMirror oder Integrationen durch Drittanbieter. Wenn jeder Datastore (Volume) im Replizierungsplan bereits über eine SnapMirror-Beziehung verfügt, die an anderer Stelle gemanagt wird, können Sie diese Snapshots als Wiederherstellungspunkte in der BlueXP  Disaster Recovery verwenden.
++
+Wenn diese Option ausgewählt ist, wird für BlueXP  Disaster Recovery kein Backup-Zeitplan konfiguriert. Sie müssen jedoch weiterhin einen Aufbewahrungszeitplan konfigurieren, da darüber hinaus Snapshots für Test-, Failover- und Failback-Vorgänge erstellt werden können.
+
++
+Nach der Konfiguration erstellt der Service keine regelmäßig geplanten Snapshots, sondern verlässt sich darauf, dass die externe Einheit diese Snapshots erstellt und aktualisiert.
+
+** *Startzeit*: Geben Sie das Datum und die Uhrzeit ein, zu der Backups und die Aufbewahrung ausgeführt werden sollen.
+** *Run interval*: Geben Sie das Zeitintervall in Stunden und Minuten ein. Wenn Sie beispielsweise eine Stunde eingeben, erstellt der Dienst stündlich einen Snapshot.
 ** *Retention count*: Geben Sie die Anzahl der Snapshots ein, die Sie behalten möchten.
 ** *Quell- und Zieldatenspeicher*: Wenn mehrere (Fan-out) SnapMirror-Beziehungen existieren, können Sie das zu verwendende Ziel auswählen. Wenn ein Volume bereits eine SnapMirror-Beziehung aufgebaut hat, werden die entsprechenden Quell- und Ziel-Datastores angezeigt. Wenn ein Volume nicht über eine SnapMirror-Beziehung verfügt, können Sie es jetzt erstellen. Dazu wählen Sie einen Ziel-Cluster und eine Ziel-SVM aus und geben einen Volume-Namen an. Der Service erstellt die Volume- und SnapMirror-Beziehung.
 +
 
 NOTE: Wenn Sie in diesem Service eine SnapMirror Beziehung erstellen möchten, hätten Sie den Cluster und dessen SVM-Peering bereits außerhalb der Disaster Recovery von BlueXP eingerichtet haben müssen.
 
-** Wenn Sie das Recovery Point Objective (RPO) angeben, plant der Service ein primäres Backup auf der Grundlage des RPO und aktualisiert die sekundären Ziele.
 ** Wenn die VMs vom gleichen Volume und derselben SVM stammen, führt der Service einen standardmäßigen ONTAP-Snapshot durch und aktualisiert die sekundären Ziele.
 ** Wenn die VMs aus unterschiedlichen Volumes und derselben SVM stammen, erstellt der Service einen KonsistenzgruppenSnapshot, in dem alle Volumes eingeschlossen werden und die sekundären Ziele aktualisiert werden.
 ** Wenn die VMs aus verschiedenen Volumes und unterschiedlichen SVMs stammen, führt der Service eine Startphase für die Konsistenzgruppe und einen Snapshot der Commit-Phase durch, indem alle Volumes im selben oder unterschiedlichen Cluster eingeschlossen werden und die sekundären Ziele aktualisiert werden.
@@ -232,7 +235,7 @@ NOTE: Wenn Sie in diesem Service eine SnapMirror Beziehung erstellen möchten, h
 
 
 
-=== Testen Sie die Zuordnungen
+=== Fügen Sie Test-Failover-Zuordnungen hinzu
 
 .Schritte
 . Um verschiedene Zuordnungen für die Testumgebung festzulegen, deaktivieren Sie das Kontrollkästchen und wählen Sie die Registerkarte *Testzuordnungen* aus.
@@ -244,27 +247,6 @@ Auf der Registerkarte Testzuordnungen sind die Zuordnungen für virtuelle Maschi
 
 TIP: Sie können den gesamten Plan später testen. Derzeit richten Sie die Zuordnungen für die Testumgebung ein.
 
-
-
-
-
-=== Identifizieren Sie die Wiederholung
-
-Wählen Sie aus, ob Sie Daten (eine einmalige Verschiebung) zu einem anderen Ziel migrieren oder sie mit der Frequenz von SnapMirror replizieren möchten.
-
-Ermitteln Sie, wie oft die Daten gespiegelt werden sollen, wenn Sie sie replizieren möchten.
-
-.Schritte
-. Wählen Sie auf der Seite Rezidive *Migrate* oder *Replicate* aus.
-+
-** *Migrate*: Wählen Sie, um die Anwendung an den Zielspeicherort zu verschieben.
-** *Replicate*: Halten Sie die Zielkopie mit Änderungen von der Quellkopie in einer wiederkehrenden Replikation auf dem neuesten Stand.
-
-
-+
-image:dr-plan-create-recurrence.png["Screenshot mit Add Replication Plan > Recurrence"]
-
-. Wählen Sie *Weiter*.
 
 
 
@@ -311,11 +293,12 @@ image:dr-plan-list.png["Screenshot mit der Liste der Replikationspläne"]
 .. Wählen Sie den Tag des Monats und die Uhrzeit aus, zu der diese Tests ausgeführt werden sollen.
 .. Geben Sie das Datum im Format JJJJ-mm-TT ein, wenn der Test gestartet werden soll.
 +
-image:dr-plan-schedule-edit.png["Screenshot, in dem Sie Zeitpläne bearbeiten können"]
+image:dr-plan-schedule-edit2.png["Screenshot, in dem Sie Zeitpläne bearbeiten können"]
 
 
 
-. Um die Testumgebung nach Abschluss des Failover-Tests zu bereinigen, aktivieren Sie *Automatically clean up after Test Failover*.
+. *On-Demand-Snapshot für geplanten Test-Failover verwenden*: Um einen neuen Snapshot vor dem Initiieren des automatischen Test-Failovers zu erstellen, aktivieren Sie dieses Kontrollkästchen.
+. Um die Testumgebung nach Abschluss des Failover-Tests zu bereinigen, aktivieren Sie *Automatically clean up after Test Failover* und geben Sie die Anzahl der Minuten ein, die Sie warten möchten, bevor die Bereinigung beginnt.
 +
 
 NOTE: Durch diesen Prozess werden die temporären VMs vom Teststandort entfernt, das erstellte FlexClone Volume gelöscht und die temporären Datenspeicher abgehängt.

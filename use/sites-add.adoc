@@ -33,7 +33,7 @@ VMs können nur gesichert werden, wenn der Replizierungsplan einen der folgenden
 
 
 .Schritte
-. Melden Sie sich bei BlueXP an und wählen Sie im linken Navigationsbereich *Protection* > *Disaster Recovery* aus.
+. Melden Sie sich bei BlueXP  an und wählen Sie im linken Navigationsmenü *Schutz* > *Notfallwiederherstellung*.
 +
 Sie finden die Seite zum Disaster Recovery Dashboard von BlueXP. Wenn Sie mit dem Service beginnen, müssen Sie vCenter-Informationen hinzufügen. Später werden im Dashboard Daten zu Ihren Standorten und Replikationsplänen angezeigt.
 
@@ -80,6 +80,70 @@ image:sites-list2.png["Screenshot der Seite „Sites“"]
 
 
 . Um den Fortschritt des Vorgangs anzuzeigen, wählen Sie im oberen Menü *Job-Überwachung*.
+
+
+
+
+== Fügen Sie die Subnetzzuordnung für einen vCenter-Standort hinzu
+
+Managen Sie IP-Adressen beim Failover auf neue Weise mithilfe der Subnetzzuordnung, wodurch Sie Subnetze für jedes vCenter hinzufügen können. Dabei definieren Sie den IPv4 CIDR, das Standard-Gateway und den DNS für jedes virtuelle Netzwerk.
+
+Bei einem Failover ermittelt die Disaster Recovery von BlueXP  die geeignete IP-Adresse jeder vNIC, indem das für das zugeordnete virtuelle Netzwerk bereitgestellte CIDR betrachtet und es zum Ableiten der neuen IP-Adresse verwendet wird.
+
+Beispiel:
+
+* NetworkA = 10.1.1.0/24
+* NetzwerkB = 192.168.1.0/24
+
+
+VM1 verfügt über eine vNIC (10.1.1.50), die mit NetworkA verbunden ist. NetworkA wird in den Einstellungen des Replikationsplans zu NetworkB zugeordnet.
+
+Bei einem Failover ersetzt die Disaster Recovery von BlueXP  den Teil Netzwerk der ursprünglichen IP-Adresse (10.1.1) und behält die Host-Adresse (.50) der ursprünglichen IP-Adresse (10.1.1.50) bei. Für VM1 betrachtet die BlueXP  Disaster Recovery die CIDR-Einstellungen für NetworkB und verwendet den Netzwerk-B-Teil 192.168.1, während der Host-Teil (.50) beibehalten wird, um die neue IP-Adresse für VM1 zu erstellen. Die neue IP wird 192.168.1.50.
+
+Zusammenfassend bleibt die Host-Adresse unverändert, während die Netzwerkadresse durch das ersetzt wird, was in der Subnetz-Zuordnung des Standorts konfiguriert ist. So lässt sich die IP-Adressenzuweisung beim Failover einfacher managen, insbesondere wenn Sie hunderte Netzwerke und tausende VMs managen müssen.
+
+Die Verwendung der Subnetzzuordnung ist ein optionaler Prozess in zwei Schritten:
+
+* Fügen Sie zunächst die Subnetzzuordnung für jeden vCenter-Standort hinzu.
+* Geben Sie anschließend im Replikationsplan an, dass Sie die Subnetzzuordnung verwenden möchten.
+
+
+.Schritte
+. Wählen Sie im oberen BlueXP -Disaster-Recovery-Menü *Sites* aus.
+. Wählen Sie aus dem Aktionen-image:icon-vertical-dots.png["Aktionssymbol"]Symbol auf der rechten Seite *Subnetz hinzufügen*.
++
+image:sites-subnet-add.png["Screenshot zur Subnetzzuordnung hinzufügen"]
+
+. Geben Sie auf der Seite Subnetz konfigurieren die folgenden Informationen ein:
++
+.. Subnetz: Geben Sie den IPv4 CIDR für das Subnetz bis zu /32 ein.
++
+
+TIP: Die CIDR-Notation ist eine Methode zur Angabe von IP-Adressen und deren Netzwerkmasken. /24 bezeichnet die Netzmaske. Die Nummer besteht aus einer IP-Adresse mit der Zahl nach dem „/“, die angibt, wie viele Bits der IP-Adresse das Netzwerk kennzeichnen. Beispiel: 192.168.0.50/24, die IP-Adresse ist 192.168.0.50 und die Gesamtzahl der Bits in der Netzwerkadresse ist 24. 192.168.0.50 255.255.255.0 wird zu 192.168.0.0/24.
+
+.. Gateway: Geben Sie das Standard-Gateway für das Subnetz ein.
+.. DNS: Geben Sie den DNS für das Subnetz ein.
+
+
+. Wählen Sie *Subnetzzuordnung hinzufügen*.
+
+
+
+
+=== Wählen Sie die Subnetzzuordnung für einen Replikationsplan aus
+
+Wenn Sie einen Replikationsplan erstellen, können Sie die Subnetzzuordnung für den Replikationsplan auswählen.
+
+.Schritte
+. Wählen Sie im oberen Menü der BlueXP Disaster Recovery die Option *Replication Plans* aus.
+. Wählen Sie *Add*, um einen Replikationsplan hinzuzufügen.
+. Füllen Sie die Felder wie gewohnt aus, indem Sie die vCenter-Server hinzufügen, die Ressourcengruppen oder Anwendungen auswählen und die Zuordnungen abschließen.
+. Wählen Sie auf der Seite Replizierungsplan > Ressourcenzuordnung den Abschnitt *Virtuelle Maschinen* aus.
++
+image:dr-plan-create-subnet-mapping.png["Screenshot der Subnetz-Mapping-Auswahl"]
+
+. Wählen Sie im Feld *Ziel-IP* aus der Dropdown-Liste *Subnetz-Zuordnung verwenden* aus.
+. Fahren Sie mit dem Erstellen des Replikationsplans fort.
 
 
 
