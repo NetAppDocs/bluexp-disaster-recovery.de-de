@@ -36,7 +36,7 @@ Wenn Sie ein Failover starten, können Sie jetzt eine Option *Skip Protection* w
 
 Nachdem der ursprüngliche Quellstandort wieder online ist, können Sie den umgekehrten Schutz einrichten, indem Sie im Menü Aktionen des Replikationsplans die Option *Ressourcen schützen* auswählen. Dadurch wird versucht, für jedes Volume im Plan eine umgekehrte Replikationsbeziehung zu erstellen. Sie können diesen Job wiederholt ausführen, bis der Schutz wiederhergestellt ist. Wenn der Schutz wiederhergestellt ist, können Sie ein Failback auf die übliche Weise initiieren.
 
-Weitere Informationen zum Übersprungsschutz finden Sie unter https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/failover.html["Fehler bei ovre-Anwendungen an einem Remote-Standort"].
+Weitere Informationen zum Übersprungsschutz finden Sie unter https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/failover.html["Failover von Anwendungen an einen Remote-Standort"].
 
 
 
@@ -46,8 +46,8 @@ BlueXP  Disaster Recovery unterstützt nun die Verwendung externer Snapshot-Man
 
 Aktivieren Sie zum Konfigurieren im Abschnitt Replizierungsplan > Ressourcenzuordnung das Kontrollkästchen *Plattform-verwaltete Backups und Aufbewahrungszeitpläne verwenden*, wenn Sie die Datenspeicherzuordnung konfigurieren.
 
-Wenn diese Option ausgewählt ist, wird für BlueXP  Disaster Recovery kein Backup-Zeitplan konfiguriert. Sie müssen jedoch weiterhin einen Aufbewahrungszeitplan konfigurieren, da darüber hinaus Snapshots für Test-, Failover- und Failback-Vorgänge erstellt werden können.
+Wenn die Option ausgewählt ist, wird in BlueXP  Disaster Recovery kein Backup-Zeitplan konfiguriert. Sie müssen jedoch weiterhin einen Aufbewahrungszeitplan konfigurieren, da darüber hinaus Snapshots für Test-, Failover- und Failback-Vorgänge erstellt werden können.
 
 Nach der Konfiguration erstellt der Service keine regelmäßig geplanten Snapshots, sondern verlässt sich darauf, dass die externe Einheit diese Snapshots erstellt und aktualisiert.
 
-Weitere Informationen zum Übersprungsschutz finden Sie unter https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Erstellen Sie einen Replizierungsplan"].
+Weitere Informationen zur Verwendung externer Snapshot-Lösungen im Replikationsplan finden Sie unter https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Erstellen Sie einen Replizierungsplan"].
