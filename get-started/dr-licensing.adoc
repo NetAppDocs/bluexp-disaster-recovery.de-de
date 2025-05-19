@@ -17,7 +17,7 @@ Mit BlueXP Disaster Recovery können Sie verschiedene Lizenzierungsmodelle verwe
 Sie können die folgenden Lizenztypen verwenden:
 
 * Melden Sie sich für eine kostenlose 30-Tage-Testversion an.
-* Mit Amazon Web Services (AWS) Marketplace besteht ein Pay-as-you-go-Abonnement (PAYGO).
+* Erwerben Sie ein Pay-as-you-go-Abonnement (PAYGO) für *NetApp Intelligent Services* mit Amazon Web Services (AWS) Marketplace.
 * Bring-Your-Own-License (BYOL) bei einer NetApp Lizenzdatei (NLF), die Sie von Ihrem NetApp Vertriebsmitarbeiter erhalten. Sie können die Seriennummer der Lizenz verwenden, um das BYOL in der Digital Wallet von BlueXP zu aktivieren.
 
 
@@ -71,12 +71,12 @@ Weitere Informationen finden Sie unter link:../use/sites-add.html["Fügen Sie vC
 
 == Abonnieren Sie nach Ablauf der Testversion den AWS Marketplace
 
-Nach Ablauf der kostenlosen Testversion können Sie entweder eine Lizenz bei NetApp erwerben oder sich über AWS Marketplace abonnieren. Dieses Verfahren bietet einen allgemeinen Überblick über das direkte Abonnieren im AWS Marketplace.
+Nach Ablauf der kostenlosen Testversion können Sie entweder eine Lizenz von NetApp erwerben oder *NetApp Intelligente Dienste* über AWS Marketplace abonnieren. Dieses Verfahren bietet einen allgemeinen Überblick über das direkte Abonnieren im AWS Marketplace.
 
 .Schritte
 . Bei der Disaster Recovery von BlueXP wird deutlich, dass die kostenlose Testversion ausläuft. Wählen Sie in der Nachricht *Abonnieren oder eine Lizenz erwerben*.
 . Wählen Sie *im AWS Marketplace abonnieren*.
-. Wählen Sie im AWS Marketplace *Kaufoptionen anzeigen*. Verwenden Sie AWS Marketplace, um BlueXP Disaster Recovery zu abonnieren.
+. Verwenden Sie den AWS Marketplace, um *NetApp Intelligent Services* und *BlueXP  Disaster Recovery* zu abonnieren.
 . Wenn Sie zur Disaster Recovery von BlueXP zurückkehren, wird in einer Meldung angezeigt, dass Sie abonniert sind.
 +
 Die Abonnementdetails finden Sie in der BlueXP  Digital Wallet. link:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-homepage.html["Weitere Informationen Management von Abonnements mit Digital Wallet"^].
