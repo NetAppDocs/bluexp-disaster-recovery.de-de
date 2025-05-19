@@ -112,6 +112,12 @@ Die Verwendung der Subnetzzuordnung ist ein optionaler Prozess in zwei Schritten
 . Wählen Sie im oberen BlueXP -Disaster-Recovery-Menü *Sites* aus.
 . Wählen Sie aus dem Aktionen-image:icon-vertical-dots.png["Aktionssymbol"]Symbol auf der rechten Seite *Subnetz hinzufügen*.
 +
+image:dr-sites-subnet-menu.png["Screenshot zum Subnetz-Menü hinzufügen"]
+
++
+Die Seite Subnetz konfigurieren wird angezeigt:
+
++
 image:sites-subnet-add.png["Screenshot zur Subnetzzuordnung hinzufügen"]
 
 . Geben Sie auf der Seite Subnetz konfigurieren die folgenden Informationen ein:
@@ -140,9 +146,13 @@ Wenn Sie einen Replikationsplan erstellen, können Sie die Subnetzzuordnung für
 . Füllen Sie die Felder wie gewohnt aus, indem Sie die vCenter-Server hinzufügen, die Ressourcengruppen oder Anwendungen auswählen und die Zuordnungen abschließen.
 . Wählen Sie auf der Seite Replizierungsplan > Ressourcenzuordnung den Abschnitt *Virtuelle Maschinen* aus.
 +
-image:dr-plan-create-subnet-mapping.png["Screenshot der Subnetz-Mapping-Auswahl"]
+image:dr-plan-vm-subnet-option.png["Screenshot der Subnetz-Mapping-Auswahl"]
 
 . Wählen Sie im Feld *Ziel-IP* aus der Dropdown-Liste *Subnetz-Zuordnung verwenden* aus.
++
+
+NOTE: Wenn zwei VMs vorhanden sind (z. B. Linux und Windows), werden nur Anmeldeinformationen für Windows benötigt.
+
 . Fahren Sie mit dem Erstellen des Replikationsplans fort.
 
 

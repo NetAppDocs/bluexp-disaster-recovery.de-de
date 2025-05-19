@@ -139,41 +139,49 @@ Wenn Sie in diesem Service eine SnapMirror Beziehung erstellen möchten, hätten
 image:dr-plan-resource-mapping2.png["Replizierungsplan, Registerkarte „Ressourcenzuordnung“"]
 
 . Wählen Sie auf der Registerkarte Failover Mappings den Abwärtspfeil rechts neben jeder Ressource aus, und ordnen Sie die jeweiligen Ressourcen zu.
-. *Compute Resources*: Wählen Sie den Pfeil nach unten neben *Compute Resources*.
-+
-** *Quell- und Ziel-Rechenzentren*
-** *Zielcluster*
-** *Target Host* (optional): Nachdem Sie den Cluster ausgewählt haben, können Sie diese Information einstellen.
-+
-
-TIP: Wenn ein vCenter über einen Distributed Resource Scheduler (DRS) verfügt, der für das Management mehrerer Hosts in einem Cluster konfiguriert ist, müssen Sie keinen Host auswählen. Wenn Sie einen Host auswählen, werden alle VMs von BlueXP  Disaster Recovery auf dem ausgewählten Host platziert.
-
-** *Ziel-VM-Ordner* (optional): Erstellen Sie einen neuen Stammordner, um die ausgewählten VMs zu speichern.
 
 
-. *Virtuelle Netzwerke*: Wählen Sie auf der Registerkarte Failover Mappings den Abwärtspfeil neben *Virtuelle Netzwerke* aus. Wählen Sie das virtuelle Quell-LAN und das virtuelle Ziel-LAN aus.
-+
+
+
+=== Ressourcen zuordnen > Abschnitt „Computing-Ressourcen“
+
+Wählen Sie den Abwärtspfeil neben *Compute Resources*.
+
+* *Quell- und Ziel-Rechenzentren*
+* *Zielcluster*
+* *Target Host* (optional): Nachdem Sie den Cluster ausgewählt haben, können Sie diese Information einstellen.
+
+
+
+TIP: Wenn ein vCenter über einen Distributed Resource Scheduler (DRS) verfügt, der für das Management mehrerer Hosts in einem Cluster konfiguriert ist, müssen Sie keinen Host auswählen. Wenn Sie einen Host auswählen, werden alle VMs von BlueXP  Disaster Recovery auf dem ausgewählten Host platziert. * *Ziel-VM-Ordner* (optional): Erstellen Sie einen neuen Stammordner, um die ausgewählten VMs zu speichern.
+
+
+
+=== Ressourcen zuordnen > Abschnitt Virtuelle Netzwerke
+
+Wählen Sie auf der Registerkarte Failover Mappings den Abwärtspfeil neben *Virtuelle Netzwerke* aus. Wählen Sie das virtuelle Quell-LAN und das virtuelle Ziel-LAN aus.
+
 Wählen Sie die Netzwerkzuordnung zum entsprechenden virtuellen LAN aus. Die virtuellen LANs sollten bereits bereitgestellt werden. Wählen Sie daher das entsprechende virtuelle LAN für die Zuordnung der VM aus.
 
-. *Virtuelle Maschinen*: Wählen Sie auf der Registerkarte Failover Mappings den Abwärtspfeil neben *Virtuelle Maschinen* aus.
-+
+
+
+=== Ressourcen zuordnen > Abschnitt Virtuelle Maschinen
+
+Wählen Sie auf der Registerkarte Failover Mappings den Abwärtspfeil neben *Virtual Machines* aus.
+
 Der Standard für die VMs ist zugeordnet. Bei der Standardzuordnung werden dieselben Einstellungen verwendet, die die VMs in der Produktionsumgebung verwenden (gleiche IP-Adresse, Subnetzmaske und Gateway).
 
-+
 Wenn Sie Änderungen an den Standardeinstellungen vornehmen, müssen Sie das Feld Ziel-IP in „anders als die Quelle“ ändern.
 
-+
 
 NOTE: Wenn Sie Einstellungen in „anders als von der Quelle“ ändern, müssen Sie die Anmeldeinformationen für das VM-Gastbetriebssystem angeben.
 
-+
 In diesem Abschnitt können je nach Auswahl verschiedene Felder angezeigt werden.
 
+* *IP-Adress-Typ*: Konfigurieren Sie die VM-Konfiguration so, dass sie den Anforderungen des virtuellen Zielnetzwerks entspricht. BlueXP  Disaster Recovery bietet zwei Optionen: DHCP oder statische IP. Konfigurieren Sie für statische IPs die Subnetzmaske, das Gateway und die DNS-Server. Geben Sie darüber hinaus Anmeldedaten für VMs ein.
 +
-** *IP-Adress-Typ*: Konfigurieren Sie die VM-Konfiguration so, dass sie den Anforderungen des virtuellen Zielnetzwerks entspricht. BlueXP  Disaster Recovery bietet zwei Optionen: DHCP oder statische IP. Konfigurieren Sie für statische IPs die Subnetzmaske, das Gateway und die DNS-Server. Geben Sie darüber hinaus Anmeldedaten für VMs ein.
-+
-*** *DHCP*: Wählen Sie diese Einstellung, wenn Ihre VMs Netzwerkkonfigurationsinformationen von einem DHCP-Server beziehen sollen. Wenn Sie sich für diese Option entscheiden, geben Sie nur die Anmeldeinformationen für die VM an.
-*** *Statische IP*: Wählen Sie diese Einstellung, wenn Sie IP-Konfigurationsinformationen manuell angeben möchten. Sie können eine der folgenden Optionen auswählen: Wie die Quelle, anders als die Quelle oder die Subnetzzuordnung. Wenn Sie dieselbe Auswahl wie die Quelle wählen, müssen Sie keine Anmeldeinformationen eingeben. Wenn Sie jedoch andere Informationen aus der Quelle verwenden möchten, können Sie die Anmeldeinformationen, die IP-Adresse der VM, die Subnetzmaske, das DNS und die Gateway-Informationen angeben. Die Anmeldedaten für das VM-Gastbetriebssystem sollten entweder auf globaler Ebene oder auf jeder VM-Ebene bereitgestellt werden.
+** *DHCP*: Wählen Sie diese Einstellung, wenn Ihre VMs Netzwerkkonfigurationsinformationen von einem DHCP-Server beziehen sollen. Wenn Sie sich für diese Option entscheiden, geben Sie nur die Anmeldeinformationen für die VM an.
+** *Statische IP*: Wählen Sie diese Einstellung, wenn Sie IP-Konfigurationsinformationen manuell angeben möchten. Sie können eine der folgenden Optionen auswählen: Wie die Quelle, anders als die Quelle oder die Subnetzzuordnung. Wenn Sie dieselbe Auswahl wie die Quelle wählen, müssen Sie keine Anmeldeinformationen eingeben. Wenn Sie jedoch andere Informationen aus der Quelle verwenden möchten, können Sie die Anmeldeinformationen, die IP-Adresse der VM, die Subnetzmaske, das DNS und die Gateway-Informationen angeben. Die Anmeldedaten für das VM-Gastbetriebssystem sollten entweder auf globaler Ebene oder auf jeder VM-Ebene bereitgestellt werden.
 +
 Dies ist vor allem bei der Wiederherstellung großer Umgebungen zu kleineren Ziel-Clustern oder bei Disaster-Recovery-Tests hilfreich, ohne eine 1:1-physische VMware-Infrastruktur bereitstellen zu müssen.
 
@@ -182,49 +190,55 @@ image:dr-plan-create-mapping-vms2.png["Screenshot mit Add Replication Plan > Res
 
 
 
-** *Scripts*: Sie können benutzerdefinierte Skripte im .sh-, .bat- oder .ps1-Format als Post-Failover-Prozesse einfügen. Mit benutzerdefinierten Skripts kann die BlueXP Disaster Recovery Ihr Skript nach einem Failover-Prozess ausführen. Sie können beispielsweise ein benutzerdefiniertes Skript verwenden, um alle Datenbanktransaktionen nach Abschluss des Failovers wieder aufzunehmen.
-** *Ziel-VM-Präfix und Suffix*: Unter den Details der virtuellen Maschinen können Sie optional dem VM-Namen ein Präfix und Suffix hinzufügen.
-** *Source VM CPU und RAM*: Unter den Details der virtuellen Maschinen können Sie optional die VM CPU und RAM Parameter anpassen.
+* *Scripts*: Sie können benutzerdefinierte Skripte im .sh-, .bat- oder .ps1-Format als Post-Failover-Prozesse einfügen. Mit benutzerdefinierten Skripts kann die BlueXP Disaster Recovery Ihr Skript nach einem Failover-Prozess ausführen. Sie können beispielsweise ein benutzerdefiniertes Skript verwenden, um alle Datenbanktransaktionen nach Abschluss des Failovers wieder aufzunehmen.
+* *Ziel-VM-Präfix und Suffix*: Unter den Details der virtuellen Maschinen können Sie optional dem VM-Namen ein Präfix und Suffix hinzufügen.
+* *Source VM CPU und RAM*: Unter den Details der virtuellen Maschinen können Sie optional die VM CPU und RAM Parameter anpassen.
 +
 image:dr-plan-resource-mapping-vm-boot-order.png["Screenshot mit Add Replication Plan > Resource Mapping > Virtual Machines"]
 
-** *Startreihenfolge*: Sie können die Startreihenfolge nach einem Failover für alle ausgewählten virtuellen Maschinen über die Ressourcengruppen hinweg ändern. Standardmäßig werden alle VMs parallel gebootet. Sie können jedoch zu diesem Zeitpunkt Änderungen vornehmen. So können Sie sicherstellen, dass alle VMs mit Ihrer Priorität ausgeführt werden, bevor VMs mit der folgenden Priorität gestartet werden.
+* *Startreihenfolge*: Sie können die Startreihenfolge nach einem Failover für alle ausgewählten virtuellen Maschinen über die Ressourcengruppen hinweg ändern. Standardmäßig werden alle VMs parallel gebootet. Sie können jedoch zu diesem Zeitpunkt Änderungen vornehmen. So können Sie sicherstellen, dass alle VMs mit Ihrer Priorität ausgeführt werden, bevor VMs mit der folgenden Priorität gestartet werden.
 +
 Alle VMs mit derselben Startauftragsnummer werden parallel gestartet.
 
 +
-*** Sequenzieller Start: Weisen Sie jeder VM eine eindeutige Nummer zu, um den in der zugewiesenen Reihenfolge zu booten, z. B. 1,2,3,4,5.
-*** Gleichzeitiges Booten: Weisen Sie jeder VM dieselbe Zahl zu, um sie gleichzeitig zu booten, z. B. 1,1,4,2,2,3,4,1,1.
+** Sequenzieller Start: Weisen Sie jeder VM eine eindeutige Nummer zu, um den in der zugewiesenen Reihenfolge zu booten, z. B. 1,2,3,4,5.
+** Gleichzeitiges Booten: Weisen Sie jeder VM dieselbe Zahl zu, um sie gleichzeitig zu booten, z. B. 1,1,4,2,2,3,4,1,1.
 
 
-** *Boot Delay*: Passen Sie die Verzögerung in Minuten der Boot-Aktion an.
+* *Boot Delay*: Passen Sie die Verzögerung in Minuten der Boot-Aktion an.
 +
 
 TIP: Um die Startreihenfolge auf die Standardeinstellung zurückzusetzen, wählen Sie *VM-Einstellungen auf Standard zurücksetzen* und wählen Sie dann aus, welche Einstellungen Sie auf die Standardeinstellung zurücksetzen möchten.
 
-** *Erstellen Sie anwendungskonsistente Replikate*: Geben Sie an, ob anwendungskonsistente Snapshot-Kopien erstellt werden sollen. Der Service stellt die Anwendung still und erstellt dann einen Snapshot, um einen konsistenten Status der Anwendung zu erhalten. Diese Funktion wird von Oracle unter Windows sowie von Linux und SQL Server unter Windows unterstützt.
+* *Erstellen Sie anwendungskonsistente Replikate*: Geben Sie an, ob anwendungskonsistente Snapshot-Kopien erstellt werden sollen. Der Service stellt die Anwendung still und erstellt dann einen Snapshot, um einen konsistenten Status der Anwendung zu erhalten. Diese Funktion wird von Oracle unter Windows sowie von Linux und SQL Server unter Windows unterstützt.
 
 
-. *Datastores*: Wählen Sie den Abwärtspfeil neben *Datastores*. Je nach Auswahl der VMs werden automatisch Datastore-Zuordnungen ausgewählt.
-+
+
+
+=== Ressourcen zuordnen > Abschnitt Datastores
+
+Wählen Sie den Abwärtspfeil neben *Datastores*. Je nach Auswahl der VMs werden automatisch Datastore-Zuordnungen ausgewählt.
+
 Dieser Abschnitt kann je nach Auswahl aktiviert oder deaktiviert sein.
 
-+
-** *Plattform-verwaltete Backups und Aufbewahrungszeitpläne verwenden*: Wenn Sie eine externe Snapshot-Managementlösung verwenden, aktivieren Sie dieses Kontrollkästchen. BlueXP  Disaster Recovery unterstützt die Verwendung externer Snapshot-Managementlösungen, wie z. B. der native Richtlinienplaner von ONTAP SnapMirror oder Integrationen durch Drittanbieter. Wenn jeder Datastore (Volume) im Replizierungsplan bereits über eine SnapMirror-Beziehung verfügt, die an anderer Stelle gemanagt wird, können Sie diese Snapshots als Wiederherstellungspunkte in der BlueXP  Disaster Recovery verwenden.
+image:dr-plan-datastore-platform.png["Screenshot mit Add Replication Plan > Resource Mapping > Datastores"]
+
+* *Plattform-verwaltete Backups und Aufbewahrungszeitpläne verwenden*: Wenn Sie eine externe Snapshot-Managementlösung verwenden, aktivieren Sie dieses Kontrollkästchen. BlueXP  Disaster Recovery unterstützt die Verwendung externer Snapshot-Managementlösungen, wie z. B. der native Richtlinienplaner von ONTAP SnapMirror oder Integrationen durch Drittanbieter. Wenn jeder Datastore (Volume) im Replizierungsplan bereits über eine SnapMirror-Beziehung verfügt, die an anderer Stelle gemanagt wird, können Sie diese Snapshots als Wiederherstellungspunkte in der BlueXP  Disaster Recovery verwenden.
 +
 Wenn diese Option ausgewählt ist, wird für BlueXP  Disaster Recovery kein Backup-Zeitplan konfiguriert. Sie müssen jedoch weiterhin einen Aufbewahrungszeitplan konfigurieren, da darüber hinaus Snapshots für Test-, Failover- und Failback-Vorgänge erstellt werden können.
 
 +
 Nach der Konfiguration erstellt der Service keine regelmäßig geplanten Snapshots, sondern verlässt sich darauf, dass die externe Einheit diese Snapshots erstellt und aktualisiert.
 
-** *Startzeit*: Geben Sie das Datum und die Uhrzeit ein, zu der Backups und die Aufbewahrung ausgeführt werden sollen.
-** *Run interval*: Geben Sie das Zeitintervall in Stunden und Minuten ein. Wenn Sie beispielsweise eine Stunde eingeben, erstellt der Dienst stündlich einen Snapshot.
-** *Retention count*: Geben Sie die Anzahl der Snapshots ein, die Sie behalten möchten.
-** *Quell- und Zieldatenspeicher*: Wenn mehrere (Fan-out) SnapMirror-Beziehungen existieren, können Sie das zu verwendende Ziel auswählen. Wenn ein Volume bereits eine SnapMirror-Beziehung aufgebaut hat, werden die entsprechenden Quell- und Ziel-Datastores angezeigt. Wenn ein Volume nicht über eine SnapMirror-Beziehung verfügt, können Sie es jetzt erstellen. Dazu wählen Sie einen Ziel-Cluster und eine Ziel-SVM aus und geben einen Volume-Namen an. Der Service erstellt die Volume- und SnapMirror-Beziehung.
+* *Startzeit*: Geben Sie das Datum und die Uhrzeit ein, zu der Backups und die Aufbewahrung ausgeführt werden sollen.
+* *Run interval*: Geben Sie das Zeitintervall in Stunden und Minuten ein. Wenn Sie beispielsweise eine Stunde eingeben, erstellt der Dienst stündlich einen Snapshot.
+* *Retention count*: Geben Sie die Anzahl der Snapshots ein, die Sie behalten möchten.
+* *Quell- und Zieldatenspeicher*: Wenn mehrere (Fan-out) SnapMirror-Beziehungen existieren, können Sie das zu verwendende Ziel auswählen. Wenn ein Volume bereits eine SnapMirror-Beziehung aufgebaut hat, werden die entsprechenden Quell- und Ziel-Datastores angezeigt. Wenn ein Volume nicht über eine SnapMirror-Beziehung verfügt, können Sie es jetzt erstellen. Dazu wählen Sie ein Ziel-Cluster aus, wählen eine Ziel-SVM aus und geben einen Volume-Namen an. Der Service erstellt die Volume- und SnapMirror-Beziehung.
 +
 
 NOTE: Wenn Sie in diesem Service eine SnapMirror Beziehung erstellen möchten, hätten Sie den Cluster und dessen SVM-Peering bereits außerhalb der Disaster Recovery von BlueXP eingerichtet haben müssen.
 
++
 ** Wenn die VMs vom gleichen Volume und derselben SVM stammen, führt der Service einen standardmäßigen ONTAP-Snapshot durch und aktualisiert die sekundären Ziele.
 ** Wenn die VMs aus unterschiedlichen Volumes und derselben SVM stammen, erstellt der Service einen KonsistenzgruppenSnapshot, in dem alle Volumes eingeschlossen werden und die sekundären Ziele aktualisiert werden.
 ** Wenn die VMs aus verschiedenen Volumes und unterschiedlichen SVMs stammen, führt der Service eine Startphase für die Konsistenzgruppe und einen Snapshot der Commit-Phase durch, indem alle Volumes im selben oder unterschiedlichen Cluster eingeschlossen werden und die sekundären Ziele aktualisiert werden.
