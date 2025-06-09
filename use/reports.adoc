@@ -4,7 +4,7 @@ permalink: use/reports.html
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, monitor, bluexp, protection, reports 
 summary: Durch die Überprüfung von Disaster Recovery-Berichten können Sie die Bereitschaft Ihrer Disaster Recovery analysieren. Vordefinierte Berichte enthalten eine Zusammenfassung von Failover und Failbacks, Replikationsdetails zu allen Standorten und Jobdetails für das vergangene Jahr. 
 ---
-= Erstellen von Disaster-Recovery-Berichten
+= Erstellen Sie BlueXP-Notfallwiederherstellungsberichte
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,7 +12,7 @@ summary: Durch die Überprüfung von Disaster Recovery-Berichten können Sie die
 
 
 [role="lead"]
-Durch die Überprüfung von Disaster Recovery-Berichten können Sie die Bereitschaft Ihrer Disaster Recovery analysieren. Vordefinierte Berichte enthalten eine Zusammenfassung der Failover-Tests, Details zum Replizierungsplan und Jobdetails für alle Standorte innerhalb eines Kontos der letzten sieben Tage.
+Durch die Überprüfung der BlueXP-Notfallwiederherstellungsberichte können Sie Ihre Notfallwiederherstellungsvorbereitung analysieren. Vordefinierte Berichte enthalten eine Zusammenfassung der Failover-Tests, Details zum Replizierungsplan und Jobdetails für alle Standorte innerhalb eines Kontos der letzten sieben Tage.
 
 Sie können Berichte im PDF-, HTML- oder JSON-Format herunterladen.
 

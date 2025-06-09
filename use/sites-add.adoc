@@ -4,7 +4,7 @@ permalink: use/sites-add.html
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
 summary: Bevor Sie einen Disaster Recovery-Plan erstellen können, müssen Sie einen primären vCenter Standort und einen Ziel-vCenter Disaster Recovery-Standort in BlueXP  Disaster Recovery hinzufügen. 
 ---
-= Fügen Sie einem Standort vCenter hinzu
+= vCenters zu einem Standort in BlueXP Disaster Recovery hinzufügen
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -13,6 +13,9 @@ summary: Bevor Sie einen Disaster Recovery-Plan erstellen können, müssen Sie e
 
 [role="lead"]
 Bevor Sie einen Disaster Recovery-Plan erstellen können, müssen Sie einem Standort einen primären vCenter Server und einen vCenter Ziel-Disaster-Recovery-Standort in BlueXP  hinzufügen.
+
+
+TIP: Stellen Sie sicher, dass sowohl das Quell- als auch das Ziel-vCenter denselben BlueXP Connector verwenden.
 
 Nach dem Hinzufügen von vCenters führt BlueXP  Disaster Recovery eine umfassende Erkennung der vCenter-Umgebungen durch, einschließlich vCenter-Cluster, ESXi-Hosts, Datastores, Storage-Platzbedarf, Details zu virtuellen Maschinen, SnapMirror-Replikaten und Virtual-Machine-Netzwerken.
 
@@ -139,6 +142,12 @@ TIP: Die CIDR-Notation ist eine Methode zur Angabe von IP-Adressen und deren Net
 === Wählen Sie die Subnetzzuordnung für einen Replikationsplan aus
 
 Wenn Sie einen Replikationsplan erstellen, können Sie die Subnetzzuordnung für den Replikationsplan auswählen.
+
+Die Verwendung der Subnetzzuordnung ist ein optionaler Prozess in zwei Schritten:
+
+* Fügen Sie zunächst die Subnetzzuordnung für jeden vCenter-Standort hinzu.
+* Geben Sie anschließend im Replikationsplan an, dass Sie die Subnetzzuordnung verwenden möchten.
+
 
 .Schritte
 . Wählen Sie im oberen Menü der BlueXP Disaster Recovery die Option *Replication Plans* aus.

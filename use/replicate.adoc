@@ -4,7 +4,7 @@ permalink: use/replicate.html
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
 summary: Mit der Disaster Recovery von BlueXP können Sie VMware Applikationen an Ihrem Quellstandort mithilfe von SnapMirror Replizierung an einen Remote-Standort zur Disaster Recovery in der Cloud replizieren. 
 ---
-= Replizierung von Applikationen an einen anderen Standort
+= Replizieren Sie Anwendungen an einen anderen Standort mit BlueXP Disaster Recovery
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
