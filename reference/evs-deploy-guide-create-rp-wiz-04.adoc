@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-create-rp-wiz-04.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, netapp, ontap 
+summary: Einführung in die BlueXP-Notfallwiederherstellung mit Amazon EVS und Amazon FSx für NetApp ONTAP. Nachdem Sie alle Informationen zum Replikationsplan in der BlueXP-Notfallwiederherstellung hinzugefügt haben, überprüfen Sie, ob die eingegebenen Informationen korrekt sind. 
+---
+= Erstellen eines Replikationsplans: Schritt 4 – Überprüfen der Einstellungen in BlueXP Disaster Recovery
+:allow-uri-read: 
+
+
+[role="lead"]
+Nachdem Sie die Replikationsplaninformationen in der BlueXP-Notfallwiederherstellung hinzugefügt haben, überprüfen Sie, ob die eingegebenen Informationen richtig sind.
+
+.Schritte
+. Wählen Sie *Speichern*, um Ihre Einstellungen zu überprüfen, bevor Sie den Replikationsplan aktivieren.
++
+Sie können jede Registerkarte auswählen, um die Einstellungen zu überprüfen und auf jeder Registerkarte Änderungen vorzunehmen, indem Sie das Stiftsymbol auswählen.
+
++
+Überprüfung der Replikationsplaneinstellungen image:evs-create-rp-wiz-c-verify.png["Überprüfung der Replikationsplaneinstellungen"]
+
+. Wenn Sie sicher sind, dass alle Einstellungen korrekt sind, wählen Sie unten auf dem Bildschirm *Plan hinzufügen* aus.
+
+
+Weiter mit link:evs-deploy-guide-verify-rp.html["Überprüfen des Replikationsplans"] .

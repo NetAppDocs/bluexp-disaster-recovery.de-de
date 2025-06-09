@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-verify-rp.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
+summary: Einführung der BlueXP-Notfallwiederherstellung mit Amazon EVS und Amazon FSx für NetApp ONTAP. 
+---
+= Überprüfen Sie, ob bei der Notfallwiederherstellung von BlueXP alles funktioniert
+:allow-uri-read: 
+
+
+[role="lead"]
+Nachdem Sie den Replikationsplan in BlueXP Disaster Recovery hinzugefügt haben, gelangen Sie zurück zur Seite „Replikationspläne“, wo Sie Ihre Replikationspläne und deren Status einsehen können. Stellen Sie sicher, dass der Replikationsplan den Status „Intakt“ aufweist. Ist dies nicht der Fall, überprüfen Sie den Status des Replikationsplans und beheben Sie alle Probleme, bevor Sie fortfahren.
+
+Abbildung: Seite „Replikationspläne“ image:evs-replication-plan-post-create.png["Seite „Replikationspläne“"]
+
+BlueXP Disaster Recovery führt eine Reihe von Tests durch, um sicherzustellen, dass alle Komponenten (ONTAP-Cluster, vCenter-Cluster und VMs) zugänglich sind und sich im korrekten Zustand befinden, damit der Dienst die VMs schützen kann. Dieser sogenannte Compliance-Check wird regelmäßig durchgeführt.
+
+Auf der Seite „Replikationspläne“ können Sie die folgenden Informationen sehen:
+
+* Status der letzten Compliance-Prüfung
+* Der Replikationsstatus des Replikationsplans
+* Der Name der geschützten (Quell-)Site
+* Die Liste der durch den Replikationsplan geschützten Ressourcengruppen
+* Der Name der Failover-Site (Ziel-Site)
+

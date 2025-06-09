@@ -1,0 +1,77 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-config-add-arrays.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
+summary: Bevor Sie die Notfallwiederherstellung von BlueXP verwenden, müssen Sie der BlueXP-Arbeitsumgebung lokale und in der Cloud gehostete Speicherinstanzen hinzufügen. 
+---
+= Fügen Sie der BlueXP-Arbeitsumgebung für Amazon EVS mit BlueXP Disaster Recovery lokale Arrays hinzu
+:allow-uri-read: 
+
+
+[role="lead"]
+Bevor Sie die Notfallwiederherstellung von BlueXP verwenden, müssen Sie der BlueXP-Arbeitsumgebung lokale und in der Cloud gehostete Speicherinstanzen hinzufügen.
+
+Sie müssen Folgendes tun:
+
+* Fügen Sie Ihrer BlueXP-Arbeitsumgebung lokale Arrays hinzu.
+* Fügen Sie Ihrer BlueXP-Arbeitsumgebung Amazon FSx für NetApp ONTAP (FSx für ONTAP)-Instanzen hinzu.
+
+
+
+
+== Fügen Sie der BlueXP-Arbeitsumgebung lokale Speicher-Arrays hinzu
+
+Fügen Sie Ihrer BlueXP-Arbeitsumgebung lokale ONTAP-Speicherressourcen hinzu.
+
+. Wählen Sie im BlueXP Canvas *Arbeitsumgebung hinzufügen* aus.
++
+image:evs-canvas-add-working-env-1.png["Arbeitsumgebung hinzufügen"]
+
+. Wählen Sie auf der Seite „Arbeitsumgebung hinzufügen“ die Karte *On-Premises* aus.
++
+image:evs-canvas-add-working-env-2.png["Arbeitsumgebungsbild hinzufügen"]
+
+. Wählen Sie *Erkennen* auf der On-Premises ONTAP-Karte.
++
+image:evs-canvas-add-working-env-3.png["Arbeitsumgebungsbild hinzufügen"]
+
+. Geben Sie auf der Seite „Cluster ermitteln“ die folgenden Informationen ein:
++
+.. Die IP-Adresse des ONTAP-Array-Cluster-Management-Ports
+.. Der Administrator-Benutzername
+.. Das Administratorkennwort
+
+
+. Wählen Sie unten auf der Seite *Entdecken* aus.
++
+image:evs-canvas-add-working-env-4-5.png["Arbeitsumgebungsbild hinzufügen"]
+
+. Wiederholen Sie die Schritte 1 bis 5 für jedes ONTAP-Array, das vCenter-Datenspeicher hosten wird.
+
+
+
+
+== Fügen Sie Amazon FSx für NetApp ONTAP-Speicherinstanzen zur BlueXP-Arbeitsumgebung hinzu
+
+Fügen Sie als Nächstes Ihrer BlueXP-Arbeitsumgebung ein Amazon FSx für NetApp ONTAP-Speicherressourcen hinzu.
+
+. Wählen Sie im BlueXP Canvas *Arbeitsumgebung hinzufügen* aus.
++
+image:evs-canvas-add-working-env-1.png["Arbeitsumgebungsbild hinzufügen"]
+
+. Wählen Sie auf der Seite „Arbeitsumgebung hinzufügen“ die Karte *Amazon Web Services* aus.
++
+image:evs-canvas-add-working-evs-2.png["Arbeitsumgebungsbild hinzufügen"]
+
+. Wählen Sie den Link *Vorhandenes erkennen* auf der Amazon FSx for ONTAP-Karte.
++
+image:evs-canvas-add-working-evs-3.png["Arbeitsumgebungsbild hinzufügen"]
+
+. Wählen Sie die Anmeldeinformationen und die AWS-Region aus, in der die FSx for ONTAP-Instanz gehostet wird.
+. Wählen Sie ein oder mehrere FSx for ONTAP-Dateisysteme aus, die hinzugefügt werden sollen.
+. Wählen Sie unten auf der Seite *Entdecken* aus.
++
+image:evs-needs-updates-canvas-add-working-evs-4-5.png["Arbeitsumgebungsbild hinzufügen"]
+
+. Wiederholen Sie die Schritte 1–6 für jede FSx for ONTAP-Instanz, die vCenter-Datenspeicher hosten wird.
+

@@ -1,0 +1,20 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-install-connector.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
+summary: Einführung der BlueXP-Notfallwiederherstellung mit Amazon EVS und Amazon FSx für NetApp ONTAP. Der Connector kann zwar an jedem Ihrer Netzwerkstandorte installiert werden, für die BlueXP-Notfallwiederherstellung empfehlen wir jedoch die Installation am DR-Standort. Dadurch wird sichergestellt, dass die cloudbasierte BlueXP-Konsolenoberfläche bei einem Ausfall des primären Standorts weiterhin mit dem Connector verbunden ist und den Wiederherstellungsprozess innerhalb dieses DR-Standorts orchestrieren kann. 
+---
+= Installieren Sie den BlueXP Connector für die BlueXP-Notfallwiederherstellung
+:allow-uri-read: 
+
+
+[role="lead"]
+Ein BlueXP Connector ist eine NetApp-Software, die in Ihrer Cloud oder Ihrem lokalen Netzwerk ausgeführt wird. Er führt die Aktionen aus, die BlueXP zur Verwaltung Ihrer Dateninfrastruktur benötigt. Der Connector fragt die BlueXP Disaster Recovery-Software als Serviceebene ständig nach den erforderlichen Aktionen ab.
+
+Für den BlueXP Disaster Recovery Service orchestrieren die ausgeführten Aktionen VMware vCenter-Cluster und ONTAP-Speicherinstanzen mithilfe nativer APIs für den jeweiligen Dienst, um den Schutz von Produktions-VMs vor Ort zu gewährleisten. Der Connector kann zwar an jedem Ihrer Netzwerkstandorte installiert werden, für die BlueXP Disaster Recovery empfehlen wir jedoch die Installation am DR-Standort. Dadurch wird sichergestellt, dass die cloudbasierte BlueXP-Konsolenoberfläche im Falle eines Ausfalls des primären Standorts weiterhin Kontakt zum Connector hat und den Wiederherstellungsprozess innerhalb dieses DR-Standorts orchestrieren kann.
+
+Um den Dienst zu nutzen, installieren Sie den Connector im Standardmodus. Weitere Informationen zu den verschiedenen Connector-Installationsarten finden Sie unter  https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html["Erfahren Sie mehr über die Bereitstellungsmodi von BlueXP | NetApp Dokumentation"^] .
+
+Obwohl der Connector für die Nutzung des Dienstes unerlässlich ist, hängen die Installationsschritte von Ihren Anforderungen und Ihrer Netzwerkkonfiguration ab. Spezifische Installationsanweisungen gehen über den Rahmen dieser Informationen hinaus.
+
+Die einfachste Methode zur Installation eines Connectors mit Amazon AWS ist die Verwendung des AWS Marketplace. Weitere Informationen zur Connector-Installation über den AWS Marketplace finden Sie unter  https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-aws-marketplace.html["Erstellen eines Connectors aus dem AWS Marketplace | NetApp-Dokumentation"^] .

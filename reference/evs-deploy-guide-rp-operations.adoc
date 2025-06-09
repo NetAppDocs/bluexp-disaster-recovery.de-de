@@ -1,0 +1,232 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-rp-operations.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, netapp, ontap 
+summary: Einführung in die Notfallwiederherstellung mit BlueXP mithilfe von Amazon EVS und Amazon FSx für NetApp ONTAP. Nutzen Sie die Notfallwiederherstellung mit BlueXP mithilfe von Amazon EVS und Amazon FSx für NetApp ONTAP, um Failover durchzuführen, Failover zu testen, Ressourcen zu aktualisieren, zu migrieren, jetzt einen Snapshot zu erstellen, Replikationspläne zu deaktivieren oder zu aktivieren, alte Snapshots zu bereinigen, Snapshots abzugleichen, Replikationspläne zu löschen und Zeitpläne zu bearbeiten. 
+---
+= Führen Sie Replikationsplanvorgänge mit BlueXP Disaster Recovery durch
+:allow-uri-read: 
+
+
+[role="lead"]
+Verwenden Sie die Notfallwiederherstellung von BlueXP mit Amazon EVS und Amazon FSx für NetApp ONTAP, um die folgenden Vorgänge auszuführen: Failover, Test-Failover, Ressourcen aktualisieren, migrieren, jetzt einen Snapshot erstellen, Replikationsplan deaktivieren/aktivieren, alte Snapshots bereinigen, Snapshots abgleichen, Replikationsplan löschen und Zeitpläne bearbeiten.
+
+
+
+== Failover
+
+Der wichtigste Vorgang, den Sie möglicherweise durchführen müssen, ist der, von dem Sie hoffen, dass er nie stattfindet: ein Failover zum DR-(Ziel-)Rechenzentrum im Falle eines katastrophalen Fehlers am Produktionsstandort vor Ort.
+
+Failover ist ein manuell initiierter Prozess.
+
+.Schritte zum Zugriff auf den Failover-Vorgang
+. Wählen Sie in der linken Navigation von BlueXP *Schutz* > *Notfallwiederherstellung*.
+. Wählen Sie im BlueXP-Notfallwiederherstellungsmenü *Replikationspläne* aus.
+
+
+.Schritte zum Durchführen eines Failovers
+. Wählen Sie auf der Seite Replikationspläne die Option Aktionen des Replikationsplans aus. image:icon-horizontal-dots.png["Horizontale Punkte für das Aktionsmenü"] .
+. Wählen Sie *Failover*.
++
+image:evs-rp-menu-failover.png["Failover-Menüoption"]
+
+. Wenn auf die (geschützte) Produktionssite nicht zugegriffen werden kann, wählen Sie einen zuvor erstellten Snapshot als Wiederherstellungsimage aus. Wählen Sie dazu *Auswählen*.
+. Wählen Sie das Backup aus, das für die Wiederherstellung verwendet werden soll.
+. (Optional) Wählen Sie aus, ob BlueXP Disaster Recovery den Failover-Prozess unabhängig vom Status des Replikationsplans erzwingen soll. Dies sollte nur als letztes Mittel erfolgen.
+. (Optional) Wählen Sie aus, ob BlueXP Disaster Recovery nach der Wiederherstellung der Produktionssite automatisch eine umgekehrte Schutzbeziehung erstellen soll.
+. Geben Sie das Wort „Failover“ ein, um zu bestätigen, dass Sie fortfahren möchten.
+. Wählen Sie *Failover*.
++
+image:evs-rp-failover-dialog.png["Dialogfeld „Failover“"]
+
+
+
+
+
+== Testen Sie den Failover
+
+Ein Test-Failover ähnelt einem Failover, weist jedoch zwei Unterschiede auf.
+
+* Die Produktionssite ist noch aktiv und alle VMs funktionieren weiterhin wie erwartet.
+* Der BlueXP-Notfallwiederherstellungsschutz der Produktions-VMs wird fortgesetzt.
+
+
+Dies wird durch die Verwendung nativer ONTAP FlexClone-Volumes am Zielstandort erreicht. Weitere Informationen zum Test-Failover finden Sie unter link:../use/failover.html["Failover von Anwendungen an einen Remote-Standort | NetApp Dokumentation"] .
+
+Die Schritte zum Ausführen eines Test-Failovers sind identisch mit denen zum Ausführen eines echten Failovers, mit der Ausnahme, dass Sie den Vorgang „Test-Failover“ im Kontextmenü des Replikationsplans verwenden.
+
+.Schritte
+. Wählen Sie die Option Aktionen des Replikationsplans image:icon-horizontal-dots.png["Horizontale Punkte für das Aktionsmenü"] .
+. Wählen Sie im Menü *Failover testen*.
++
+image:evs-rp-menu-test-failover.png["Menüoption „Failover testen“"]
+
+. Entscheiden Sie, ob Sie den neuesten Stand der Produktionsumgebung abrufen möchten (Jetzt Snapshot erstellen) oder ein zuvor erstelltes Backup des Replikationsplans verwenden möchten (Auswählen).
+. Wenn Sie eine zuvor erstellte Sicherung ausgewählt haben, wählen Sie die Sicherung aus, die für die Wiederherstellung verwendet werden soll.
+. Geben Sie das Wort „Test-Failover“ ein, um zu bestätigen, dass Sie fortfahren möchten.
+. Wählen Sie *Failover testen*.
++
+image:evs-test-failover-dialog.png["Dialogfeld „Failover testen“"]
+
+
+
+
+
+== Führen Sie eine Konformitätsprüfung durch
+
+Compliance-Prüfungen werden standardmäßig alle drei Stunden durchgeführt. Sie können jederzeit eine manuelle Compliance-Prüfung durchführen.
+
+.Schritte
+. Wählen Sie die Option *Aktionen* image:../use/icon-horizontal-dots.png["Actions-Menü-Symbol im BlueXP Disaster Recovery Service"] neben dem Replikationsplan.
+. Wählen Sie im Menü „Aktionen“ des Replikationsplans die Option „Konformitätsprüfung ausführen“ aus:
++
+image:evs-rp-menu-compliance-check.png["Menüoption „Konformitätsprüfung ausführen“"]
+
+. Um zu ändern, wie oft BlueXP Disaster Recovery automatisch Konformitätsprüfungen durchführt, wählen Sie die Option *Zeitpläne bearbeiten* aus dem Menü „Aktionen“ des Replikationsplans.
+
+
+
+
+== Ressourcen aktualisieren
+
+Bei jeder Änderung Ihrer virtuellen Infrastruktur – beispielsweise beim Hinzufügen oder Löschen von VMs, beim Hinzufügen oder Löschen von Datenspeichern oder beim Verschieben von VMs zwischen Datenspeichern – müssen Sie die betroffenen vCenter-Cluster im BlueXP Disaster Recovery Service aktualisieren. Der Service führt dies standardmäßig alle 24 Stunden automatisch durch. Eine manuelle Aktualisierung stellt jedoch sicher, dass die neuesten Informationen zur virtuellen Infrastruktur verfügbar sind und für den DR-Schutz berücksichtigt werden.
+
+Es gibt zwei Fälle, in denen eine Aktualisierung erforderlich ist:
+
+* vCenter-Aktualisierung: Führen Sie immer dann eine vCenter-Aktualisierung durch, wenn VMs zu einem vCenter-Cluster hinzugefügt, daraus gelöscht oder aus diesem verschoben werden:
+* Aktualisierung des Replikationsplans: Führen Sie jedes Mal eine Aktualisierung des Replikationsplans durch, wenn eine VM zwischen Datenspeichern im selben Quell-vCenter-Cluster verschoben wird.
+
+
+image::evs-rp-menu-refresh-resources.png[Menüoption „Ressourcen aktualisieren“]
+
+
+
+== Migrieren
+
+BlueXP Disaster Recovery wird zwar primär für Notfallwiederherstellungsfälle eingesetzt, ermöglicht aber auch die einmalige Verschiebung einer Gruppe von VMs vom Quell- zum Zielstandort. Dies kann für eine konzertierte Migration in die Cloud oder zur Katastrophenvorbeugung – beispielsweise bei schlechtem Wetter, politischen Unruhen oder anderen potenziell vorübergehenden Katastrophen – genutzt werden.
+
+. Wählen Sie die Option *Aktionen* image:../use/icon-horizontal-dots.png["Actions-Menü-Symbol im BlueXP Disaster Recovery Service"] neben dem Replikationsplan.
+. Um die VMs in einem Replikationsplan in den Amazon EVS-Zielcluster zu verschieben, wählen Sie im Aktionsmenü des Replikationsplans die Option *Migrieren* aus:
++
+image::evs-rp-menu-migrate.png[Menüoption „Migrieren“]
+
+. Geben Sie Informationen in das Dialogfeld „Migrieren“ ein.
+
+
+
+
+== Jetzt Schnappschuss machen
+
+Sie können jederzeit einen sofortigen Snapshot des Replikationsplans erstellen. Dieser Snapshot wird in die Notfallwiederherstellungsüberlegungen von BlueXP einbezogen, die durch die Snapshot-Aufbewahrungsanzahl des Replikationsplans festgelegt werden.
+
+. Wählen Sie die Option *Aktionen* image:../use/icon-horizontal-dots.png["Actions-Menü-Symbol im BlueXP Disaster Recovery Service"] neben dem Replikationsplan.
+. Um sofort einen Snapshot der Ressourcen des Replikationsplans zu erstellen, wählen Sie im Aktionsmenü des Replikationsplans die Option *Jetzt Snapshot erstellen* aus:
++
+image::evs-rp-menu-take-snapshot-now.png[Menüoption „Jetzt Schnappschuss machen“]
+
+
+
+
+
+== Replikationsplan deaktivieren oder aktivieren
+
+Möglicherweise müssen Sie den Replikationsplan vorübergehend anhalten, um Vorgänge oder Wartungsarbeiten durchzuführen, die den Replikationsprozess beeinträchtigen könnten. Der Dienst bietet eine Methode zum Anhalten und Starten der Replikation.
+
+. Um die Replikation vorübergehend zu stoppen, wählen Sie im Aktionsmenü des Replikationsplans die Option *Deaktivieren*.
+. Um die Replikation neu zu starten, wählen Sie im Aktionsmenü des Replikationsplans die Option *Aktivieren*.
++
+Wenn der Replikationsplan aktiv ist, ist der Befehl *Aktivieren* ausgegraut. Wenn der Replikationsplan deaktiviert ist, ist der Befehl *Deaktivieren* ausgegraut.
+
++
+image::evs-rp-menu-disable-enable.png[Menüoption „Deaktivieren/Aktivieren“]
+
+
+
+
+
+== Alte Snapshots bereinigen
+
+Möglicherweise möchten Sie ältere Snapshots bereinigen, die auf den Quell- und Zielsites aufbewahrt wurden. Dies kann passieren, wenn die Snapshot-Aufbewahrungsanzahl des Replikationsplans geändert wird.
+
+. Wählen Sie die Option *Aktionen* image:../use/icon-horizontal-dots.png["Actions-Menü-Symbol im BlueXP Disaster Recovery Service"] neben dem Replikationsplan.
+. Um diese älteren Snapshots manuell zu entfernen, wählen Sie im Aktionsmenü des Replikationsplans die Option *Alte Snapshots bereinigen*.
++
+image::evs-rp-menu-cleanup-old-snapshots.png[Menüoption „Alte Snapshots bereinigen“]
+
+
+
+
+
+== Snapshots abgleichen
+
+Da der Service ONTAP Volume Snapshots orchestriert, kann ein ONTAP Storage-Administrator Snapshots direkt über den ONTAP System Manager, die ONTAP CLI oder die ONTAP REST APIs löschen, ohne dass der Service davon Kenntnis hat. Snapshots auf der Quelle, die sich nicht im Zielcluster befinden, werden automatisch alle 24 Stunden gelöscht. Sie können dies jedoch nach Bedarf durchführen. Mit dieser Funktion können Sie sicherstellen, dass die Snapshots über alle Standorte hinweg konsistent sind.
+
+. Wählen Sie die Option *Aktionen* image:../use/icon-horizontal-dots.png["Actions-Menü-Symbol im BlueXP Disaster Recovery Service"] neben dem Replikationsplan.
+. Um Snapshots aus dem Quellcluster zu löschen, die im Zielcluster nicht vorhanden sind, wählen Sie im Menü „Aktionen“ des Replikationsplans die Option „Snapshots abgleichen“ aus.
++
+image::evs-rp-menu-reconcile-snapshots.png[Menüoption „Snapshots abgleichen“]
+
+
+
+
+
+== Replikationsplan löschen
+
+Wenn der Replikationsplan nicht mehr benötigt wird, können Sie ihn löschen.
+
+. Wählen Sie die Option *Aktionen* image:../use/icon-horizontal-dots.png["Actions-Menü-Symbol im BlueXP Disaster Recovery Service"] neben dem Replikationsplan.
+. Um den Replikationsplan zu löschen, wählen Sie *Löschen* aus dem Kontextmenü des Replikationsplans.
++
+image::evs-rp-menu-delete.png[Menüoption „Löschen“]
+
+
+
+
+
+== Schichtpläne bearbeiten
+
+Zwei Vorgänge werden automatisch und regelmäßig ausgeführt: Test-Failover und Konformitätsprüfungen.
+
+. Wählen Sie die Option *Aktionen* image:../use/icon-horizontal-dots.png["Actions-Menü-Symbol im BlueXP Disaster Recovery Service"] neben dem Replikationsplan.
+. Um diese Zeitpläne für einen dieser beiden Vorgänge zu ändern, wählen Sie *Zeitpläne bearbeiten* für den Replikationsplan aus.
++
+image::evs-rp-menu-edit-schedules.png[Menüoption „Zeitpläne bearbeiten“]
+
+
+
+
+
+=== Ändern des Intervalls für die Konformitätsprüfung
+
+Standardmäßig werden Konformitätsprüfungen alle drei Stunden durchgeführt. Sie können dieses Intervall auf ein beliebiges Intervall zwischen 30 Minuten und 24 Stunden ändern.
+
+Um dieses Intervall zu ändern, ändern Sie das Feld „Häufigkeit“ im Dialogfeld „Zeitpläne bearbeiten“:
+
+image::evs-rp-edit-compliance-check-schedule.png[Zeitplan für die Konformitätsprüfung]
+
+
+
+=== Planen Sie automatisierte Test-Failover
+
+Test-Failover werden standardmäßig manuell ausgeführt. Sie können automatische Test-Failover planen, um sicherzustellen, dass Ihre Replikationspläne wie erwartet funktionieren. Weitere Informationen zum Test-Failover-Prozess finden Sie unter link:../use/failover.html["Testen Sie den Failover-Prozess"] .
+
+.Schritte zum Planen von Test-Failovern
+. Wählen Sie die Option *Aktionen* image:../use/icon-horizontal-dots.png["Actions-Menü-Symbol im BlueXP Disaster Recovery Service"] neben dem Replikationsplan.
+. Wählen Sie *Failover ausführen*.
+. Aktivieren Sie das Kontrollkästchen *Test-Failover nach Zeitplan ausführen*.
+. (Optional) Aktivieren Sie *On-Demand-Snapshot für geplantes Test-Failover verwenden*.
+. Wählen Sie im Dropdown-Menü „Wiederholen“ einen Intervalltyp aus.
+. Wählen Sie aus, wann das Test-Failover durchgeführt werden soll
++
+.. Wöchentlich: Wählen Sie den Wochentag
+.. Monatlich: Wählen Sie den Tag des Monats
+
+
+. Wählen Sie die Tageszeit für die Ausführung des Test-Failovers
+. Wählen Sie das Startdatum.
+. Entscheiden Sie, ob der Dienst die Testumgebung automatisch bereinigen soll und wie lange die Testumgebung ausgeführt werden soll, bevor der Bereinigungsprozess beginnt.
+. Wählen Sie *Speichern*.
++
+image::evs-rp-edit-schedule-test-failover.png[Zeitplan für Test-Failover bearbeiten]
+
+

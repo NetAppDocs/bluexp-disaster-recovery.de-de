@@ -1,0 +1,23 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-introduction.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, netapp, ontap 
+summary: Einführung der BlueXP-Notfallwiederherstellung mit Amazon EVS und Amazon FSx für NetApp ONTAP. 
+---
+= Einführung der BlueXP-Notfallwiederherstellung mit Amazon Elastic VMware Service und Amazon FSx für NetApp ONTAP
+:allow-uri-read: 
+
+
+[role="lead"]
+Kunden setzen für ihre Produktions-Rechenlasten zunehmend auf virtualisierte Infrastrukturen, beispielsweise auf VMware vSphere. Da diese virtuellen Maschinen (VMs) für ihre Unternehmen immer wichtiger werden, müssen sie vor den gleichen Katastrophen geschützt werden wie ihre physischen Rechenressourcen. Die derzeit angebotenen Disaster-Recovery-Lösungen (DR) sind komplex, teuer und ressourcenintensiv. NetApp, der größte Storage-Anbieter für virtualisierte Infrastrukturen, hat ein großes Interesse daran, die VMs seiner Kunden genauso zu schützen wie ONTAP-Storage-Daten aller Art. Um dieses Ziel zu erreichen, hat NetApp den Disaster-Recovery-Service BlueXP entwickelt.
+
+
+NOTE: DIESE DOKUMENTATION ZU AMAZON EVS DIENT ALS TECHNOLOGIEVORSCHAU. Mit diesem Vorschauangebot behält sich NetApp das Recht vor, Angebotsdetails, Inhalte und Zeitpläne vor der allgemeinen Verfügbarkeit zu ändern.
+
+Eine der größten Herausforderungen bei jeder DR-Lösung besteht darin, die zusätzlichen Kosten für Anschaffung, Konfiguration und Wartung zusätzlicher Rechen-, Netzwerk- und Speicherressourcen allein für die Bereitstellung einer DR-Replikations- und Wiederherstellungsinfrastruktur zu bewältigen. Eine beliebte Option zum Schutz kritischer virtueller Ressourcen vor Ort ist die Nutzung von in der Cloud gehosteten virtuellen Ressourcen als DR-Replikations- und Wiederherstellungsinfrastruktur. Amazon ist ein Beispiel für eine solche Lösung, die kostengünstige Ressourcen bereitstellt, die mit NetApp ONTAP-gehosteten VM-Infrastrukturen kompatibel sind.
+
+Amazon hat seinen Amazon Elastic VMware Service (Amazon EVS) eingeführt, der VMware Cloud Foundation in Ihrer Virtual Private Cloud (VPC) ermöglicht. Amazon EVS bietet die Ausfallsicherheit und Leistung von AWS sowie die vertraute VMware-Software und -Tools. Dadurch können Amazon EVS vCenter als Erweiterung Ihrer virtuellen Infrastruktur vor Ort integriert werden.
+
+Amazon EVS bietet zwar integrierte Speicherressourcen, die Nutzung nativer Speicherlösungen kann jedoch die Effektivität für Unternehmen mit hohen Speicherlasten beeinträchtigen. In diesen Fällen bietet die Kombination von Amazon EVS mit Amazon FSx für NetApp ONTAP-Speicher (Amazon FSxN) eine flexiblere Speicherlösung. Wenn Sie NetApp ONTAP-Speicherlösungen vor Ort zum Hosten Ihrer VMware-Infrastruktur nutzen, profitieren Sie durch die Verwendung von Amazon EVS mit FSx für ONTAP zudem von erstklassigen Dateninteroperabilitäts- und Sicherheitsfunktionen zwischen Ihren lokalen und Cloud-Infrastrukturen.
+
+Weitere Informationen zu Amazon FSX for NetApp ONTAP finden Sie unter https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/getting-started.html["Erste Schritte mit Amazon FSX für NetApp ONTAP"^].

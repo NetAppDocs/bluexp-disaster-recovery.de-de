@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-add-vcenters.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
+summary: Einführung in BlueXP Disaster Recovery mit Amazon EVS und Amazon FSxN. Nachdem Sie die Sites erstellt haben, fügen Sie Ihre vCenter-Cluster nun den einzelnen Sites in BlueXP Disaster Recovery hinzu. Bei der Erstellung jeder Site haben wir den jeweiligen Site-Typ angegeben. Dadurch weiß BlueXP Disaster Recovery, welcher Zugriff für die in den einzelnen Site-Typen gehosteten vCenter erforderlich ist. Ein Vorteil von Amazon EVS besteht darin, dass es keinen wirklichen Unterschied zwischen einem Amazon EVS vCenter und einem lokalen vCenter gibt. Beide benötigen dieselben Verbindungs- und Authentifizierungsinformationen. 
+---
+= Fügen Sie lokale und Amazon EVS vCenter-Cluster in der BlueXP-Notfallwiederherstellung hinzu
+:allow-uri-read: 
+
+
+[role="lead"]
+Nachdem Sie die Sites erstellt haben, fügen Sie Ihre vCenter-Cluster nun den einzelnen Sites in BlueXP Disaster Recovery hinzu. Bei der Erstellung der Sites haben wir die jeweiligen Site-Typen angegeben. Dadurch weiß BlueXP Disaster Recovery, welcher Zugriff für die dort gehosteten vCenter erforderlich ist. Ein Vorteil von Amazon EVS besteht darin, dass es keinen wirklichen Unterschied zwischen einem Amazon EVS vCenter und einem lokalen vCenter gibt. Beide benötigen dieselben Verbindungs- und Authentifizierungsinformationen.
+
+.Schritte zum Hinzufügen eines vCenters zu jeder Site
+. Wählen Sie auf der Registerkarte *Sites* für die gewünschte Site die Option *vCenter hinzufügen* aus.
++
+image:evs-add-vcenter-1.png["vCenter-Option hinzufügen"]
+
+. Wählen Sie im Dialogfeld „vCenter-Server hinzufügen“ die folgenden Informationen aus bzw. geben Sie sie ein:
++
+.. Der BlueXP-Connector wird in Ihrem AWS VPC gehostet.
+.. Die IP-Adresse oder der FQDN für das hinzuzufügende vCenter.
+.. Falls abweichend, ändern Sie den Portwert in den TCP-Port, der von Ihrem vCenter-Cluster-Manager verwendet wird.
+.. Der vCenter-Benutzername für das zuvor erstellte Konto, der von BlueXP Disaster Recovery zum Verwalten des vCenter verwendet wird.
+.. Das vCenter-Passwort für den angegebenen Benutzernamen.
+.. Wenn Ihr Unternehmen eine externe Zertifizierungsstelle (CA) oder den vCenter Endpoint Certificate Store für den Zugriff auf Ihre vCenter verwendet, deaktivieren Sie das Kontrollkästchen *Selbstsignierte Zertifikate verwenden*. Andernfalls lassen Sie das Kontrollkästchen aktiviert.
+
+
+. Wählen Sie *Hinzufügen*.
++
+image:evs-add-vcenter-2-3.png["Dialogfeld „vCenter hinzufügen“"]
+
+

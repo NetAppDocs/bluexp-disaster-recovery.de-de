@@ -1,0 +1,32 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-solution-overview.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
+summary: Lösungsübersicht zur Notfallwiederherstellung von BlueXP mit Amazon EVS und Amazon FSxN. 
+---
+= Lösungsübersicht zur BlueXP-Notfallwiederherstellung mit Amazon EVS und Amazon FSs für NetApp ONTAP
+:allow-uri-read: 
+
+
+[role="lead"]
+BlueXP Disaster Recovery ist ein Mehrwertdienst, der in der BlueXP Software-as-a-Service-Umgebung gehostet wird und auf der BlueXP-Kernarchitektur basiert. Mehrere Hauptkomponenten bilden den DR-Dienst für den VMware-Schutz innerhalb von BlueXP.
+
+Eine vollständige Übersicht über die BlueXP Disaster Recovery-Lösung finden Sie unter link:../get-started/dr-intro.html["Erfahren Sie mehr über BlueXP Disaster Recovery für VMware"] .
+
+Wenn Sie Ihre lokalen, auf VMware gehosteten virtuellen Maschinen auf Amazon AWS schützen möchten, verwenden Sie den Dienst zum Sichern auf Amazon EVS mit Amazon FSx für auf NetApp ONTAP-Speicher gehostete Datenspeicher.
+
+Die folgende Abbildung zeigt, wie der Dienst zum Schutz Ihrer VMs mit Amazon EVS funktioniert.
+
+Übersicht über die Notfallwiederherstellung von BlueXP mit Amazon EVS und FSx für ONTAP image:evs-soloverview-evs.png["Übersicht über die Notfallwiederherstellung von BlueXP mit Amazon EVS und FSx für ONTAP"]
+
+. Amazon EVS wird in Ihrem Konto in einer einzigen Availability Zone (AZ)-Konfiguration und innerhalb Ihrer Virtual Private Cloud (VPC) bereitgestellt.
+. Ein FSx for ONTAP-Dateisystem wird in derselben AZ wie die Amazon EVS-Bereitstellung bereitgestellt. Die Verbindung des Dateisystems mit Amazon EVS erfolgt entweder direkt über eine Elastic Network Interface (ENI), eine VPC-Peer-Verbindung oder ein AmazonTransit Gateway.
+. Der NetApp BlueXP Connector ist in Ihrer VPC installiert. Der BlueXP Connector hostet mehrere Datenverwaltungsdienste (Agenten), darunter den BlueXP Disaster Recovery Agent, der die Notfallwiederherstellung (DR) der VMware-Infrastruktur sowohl in Ihren lokalen physischen Rechenzentren als auch auf Ihren von Amazon AWS gehosteten Ressourcen verwaltet.
+. Der BlueXP-Disaster-Recovery-Agent kommuniziert sicher mit dem in der BlueXP-Cloud gehosteten Dienst, um Aufgaben zu empfangen, und verteilt diese Aufgaben an die entsprechenden lokalen und von AWS gehosteten vCenter- und ONTAP-Speicherinstanzen.
+. Sie erstellen einen Replikationsplan mithilfe der in der Cloud gehosteten BlueXP-UI-Konsole und geben dabei die zu schützenden VMs, die Häufigkeit des Schutzes dieser VMs und die Verfahren an, die ausgeführt werden müssen, um diese VMs im Falle eines Failovers vom lokalen Standort neu zu starten.
+. Der Replikationsplan bestimmt, welche vCenter-Datenspeicher die geschützten VMs hosten und welche ONTAP-Volumes diese Datenspeicher hosten. Falls im FSx for ONTAP-Cluster noch keine Volumes vorhanden sind, werden diese von BlueXP Disaster Recovery automatisch erstellt.
+. Für jedes identifizierte Quell-ONTAP-Volume wird eine SnapMirror-Beziehung zu jedem von FSx für ONTAP gehosteten Ziel-ONTAP-Volume erstellt und ein Replikationszeitplan wird basierend auf dem vom Benutzer im Replikationsplan bereitgestellten RPO erstellt.
+. Im Falle eines Ausfalls der primären Site leitet ein Administrator einen manuellen Failover-Prozess innerhalb der BlueXP-Konsole ein und wählt ein Backup aus, das als Wiederherstellungspunkt verwendet werden soll.
+. Der BlueXP Disaster Recovery Agent aktiviert die von FSx für ONTAP gehosteten Datenschutzvolumes.
+. Der Agent registriert jedes aktivierte FSx für ONTAP-Volume beim Amazon EVS vCenter, registriert jede geschützte VM beim Amazon EVS vCenter und startet jede gemäß den im Replikationsplan enthaltenen vordefinierten Regeln.
+

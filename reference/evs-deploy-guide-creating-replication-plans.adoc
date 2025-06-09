@@ -1,0 +1,27 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-creating-replication-plans.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
+summary: 'Einführung der BlueXP-Notfallwiederherstellung mit Amazon EVS und Amazon FSx für NetApp ONTAP. Nachdem Sie vCenter zum Schutz vor Ort eingerichtet und eine Amazon EVS-Site für die Verwendung von Amazon FSx für NetApp ONTAP konfiguriert haben, die Sie als DR-Ziel verwenden können, können Sie nun einen Replikationsplan (RP) erstellen, um alle VMs zu schützen, die im vCenter-Cluster vor Ort gehostet werden.' 
+---
+= Erstellen von Replikationsplänen in der BlueXP-Übersicht zur Notfallwiederherstellung
+:allow-uri-read: 
+
+
+[role="lead"]
+Nachdem Sie vCenter zum Schutz auf der lokalen Site haben und eine Amazon EVS-Site für die Verwendung von Amazon FSx für NetApp ONTAP konfiguriert haben, die Sie als DR-Ziel verwenden können, können Sie einen Replikationsplan (RP) erstellen, um alle auf dem vCenter-Cluster innerhalb Ihrer lokalen Site gehosteten VM-Gruppen zu schützen.
+
+.So starten Sie den Prozess zur Erstellung des Replikationsplans:
+. Wählen Sie auf einem beliebigen BlueXP-Notfallwiederherstellungsbildschirm die Registerkarte *Replikationspläne* aus.
++
+image:evs-create-rp-1.png["Registerkarte „Replikationspläne“"]
+
+. Wählen Sie im Bildschirm „Replikationspläne“ die Option „Hinzufügen“ aus.
++
+image:evs-create-rp-2.png["Bildschirm „Replikationspläne“"]
+
+
+
+Dadurch wird der Assistent „Replikationsplan erstellen“ geöffnet.
+
+Weiter mit link:evs-deploy-guide-create-rp-wiz-01.html["Assistent zum Erstellen eines Replikationsplans – Schritt 1"] .
