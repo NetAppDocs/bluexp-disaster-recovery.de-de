@@ -1640,4 +1640,12 @@ Für vollständigen Zugriff ist eine Disaster-Recovery-Lizenz von BlueXP erforde
   <block id="3a83143b77a0b90d82bf03cbf43e4443" category="sidebar">Erstellen eines Replikationsplans Schritt 4 für Amazon EVS</block>
   <block id="5a72de72f8b0ba4525e25ce937621889" category="sidebar">Überprüfen des Replikationsplans für Amazon EVS</block>
   <block id="f260d0f12b515f0ab789c0349e49a0fc" category="sidebar">Ausführen von Replikationsplanvorgängen</block>
+  <block id="a1e044c84ca270d3adc998b256510801" category="doc">Verbesserungen der Subnetzzuordnung</block>
+  <block id="494053c615ca0aa0debeb6eac90b3e5a" category="paragraph">Dieses Update erweitert den Dialog „Subnetzzuordnung hinzufügen und bearbeiten“ um eine neue Suchfunktion. Sie können nun schnell bestimmte Subnetze durch die Eingabe von Suchbegriffen finden, was die Verwaltung von Subnetzzuordnungen vereinfacht.</block>
+  <block id="dc729c135725ed28b09cd35258e2a28d" category="doc">Verbesserungen bei der Erkennung</block>
+  <block id="778d15d21e8eaffc6a6c8069d8fa5872" category="paragraph">Dieses Update verbessert den Erkennungsprozess und verkürzt so die für die Erkennung benötigte Zeit.</block>
+  <block id="b77e8ec0a3425747f32b3dbc303adecb" category="section-title">30 Juni 2025</block>
+  <block id="f5939a7e3fd75d2d5422c1d6029f44c8" category="paragraph">Version 4.2.4P2</block>
+  <block id="1d498761d9b5afe7d166fb15809b8000" category="section-title">23 Juni 2025</block>
+  <block id="c114a433f08237cc585990ed9e9e88d5" category="paragraph">Version 4.2.4P1</block>
 </blocks>

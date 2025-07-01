@@ -16,6 +16,30 @@ Erfahren Sie mehr über die Neuerungen bei BlueXP Disaster Recovery.
 
 
 
+== 30 Juni 2025
+
+Version 4.2.4P2
+
+
+
+=== Verbesserungen bei der Erkennung
+
+Dieses Update verbessert den Erkennungsprozess und verkürzt so die für die Erkennung benötigte Zeit.
+
+
+
+== 23 Juni 2025
+
+Version 4.2.4P1
+
+
+
+=== Verbesserungen der Subnetzzuordnung
+
+Dieses Update erweitert den Dialog „Subnetzzuordnung hinzufügen und bearbeiten“ um eine neue Suchfunktion. Sie können nun schnell bestimmte Subnetze durch die Eingabe von Suchbegriffen finden, was die Verwaltung von Subnetzzuordnungen vereinfacht.
+
+
+
 == 9 Juni 2025
 
 Version 4.2.4
