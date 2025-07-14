@@ -21,11 +21,17 @@ Sie können einen schnellen Überblick über alle Ihre BlueXP-Ressourcen zur Not
 * Virtual Machines
 
 
+die einzelnen Aufgaben sind unterschiedliche BlueXP -Rollen erforderlich. Weitere Informationen finden Sie im Abschnitt „Erforderliche BlueXP -Rolle“ der jeweiligen Aufgabe.
+
+link:../reference/dr-reference-roles.html["Erfahren Sie mehr über Benutzerrollen und Berechtigungen bei der BlueXP disaster recovery"]. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über BlueXP-Zugriffsrollen für alle Dienste"^].
+
 
 
 == VCenter-Sites verwalten
 
 Sie können den vCenter-Standortnamen und den Standorttyp (On-Premises oder AWS) bearbeiten.
+
+*Erforderliche BlueXP -Rolle* Organisationsadministrator, Ordner- oder Projektadministrator oder Notfallwiederherstellungsadministratorrolle.
 
 .Schritte
 . Wählen Sie im oberen Menü *Sites* aus.
@@ -38,6 +44,8 @@ Sie können den vCenter-Standortnamen und den Standorttyp (On-Premises oder AWS)
 == Verwalten von Ressourcengruppen
 
 Sie können zwar eine Ressourcengruppe als Teil des Erstellens eines Replikationsplans hinzufügen, jedoch ist es möglicherweise bequemer, die Gruppen separat hinzuzufügen und später diese Gruppen im Plan zu verwenden. Sie erstellen Ressourcengruppen nach VMs oder Datastores.
+
+*Erforderliche BlueXP Rolle* Organisationsadministrator, Ordner- oder Projektadministrator, Notfallwiederherstellungsadministrator oder Administratorrolle für Notfallwiederherstellungsanwendungen.
 
 Sie haben folgende Möglichkeiten, eine Ressourcengruppe nach Datastores zu erstellen:
 
@@ -58,6 +66,8 @@ Sie können auch Ressourcengruppen bearbeiten und löschen.
 == Verwalten von Replikationsplänen
 
 Sie können Replikationspläne deaktivieren, aktivieren und löschen. Sie können Zeitpläne ändern.
+
+*Erforderliche BlueXP -Rolle* Organisationsadministrator, Ordner- oder Projektadministrator, Notfallwiederherstellungsadministrator, Notfallwiederherstellungs-Failover-Administrator oder Notfallwiederherstellungsanwendungsadministrator.
 
 * Wenn Sie einen Replikationsplan vorübergehend anhalten möchten, können Sie ihn deaktivieren und später aktivieren.
 * Wenn Sie den Plan nicht mehr benötigen, können Sie ihn löschen.
@@ -94,6 +104,8 @@ image:../use/dr-plan-list2.png["Liste der Replikationspläne"]
 
 Sie können Snapshots abgleichen, die nicht synchron zwischen Quelle und Ziel sind. Dies kann vorkommen, wenn Snapshots auf einem Ziel außerhalb der Disaster Recovery von BlueXP  gelöscht werden. Der Dienst löscht automatisch den Snapshot auf der Quelle alle 24 Stunden. Sie können dies jedoch nach Bedarf durchführen. Mit dieser Funktion können Sie sicherstellen, dass die Snapshots über alle Standorte hinweg konsistent sind.
 
+*Erforderliche BlueXP -Rolle* Organisationsadministrator, Ordner- oder Projektadministrator, Notfallwiederherstellungsadministrator, Notfallwiederherstellungs-Failover-Administrator oder Notfallwiederherstellungsanwendungsadministrator.
+
 .Schritte
 . Wählen Sie im oberen Menü *Replikationspläne* aus.
 +
@@ -109,6 +121,8 @@ image:../use/dr-plan-list2.png["Liste der Replikationspläne"]
 === Löschen Sie einen Replikationsplan
 
 Sie können einen Replikationsplan löschen, wenn Sie ihn nicht mehr benötigen. Wenn Sie einen Replizierungsplan löschen, können Sie auch die vom Plan erstellten primären und sekundären Snapshots löschen.
+
+*Erforderliche BlueXP -Rolle* Organisationsadministrator, Ordner- oder Projektadministrator, Notfallwiederherstellungsadministrator, Notfallwiederherstellungs-Failover-Administrator oder Notfallwiederherstellungsanwendungsadministrator.
 
 .Schritte
 . Wählen Sie im oberen Menü *Replikationspläne* aus.
@@ -127,6 +141,9 @@ image:../use/dr-plan-list2.png["Liste der Replikationspläne"]
 
 Sie können ändern, wie viele Datastores beibehalten werden.
 
+*Erforderliche BlueXP -Rolle* Organisationsadministrator, Ordner- oder Projektadministrator, Notfallwiederherstellungsadministrator, Notfallwiederherstellungs-Failover-Administrator oder Notfallwiederherstellungsanwendungsadministrator.
+
+.Schritte
 . Wählen Sie im oberen Menü *Replikationspläne* aus.
 . Wählen Sie den Replikationsplan aus, klicken Sie auf die Registerkarte *Failover Mapping* und klicken Sie auf das Bleistiftsymbol *Bearbeiten*.
 . Klicken Sie auf den Pfeil *Datastores*, um ihn zu erweitern.
@@ -143,6 +160,9 @@ image:../use/dr-plan-failover-edit.png["Seite für Failover-Zuordnungen bearbeit
 
 Sie können Informationen darüber anzeigen, wie viele Datastores auf der Quelle und auf dem Ziel vorhanden sind.
 
+*Erforderliche BlueXP -Rolle* Organisationsadministrator, Ordner- oder Projektadministrator, Disaster Recovery-Administrator, Disaster Recovery-Failover-Administrator, Disaster Recovery-Anwendungsadministrator oder Disaster Recovery-Viewer-Rolle.
+
+.Schritte
 . Wählen Sie im oberen Menü *Dashboard*.
 . Wählen Sie das vCenter in der Standortzeile aus.
 . Wählen Sie *Datastores*.
@@ -155,6 +175,9 @@ Sie können Informationen darüber anzeigen, wie viele Datastores auf der Quelle
 
 Sie können Informationen darüber anzeigen, wie viele virtuelle Maschinen auf der Quelle und auf dem Ziel zusammen mit CPU, Arbeitsspeicher und verfügbarer Kapazität vorhanden sind.
 
+*Erforderliche BlueXP -Rolle* Organisationsadministrator, Ordner- oder Projektadministrator, Disaster Recovery-Administrator, Disaster Recovery-Failover-Administrator, Disaster Recovery-Anwendungsadministrator oder Disaster Recovery-Viewer-Rolle.
+
+.Schritte
 . Wählen Sie im oberen Menü *Dashboard*.
 . Wählen Sie das vCenter in der Standortzeile aus.
 . Wählen Sie *Virtuelle Maschinen*.

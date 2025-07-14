@@ -14,6 +14,10 @@ summary: NetApp BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recove
 [role="lead"]
 Mit dem BlueXP Disaster Recovery-Dashboard können Sie den Zustand Ihrer Disaster-Recovery-Standorte und Replizierungspläne bestimmen. Sie können schnell feststellen, welche Standorte und Pläne gesund, getrennt oder degradiert sind.
 
+*Erforderliche BlueXP -Rolle* Organisationsadministrator, Ordner- oder Projektadministrator, Notfallwiederherstellungsadministrator, Notfallwiederherstellungsanwendungsadministrator oder Notfallwiederherstellungsbetrachterrolle.
+
+link:../reference/dr-reference-roles.html["Erfahren Sie mehr über Benutzerrollen und Berechtigungen bei der BlueXP disaster recovery"]. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über BlueXP-Zugriffsrollen für alle Dienste"^].
+
 .Schritte
 . Wählen Sie in der linken Navigationsleiste von BlueXP *Protection* > *Disaster Recovery* aus.
 . Wählen Sie aus dem BlueXP Disaster Recovery-Hauptmenü *Dashboard* aus.

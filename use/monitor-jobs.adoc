@@ -14,6 +14,14 @@ summary: NetApp BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recove
 [role="lead"]
 Sie können alle BlueXP-Notfallwiederherstellungsjobs überwachen und ihren Fortschritt bestimmen.
 
+
+
+== Jobs anzeigen
+
+*Erforderliche BlueXP -Rolle* Organisationsadministrator, Ordner- oder Projektadministrator, Notfallwiederherstellungsadministrator, Notfallwiederherstellungsanwendungsadministrator oder Notfallwiederherstellungsbetrachterrolle.
+
+link:../reference/dr-reference-roles.html["Erfahren Sie mehr über Benutzerrollen und Berechtigungen bei der BlueXP disaster recovery"]. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über BlueXP-Zugriffsrollen für alle Dienste"^].
+
 .Schritte
 . Wählen Sie in der linken Navigationsleiste von BlueXP *Protection* > *Disaster Recovery* aus.
 . Wählen Sie im oberen Menü *Job-Überwachung*.
@@ -27,6 +35,10 @@ Sie können alle BlueXP-Notfallwiederherstellungsjobs überwachen und ihren Fort
 == Abbrechen eines Jobs
 
 Wenn ein Job in Bearbeitung ist oder sich in der Warteschlange befindet und Sie nicht möchten, dass er fortgesetzt wird, können Sie ihn abbrechen. Sie können einen Job abbrechen, wenn er im gleichen Status bleibt und Sie den nächsten Vorgang in der Warteschlange freigeben möchten. Sie können einen Job abbrechen, bevor es zu einer Zeitabsage kommt.
+
+*Erforderliche BlueXP -Rolle* Organisationsadministrator, Ordner- oder Projektadministrator, Notfallwiederherstellungsadministrator, Notfallwiederherstellungs-Failover-Administrator oder Notfallwiederherstellungsanwendungsadministrator.
+
+link:../reference/dr-reference-roles.html["Erfahren Sie mehr über Benutzerrollen und Berechtigungen bei der BlueXP disaster recovery"]. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über BlueXP-Zugriffsrollen für alle Dienste"^].
 
 .Schritte
 . Wählen Sie in der linken Navigationsleiste von BlueXP *Protection* > *Disaster Recovery* aus.

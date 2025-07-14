@@ -16,6 +16,10 @@ Nachdem Sie vCenter Standorte hinzugefügt haben, sind Sie bereit, einen Disaste
 
 Solche Pläne werden manchmal _Blueprints_ genannt.
 
+*Erforderliche BlueXP -Rolle* Organisationsadministrator, Ordner- oder Projektadministrator, Notfallwiederherstellungsadministrator, Notfallwiederherstellungs-Failover-Administrator oder Notfallwiederherstellungsanwendungsadministrator.
+
+link:../reference/dr-reference-roles.html["Erfahren Sie mehr über Benutzerrollen und Berechtigungen bei der BlueXP disaster recovery"]. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über BlueXP-Zugriffsrollen für alle Dienste"^].
+
 Sie können einen Replizierungsplan erstellen und darüber hinaus Zeitpläne für Compliance und Tests bearbeiten.
 
 Sie können mehrere VMs auf mehreren Datenspeichern sichern. Die Disaster Recovery von BlueXP  erstellt ONTAP-Konsistenzgruppen für alle ONTAP-Volumes, die geschützte VM-Datastores hosten.

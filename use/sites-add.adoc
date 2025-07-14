@@ -19,6 +19,10 @@ TIP: Stellen Sie sicher, dass sowohl das Quell- als auch das Ziel-vCenter densel
 
 Nach dem Hinzufügen von vCenters führt BlueXP  Disaster Recovery eine umfassende Erkennung der vCenter-Umgebungen durch, einschließlich vCenter-Cluster, ESXi-Hosts, Datastores, Storage-Platzbedarf, Details zu virtuellen Maschinen, SnapMirror-Replikaten und Virtual-Machine-Netzwerken.
 
+*Erforderliche BlueXP -Rolle* Organisationsadministrator, Ordner- oder Projektadministrator oder Notfallwiederherstellungsadministrator.
+
+link:../reference/dr-reference-roles.html["Erfahren Sie mehr über Benutzerrollen und Berechtigungen bei der BlueXP disaster recovery"]. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über BlueXP-Zugriffsrollen für alle Dienste"^].
+
 Wenn Sie in früheren Versionen vCenter hinzugefügt haben und den Ermittlungsplan anpassen möchten, müssen Sie den vCenter Server-Standort bearbeiten und den Zeitplan festlegen.
 
 

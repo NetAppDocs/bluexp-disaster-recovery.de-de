@@ -14,6 +14,10 @@ summary: Mit der Disaster Recovery von BlueXP können Sie VMware Applikationen a
 [role="lead"]
 Mit der Disaster Recovery von BlueXP können Sie VMware Applikationen an Ihrem Quellstandort mithilfe von SnapMirror Replizierung an einen Remote-Standort zur Disaster Recovery in der Cloud replizieren.
 
+*Erforderliche BlueXP -Rolle* Organisationsadministrator, Ordner- oder Projektadministrator, Notfallwiederherstellungsadministrator oder Notfallwiederherstellungs-Failover-Administratorrolle.
+
+link:../reference/dr-reference-roles.html["Erfahren Sie mehr über Benutzerrollen und Berechtigungen bei der BlueXP disaster recovery"]. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über BlueXP-Zugriffsrollen für alle Dienste"^].
+
 
 TIP: Nachdem Sie den Disaster-Recovery-Plan erstellt haben, identifizieren Sie im Assistenten die Wiederholung und initiieren Sie eine Replizierung zu einem Disaster-Recovery-Standort. Die BlueXP Disaster Recovery überprüft alle 30 Minuten, ob die Replizierung tatsächlich gemäß dem Plan stattfindet. Sie können den Fortschritt auf der Seite Job Monitor überwachen.
 

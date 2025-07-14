@@ -14,6 +14,10 @@ summary: NetApp BlueXP Disaster Recovery ist ein Cloud-basierter Disaster Recove
 [role="lead"]
 Bei einem Ausfall sollte ein Failover Ihres primären lokalen VMware-Standorts auf einen anderen VMware-Standort vor Ort oder auf VMware Cloud on AWS erfolgen. Sie können den Failover-Prozess testen, um sicherzustellen, dass er bei Bedarf erfolgreich ist.
 
+*Erforderliche BlueXP -Rolle* Organisationsadministrator, Ordner- oder Projektadministrator, Notfallwiederherstellungsadministrator oder Notfallwiederherstellungs-Failover-Administratorrolle.
+
+link:../reference/dr-reference-roles.html["Erfahren Sie mehr über Benutzerrollen und Berechtigungen bei der BlueXP disaster recovery"]. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über BlueXP-Zugriffsrollen für alle Dienste"^].
+
 Während eines Failover wird die aktuellste SnapMirror Snapshot Kopie verwendet. Sie können auch einen bestimmten Snapshot aus einem zeitpunktgenauen Snapshot auswählen (gemäß der Aufbewahrungsrichtlinie von SnapMirror). Die Point-in-Time-Option kann hilfreich sein, wenn Sie vor einem Korruptionsereignis wie Ransomware stehen, wo die neuesten Replikate bereits kompromittiert oder verschlüsselt sind. Die Disaster Recovery von BlueXP zeigt alle verfügbaren Zeitpunkte an.
 
 Dieser Prozess unterscheidet sich, je nachdem, ob der Produktionsstandort in einem ordnungsgemäßen Zustand ist und Sie aus anderen Gründen als zum Ausfall der Infrastruktur ein Failover auf den Disaster-Recovery-Standort durchführen:
