@@ -16,7 +16,7 @@ Gehen Sie insbesondere wie folgt vor:
 * Erstellen Sie ein vCenter-Benutzerkonto mit den spezifischen VMware-Berechtigungen, die für die Notfallwiederherstellung von BlueXP erforderlich sind, um die erforderlichen Vorgänge auszuführen.
 +
 
-NOTE: Wir empfehlen nicht, das standardmäßige Administratorkonto „administrator@vsphere.com“ zu verwenden. Stattdessen sollten Sie auf allen vCenter-Clustern, die am DR-Prozess teilnehmen, ein BlueXP-Disaster-Recovery-spezifisches Benutzerkonto erstellen. Eine Liste der erforderlichen Berechtigungen finden Sie unter link:vcenter-privileges.html["Für die Disaster Recovery von BlueXP sind vCenter Berechtigungen erforderlich"] .
+NOTE: Wir empfehlen nicht, das standardmäßige Administratorkonto „\administrator@vsphere.com“ zu verwenden. Stattdessen sollten Sie auf allen vCenter-Clustern, die am DR-Prozess teilnehmen, ein BlueXP-Disaster-Recovery-spezifisches Benutzerkonto erstellen. Eine Liste der erforderlichen Berechtigungen finden Sie unter link:vcenter-privileges.html["Für die Disaster Recovery von BlueXP sind vCenter Berechtigungen erforderlich"] .
 
 * Stellen Sie sicher, dass sich alle vCenter-Datenspeicher, die durch die Notfallwiederherstellung von BlueXP geschützte VMs hosten, auf NetApp ONTAP-Speicherressourcen befinden.
 +
