@@ -14,6 +14,6 @@ Nachdem Sie den BlueXP Connector installiert haben, müssen Sie alle ONTAP-Speic
 * link:evs-deploy-guide-config-prereqs.html["Voraussetzungen für Amazon EVS mit BlueXP Disaster Recovery"]
 * link:evs-deploy-guide-config-add-arrays.html["Fügen Sie ONTAP-Speicher-Arrays zur BlueXP-Notfallwiederherstellung hinzu"]
 * link:evs-deploy-guide-enable-draas.html["Aktivieren Sie die BlueXP-Notfallwiederherstellung für Amazon EVS"]
-* link:evs-deploy-guide-config-add-sites.html["Fügen Sie vCenter-Sites zur BlueXP-Notfallwiederherstellung hinzu"]
-* link:evs-deploy-guide-config-add-vcenters.html["Fügen Sie vCenter-Cluster zur BlueXP-Notfallwiederherstellung hinzu"]
+* link:evs-deploy-guide-config-add-arrays.html["Fügen Sie vCenter-Sites zur BlueXP-Notfallwiederherstellung hinzu"]
+* link:evs-deploy-guide-add-vcenters.html["Fügen Sie vCenter-Cluster zur BlueXP-Notfallwiederherstellung hinzu"]
 

@@ -8,7 +8,7 @@ summary: Die BlueXP disaster recovery verwendet Rollen, um den Zugriff jedes Ben
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/use
 
 
 [role="lead"]
