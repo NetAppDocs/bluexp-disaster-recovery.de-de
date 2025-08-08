@@ -18,10 +18,10 @@ Mit BlueXP Disaster Recovery können Sie verschiedene Lizenzierungsmodelle verwe
 
 link:../reference/dr-reference-roles.html["Erfahren Sie mehr über Benutzerrollen und Berechtigungen bei der BlueXP disaster recovery"]. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über BlueXP-Zugriffsrollen für alle Dienste"^].
 
-Sie können die folgenden Lizenztypen verwenden:
+*Lizenzierungsoptionen* Sie können die folgenden Lizenzierungsoptionen nutzen:
 
 * Melden Sie sich für eine kostenlose 30-Tage-Testversion an.
-* Erwerben Sie ein Pay-as-you-go-Abonnement (PAYGO) für *NetApp Intelligent Services* mit Amazon Web Services (AWS) Marketplace.
+* Erwerben Sie ein Pay-as-you-go-Abonnement (PAYGO) für * NetApp Intelligent Services* über den Amazon Web Services (AWS) Marketplace oder den Microsoft Azure Marketplace.
 * Bring-Your-Own-License (BYOL) bei einer NetApp Lizenzdatei (NLF), die Sie von Ihrem NetApp Vertriebsmitarbeiter erhalten. Sie können die Seriennummer der Lizenz verwenden, um das BYOL in der Digital Wallet von BlueXP zu aktivieren.
 
 
@@ -73,14 +73,20 @@ Weitere Informationen finden Sie unter link:../use/sites-add.html["Fügen Sie vC
 
 
 
-== Abonnieren Sie nach Ablauf der Testversion den AWS Marketplace
+== Nach Ablauf der Testphase abonnieren Sie über einen der Marketplaces
 
-Nach Ablauf der kostenlosen Testversion können Sie entweder eine Lizenz von NetApp erwerben oder *NetApp Intelligente Dienste* über AWS Marketplace abonnieren. Dieses Verfahren bietet einen allgemeinen Überblick über das direkte Abonnieren im AWS Marketplace.
+Nach Ablauf der kostenlosen Testversion können Sie entweder eine Lizenz von NetApp erwerben oder * NetApp Intelligent Services* über AWS Marketplace oder Microsoft Azure Marketplace abonnieren.  Dieses Verfahren bietet einen allgemeinen Überblick darüber, wie Sie sich direkt bei einem der Marktplätze anmelden können.
 
 .Schritte
 . Bei der Disaster Recovery von BlueXP wird deutlich, dass die kostenlose Testversion ausläuft. Wählen Sie in der Nachricht *Abonnieren oder eine Lizenz erwerben*.
-. Wählen Sie *im AWS Marketplace abonnieren*.
-. Verwenden Sie den AWS Marketplace, um *NetApp Intelligent Services* und *BlueXP  Disaster Recovery* zu abonnieren.
++
+Oder wählen Sie oben rechts *Zahlungsmethoden anzeigen* aus.
+
++
+image:dr-licensing-payment-methods.png["Die BlueXP disaster recovery Seite mit Zahlungsmethoden"]
+
+. Wählen Sie *Im AWS Marketplace abonnieren* oder *Im Azure Marketplace abonnieren*.
+. Verwenden Sie AWS Marketplace oder Microsoft Azure Marketplace, um * NetApp Intelligent Services* und * BlueXP disaster recovery* zu abonnieren.
 . Wenn Sie zur Disaster Recovery von BlueXP zurückkehren, wird in einer Meldung angezeigt, dass Sie abonniert sind.
 +
 Die Abonnementdetails finden Sie in der BlueXP  Digital Wallet. link:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-homepage.html["Weitere Informationen Management von Abonnements mit Digital Wallet"^].

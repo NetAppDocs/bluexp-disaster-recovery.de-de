@@ -75,7 +75,7 @@ IMPORTANT: Einige Versionen enthalten eine Technologievorschau. NetApp berechnet
 Sie können die folgenden Lizenztypen verwenden:
 
 * Melden Sie sich für eine kostenlose 30-Tage-Testversion an.
-* Erwerben Sie über den Amazon Web Services (AWS) Marketplace ein Pay-as-you-go-Abonnement für *NetApp Intelligent Services*.
+* Erwerben Sie ein Pay-as-you-go-Abonnement (PAYGO) für * NetApp Intelligent Services* über den Amazon Web Services (AWS) Marketplace und den Microsoft Azure Marketplace.
 * Bring-Your-Own-License (BYOL) bei einer NetApp Lizenzdatei (NLF), die Sie von Ihrem NetApp Vertriebsmitarbeiter erhalten. Sie können die Seriennummer der Lizenz verwenden, um das BYOL in der Digital Wallet von BlueXP zu aktivieren.
 
 
