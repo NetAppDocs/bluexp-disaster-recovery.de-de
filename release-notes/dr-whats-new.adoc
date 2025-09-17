@@ -16,6 +16,28 @@ Erfahren Sie mehr über die Neuerungen bei BlueXP Disaster Recovery.
 
 
 
+== 15. September 2025
+
+Version 4.3.5P3
+
+
+
+=== Skriptkonfiguration für Test-Failover
+
+Mit dieser Version können Sie jetzt Skripts auf VMs ausführen, nachdem diese während des Test-Failover-Prozesses eingeschaltet wurden.  Auf diese Weise können Sie Skripte testen und validieren.  Sie können beispielsweise NFS-Mounts aktualisieren, um auf einen neuen Zielserver zu verweisen. So stellen Sie sicher, dass Gastanwendungen vollständig online sind und Ihr Wiederherstellungsprozess von Anfang bis Ende getestet werden kann.
+
+Weitere Informationen zum Failover-Prozess finden Sie unterlink:https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/failover.html["Failover von Anwendungen an einen Remote-Standort"] .
+
+
+
+=== Verbesserter Failback-Prozess
+
+Während des Failovers ist der Failback-Prozess jetzt deaktiviert, bis die Erkennung abgeschlossen ist.  Dadurch wird sichergestellt, dass alle Konfigurationen vor dem Einleiten eines Failovers richtig identifiziert und berücksichtigt werden, und das Fehlerrisiko wird verringert.
+
+Weitere Informationen zum Failback-Prozess finden Sie unterlink:https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/failback.html["Failback von Anwendungen auf die ursprüngliche Quelle"] .
+
+
+
 == 04. August 2025
 
 Version 4.2.5P2

@@ -1742,4 +1742,13 @@ Für vollständigen Zugriff ist eine Disaster-Recovery-Lizenz von BlueXP erforde
   <block id="ea9723858fffb6cdd001caff1cc4ed38" category="list-text">Verwenden Sie AWS Marketplace oder Microsoft Azure Marketplace, um * NetApp Intelligent Services* und * BlueXP disaster recovery* zu abonnieren.</block>
   <block id="3488d38349240c72f75d081c2a79fa3b" category="section-title">04. August 2025</block>
   <block id="4a32789f771ba902fef02cd0f2a544e6" category="paragraph">Version 4.2.5P2</block>
+  <block id="b9c1cdf7f87b0afdb4912dd1210368b2" category="doc">Skriptkonfiguration für Test-Failover</block>
+  <block id="23b8df4f947d4876b62a4f35651dc9da" category="paragraph">Mit dieser Version können Sie jetzt Skripts auf VMs ausführen, nachdem diese während des Test-Failover-Prozesses eingeschaltet wurden.  Auf diese Weise können Sie Skripte testen und validieren.  Sie können beispielsweise NFS-Mounts aktualisieren, um auf einen neuen Zielserver zu verweisen. So stellen Sie sicher, dass Gastanwendungen vollständig online sind und Ihr Wiederherstellungsprozess von Anfang bis Ende getestet werden kann.</block>
+  <block id="c50483baf55d5fc84eb7cde2deb8dbbe" category="paragraph">Weitere Informationen zum Failover-Prozess finden Sie unter<block ref="971d0cd2e9d374816901b4e00433e2bb" category="inline-link-macro-rx"></block> .</block>
+  <block id="bf6db1e2a0fdc4928d739c9a62b174a9" category="section-title">Verbesserter Failback-Prozess</block>
+  <block id="3409a7280b540ad3a82c8fa7bda31a54" category="paragraph">Während des Failovers ist der Failback-Prozess jetzt deaktiviert, bis die Erkennung abgeschlossen ist.  Dadurch wird sichergestellt, dass alle Konfigurationen vor dem Einleiten eines Failovers richtig identifiziert und berücksichtigt werden, und das Fehlerrisiko wird verringert.</block>
+  <block id="4e76033871d8eb52e7a46330cc531bd8" category="inline-link-macro">Failback von Anwendungen auf die ursprüngliche Quelle</block>
+  <block id="61a1bcd67556c0aafb06a8820e6e7dce" category="paragraph">Weitere Informationen zum Failback-Prozess finden Sie unter<block ref="5386470d7b73cea41e5e361ec83bbd7a" category="inline-link-macro-rx"></block> .</block>
+  <block id="2f5c8ea43e93d972b7a25e5290de1a89" category="section-title">15. September 2025</block>
+  <block id="7b79550b0f239051cee47679029d92d0" category="paragraph">Version 4.3.5P3</block>
 </blocks>
